@@ -1,4 +1,6 @@
+import Roster from './team/roster.js'
+
 ReactDOM.render(
-    <h1>Hello, world!</h1>,
+    <Roster />,
     document.getElementById('root')
   );

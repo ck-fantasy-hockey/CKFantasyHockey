@@ -1,5 +1,3 @@
-ReactDOM.render(React.createElement(
-    'h1',
-    null,
-    'Hello, world!'
-), document.getElementById('root'));
+import Roster from './team/roster.js';
+
+ReactDOM.render(React.createElement(Roster, null), document.getElementById('root'));
