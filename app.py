@@ -16,9 +16,9 @@ def root():
 def team_view():
     return render_template('index.j2', page="team_view")
 
-@app.route('/join-team')
+@app.route('/join-league')
 def join_team():
-    return render_template('index.j2', page="join_team")
+    return render_template('index.j2', page="join_league")
 
 if __name__ == '__main__':
     app.run(port=5000)

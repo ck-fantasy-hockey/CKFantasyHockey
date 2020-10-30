@@ -1,11 +1,11 @@
 import NavBar from './nav_bar.js'
 
-class JoinTeam extends React.Component {
+class JoinLeague extends React.Component {
     render() {
         return <div>
             <NavBar />
             <div className='container'>
-                <h1>JOIN TEAM</h1>
+                <h1>JOIN LEAGUE</h1>
             </div>
             
         </div> 
@@ -13,6 +13,6 @@ class JoinTeam extends React.Component {
 }
 
 ReactDOM.render(
-    <JoinTeam />,
+    <JoinLeague />,
     document.getElementById('root')
   );
