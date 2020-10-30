@@ -1,7 +1,7 @@
 export default class LeagueRow extends React.Component {
     joinLeagueButton() {
         if (this.props.joinable) {
-            return <a href={'/join?team=' + this.props.leagueID}><button>JOIN</button></a>
+            return <a href={'/create-team?leagueID=' + this.props.leagueID}><button>JOIN</button></a>
         } else {
             return <span className='league-closed'>CLOSED</span>
         }
