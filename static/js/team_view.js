@@ -6,56 +6,31 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var RosterRow = function (_React$Component) {
-    _inherits(RosterRow, _React$Component);
+import Roster from './team/roster.js';
+import TeamInformation from './team/team_information.js';
 
-    function RosterRow() {
-        _classCallCheck(this, RosterRow);
+var TeamView = function (_React$Component) {
+    _inherits(TeamView, _React$Component);
 
-        return _possibleConstructorReturn(this, (RosterRow.__proto__ || Object.getPrototypeOf(RosterRow)).apply(this, arguments));
+    function TeamView() {
+        _classCallCheck(this, TeamView);
+
+        return _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).apply(this, arguments));
     }
 
-    _createClass(RosterRow, [{
-        key: "render",
+    _createClass(TeamView, [{
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "tr",
+                'div',
                 null,
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.playerID
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.name
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.position
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.wins
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.losses
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.points
-                )
+                React.createElement(TeamInformation, { data: this.props.data }),
+                React.createElement(Roster, { data: this.props.data })
             );
         }
     }]);
 
-    return RosterRow;
+    return TeamView;
 }(React.Component);
 
-export default RosterRow;
+export default TeamView;

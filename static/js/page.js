@@ -1,3 +1,6 @@
-import Roster from './team/roster.js';
+import TeamView from './team_view.js';
+import DATA from '../json/data.json';
 
-ReactDOM.render(React.createElement(Roster, null), document.getElementById('root'));
+var data = JSON.parse(DATA);
+
+ReactDOM.render(React.createElement(TeamView, { data: data }), document.getElementById('root'));

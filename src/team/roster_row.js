@@ -1,7 +1,12 @@
-export default class RosterRow {
+export default class RosterRow extends React.Component {
     render() {
         return <tr>
-            <td></td>
+            <td>{this.props.playerID}</td>
+            <td>{this.props.name}</td>
+            <td>{this.props.position}</td>
+            <td>{this.props.wins}</td>
+            <td>{this.props.losses}</td>
+            <td>{this.props.points}</td>
         </tr>
     }
 }

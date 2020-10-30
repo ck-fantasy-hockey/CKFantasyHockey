@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import RosterRow from './roster_row.js';
+
 var Roster = function (_React$Component) {
     _inherits(Roster, _React$Component);
 
@@ -14,108 +16,60 @@ var Roster = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Roster.__proto__ || Object.getPrototypeOf(Roster)).call(this, props));
 
-        _this.state = {
-            1: {
-                playerID: "1",
-                name: "Henrik Lundqvist",
-                postion: "G",
-                wins: "54",
-                losses: "18",
-                points: "105"
-            },
-            2: {
-                playerID: "2",
-                name: "Ron Hextall",
-                position: "G",
-                wins: "78",
-                losses: "23",
-                points: "178"
-            }
-        };
+        _this.state = _this.props.data.players;
         return _this;
     }
 
     _createClass(Roster, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "table",
+                'table',
                 null,
                 React.createElement(
-                    "thead",
+                    'thead',
                     null,
                     React.createElement(
-                        "tr",
+                        'tr',
                         null,
                         React.createElement(
-                            "th",
+                            'th',
                             null,
-                            "Player ID"
+                            'Player ID'
                         ),
                         React.createElement(
-                            "th",
+                            'th',
                             null,
-                            "Name"
+                            'Name'
                         ),
                         React.createElement(
-                            "th",
+                            'th',
                             null,
-                            "Position"
+                            'Position'
                         ),
                         React.createElement(
-                            "th",
+                            'th',
                             null,
-                            "Wins"
+                            'Wins'
                         ),
                         React.createElement(
-                            "th",
+                            'th',
                             null,
-                            "Losses"
+                            'Losses'
                         ),
                         React.createElement(
-                            "th",
+                            'th',
                             null,
-                            "Points"
+                            'Points'
                         )
                     )
                 ),
                 React.createElement(
-                    "tbody",
+                    'tbody',
                     null,
-                    React.createElement(
-                        "tr",
-                        null,
-                        React.createElement(
-                            "td",
-                            null,
-                            "1"
-                        ),
-                        React.createElement(
-                            "td",
-                            null,
-                            "Henrik Lundqvist"
-                        ),
-                        React.createElement(
-                            "td",
-                            null,
-                            "G"
-                        ),
-                        React.createElement(
-                            "td",
-                            null,
-                            "54"
-                        ),
-                        React.createElement(
-                            "td",
-                            null,
-                            "18"
-                        ),
-                        React.createElement(
-                            "td",
-                            null,
-                            "105"
-                        )
-                    )
+                    this.state.players.map(function (element) {
+                        return React.createElement(RosterRow, Object.assign({ key: element.playerID }, element));
+                    })
                 )
             );
         }

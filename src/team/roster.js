@@ -1,24 +1,8 @@
+import RosterRow from './roster_row.js'
 export default class Roster extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            1: {
-                playerID: "1",
-                name: "Henrik Lundqvist",
-                postion: "G",
-                wins: "54",
-                losses: "18",
-                points: "105"
-            },
-            2:  {
-                playerID: "2",
-                name: "Ron Hextall",
-                position: "G",
-                wins: "78",
-                losses: "23",
-                points: "178"
-            }    
-        }
+        this.state = this.props.data.players
     }
 
     render() {
@@ -34,14 +18,9 @@ export default class Roster extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Henrik Lundqvist</td>
-                    <td>G</td>
-                    <td>54</td>
-                    <td>18</td>
-                    <td>105</td>
-                </tr>
+                {this.state.players.map(element =>
+                    <RosterRow key={element.playerID} {...element}/>
+                    )}
             </tbody>
         </table>;
     }
