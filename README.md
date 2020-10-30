@@ -3,6 +3,25 @@
 
 CKFantasyFootball is a full-stack web application that is a platform for Fantasy Hockey. The front-end is built purely from React.js. The backend will be built using Flask and MySQL.
 
+## Getting Running
+
+Helpful link for the first section: https://reactjs.org/docs/add-react-to-a-website.html#optional-try-react-with-jsx
+* Install Node.js and npm
+* Install babel using npm 
+
+The rest is Python
+* Install Python 3
+* Intall Flask
+  * `pip3 install flask`
+
+To run the project
+* Navigate to project folder
+* `flask run`
+
+Project will be served on http://localhost:5000
+
+Ensure that you use the `--watch` switch when running babel (see the React page linked) so that when you make changes in the React JavaScript files, they're transpiled in realtime.
+
 ## Project Directory Structure
 
 Path | Description
