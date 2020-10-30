@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import NavBar from './nav_bar.js';
+
 var JoinTeam = function (_React$Component) {
     _inherits(JoinTeam, _React$Component);
 
@@ -16,12 +18,21 @@ var JoinTeam = function (_React$Component) {
     }
 
     _createClass(JoinTeam, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "h1",
+                'div',
                 null,
-                "JOIN TEAM"
+                React.createElement(NavBar, null),
+                React.createElement(
+                    'div',
+                    { className: 'container' },
+                    React.createElement(
+                        'h1',
+                        null,
+                        'JOIN TEAM'
+                    )
+                )
             );
         }
     }]);
@@ -29,4 +40,4 @@ var JoinTeam = function (_React$Component) {
     return JoinTeam;
 }(React.Component);
 
-export default JoinTeam;
+ReactDOM.render(React.createElement(JoinTeam, null), document.getElementById('root'));

@@ -10,7 +10,15 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/')
 def root():
-    return render_template('index.j2')
+    return render_template('index.j2', page="landing_page")
+
+@app.route('/team-view')
+def team_view():
+    return render_template('index.j2', page="team_view")
+
+@app.route('/join-team')
+def join_team():
+    return render_template('index.j2', page="join_team")
 
 if __name__ == '__main__':
     app.run(port=5000)
