@@ -16,7 +16,9 @@ var Roster = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Roster.__proto__ || Object.getPrototypeOf(Roster)).call(this, props));
 
-        _this.state = _this.props.data.players;
+        _this.state = {
+            players: _this.props.data.players
+        };
         return _this;
     }
 
@@ -24,52 +26,65 @@ var Roster = function (_React$Component) {
         key: 'render',
         value: function render() {
             return React.createElement(
-                'table',
-                null,
+                'div',
+                { className: 'roster' },
                 React.createElement(
-                    'thead',
-                    null,
+                    'div',
+                    { className: 'roster_title' },
                     React.createElement(
-                        'tr',
+                        'h2',
                         null,
-                        React.createElement(
-                            'th',
-                            null,
-                            'Player ID'
-                        ),
-                        React.createElement(
-                            'th',
-                            null,
-                            'Name'
-                        ),
-                        React.createElement(
-                            'th',
-                            null,
-                            'Position'
-                        ),
-                        React.createElement(
-                            'th',
-                            null,
-                            'Wins'
-                        ),
-                        React.createElement(
-                            'th',
-                            null,
-                            'Losses'
-                        ),
-                        React.createElement(
-                            'th',
-                            null,
-                            'Points'
-                        )
+                        'Roster'
                     )
                 ),
                 React.createElement(
-                    'tbody',
+                    'table',
                     null,
-                    this.state.players.map(function (element) {
-                        return React.createElement(RosterRow, Object.assign({ key: element.playerID }, element));
-                    })
+                    React.createElement(
+                        'thead',
+                        null,
+                        React.createElement(
+                            'tr',
+                            null,
+                            React.createElement(
+                                'th',
+                                null,
+                                'Player ID'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Name'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Position'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Wins'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Losses'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Points'
+                            )
+                        )
+                    ),
+                    React.createElement(
+                        'tbody',
+                        null,
+                        this.state.players.map(function (element) {
+                            return React.createElement(RosterRow, Object.assign({ key: element.playerID }, element));
+                        })
+                    )
                 )
             );
         }

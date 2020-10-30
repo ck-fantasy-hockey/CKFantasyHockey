@@ -1,9 +1,7 @@
 import TeamView from './team_view.js'
-import DATA from '../json/data.json'
-
-const data = JSON.parse(DATA)
+import DATA from '../json/data.js'
 
 ReactDOM.render(
-    <TeamView data={data} />,
+    <TeamView data={DATA} />,
     document.getElementById('root')
   );

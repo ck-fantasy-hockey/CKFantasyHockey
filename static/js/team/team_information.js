@@ -19,30 +19,39 @@ var TeamInformation = function (_React$Component) {
     }
 
     _createClass(TeamInformation, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "div",
-                null,
+                'div',
+                { className: 'team_info' },
                 React.createElement(
-                    "p",
+                    'div',
                     null,
-                    this.state.teamName
+                    React.createElement('img', { className: 'team_info_image', src: '/static/img/' + this.state.teamLogo })
                 ),
                 React.createElement(
-                    "p",
-                    null,
-                    this.state.createdOn
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    this.state.leagueName
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    this.state.leagueID
+                    'div',
+                    { className: 'team_info_text' },
+                    React.createElement(
+                        'h1',
+                        null,
+                        this.state.teamName
+                    ),
+                    React.createElement(
+                        'p',
+                        null,
+                        this.state.createdOn
+                    ),
+                    React.createElement(
+                        'p',
+                        null,
+                        this.state.leagueName
+                    ),
+                    React.createElement(
+                        'p',
+                        null,
+                        this.state.leagueID
+                    )
                 )
             );
         }

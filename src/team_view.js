@@ -3,7 +3,7 @@ import TeamInformation from './team/team_information.js'
 
 export default class TeamView extends React.Component {
     render() {
-        return <div>
+        return <div className='container'>
             <TeamInformation data={this.props.data} />
             <Roster data={this.props.data} />
         </div>

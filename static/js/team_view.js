@@ -23,7 +23,7 @@ var TeamView = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                null,
+                { className: 'container' },
                 React.createElement(TeamInformation, { data: this.props.data }),
                 React.createElement(Roster, { data: this.props.data })
             );

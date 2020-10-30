@@ -2,11 +2,18 @@ import RosterRow from './roster_row.js'
 export default class Roster extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.data.players
+        this.state ={
+            players: this.props.data.players
+        }
     }
 
     render() {
-        return <table>
+        return <div className='roster'>
+            <div className='roster_title'>
+                <h2>Roster</h2>
+            </div>
+            
+            <table>
             <thead>
                 <tr>
                     <th>Player ID</th>
@@ -22,6 +29,7 @@ export default class Roster extends React.Component {
                     <RosterRow key={element.playerID} {...element}/>
                     )}
             </tbody>
-        </table>;
+        </table>
+        </div>;
     }
 }
