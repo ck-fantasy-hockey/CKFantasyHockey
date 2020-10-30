@@ -1,6 +1,4 @@
 # CKFantasyHockey
-<<<<<<< HEAD
-=======
 ### Developed By: William Coiner and George Kochera
 
 CKFantasyFootball is a full-stack web application that is a platform for Fantasy Hockey. The front-end is built purely from React.js. The backend will be built using Flask and MySQL.
@@ -49,4 +47,11 @@ Path | Description
   
 - Python
   - Flask
->>>>>>> george
+
+## Routes
+
+Path | Description | Targets
+-----|-------------|---------
+/ | homepage | `landing_page.js`
+/join_league | Area to join a new league and establish a new team. | `join_league.js`
+/team_view | Area to view the team roster (and possibly later make changes) | `team_view.js`

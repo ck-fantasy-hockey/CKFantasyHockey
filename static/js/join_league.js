@@ -6,21 +6,18 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import Roster from './team/roster.js';
-import TeamInformation from './team/team_information.js';
 import NavBar from './nav_bar.js';
-import data from '../json/data.js';
 
-var TeamView = function (_React$Component) {
-    _inherits(TeamView, _React$Component);
+var JoinLeague = function (_React$Component) {
+    _inherits(JoinLeague, _React$Component);
 
-    function TeamView() {
-        _classCallCheck(this, TeamView);
+    function JoinLeague() {
+        _classCallCheck(this, JoinLeague);
 
-        return _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (JoinLeague.__proto__ || Object.getPrototypeOf(JoinLeague)).apply(this, arguments));
     }
 
-    _createClass(TeamView, [{
+    _createClass(JoinLeague, [{
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -30,14 +27,17 @@ var TeamView = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
-                    React.createElement(TeamInformation, { data: data }),
-                    React.createElement(Roster, { data: data })
+                    React.createElement(
+                        'h1',
+                        null,
+                        'JOIN LEAGUE'
+                    )
                 )
             );
         }
     }]);
 
-    return TeamView;
+    return JoinLeague;
 }(React.Component);
 
-ReactDOM.render(React.createElement(TeamView, null), document.getElementById('root'));
+ReactDOM.render(React.createElement(JoinLeague, null), document.getElementById('root'));
