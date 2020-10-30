@@ -10,9 +10,9 @@ export default class TeamInformation extends React.Component {
         </div>
         <div className='team_info_text'>
             <h1>{this.state.teamName}</h1>
-            <p>{this.state.createdOn}</p>
-            <p>{this.state.leagueName}</p>
-            <p>{this.state.leagueID}</p>
+            <p>Created: {this.state.createdOn}</p>
+            <p>League: {this.state.leagueName}</p>
+            <p>League ID: {this.state.leagueID}</p>
         </div>
     </div>    
     }

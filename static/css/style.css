@@ -53,6 +53,11 @@
     padding-left: 30px;
 }
 
+.team_info_text h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
 .team_info * {
     margin: 0;
 }

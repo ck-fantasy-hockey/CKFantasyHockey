@@ -40,16 +40,19 @@ var TeamInformation = function (_React$Component) {
                     React.createElement(
                         'p',
                         null,
+                        'Created: ',
                         this.state.createdOn
                     ),
                     React.createElement(
                         'p',
                         null,
+                        'League: ',
                         this.state.leagueName
                     ),
                     React.createElement(
                         'p',
                         null,
+                        'League ID: ',
                         this.state.leagueID
                     )
                 )
