@@ -1,13 +1,13 @@
 import NavBar from './nav_bar.js'
+import LeagueList from './join_league/league_list.js';
 
 class JoinLeague extends React.Component {
     render() {
         return <div>
             <NavBar />
             <div className='container'>
-                <h1>JOIN LEAGUE</h1>
-            </div>
-            
+                <LeagueList />
+            </div> 
         </div> 
     }
 }
