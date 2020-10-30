@@ -49,4 +49,11 @@ Path | Description
   
 - Python
   - Flask
->>>>>>> george
+
+## Routes
+
+Path | Description | Targets
+-----|-------------|---------
+/ | homepage | `landing_page.js`
+/join_league | Area to join a new league and establish a new team. | `join_league.js`
+/team_view | Area to view the team roster (and possibly later make changes) | `team_view.js`
