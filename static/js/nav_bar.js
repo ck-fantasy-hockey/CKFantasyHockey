@@ -38,8 +38,8 @@ var NavBar = function (_React$Component) {
                         null,
                         React.createElement(
                             'a',
-                            { href: '/join-team' },
-                            'Join Team'
+                            { href: '/join-league' },
+                            'Join League'
                         )
                     ),
                     React.createElement(
