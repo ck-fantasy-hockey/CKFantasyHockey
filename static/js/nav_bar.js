@@ -6,38 +6,57 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import Roster from './team/roster.js';
-import TeamInformation from './team/team_information.js';
-import NavBar from './nav_bar.js';
-import data from '../json/data.js';
+var NavBar = function (_React$Component) {
+    _inherits(NavBar, _React$Component);
 
-var TeamView = function (_React$Component) {
-    _inherits(TeamView, _React$Component);
+    function NavBar() {
+        _classCallCheck(this, NavBar);
 
-    function TeamView() {
-        _classCallCheck(this, TeamView);
-
-        return _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).apply(this, arguments));
     }
 
-    _createClass(TeamView, [{
+    _createClass(NavBar, [{
         key: 'render',
         value: function render() {
             return React.createElement(
-                'div',
+                'nav',
                 null,
-                React.createElement(NavBar, null),
                 React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(TeamInformation, { data: data }),
-                    React.createElement(Roster, { data: data })
+                    'ul',
+                    null,
+                    React.createElement(
+                        'li',
+                        null,
+                        React.createElement(
+                            'a',
+                            { href: '/' },
+                            'Home'
+                        )
+                    ),
+                    React.createElement(
+                        'li',
+                        null,
+                        React.createElement(
+                            'a',
+                            { href: '/join-league' },
+                            'Join League'
+                        )
+                    ),
+                    React.createElement(
+                        'li',
+                        null,
+                        React.createElement(
+                            'a',
+                            { href: '/team-view' },
+                            'Team View'
+                        )
+                    )
                 )
             );
         }
     }]);
 
-    return TeamView;
+    return NavBar;
 }(React.Component);
 
-ReactDOM.render(React.createElement(TeamView, null), document.getElementById('root'));
+export default NavBar;
