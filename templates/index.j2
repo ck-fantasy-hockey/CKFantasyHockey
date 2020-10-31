@@ -11,6 +11,10 @@
         <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 
         {# TOP LEVEL REACT.JS SCRIPT  #}
-       <script crossorigin src={{ '/static/js/' + page + '.js' }} type="module"></script>
+        <script type='text/javascript'>
+            let dataFromServer = JSON.parse('{{ dataFromServer | tojson }}');
+        </script>
+
+        <script crossorigin src={{ '/static/js/' + page + '.js' }} type="module"></script>
     </body>
 </html>
