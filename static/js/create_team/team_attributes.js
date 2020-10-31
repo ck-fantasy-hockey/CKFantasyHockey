@@ -6,35 +6,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import NavBar from './nav_bar.js';
-import LeagueList from './join_league/league_list.js';
+import TeamAttributesForm from './team_attributes_form.js';
 
-var JoinLeague = function (_React$Component) {
-    _inherits(JoinLeague, _React$Component);
+var TeamAttributes = function (_React$Component) {
+    _inherits(TeamAttributes, _React$Component);
 
-    function JoinLeague() {
-        _classCallCheck(this, JoinLeague);
+    function TeamAttributes() {
+        _classCallCheck(this, TeamAttributes);
 
-        return _possibleConstructorReturn(this, (JoinLeague.__proto__ || Object.getPrototypeOf(JoinLeague)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (TeamAttributes.__proto__ || Object.getPrototypeOf(TeamAttributes)).apply(this, arguments));
     }
 
-    _createClass(JoinLeague, [{
-        key: 'render',
+    _createClass(TeamAttributes, [{
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                null,
-                React.createElement(NavBar, null),
+                "div",
+                { className: "team_info" },
                 React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(LeagueList, null)
+                    "div",
+                    null,
+                    React.createElement("i", { className: "fas fa-hockey-puck" })
+                ),
+                React.createElement(
+                    "div",
+                    { className: "team_info_text" },
+                    React.createElement(TeamAttributesForm, null)
                 )
             );
         }
     }]);
 
-    return JoinLeague;
+    return TeamAttributes;
 }(React.Component);
 
-ReactDOM.render(React.createElement(JoinLeague, null), document.getElementById('root'));
+export default TeamAttributes;
