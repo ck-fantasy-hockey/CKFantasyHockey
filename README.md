@@ -50,10 +50,20 @@ Path | Description
 
 ## Routes
 
+When creating a route there is a general method so far for establishing a new route:
+1. Add the route in the traditional fashion in app.py. Specify the variable `page` to equal the file name of the top-level React.js file that you will use for your new page.
+2. If you need to pipe data to your page from the server, use the dictionary `dataFromServer`. This gets translated to JSON in `index.j2` and is available to all React.js scripts.
+3. Create the top-level React.js file in `/static/js`. This should serve the total content for the page including subfeatures. Be sure to include the navbar. The navbar code is located at `/static/js/nav_bar.js`.
+4. Test and Verify
+
 Path | Description | Targets
 -----|-------------|---------
 / | homepage | `landing_page.js`
 /join_league | Area to join a new league and establish a new team. | `join_league.js`
 /team_view | Area to view the team roster (and possibly later make changes) | `team_view.js`
+<<<<<<< HEAD
 /signup | Create new account | 'signup.js'
 /login | Log into existing user | 'login.js'
+=======
+/create_team | Allows the user to select players for the their team and add a name | `create_team.js`
+>>>>>>> george_ui
