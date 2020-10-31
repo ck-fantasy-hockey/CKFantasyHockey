@@ -22,12 +22,16 @@ var LandingPage = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                null,
+                { className: 'main' },
                 React.createElement(NavBar, null),
                 React.createElement(
-                    'h1',
-                    null,
-                    'WELCOME TO CKFantasyHockey!'
+                    'div',
+                    { className: 'front-page-title' },
+                    React.createElement(
+                        'h1',
+                        null,
+                        'CK Fantasy Hockey'
+                    )
                 )
             );
         }

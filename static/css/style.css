@@ -7,7 +7,60 @@ html {
     */
 }
 
+body {
+    margin: 0;
+    background-image: url(../img/hockey-bg-unsplash.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: rgb(206, 213, 233);
+}
 
+.main {
+    position: relative;
+    margin: 0;
+}
+
+.bg-image {
+    width: 100%;
+}
+
+.content {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* FRONT PAGE */
+.front-page-title {
+    color: rgb(255, 255, 255);
+    margin: auto;
+    text-align: center;
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px rgba(37, 37, 37, 0.6);
+}
+
+.front-page-title h1 {
+    margin: 0;
+}
+
+/* NAVBAR */
+.nav-bar ul {
+    list-style-type: none;
+}
+
+.nav-bar li {
+    display: inline;
+    float: left;
+
+}
+
+.nav-bar li a {
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 8px
+}
 
 /* MAIN CONTAINER */
 
@@ -25,11 +78,12 @@ html {
     color: rgb(0, 0, 0);
 }
 
-.roster th, td {
-    border-bottom: 1px solid black;
+.roster td, th {
+    height: 40px;
 }
 
 .roster th {
+    border-bottom: 1px solid black;
     background-color: rgba(228, 228, 228);
 }
 
@@ -86,8 +140,16 @@ html {
 .team_info {
     display: flex;
     background-color: darkgrey;
+    background: linear-gradient(
+        0deg,
+         rgb(114, 114, 114) 0%,
+         rgba(200,200,200,1) 40%,
+         rgba(200,200,200,1) 60%,
+         rgb(114, 114, 114) 100%
+    );
     border-radius: 10px;
     padding: 10px;
+    margin: 0 0 20px 0;
 }
 
 .team_info_text {
@@ -102,4 +164,20 @@ html {
 
 .team_info * {
     margin: 0;
+}
+
+/* BUTTONS */
+
+.btn {
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 0;
+    font-size: 1rem;
+}
+
+.btn-join {
+    border: 3px solid rgb(153, 207, 174);
+    background-color: rgb(0, 100, 38);
+    color: rgb(153, 207, 174)
+
 }

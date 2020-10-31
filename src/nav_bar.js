@@ -1,6 +1,6 @@
 export default class NavBar extends React.Component {
     render() {
-        return <nav>
+        return <nav className='nav-bar'>
             <ul>
                 <li>
                     <a href='/'>Home</a>

@@ -24,7 +24,7 @@ var LeagueRow = function (_React$Component) {
                     { href: '/create-team?leagueID=' + this.props.leagueID },
                     React.createElement(
                         'button',
-                        null,
+                        { className: 'btn btn-join' },
                         'JOIN'
                     )
                 );

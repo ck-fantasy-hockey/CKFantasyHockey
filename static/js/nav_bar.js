@@ -20,7 +20,7 @@ var NavBar = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'nav',
-                null,
+                { className: 'nav-bar' },
                 React.createElement(
                     'ul',
                     null,
