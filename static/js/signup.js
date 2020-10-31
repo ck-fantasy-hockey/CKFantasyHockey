@@ -44,7 +44,7 @@ var Signup = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                { className: 'create_account_form' },
+                { className: 'account_form' },
                 React.createElement(
                     'h1',
                     null,
@@ -52,7 +52,7 @@ var Signup = function (_React$Component) {
                 ),
                 React.createElement(
                     'form',
-                    null,
+                    { className: 'form' },
                     React.createElement(
                         'p',
                         null,
@@ -117,7 +117,7 @@ var Signup = function (_React$Component) {
                     }),
                     React.createElement(
                         'div',
-                        { classname: 'submitbutton' },
+                        { className: 'submitbutton' },
                         React.createElement(
                             'button',
                             {

@@ -28,9 +28,9 @@ class Signup extends React.Component {
     }
 
     render() {
-        return <div className="create_account_form">
+        return <div className="account_form">
             <h1>Create account</h1>
-            <form>
+            <form className="form">
             <p>Username:</p>
                 <input
                     text="Username"
@@ -78,7 +78,7 @@ class Signup extends React.Component {
                     emptyMessage="Please confirm your password"
                     errorMessage="Passwords don't match"
                 />
-                <div classname="submitbutton">
+                <div className="submitbutton">
                 <button
                     type="submit"
                     className="button button_wide"
