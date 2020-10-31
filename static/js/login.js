@@ -36,7 +36,7 @@ var Login = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                { className: 'login_form' },
+                { className: 'account_form' },
                 React.createElement(
                     'h1',
                     null,
@@ -44,7 +44,7 @@ var Login = function (_React$Component) {
                 ),
                 React.createElement(
                     'form',
-                    null,
+                    { className: 'form' },
                     React.createElement(
                         'p',
                         null,
