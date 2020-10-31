@@ -31,5 +31,13 @@ def create_team():
         }
     return render_template('index.j2', page="create_team", dataFromServer=dataFromServer)
 
+@app.route('/signup')
+def signup():
+    return render_template('index.j2', page="signup", css="signup_login")
+
+@app.route('/login')
+def login():
+    return render_template('index.j2', page="login", css="signup_login")
+
 if __name__ == '__main__':
     app.run(port=5000)
