@@ -41,8 +41,17 @@ form {
     );
     border-radius: 10px;
     padding: 10px;
-    margin: 0 0 20px 0;
+    margin: 40px 0 20px 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
 }
+
+button {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+}
+
+
 
 /* .submit_area {
     background-color: rgba(37, 37, 37, 0.8);
