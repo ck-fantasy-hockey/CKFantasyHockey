@@ -45,7 +45,11 @@ var Login = function (_React$Component) {
                 React.createElement(
                     'form',
                     null,
-                    'Username:',
+                    React.createElement(
+                        'p',
+                        null,
+                        'Username:'
+                    ),
                     React.createElement('input', {
                         text: 'Username',
                         ref: 'user',
@@ -56,7 +60,11 @@ var Login = function (_React$Component) {
                         errorMessage: 'Email is invalid',
                         emptyMessage: 'Email can\'t be empty'
                     }),
-                    'Password:',
+                    React.createElement(
+                        'p',
+                        null,
+                        'Password:'
+                    ),
                     React.createElement('input', {
                         text: 'Password',
                         type: 'password',
@@ -70,12 +78,16 @@ var Login = function (_React$Component) {
                         onChange: this.handlePasswordInput
                     }),
                     React.createElement(
-                        'button',
-                        {
-                            type: 'submit',
-                            className: 'button button_wide',
-                            onClick: this.handleSubmit },
-                        'Login'
+                        'div',
+                        { className: 'submitbutton' },
+                        React.createElement(
+                            'button',
+                            {
+                                type: 'submit',
+                                className: 'button button_wide',
+                                onClick: this.handleSubmit },
+                            'Login'
+                        )
                     )
                 )
             );

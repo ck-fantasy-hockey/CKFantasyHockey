@@ -22,7 +22,7 @@ class Login extends React.Component {
         return <div className="login_form">
             <h1>Login</h1>
             <form>
-            Username:
+            <p>Username:</p>
                 <input
                     text="Username"
                     ref="user"
@@ -34,7 +34,7 @@ class Login extends React.Component {
                     emptyMessage="Email can't be empty"
                 />
 
-                Password:
+                <p>Password:</p>
                 <input
                     text="Password"
                     type="password"
@@ -47,13 +47,14 @@ class Login extends React.Component {
                     emptyMessage="Password is invalid"
                     onChange={this.handlePasswordInput}
                 />
-
+                <div className="submitbutton">
                 <button
                     type="submit"
                     className="button button_wide"
                     onClick={this.handleSubmit}>
                     Login
                 </button>
+                </div>
 
             </form>
         </div>

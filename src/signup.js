@@ -31,7 +31,7 @@ class Signup extends React.Component {
         return <div className="create_account_form">
             <h1>Create account</h1>
             <form>
-            Username:
+            <p>Username:</p>
                 <input
                     text="Username"
                     ref="user"
@@ -43,7 +43,7 @@ class Signup extends React.Component {
                     emptyMessage="Email can't be empty"
                 />
 
-                Email Address:
+                <p>Email Address:</p>
                 <input
                     text="Email Address"
                     ref="email"
@@ -54,7 +54,7 @@ class Signup extends React.Component {
                     errorMessage="Email is invalid"
                     emptyMessage="Email can't be empty"
                 />
-                Password:
+                <p>Password:</p>
                 <input
                     text="Password"
                     type="password"
@@ -67,7 +67,7 @@ class Signup extends React.Component {
                     emptyMessage="Password is invalid"
                     onChange={this.handlePasswordInput}
                 />
-                Confirm Password:
+                <p>Confirm Password:</p>
                 <input
                     text="Confirm password"
                     ref="passwordConfirm"
@@ -78,15 +78,16 @@ class Signup extends React.Component {
                     emptyMessage="Please confirm your password"
                     errorMessage="Passwords don't match"
                 />
-
+                <div classname="submitbutton">
                 <button
                     type="submit"
                     className="button button_wide"
                     onClick={this.handleSubmit}>
                     CREATE ACCOUNT
                 </button>
+                </div>
 
-                Already have an account?
+                <p>Already have an account?</p>
                 <a href='/login'>Login</a>
 
             </form>

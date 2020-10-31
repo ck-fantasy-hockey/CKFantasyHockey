@@ -53,7 +53,11 @@ var Signup = function (_React$Component) {
                 React.createElement(
                     'form',
                     null,
-                    'Username:',
+                    React.createElement(
+                        'p',
+                        null,
+                        'Username:'
+                    ),
                     React.createElement('input', {
                         text: 'Username',
                         ref: 'user',
@@ -64,7 +68,11 @@ var Signup = function (_React$Component) {
                         errorMessage: 'Email is invalid',
                         emptyMessage: 'Email can\'t be empty'
                     }),
-                    'Email Address:',
+                    React.createElement(
+                        'p',
+                        null,
+                        'Email Address:'
+                    ),
                     React.createElement('input', {
                         text: 'Email Address',
                         ref: 'email',
@@ -75,7 +83,11 @@ var Signup = function (_React$Component) {
                         errorMessage: 'Email is invalid',
                         emptyMessage: 'Email can\'t be empty'
                     }),
-                    'Password:',
+                    React.createElement(
+                        'p',
+                        null,
+                        'Password:'
+                    ),
                     React.createElement('input', {
                         text: 'Password',
                         type: 'password',
@@ -88,7 +100,11 @@ var Signup = function (_React$Component) {
                         emptyMessage: 'Password is invalid',
                         onChange: this.handlePasswordInput
                     }),
-                    'Confirm Password:',
+                    React.createElement(
+                        'p',
+                        null,
+                        'Confirm Password:'
+                    ),
                     React.createElement('input', {
                         text: 'Confirm password',
                         ref: 'passwordConfirm',
@@ -100,14 +116,22 @@ var Signup = function (_React$Component) {
                         errorMessage: 'Passwords don\'t match'
                     }),
                     React.createElement(
-                        'button',
-                        {
-                            type: 'submit',
-                            className: 'button button_wide',
-                            onClick: this.handleSubmit },
-                        'CREATE ACCOUNT'
+                        'div',
+                        { classname: 'submitbutton' },
+                        React.createElement(
+                            'button',
+                            {
+                                type: 'submit',
+                                className: 'button button_wide',
+                                onClick: this.handleSubmit },
+                            'CREATE ACCOUNT'
+                        )
                     ),
-                    'Already have an account?',
+                    React.createElement(
+                        'p',
+                        null,
+                        'Already have an account?'
+                    ),
                     React.createElement(
                         'a',
                         { href: '/login' },
