@@ -6,19 +6,23 @@ app = Flask(__name__)
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+# Data Transportation
+
+dataFromServer = {}
+
 # Routes
 
 @app.route('/')
 def root():
-    return render_template('index.j2', page="landing_page")
+    return render_template('index.j2', page="landing_page", dataFromServer=dataFromServer)
 
 @app.route('/team-view')
 def team_view():
-    return render_template('index.j2', page="team_view")
+    return render_template('index.j2', page="team_view", dataFromServer=dataFromServer)
 
 @app.route('/join-league')
 def join_team():
-    return render_template('index.j2', page="join_league")
+    return render_template('index.j2', page="join_league", dataFromServer=dataFromServer)
 
 @app.route('/create-team')
 def create_team():
