@@ -20,5 +20,9 @@ def team_view():
 def join_team():
     return render_template('index.j2', page="join_league")
 
+@app.route('/create-team')
+def create_team():
+    return render_template('index.j2', page="create_team", leagueID=request.args.get('leagueID'))
+
 if __name__ == '__main__':
     app.run(port=5000)
