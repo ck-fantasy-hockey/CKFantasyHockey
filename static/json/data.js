@@ -19,6 +19,14 @@ export default {
         },
         {
             playerID: "3",
+            name: "Wayne Gretzky",
+            position: "C",
+            wins: "8234",
+            losses: "1251",
+            points: "15821"
+        },
+        {
+            playerID: "4",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -26,7 +34,15 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "5",
+            name: "Mario Lemieux",
+            position: "RW",
+            wins: "2039",
+            losses: "1002",
+            points: "5029"
+        },
+        {
+            playerID: "5",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -34,7 +50,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "6",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -42,7 +58,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "7",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -50,7 +66,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "8",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -58,7 +74,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "9",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -66,7 +82,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "10",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -74,7 +90,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "11",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -82,7 +98,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "12",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -90,7 +106,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "13",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -98,7 +114,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "14",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -106,7 +122,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "15",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -114,7 +130,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "16",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -122,7 +138,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "17",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -130,7 +146,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
+            playerID: "18",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",
@@ -138,23 +154,7 @@ export default {
             points: "55"
         },
         {
-            playerID: "3",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "3",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "3",
+            playerID: "19",
             name: "Sidney Crosby",
             position: "C",
             wins: "44",

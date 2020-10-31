@@ -6,37 +6,56 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import NavBar from './nav_bar.js';
-import TeamAttributes from './create_team/team_attributes.js';
-import PlayerSelect from './create_team/player_select.js';
+var PlayerSelectRow = function (_React$Component) {
+    _inherits(PlayerSelectRow, _React$Component);
 
-var JoinLeague = function (_React$Component) {
-    _inherits(JoinLeague, _React$Component);
+    function PlayerSelectRow() {
+        _classCallCheck(this, PlayerSelectRow);
 
-    function JoinLeague() {
-        _classCallCheck(this, JoinLeague);
-
-        return _possibleConstructorReturn(this, (JoinLeague.__proto__ || Object.getPrototypeOf(JoinLeague)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (PlayerSelectRow.__proto__ || Object.getPrototypeOf(PlayerSelectRow)).apply(this, arguments));
     }
 
-    _createClass(JoinLeague, [{
-        key: 'render',
+    _createClass(PlayerSelectRow, [{
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "tr",
                 null,
-                React.createElement(NavBar, null),
                 React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(TeamAttributes, null),
-                    React.createElement(PlayerSelect, null)
+                    "td",
+                    null,
+                    this.props.playerID
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.name
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.position
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.wins
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.losses
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.points
                 )
             );
         }
     }]);
 
-    return JoinLeague;
+    return PlayerSelectRow;
 }(React.Component);
 
-ReactDOM.render(React.createElement(JoinLeague, null), document.getElementById('root'));
+export default PlayerSelectRow;
