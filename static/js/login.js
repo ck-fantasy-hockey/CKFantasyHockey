@@ -38,9 +38,13 @@ var Login = function (_React$Component) {
                 'div',
                 { className: 'account_form' },
                 React.createElement(
-                    'h1',
-                    null,
-                    'Login'
+                    'div',
+                    { className: 'account_title' },
+                    React.createElement(
+                        'h2',
+                        null,
+                        'Login'
+                    )
                 ),
                 React.createElement(
                     'form',
@@ -79,7 +83,7 @@ var Login = function (_React$Component) {
                     }),
                     React.createElement(
                         'div',
-                        { className: 'submitbutton' },
+                        { className: 'submit_area' },
                         React.createElement(
                             'button',
                             {

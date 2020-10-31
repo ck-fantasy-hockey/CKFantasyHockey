@@ -3,10 +3,40 @@ body {
 }
 form {
     display: inline-block;
+    /* color: rgb(255, 255, 255); */
 }
+
+.account_title {
+    border-bottom: 1px solid black;
+    border-radius: 10px 10px 0 0;
+    text-transform: uppercase;
+    padding: 10px 0 10px 10px;
+    background-color: rgba(37, 37, 37, 0.8);
+}
+
+.account_title h2 {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 1)
+}
+
 
 .account_form {
     padding: 40px 0 0 0;
     margin: 0 auto;
     width: 70%;
+}
+
+.submit_area {
+    background-color: rgba(37, 37, 37, 0.8);
+    border-radius: 0 0 10px 10px;
+}
+
+.submit_area p {
+    color: rgba(255, 255, 255, 1);
+    padding: 10px 0 10px 10px;
+    text-align: center;
+    margin: 0;
 }

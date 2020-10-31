@@ -46,9 +46,13 @@ var Signup = function (_React$Component) {
                 'div',
                 { className: 'account_form' },
                 React.createElement(
-                    'h1',
-                    null,
-                    'Create account'
+                    'div',
+                    { className: 'account_title' },
+                    React.createElement(
+                        'h2',
+                        null,
+                        'Create account'
+                    )
                 ),
                 React.createElement(
                     'form',
@@ -117,7 +121,7 @@ var Signup = function (_React$Component) {
                     }),
                     React.createElement(
                         'div',
-                        { className: 'submitbutton' },
+                        { className: 'submit_area' },
                         React.createElement(
                             'button',
                             {
@@ -125,17 +129,17 @@ var Signup = function (_React$Component) {
                                 className: 'button button_wide',
                                 onClick: this.handleSubmit },
                             'CREATE ACCOUNT'
+                        ),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Already have an account?'
+                        ),
+                        React.createElement(
+                            'a',
+                            { href: '/login' },
+                            'Login'
                         )
-                    ),
-                    React.createElement(
-                        'p',
-                        null,
-                        'Already have an account?'
-                    ),
-                    React.createElement(
-                        'a',
-                        { href: '/login' },
-                        'Login'
                     )
                 )
             );

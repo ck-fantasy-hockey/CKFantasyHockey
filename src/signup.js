@@ -29,7 +29,7 @@ class Signup extends React.Component {
 
     render() {
         return <div className="account_form">
-            <h1>Create account</h1>
+            <div className="account_title"><h2>Create account</h2></div>
             <form className="form">
             <p>Username:</p>
                 <input
@@ -78,17 +78,16 @@ class Signup extends React.Component {
                     emptyMessage="Please confirm your password"
                     errorMessage="Passwords don't match"
                 />
-                <div className="submitbutton">
+                <div className="submit_area">
                 <button
                     type="submit"
                     className="button button_wide"
                     onClick={this.handleSubmit}>
                     CREATE ACCOUNT
                 </button>
-                </div>
-
                 <p>Already have an account?</p>
                 <a href='/login'>Login</a>
+                </div>
 
             </form>
         </div>

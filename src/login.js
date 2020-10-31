@@ -20,7 +20,7 @@ class Login extends React.Component {
 
     render() {
         return <div className="account_form">
-            <h1>Login</h1>
+           <div className="account_title"><h2>Login</h2></div>
             <form className="form">
             <p>Username:</p>
                 <input
@@ -47,7 +47,7 @@ class Login extends React.Component {
                     emptyMessage="Password is invalid"
                     onChange={this.handlePasswordInput}
                 />
-                <div className="submitbutton">
+                <div className="submit_area">
                 <button
                     type="submit"
                     className="button button_wide"
