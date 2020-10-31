@@ -15,8 +15,25 @@ class Login extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
+        const userdata = this.state
+        const url = "/checklogin"
+        fetch(url, {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(userdata)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            if (data['response'] === true) {
+                window.location.href = "/";
+            } else {
+                // return error
+            }
+        })
     }
+
 
     render() {
         return <div className="account_form">

@@ -24,7 +24,23 @@ var Login = function (_React$Component) {
 
         _this.handleSubmit = function (event) {
             event.preventDefault();
-            console.log(_this.state);
+            var userdata = _this.state;
+            var url = "/checklogin";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userdata)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data['response'] === true) {
+                    window.location.href = "/";
+                } else {
+                    // return error
+                }
+            });
         };
 
         _this.state = { username: '', password: '' };
