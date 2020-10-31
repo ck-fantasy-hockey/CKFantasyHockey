@@ -10,15 +10,15 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 @app.route('/')
 def root():
-    return render_template('index.j2', page="landing_page")
+    return render_template('index.j2', page="landing_page", css="style")
 
 @app.route('/team-view')
 def team_view():
-    return render_template('index.j2', page="team_view")
+    return render_template('index.j2', page="team_view", css="style")
 
 @app.route('/join-league')
 def join_team():
-    return render_template('index.j2', page="join_league")
+    return render_template('index.j2', page="join_league", css="style")
 
 @app.route('/signup')
 def signup():
