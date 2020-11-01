@@ -59,6 +59,7 @@ When creating a route there is a general method so far for establishing a new ro
 Path | Description | Targets
 -----|-------------|---------
 / | homepage | `landing_page.js`
+/dashboard | Main user dashbaord for viewing current leagues and teams | `dashboard.js`
 /join_league | Area to join a new league and establish a new team. | `join_league.js`
 /league_view | Area to view the leage standings | `league_view.js`
 /team_view | Area to view the team roster (and possibly later make changes) | `team_view.js`
