@@ -16,7 +16,7 @@ export default class UserLeagues extends React.Component {
             <table>
             <thead>
                 <tr>
-                    <th>View</th>
+                    <th>  </th>
                     <th>League ID</th>
                     <th>League Name</th>
                     <th>No. of Teams</th>

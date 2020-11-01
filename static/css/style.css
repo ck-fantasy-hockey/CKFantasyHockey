@@ -88,6 +88,10 @@ body {
     height: 40px;
 }
 
+.roster td {
+    text-align: center;
+}
+
 .roster th {
     border-bottom: 1px solid black;
     background-color: rgba(228, 228, 228);

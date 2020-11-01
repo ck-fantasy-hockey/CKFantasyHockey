@@ -6,6 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import UserInfo from './dashboard_items/user_info.js';
 import UserLeagues from './dashboard_items/user_leagues.js';
 import UserTeams from './dashboard_items/user_teams.js';
 import NavBar from './nav_bar.js';
@@ -30,6 +31,8 @@ var Dashboard = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
+                    React.createElement('div', { className: 'split_widgets' }),
+                    React.createElement(UserInfo, { data: data }),
                     React.createElement('div', { className: 'split_widgets' }),
                     React.createElement(UserLeagues, { data: data }),
                     React.createElement('div', { className: 'split_widgets' }),

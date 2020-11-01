@@ -49,7 +49,7 @@ var UserLeagues = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'View'
+                                '  '
                             ),
                             React.createElement(
                                 'th',

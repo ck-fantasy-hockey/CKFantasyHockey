@@ -1,5 +1,13 @@
 
 export default {
+    userInfo: {
+            userID: 24,
+            userName: "Fred Flintstone",
+            email: "fflinstone@slaterockngravel.com",
+            teams: 4,
+            leagueWins: 2,
+            userAvatar: "fredflintstonecharacter.jpg"
+    },
     players: [
         {
             playerID: "1",
