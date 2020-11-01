@@ -50,6 +50,15 @@ var NavBar = function (_React$Component) {
                             { href: '/team-view' },
                             'Team View'
                         )
+                    ),
+                    React.createElement(
+                        'li',
+                        null,
+                        React.createElement(
+                            'a',
+                            { href: '/league-view' },
+                            'League View'
+                        )
                     )
                 )
             );

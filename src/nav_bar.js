@@ -11,6 +11,9 @@ export default class NavBar extends React.Component {
                 <li>
                     <a href='/team-view'>Team View</a>
                 </li>
+                <li>
+                    <a href='/league-view'>League View</a>
+                </li>
             </ul>
         </nav>
     }
