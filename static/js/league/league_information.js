@@ -24,7 +24,6 @@ var LeagueInformation = function (_React$Component) {
             return React.createElement(
                 "div",
                 { className: "team_info" },
-                React.createElement("div", null),
                 React.createElement(
                     "div",
                     { className: "team_info_text" },
