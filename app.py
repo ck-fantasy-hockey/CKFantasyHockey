@@ -22,6 +22,10 @@ def root():
 def team_view():
     return render_template('index.j2', page="team_view", css="style", css2="style", dataFromServer=dataFromServer)
 
+@app.route('/league-view')
+def league_view():
+    return render_template('index.j2', page="league_view", css="style", css2="style", dataFromServer=dataFromServer)
+
 @app.route('/join-league')
 def join_team():
     return render_template('index.j2', page="join_league", css="style", css2="style", dataFromServer=dataFromServer)

@@ -60,10 +60,9 @@ Path | Description | Targets
 -----|-------------|---------
 / | homepage | `landing_page.js`
 /join_league | Area to join a new league and establish a new team. | `join_league.js`
+/league_view | Area to view the leage standings | `league_view.js`
 /team_view | Area to view the team roster (and possibly later make changes) | `team_view.js`
-<<<<<<< HEAD
-/signup | Create new account | 'signup.js'
-/login | Log into existing user | 'login.js'
-=======
+/signup | Create new account | `signup.js`
+/login | Log into existing user | `login.js`
 /create_team | Allows the user to select players for the their team and add a name | `create_team.js`
->>>>>>> george_ui
+
