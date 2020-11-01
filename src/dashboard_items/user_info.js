@@ -14,6 +14,7 @@ export default class UserInfo extends React.Component {
             <p>Email: {this.state.email}</p>
             <p>No. of Teams: {this.state.teams}</p>
             <p>League Wins: {this.state.leagueWins}</p>
+            <a href='/account-page'></a><button className="account_button">Edit Account</button>
         </div>
     </div>    
     }

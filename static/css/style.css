@@ -191,3 +191,7 @@ body {
     color: rgb(153, 207, 174)
 
 }
+
+.account_button {
+    margin: .5em 0;
+}

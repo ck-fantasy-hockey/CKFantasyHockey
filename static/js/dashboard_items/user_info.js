@@ -60,6 +60,12 @@ var UserInfo = function (_React$Component) {
                         null,
                         'League Wins: ',
                         this.state.leagueWins
+                    ),
+                    React.createElement('a', { href: '/account-page' }),
+                    React.createElement(
+                        'button',
+                        { className: 'account_button' },
+                        'Edit Account'
                     )
                 )
             );
