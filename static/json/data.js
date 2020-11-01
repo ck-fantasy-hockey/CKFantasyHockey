@@ -262,5 +262,77 @@ export default {
             wins: 1,
             losses: 4
         }
-    ] 
+    ],
+    userLeagues: [
+        {
+            leagueID: 1,
+            name: 'Typhoon Tigers',
+            teams: 19,
+            seasonEndDate: '6/30/2021',
+            leader: "New York Rangers"
+        },
+        {
+            leagueID: 2,
+            name: 'The Big Cheese',
+            teams: 14,
+            seasonEndDate: '6/30/2021',
+            leader: "New York Rangers"
+        },
+        {
+            leagueID: 3,
+            name: 'Where Is My Mind',
+            teams: 11,
+            seasonEndDate: '5/25/2021',
+            leader: "New York Rangers"
+        },
+        {
+            leagueID: 4,
+            name: 'Yes Mam',
+            teams: 8,
+            seasonEndDate: '4/30/2021',
+            leader: "New York Rangers"
+        }
+    ],
+    userTeams: [
+        {
+            teamID: 1,
+            teamName: "New York Rangers",
+            rank: 1,
+            win: 3,
+            loss: 0,
+            createdOn: "10/29/2020",
+            leagueName: "Honeyspot",
+            leagueID: "6G4892F3"
+        },
+        {
+            teamID: 2,
+            teamName: "Vancouver Canucks",
+            rank: 1,
+            win: 3,
+            loss: 0,
+            createdOn: "10/29/2020",
+            leagueName: "What Now?",
+            leagueID: "6G4892F3"
+        },
+        {
+            teamID: 3,
+            teamName: "Seattle Kraken",
+            rank: 1,
+            win: 3,
+            loss: 0,
+            createdOn: "10/29/2020",
+            leagueName: "Oh Jeez",
+            leagueID: "6G4892F3"
+        },
+        {
+            teamID: 4,
+            teamName: "Edmonton Oilers",
+            rank: 1,
+            win: 3,
+            loss: 0,
+            createdOn: "10/29/2020",
+            leagueName: "Yep",
+            leagueID: "6G4892F3"
+        }
+    ]
 }

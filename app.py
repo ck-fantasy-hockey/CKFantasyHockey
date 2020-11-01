@@ -18,6 +18,10 @@ dataFromServer = {}
 def root():
     return render_template('index.j2', page="landing_page", css="style", css2="style", dataFromServer=dataFromServer)
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('index.j2', page="dashboard", css="style", css2="style", dataFromServer=dataFromServer)
+
 @app.route('/team-view')
 def team_view():
     return render_template('index.j2', page="team_view", css="style", css2="style", dataFromServer=dataFromServer)

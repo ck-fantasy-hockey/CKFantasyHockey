@@ -38,6 +38,15 @@ var NavBar = function (_React$Component) {
                         null,
                         React.createElement(
                             'a',
+                            { href: '/dashboard' },
+                            'User Dashboard'
+                        )
+                    ),
+                    React.createElement(
+                        'li',
+                        null,
+                        React.createElement(
+                            'a',
                             { href: '/join-league' },
                             'Join League'
                         )

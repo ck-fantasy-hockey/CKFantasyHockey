@@ -6,6 +6,9 @@ export default class NavBar extends React.Component {
                     <a href='/'>Home</a>
                 </li>
                 <li>
+                    <a href='/dashboard'>User Dashboard</a>
+                </li>
+                <li>
                     <a href='/join-league'>Join League</a>
                 </li>
                 <li>
