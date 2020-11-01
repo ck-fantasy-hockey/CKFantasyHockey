@@ -210,5 +210,57 @@ export default {
             seasonEndDate: '5/1/2021',
             joinable: true
         }
-    ]
+    ],
+    leagueInformation: [
+        {
+            leagueID: 1,
+            teamID: 1,
+            teamName: "New York Rangers",
+            userID: 1,
+            userName: "Frank Sinatra",
+            rank: 3,
+            wins: 3,
+            losses: 2
+        },
+        {
+            leagueID: 1,
+            teamID: 2,
+            teamName: "Vancouver Canucks",
+            userID: 2,
+            userName: "George Kochera",
+            rank: 1,
+            wins: 5,
+            losses: 0
+        },
+        {
+            leagueID: 1,
+            teamID: 3,
+            teamName: "Chicago Blackhwaks",
+            userID: 3,
+            userName: "Wil Coiner",
+            rank: 2,
+            wins: 4,
+            losses: 1
+        },
+        {
+            leagueID: 1,
+            teamID: 4,
+            teamName: "Arizona Coyotes",
+            userID: 4,
+            userName: "Benedict Cumberbatch",
+            rank: 4,
+            wins: 3,
+            losses: 1
+        },
+        {
+            leagueID: 1,
+            teamID: 5,
+            teamName: "New York Islanders",
+            userID: 5,
+            userName: "He Who Shall Not Be Named",
+            rank: 5,
+            wins: 1,
+            losses: 4
+        }
+    ] 
 }

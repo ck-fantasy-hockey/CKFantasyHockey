@@ -6,38 +6,58 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import Teams from './league/teams.js';
-import LeagueInformation from './league/league_information.js';
-import NavBar from './nav_bar.js';
-import data from '../json/data.js';
+var LeagueInformation = function (_React$Component) {
+    _inherits(LeagueInformation, _React$Component);
 
-var LeagueView = function (_React$Component) {
-    _inherits(LeagueView, _React$Component);
+    function LeagueInformation(props) {
+        _classCallCheck(this, LeagueInformation);
 
-    function LeagueView() {
-        _classCallCheck(this, LeagueView);
+        var _this = _possibleConstructorReturn(this, (LeagueInformation.__proto__ || Object.getPrototypeOf(LeagueInformation)).call(this, props));
 
-        return _possibleConstructorReturn(this, (LeagueView.__proto__ || Object.getPrototypeOf(LeagueView)).apply(this, arguments));
+        _this.state = _this.props.data.leagues[0];
+        return _this;
     }
 
-    _createClass(LeagueView, [{
-        key: 'render',
+    _createClass(LeagueInformation, [{
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                null,
-                React.createElement(NavBar, null),
+                "div",
+                { className: "team_info" },
+                React.createElement("div", null),
                 React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(LeagueInformation, { data: data }),
-                    React.createElement(Teams, { data: data })
+                    "div",
+                    { className: "team_info_text" },
+                    React.createElement(
+                        "h1",
+                        null,
+                        "League: ",
+                        this.state.name
+                    ),
+                    React.createElement(
+                        "p",
+                        null,
+                        "League ID: ",
+                        this.state.leagueID
+                    ),
+                    React.createElement(
+                        "p",
+                        null,
+                        "Teams: ",
+                        this.state.teams
+                    ),
+                    React.createElement(
+                        "p",
+                        null,
+                        "Season End Date: ",
+                        this.state.seasonEndDate
+                    )
                 )
             );
         }
     }]);
 
-    return LeagueView;
+    return LeagueInformation;
 }(React.Component);
 
-ReactDOM.render(React.createElement(LeagueView, null), document.getElementById('root'));
+export default LeagueInformation;

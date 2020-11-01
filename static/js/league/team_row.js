@@ -6,38 +6,56 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import Teams from './league/teams.js';
-import LeagueInformation from './league/league_information.js';
-import NavBar from './nav_bar.js';
-import data from '../json/data.js';
+var TeamRow = function (_React$Component) {
+    _inherits(TeamRow, _React$Component);
 
-var LeagueView = function (_React$Component) {
-    _inherits(LeagueView, _React$Component);
+    function TeamRow() {
+        _classCallCheck(this, TeamRow);
 
-    function LeagueView() {
-        _classCallCheck(this, LeagueView);
-
-        return _possibleConstructorReturn(this, (LeagueView.__proto__ || Object.getPrototypeOf(LeagueView)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (TeamRow.__proto__ || Object.getPrototypeOf(TeamRow)).apply(this, arguments));
     }
 
-    _createClass(LeagueView, [{
-        key: 'render',
+    _createClass(TeamRow, [{
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "tr",
                 null,
-                React.createElement(NavBar, null),
                 React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(LeagueInformation, { data: data }),
-                    React.createElement(Teams, { data: data })
+                    "td",
+                    null,
+                    this.props.rank
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.teamID
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.teamName
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.userName
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.wins
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.losses
                 )
             );
         }
     }]);
 
-    return LeagueView;
+    return TeamRow;
 }(React.Component);
 
-ReactDOM.render(React.createElement(LeagueView, null), document.getElementById('root'));
+export default TeamRow;
