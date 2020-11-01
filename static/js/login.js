@@ -93,7 +93,7 @@ var Login = function (_React$Component) {
                         minCharacters: '8',
                         requireCapitals: '1',
                         requireNumbers: '1',
-                        value: this.state.passsword,
+                        value: this.state.password,
                         emptyMessage: 'Password is invalid',
                         onChange: this.handlePasswordInput
                     }),
