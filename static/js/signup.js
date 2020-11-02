@@ -32,7 +32,7 @@ var Signup = function (_React$Component) {
 
         _this.handleSubmit = function (event) {
             event.preventDefault();
-            console.log(_this.state);
+            window.location.href = "/dashboard";
         };
 
         _this.state = { username: '', email: '', password: '', passwordConfirm: '' };
