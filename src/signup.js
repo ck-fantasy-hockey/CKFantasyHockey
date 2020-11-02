@@ -1,6 +1,6 @@
 
 
-class Signup extends React.Component {
+export default class Signup extends React.Component {
     constructor(props) {
         super(props);
         this.state = { username: '', email: '', password: '', passwordConfirm: '' };
@@ -94,4 +94,4 @@ class Signup extends React.Component {
     }
 }
 
-ReactDOM.render(<Signup />, document.getElementById('root'));
+// ReactDOM.render(<Signup />, document.getElementById('root'));

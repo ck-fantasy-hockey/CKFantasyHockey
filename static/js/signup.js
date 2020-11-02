@@ -149,4 +149,7 @@ var Signup = function (_React$Component) {
     return Signup;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Signup, null), document.getElementById('root'));
+// ReactDOM.render(<Signup />, document.getElementById('root'));
+
+
+export default Signup;

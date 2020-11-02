@@ -16,7 +16,7 @@ dataFromServer = {}
 
 @app.route('/')
 def root():
-    return render_template('index.j2', page="landing_page", css="style", css2="style", dataFromServer=dataFromServer)
+    return render_template('index.j2', page="landing_page", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
 @app.route('/dashboard')
 def dashboard():
@@ -41,9 +41,9 @@ def create_team():
         }
     return render_template('index.j2', page="create_team", css="style", css2="style", dataFromServer=dataFromServer)
 
-@app.route('/signup')
-def signup():
-    return render_template('index.j2', page="signup", css="style", css2="signup_login", dataFromServer=dataFromServer)
+# @app.route('/signup')
+# def signup():
+#     return render_template('index.j2', page="signup", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
 @app.route('/login')
 def login():

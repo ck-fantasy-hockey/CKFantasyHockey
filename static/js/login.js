@@ -36,7 +36,7 @@ var Login = function (_React$Component) {
                 return response.json();
             }).then(function (data) {
                 if (data['response'] === true) {
-                    window.location.href = "/";
+                    window.location.href = "/dashboard";
                 } else {
                     // return error
                 }

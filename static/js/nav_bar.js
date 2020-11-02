@@ -29,15 +29,6 @@ var NavBar = function (_React$Component) {
                         null,
                         React.createElement(
                             'a',
-                            { href: '/' },
-                            'Home'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
                             { href: '/dashboard' },
                             'User Dashboard'
                         )
@@ -56,17 +47,8 @@ var NavBar = function (_React$Component) {
                         null,
                         React.createElement(
                             'a',
-                            { href: '/team-view' },
-                            'Team View'
-                        )
-                    ),
-                    React.createElement(
-                        'li',
-                        null,
-                        React.createElement(
-                            'a',
-                            { href: '/league-view' },
-                            'League View'
+                            { href: '/login' },
+                            'Logout'
                         )
                     )
                 )
