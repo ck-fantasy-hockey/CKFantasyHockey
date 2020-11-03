@@ -9,47 +9,70 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var PlayerSelectRow = function (_React$Component) {
     _inherits(PlayerSelectRow, _React$Component);
 
-    function PlayerSelectRow() {
+    function PlayerSelectRow(props) {
         _classCallCheck(this, PlayerSelectRow);
 
-        return _possibleConstructorReturn(this, (PlayerSelectRow.__proto__ || Object.getPrototypeOf(PlayerSelectRow)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (PlayerSelectRow.__proto__ || Object.getPrototypeOf(PlayerSelectRow)).call(this, props));
+
+        _this.selectPlayer = _this.selectPlayer.bind(_this);
+        console.log('PlayerSelectRow');
+        _this.state = {
+            player: _this.props.player
+        };
+        return _this;
     }
 
     _createClass(PlayerSelectRow, [{
-        key: "render",
+        key: 'selectPlayer',
+        value: function selectPlayer(e) {
+            e.preventDefault();
+            console.log('You selected ' + this.props.playerID);
+            this.props.addPlayer(this.props.playerID);
+        }
+    }, {
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "tr",
+                'tr',
                 null,
                 React.createElement(
-                    "td",
+                    'td',
                     null,
-                    this.props.playerID
+                    this.state.player.playerID
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
-                    this.props.name
+                    this.state.player.name
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
-                    this.props.position
+                    this.state.player.position
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
-                    this.props.wins
+                    this.state.player.wins
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
-                    this.props.losses
+                    this.state.player.losses
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
-                    this.props.points
+                    this.state.player.points
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    React.createElement(
+                        'button',
+                        { onClick: this.selectPlayer },
+                        'Select'
+                    )
                 )
             );
         }

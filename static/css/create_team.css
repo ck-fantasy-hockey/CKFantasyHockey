@@ -1,0 +1,41 @@
+.player-select {
+    display: flex;
+    background: linear-gradient(
+        0deg,
+         rgb(114, 114, 114) 0%,
+         rgba(200,200,200,1) 40%,
+         rgba(200,200,200,1) 60%,
+         rgb(114, 114, 114) 100%
+    );
+}
+
+.player-available {
+    flex: 1;
+    box-shadow: none;
+    min-width: 45%;
+    background: linear-gradient(
+        0deg,
+         rgb(114, 114, 114) 0%,
+         rgba(200,200,200,1) 40%,
+         rgba(200,200,200,1) 60%,
+         rgb(114, 114, 114) 100%
+    );
+}
+
+.player-select .spacer {
+    flex:2;
+    width: 50px;
+    background: linear-gradient(
+        0deg,
+         rgb(114, 114, 114) 0%,
+         rgba(200,200,200,1) 40%,
+         rgba(200,200,200,1) 60%,
+         rgb(114, 114, 114) 100%
+    );
+}
+
+.player-selected {
+    flex: 3;
+    box-shadow: none;
+    min-width: 45%;
+}

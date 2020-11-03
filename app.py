@@ -40,7 +40,7 @@ def create_team():
     dataFromServer = {
         "leagueID": request.args.get('leagueID') 
         }
-    return render_template('index.j2', page="create_team", css="style", css2="style", dataFromServer=dataFromServer)
+    return render_template('index.j2', page="create_team", css="style", css2="create_team", dataFromServer=dataFromServer)
 
 # @app.route('/signup')
 # def signup():
