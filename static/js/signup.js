@@ -60,7 +60,7 @@ var Signup = function (_React$Component) {
                     React.createElement(
                         'p',
                         null,
-                        'Username:'
+                        'Username'
                     ),
                     React.createElement('input', {
                         text: 'Username',
@@ -75,7 +75,7 @@ var Signup = function (_React$Component) {
                     React.createElement(
                         'p',
                         null,
-                        'Email Address:'
+                        'Email Address'
                     ),
                     React.createElement('input', {
                         text: 'Email Address',
@@ -90,7 +90,7 @@ var Signup = function (_React$Component) {
                     React.createElement(
                         'p',
                         null,
-                        'Password:'
+                        'Password'
                     ),
                     React.createElement('input', {
                         text: 'Password',
@@ -107,7 +107,7 @@ var Signup = function (_React$Component) {
                     React.createElement(
                         'p',
                         null,
-                        'Confirm Password:'
+                        'Confirm Password'
                     ),
                     React.createElement('input', {
                         text: 'Confirm password',

@@ -7,11 +7,11 @@ form {
 }
 
 .account_title {
-    border-bottom: 1px solid black;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 10px 10px;
     text-transform: uppercase;
-    padding: 10px 0 10px 10px;
+    padding: 10px;
     background-color: rgba(37, 37, 37, 0.8);
+    box-shadow: -10px -10px 30px rgba(37, 37, 37, 0.4);
 }
 
 .account_title h2 {
@@ -24,7 +24,7 @@ form {
 
 
 .account_form {
-    padding: 10px 0 0 0;
+    padding: 10px;
     margin: 0 auto;
     width: 70%;
 }
@@ -40,15 +40,41 @@ form {
          rgb(114, 114, 114) 100%
     );
     border-radius: 10px;
-    padding: 10px;
-    margin: 10px 0 20px 0;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
+    box-shadow: -10px -10px 30px rgba(37, 37, 37, 0.4);
+    padding: 30px 150px 30px 150px;
+    margin-top: 30px;
+}
+
+.form input {
+    height: 50px;
+    width: 100%;
+    min-width: 400px;
+    margin: 0 0 20px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.form p {
+    margin: 0;
+    text-align: left;
+    text-transform: uppercase;
 }
 
 button {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
+    font-size: 1.5rem;
+    min-width: 300px;
+    height: 40px;
+    border-radius: 7px;
+    margin: 0 0 20px 0;
+}
+
+.submit_area p {
+    text-align: center;
 }
 
 
