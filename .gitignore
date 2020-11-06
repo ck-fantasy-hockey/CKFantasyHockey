@@ -6,3 +6,4 @@ package.json
 test.txt
 testbranch.txt
 /CKFH_venv
+.venv

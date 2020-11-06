@@ -52,10 +52,10 @@ var Login = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                { className: 'account_form' },
+                { className: 'account-form' },
                 React.createElement(
                     'div',
-                    { className: 'account_title' },
+                    { className: 'account-title' },
                     React.createElement(
                         'h2',
                         null,
