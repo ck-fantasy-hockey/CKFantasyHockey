@@ -1,9 +1,11 @@
-export default class RosterRow extends React.Component {
+import PlayerFunctions from "./player_functions.js";
+
+export default class GoalieRow extends React.Component {
     render() {
         return <tr>
             <td>{this.props.name}</td>
-            <th>-</th>
-            <th>-</th>
+            <td>-</td>
+            <td>-</td>
             <td>{this.props.playerID}</td>
             <td>{this.props.position}</td>
             <td>-</td>
@@ -17,6 +19,11 @@ export default class RosterRow extends React.Component {
             <td>-</td>
             <td>-</td>
             <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>                
+                <PlayerFunctions />
+            </td>
         </tr>
     }
 }

@@ -6,16 +6,18 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var PlayerRow = function (_React$Component) {
-    _inherits(PlayerRow, _React$Component);
+import PlayerFunctions from "./player_functions.js";
 
-    function PlayerRow() {
-        _classCallCheck(this, PlayerRow);
+var GoalieRow = function (_React$Component) {
+    _inherits(GoalieRow, _React$Component);
 
-        return _possibleConstructorReturn(this, (PlayerRow.__proto__ || Object.getPrototypeOf(PlayerRow)).apply(this, arguments));
+    function GoalieRow() {
+        _classCallCheck(this, GoalieRow);
+
+        return _possibleConstructorReturn(this, (GoalieRow.__proto__ || Object.getPrototypeOf(GoalieRow)).apply(this, arguments));
     }
 
-    _createClass(PlayerRow, [{
+    _createClass(GoalieRow, [{
         key: "render",
         value: function render() {
             return React.createElement(
@@ -100,12 +102,27 @@ var PlayerRow = function (_React$Component) {
                     "td",
                     null,
                     "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement(PlayerFunctions, null)
                 )
             );
         }
     }]);
 
-    return PlayerRow;
+    return GoalieRow;
 }(React.Component);
 
-export default PlayerRow;
+export default GoalieRow;
