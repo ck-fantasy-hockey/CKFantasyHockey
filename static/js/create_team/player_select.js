@@ -8,6 +8,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import data from '../../json/data.js';
 import PlayerSelectRow from './player_select_row.js';
+import PlayerChosenRow from './player_chosen_row.js';
 
 var PlayerSelect = function (_React$Component) {
     _inherits(PlayerSelect, _React$Component);
@@ -17,16 +18,70 @@ var PlayerSelect = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (PlayerSelect.__proto__ || Object.getPrototypeOf(PlayerSelect)).call(this, props));
 
+        _this.selectPlayer = function (player) {
+
+            _this.setState(function (state) {
+                var players = _this.state.players;
+
+                var playersNotSelected = state.playersNotSelected.filter(function (p) {
+                    return p.playerID !== player.playerID;
+                });
+                playersNotSelected.sort(function (a, b) {
+                    return a.playerID > b.playerID ? 1 : -1;
+                });
+
+                var playersSelected = state.playersSelected.concat(player);
+                playersSelected.sort(function (a, b) {
+                    return a.playerID > b.playerID ? 1 : -1;
+                });
+
+                return {
+                    players: players,
+                    playersSelected: playersSelected,
+                    playersNotSelected: playersNotSelected
+                };
+            });
+        };
+
+        _this.deselectPlayer = function (player) {
+
+            _this.setState(function (state) {
+                var players = _this.state.players;
+
+                var playersNotSelected = state.playersNotSelected.concat(player);
+                playersNotSelected.sort(function (a, b) {
+                    return a.playerID > b.playerID ? 1 : -1;
+                });
+
+                var playersSelected = state.playersSelected.filter(function (p) {
+                    return p.playerID !== player.playerID;
+                });
+                playersSelected.sort(function (a, b) {
+                    return a.playerID > b.playerID ? 1 : -1;
+                });
+
+                return {
+                    players: players,
+                    playersSelected: playersSelected,
+                    playersNotSelected: playersNotSelected
+                };
+            });
+        };
+
         _this.state = {
             players: data.players,
-            players_selected: []
+            playersSelected: [],
+            playersNotSelected: data.players
         };
+        _this.selectPlayer = _this.selectPlayer.bind(_this);
         return _this;
     }
 
     _createClass(PlayerSelect, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return React.createElement(
                 'div',
                 { className: 'roster' },
@@ -94,8 +149,8 @@ var PlayerSelect = function (_React$Component) {
                             React.createElement(
                                 'tbody',
                                 null,
-                                this.state.players.map(function (element) {
-                                    return React.createElement(PlayerSelectRow, { key: element.playerID, player: element });
+                                this.state.playersNotSelected.map(function (element) {
+                                    return React.createElement(PlayerSelectRow, { key: element.playerID, selectPlayer: _this2.selectPlayer, player: element });
                                 })
                             )
                         )
@@ -150,7 +205,13 @@ var PlayerSelect = function (_React$Component) {
                                     )
                                 )
                             ),
-                            React.createElement('tbody', null)
+                            React.createElement(
+                                'tbody',
+                                null,
+                                this.state.playersSelected.map(function (element) {
+                                    return React.createElement(PlayerChosenRow, { key: element.playerID, deselectPlayer: _this2.deselectPlayer, player: element });
+                                })
+                            )
                         )
                     )
                 ),

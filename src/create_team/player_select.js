@@ -1,15 +1,55 @@
 import data from '../../json/data.js'
 import PlayerSelectRow from './player_select_row.js'
+import PlayerChosenRow from './player_chosen_row.js'
 
 export default class PlayerSelect extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             players: data.players,
-            players_selected: []
+            playersSelected: [],
+            playersNotSelected: data.players
         }
+        this.selectPlayer = this.selectPlayer.bind(this)
     }
 
+    selectPlayer = (player) => {
+        
+        this.setState(state => {
+            const players = this.state.players
+
+            const playersNotSelected = state.playersNotSelected.filter(p => p.playerID !== player.playerID)
+            playersNotSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+
+            const playersSelected = state.playersSelected.concat(player);
+            playersSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+            
+            return {
+                players,
+                playersSelected,
+                playersNotSelected
+            }
+        })
+    }
+
+    deselectPlayer = (player) => {
+
+        this.setState(state => {
+            const players = this.state.players
+            
+            const playersNotSelected = state.playersNotSelected.concat(player)
+            playersNotSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+            
+            const playersSelected = state.playersSelected.filter(p => p.playerID !== player.playerID)
+            playersSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+
+            return {
+                players,
+                playersSelected,
+                playersNotSelected
+            }
+        })
+    }
 
     render() {
         return <div className='roster'>
@@ -31,8 +71,8 @@ export default class PlayerSelect extends React.Component {
                     </tr>
                     </thead>
                     <tbody>
-                        {this.state.players.map(element =>
-                            <PlayerSelectRow key={element.playerID} player={element}/>
+                        {this.state.playersNotSelected.map(element =>
+                            <PlayerSelectRow key={element.playerID} selectPlayer={this.selectPlayer} player={element}/>
                             )}
                     </tbody>
                 </table>
@@ -52,6 +92,9 @@ export default class PlayerSelect extends React.Component {
                     </tr>
                     </thead>
                     <tbody>
+                    {this.state.playersSelected.map(element =>
+                            <PlayerChosenRow key={element.playerID} deselectPlayer={this.deselectPlayer} player={element}/>
+                            )}
                    </tbody>
                 </table>
             </div>
