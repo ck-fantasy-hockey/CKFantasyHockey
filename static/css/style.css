@@ -178,6 +178,7 @@ body {
     color: white;
     justify-content: center;
     display: flex;
+    height: 20px;
 }
 
 .roster-section span {

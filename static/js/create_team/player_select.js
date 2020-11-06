@@ -96,121 +96,148 @@ var PlayerSelect = function (_React$Component) {
                 ),
                 React.createElement(
                     'div',
-                    { className: 'player-select' },
+                    { className: 'roster-main' },
                     React.createElement(
                         'div',
-                        { className: 'roster player-available' },
+                        { className: 'roster-left' },
                         React.createElement(
-                            'table',
-                            null,
+                            'div',
+                            { className: 'roster-section' },
+                            'Available'
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'player-select' },
                             React.createElement(
-                                'thead',
-                                null,
+                                'div',
+                                { className: 'roster player-available' },
                                 React.createElement(
-                                    'tr',
+                                    'table',
                                     null,
                                     React.createElement(
-                                        'th',
+                                        'thead',
                                         null,
-                                        'Player ID'
+                                        React.createElement(
+                                            'tr',
+                                            null,
+                                            React.createElement(
+                                                'th',
+                                                null,
+                                                'Player ID'
+                                            ),
+                                            React.createElement(
+                                                'th',
+                                                null,
+                                                'Name'
+                                            ),
+                                            React.createElement(
+                                                'th',
+                                                null,
+                                                'Position'
+                                            ),
+                                            React.createElement(
+                                                'th',
+                                                null,
+                                                'Wins'
+                                            ),
+                                            React.createElement(
+                                                'th',
+                                                null,
+                                                'Losses'
+                                            ),
+                                            React.createElement(
+                                                'th',
+                                                null,
+                                                'Points'
+                                            ),
+                                            React.createElement(
+                                                'th',
+                                                null,
+                                                'Select'
+                                            )
+                                        )
                                     ),
                                     React.createElement(
-                                        'th',
+                                        'tbody',
                                         null,
-                                        'Name'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Position'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Wins'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Losses'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Points'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Select'
+                                        this.state.playersNotSelected.map(function (element) {
+                                            return React.createElement(PlayerSelectRow, { key: element.playerID, selectPlayer: _this2.selectPlayer, player: element });
+                                        })
                                     )
                                 )
-                            ),
-                            React.createElement(
-                                'tbody',
-                                null,
-                                this.state.playersNotSelected.map(function (element) {
-                                    return React.createElement(PlayerSelectRow, { key: element.playerID, selectPlayer: _this2.selectPlayer, player: element });
-                                })
                             )
                         )
                     ),
-                    React.createElement('div', { className: 'spacer' }),
                     React.createElement(
                         'div',
-                        { className: 'roster player-selected' },
+                        { className: 'roster-center' },
+                        React.createElement('div', { className: 'roster-section' }),
+                        React.createElement('div', { className: 'spacer' })
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'roster-right' },
                         React.createElement(
-                            'table',
-                            null,
+                            'div',
+                            { className: 'roster-section' },
+                            'Selected'
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'player-selected' },
                             React.createElement(
-                                'thead',
+                                'table',
                                 null,
                                 React.createElement(
-                                    'tr',
+                                    'thead',
                                     null,
                                     React.createElement(
-                                        'th',
+                                        'tr',
                                         null,
-                                        'Player ID'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Name'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Position'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Wins'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Losses'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Points'
-                                    ),
-                                    React.createElement(
-                                        'th',
-                                        null,
-                                        'Selected'
+                                        React.createElement(
+                                            'th',
+                                            null,
+                                            'Player ID'
+                                        ),
+                                        React.createElement(
+                                            'th',
+                                            null,
+                                            'Name'
+                                        ),
+                                        React.createElement(
+                                            'th',
+                                            null,
+                                            'Position'
+                                        ),
+                                        React.createElement(
+                                            'th',
+                                            null,
+                                            'Wins'
+                                        ),
+                                        React.createElement(
+                                            'th',
+                                            null,
+                                            'Losses'
+                                        ),
+                                        React.createElement(
+                                            'th',
+                                            null,
+                                            'Points'
+                                        ),
+                                        React.createElement(
+                                            'th',
+                                            null,
+                                            'Selected'
+                                        )
                                     )
+                                ),
+                                React.createElement(
+                                    'tbody',
+                                    null,
+                                    this.state.playersSelected.map(function (element) {
+                                        return React.createElement(PlayerChosenRow, { key: element.playerID, deselectPlayer: _this2.deselectPlayer, player: element });
+                                    })
                                 )
-                            ),
-                            React.createElement(
-                                'tbody',
-                                null,
-                                this.state.playersSelected.map(function (element) {
-                                    return React.createElement(PlayerChosenRow, { key: element.playerID, deselectPlayer: _this2.deselectPlayer, player: element });
-                                })
                             )
                         )
                     )
