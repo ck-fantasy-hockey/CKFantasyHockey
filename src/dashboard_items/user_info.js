@@ -15,8 +15,10 @@ export default class UserInfo extends React.Component {
             <p>Email: {this.state.email}</p>
             <p>No. of Teams: {this.state.teams}</p>
             <p>League Wins: {this.state.leagueWins}</p>
-            <a href='/account-page'></a><button className="account-button">Edit Account</button>
         </div>
+    </div>
+    <div className="team-info-subheader">
+    <a href='/account-page'></a><button className="btn">Edit Account</button>
     </div>
 </div> 
     }

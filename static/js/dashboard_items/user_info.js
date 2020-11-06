@@ -63,13 +63,17 @@ var UserInfo = function (_React$Component) {
                             null,
                             "League Wins: ",
                             this.state.leagueWins
-                        ),
-                        React.createElement("a", { href: "/account-page" }),
-                        React.createElement(
-                            "button",
-                            { className: "account-button" },
-                            "Edit Account"
                         )
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { className: "team-info-subheader" },
+                    React.createElement("a", { href: "/account-page" }),
+                    React.createElement(
+                        "button",
+                        { className: "btn" },
+                        "Edit Account"
                     )
                 )
             );
