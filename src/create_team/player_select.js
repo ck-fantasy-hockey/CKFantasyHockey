@@ -13,7 +13,7 @@ export default class PlayerSelect extends React.Component {
 
     render() {
         return <div className='roster'>
-            <div className='roster_title'>
+            <div className='roster-title'>
             <h2>Player Select</h2>
             </div>
             <div className='player-select'>

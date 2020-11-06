@@ -20,7 +20,7 @@ var PlayerFunctions = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 "div",
-                { className: "player-functions" },
+                null,
                 React.createElement(
                     "button",
                     null,

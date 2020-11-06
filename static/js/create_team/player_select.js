@@ -32,7 +32,7 @@ var PlayerSelect = function (_React$Component) {
                 { className: 'roster' },
                 React.createElement(
                     'div',
-                    { className: 'roster_title' },
+                    { className: 'roster-title' },
                     React.createElement(
                         'h2',
                         null,

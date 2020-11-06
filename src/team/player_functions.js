@@ -1,6 +1,6 @@
 export default class PlayerFunctions extends React.Component {
     render() {
-        return <div className='player-functions'>
+        return <div>
                 <button>
                     <div className="tooltip">
                         <span className="tooltiptext">Drop Player</span>

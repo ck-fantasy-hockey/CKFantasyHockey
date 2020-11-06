@@ -39,3 +39,28 @@
     box-shadow: none;
     min-width: 45%;
 }
+
+.form-item input {
+    height: 30px;
+    width: 100%;
+    min-width: 200px;
+    margin: 0 0 20px 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item.submit-button input {
+    font-size: 1.15rem;
+}
+
+.form p {
+    margin: 0;
+    text-align: left;
+    text-transform: uppercase;
+}

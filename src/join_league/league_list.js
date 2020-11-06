@@ -10,7 +10,7 @@ export default class LeagueList extends React.Component {
     }
     render() {
         return <div className='roster'>
-        <div className='roster_title'>
+        <div className='roster-title'>
             <h2>Leagues</h2>
         </div>
         

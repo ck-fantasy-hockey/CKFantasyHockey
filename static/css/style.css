@@ -74,7 +74,7 @@ body {
 
 /* Dashboard */
 
-.split_widgets {
+.split-widgets {
     margin: 20px 0;
 }
 
@@ -115,7 +115,7 @@ body {
     margin-bottom: 30px;
 }
 
-.roster_title {
+.roster-title {
     border-bottom: 1px solid black;
     border-radius: 10px 10px 0 0;
     text-transform: uppercase;
@@ -123,7 +123,7 @@ body {
     background-color: rgba(37, 37, 37, 0.8);
 }
 
-.roster_title h2 {
+.roster-title h2 {
     margin: 0;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
@@ -186,13 +186,13 @@ body {
 
 /* TEAM INFORMATION */
 
-.team_info_image {
+.team-info-image {
     height: 150px;
     order: 1;
     border-radius: 5px;
 }
 
-.team_info {
+.team-info-primary {
     display: flex;
     background-color: darkgrey;
     background: linear-gradient(
@@ -204,21 +204,27 @@ body {
     );
     border-radius: 10px;
     padding: 10px;
-    margin: 0 0 20px 0;
 }
 
-.team_info_text {
+.team-info {
+    background-color: rgba(200,200,200,1);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.team-info-subheader {
+    padding: 10px;
+    color: white;
+}
+
+.team-info-text {
     order: 2;
-    padding-left: 30px;
+    padding: 10px 30px 0 30px;
 }
 
-.team_info_text h1 {
+.team-info-text h1 {
     font-size: 3rem;
     text-transform: uppercase;
-}
-
-.team_info * {
-    margin: 0;
 }
 
 /* BUTTONS */
@@ -228,6 +234,7 @@ body {
     padding: 5px 10px;
     border: 0;
     font-size: 1rem;
+    margin: 3px;
 }
 
 .btn-join {
@@ -237,6 +244,14 @@ body {
 
 }
 
-.account_button {
+.account-button {
     margin: .5em 0;
+}
+
+.league-functions {
+    width: 180px
+}
+
+.team-functions {
+    width: 180px
 }

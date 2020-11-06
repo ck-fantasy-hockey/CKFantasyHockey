@@ -10,7 +10,7 @@ export default class Roster extends React.Component {
 
     render() {
         return <div className='roster'>
-            <div className='roster_title'>
+            <div className='roster-title'>
                 <h2>Roster</h2>
             </div>
             <div className='roster-section'>

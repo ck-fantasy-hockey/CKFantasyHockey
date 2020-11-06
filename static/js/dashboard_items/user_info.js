@@ -19,53 +19,57 @@ var UserInfo = function (_React$Component) {
     }
 
     _createClass(UserInfo, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                { className: 'team_info' },
+                "div",
+                { className: "team-info" },
                 React.createElement(
-                    'div',
-                    null,
-                    React.createElement('img', { className: 'team_info_image', src: '/static/img/' + this.state.userAvatar })
-                ),
-                React.createElement(
-                    'div',
-                    { className: 'team_info_text' },
+                    "div",
+                    { className: "team-info-primary" },
                     React.createElement(
-                        'h1',
-                        null,
-                        this.state.userName
+                        "div",
+                        { className: "team-info-header" },
+                        React.createElement("img", { className: "team-info-image", src: '/static/img/' + this.state.userAvatar })
                     ),
                     React.createElement(
-                        'p',
-                        null,
-                        'User ID: ',
-                        this.state.userID
-                    ),
-                    React.createElement(
-                        'p',
-                        null,
-                        'Email: ',
-                        this.state.email
-                    ),
-                    React.createElement(
-                        'p',
-                        null,
-                        'No. of Teams: ',
-                        this.state.teams
-                    ),
-                    React.createElement(
-                        'p',
-                        null,
-                        'League Wins: ',
-                        this.state.leagueWins
-                    ),
-                    React.createElement('a', { href: '/account-page' }),
-                    React.createElement(
-                        'button',
-                        { className: 'account_button' },
-                        'Edit Account'
+                        "div",
+                        { className: "team-info-text" },
+                        React.createElement(
+                            "h1",
+                            null,
+                            this.state.userName
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "User ID: ",
+                            this.state.userID
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "Email: ",
+                            this.state.email
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "No. of Teams: ",
+                            this.state.teams
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "League Wins: ",
+                            this.state.leagueWins
+                        ),
+                        React.createElement("a", { href: "/account-page" }),
+                        React.createElement(
+                            "button",
+                            { className: "account-button" },
+                            "Edit Account"
+                        )
                     )
                 )
             );

@@ -44,10 +44,10 @@ var Signup = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                { className: 'account_form' },
+                { className: 'account-form' },
                 React.createElement(
                     'div',
-                    { className: 'account_title' },
+                    { className: 'account-title' },
                     React.createElement(
                         'h2',
                         null,
@@ -121,12 +121,12 @@ var Signup = function (_React$Component) {
                     }),
                     React.createElement(
                         'div',
-                        { className: 'submit_area' },
+                        { className: 'submit-area' },
                         React.createElement(
                             'button',
                             {
                                 type: 'submit',
-                                className: 'button button_wide',
+                                className: 'button button-wide',
                                 onClick: this.handleSubmit },
                             'CREATE ACCOUNT'
                         ),

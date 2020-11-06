@@ -31,11 +31,11 @@ var Dashboard = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
-                    React.createElement('div', { className: 'split_widgets' }),
+                    React.createElement('div', { className: 'split-widgets' }),
                     React.createElement(UserInfo, { data: data }),
-                    React.createElement('div', { className: 'split_widgets' }),
+                    React.createElement('div', { className: 'split-widgets' }),
                     React.createElement(UserLeagues, { data: data }),
-                    React.createElement('div', { className: 'split_widgets' }),
+                    React.createElement('div', { className: 'split-widgets' }),
                     React.createElement(UserTeams, { data: data })
                 )
             );

@@ -19,21 +19,38 @@ var TeamAttributesForm = function (_React$Component) {
         key: 'render',
         value: function render() {
             return React.createElement(
-                'form',
-                { action: '/', method: 'GET' },
+                'div',
+                { className: 'form' },
                 React.createElement(
-                    'label',
-                    null,
-                    'Team Name'
-                ),
-                React.createElement('input', { type: 'text', name: 'teamName' }),
-                React.createElement(
-                    'label',
-                    null,
-                    'League ID'
-                ),
-                React.createElement('input', { type: 'text', name: 'leagueID', defaultValue: dataFromServer.leagueID, disabled: true }),
-                React.createElement('input', { type: 'submit', value: 'Make Team' })
+                    'form',
+                    { action: '/', method: 'GET' },
+                    React.createElement(
+                        'div',
+                        { className: 'form-item' },
+                        React.createElement(
+                            'label',
+                            null,
+                            'Team Name'
+                        ),
+                        React.createElement('input', { type: 'text', name: 'teamName' })
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'form-item' },
+                        React.createElement(
+                            'label',
+                            null,
+                            'League ID'
+                        ),
+                        React.createElement('input', { type: 'text', name: 'leagueID', defaultValue: dataFromServer.leagueID, disabled: true })
+                    ),
+                    React.createElement(
+                        'div',
+                        { className: 'form-item submit-button' },
+                        ' ',
+                        React.createElement('input', { type: 'submit', value: 'Make Team' })
+                    )
+                )
             );
         }
     }]);

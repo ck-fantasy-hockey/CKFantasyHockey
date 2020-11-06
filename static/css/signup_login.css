@@ -6,7 +6,7 @@ form {
     /* color: rgb(255, 255, 255); */
 }
 
-.account_title {
+.account-title {
     border-radius: 10px 10px 10px 10px;
     text-transform: uppercase;
     padding: 10px;
@@ -14,7 +14,7 @@ form {
     box-shadow: -10px -10px 30px rgba(37, 37, 37, 0.4);
 }
 
-.account_title h2 {
+.account-title h2 {
     margin: 0;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
@@ -23,7 +23,7 @@ form {
 }
 
 
-.account_form {
+.account-form {
     padding: 10px;
     margin: 0 auto;
     width: 70%;
@@ -73,7 +73,7 @@ button {
     margin: 0 0 20px 0;
 }
 
-.submit_area p {
+.submit-area p {
     text-align: center;
 }
 

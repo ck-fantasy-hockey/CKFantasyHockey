@@ -14,7 +14,7 @@ export default class Teams extends React.Component {
     render() {
         this.sortByRank();
         return <div className='roster'>
-            <div className='roster_title'>
+            <div className='roster-title'>
                 <h2>Teams</h2>
             </div>
             
