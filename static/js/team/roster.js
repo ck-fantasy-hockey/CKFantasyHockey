@@ -38,52 +38,241 @@ var Roster = function (_React$Component) {
                     )
                 ),
                 React.createElement(
-                    'table',
-                    null,
+                    'div',
+                    { className: 'roster-table' },
                     React.createElement(
-                        'thead',
+                        'table',
                         null,
                         React.createElement(
-                            'tr',
+                            'thead',
                             null,
                             React.createElement(
-                                'th',
+                                'tr',
                                 null,
-                                'Player ID'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Name'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Position'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Wins'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Losses'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Points'
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Name'
+                                        ),
+                                        'Name'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'NHL Team'
+                                        ),
+                                        'NHL Team'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Status'
+                                        ),
+                                        'Status'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Player ID'
+                                        ),
+                                        'ID'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Position'
+                                        ),
+                                        'POS'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Games Played'
+                                        ),
+                                        'GP'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Goals'
+                                        ),
+                                        'G'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Assists'
+                                        ),
+                                        'A'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Points'
+                                        ),
+                                        'P'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Shootout Goals'
+                                        ),
+                                        'SHG'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Hat Tricks'
+                                        ),
+                                        'HT'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    '+/-'
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Points Per Game'
+                                        ),
+                                        'PPG'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Shorthanded Goals'
+                                        ),
+                                        'SHG'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Penalty Minutes'
+                                        ),
+                                        'PIM'
+                                    )
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'Blocks'
+                                        ),
+                                        'B'
+                                    )
+                                )
                             )
+                        ),
+                        React.createElement(
+                            'tbody',
+                            null,
+                            this.state.players.map(function (element) {
+                                return React.createElement(RosterRow, Object.assign({ key: element.playerID }, element));
+                            })
                         )
-                    ),
-                    React.createElement(
-                        'tbody',
-                        null,
-                        this.state.players.map(function (element) {
-                            return React.createElement(RosterRow, Object.assign({ key: element.playerID }, element));
-                        })
                     )
                 )
             );

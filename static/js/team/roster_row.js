@@ -24,12 +24,22 @@ var RosterRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.playerID
+                    this.props.name
+                ),
+                React.createElement(
+                    "th",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "th",
+                    null,
+                    "-"
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.name
+                    this.props.playerID
                 ),
                 React.createElement(
                     "td",
@@ -39,17 +49,57 @@ var RosterRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.wins
+                    "-"
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.losses
+                    "-"
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.points
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
                 )
             );
         }

@@ -83,6 +83,7 @@ body {
 .roster table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
     color: rgb(0, 0, 0);
 }
 
@@ -139,6 +140,28 @@ body {
     padding: 10px 0 10px 10px;
     text-align: center;
     margin: 0 0 30px 0;
+}
+
+.tooltip {
+    position: relative;
+  }
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: -40px;
+    right:-100%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 /* TEAM INFORMATION */
