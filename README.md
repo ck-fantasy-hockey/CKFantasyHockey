@@ -22,6 +22,15 @@ Project will be served on http://localhost:5000
 
 Ensure that you use the `--watch` switch when running babel (see the React page linked) so that when you make changes in the React JavaScript files, they're transpiled in realtime.
 
+## Babel Notes
+
+Only needed to install Babel and get up and running the first time
+```npm init -y```
+```npm install babel-cli@6 babel-preset-react-app@3```
+
+Here is the code to use to run Babel (JSX transpiler)
+```npx babel --watch src --out-dir ./static/js --presets react-app/prod```
+
 ## Project Directory Structure
 
 Path | Description
