@@ -48,28 +48,57 @@ body {
 
 /* NAVBAR */
 
-.nav-bar ul {
-    list-style-type: none;
+.nav-bar {
+    height: 60px;
+        background: linear-gradient(
+        180deg,
+         rgba(37, 37, 37,0.8) 0%,
+         rgba(37, 37, 37,0.8) 80%,
+         rgba(37, 37, 37,0) 100%
+    );
+    padding: 0 0 10px 0;
 }
 
-.nav-bar li {
-    display: inline;
-    float: left;
+.nav-bar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 10px;
+    height: 100%;
+}
 
+.nav-bar .nav-item {
+    display: flex;
+    align-self: center;
+    padding: 0 10px;
+}
+
+.nav-bar .right {
+    margin-left:auto;
 }
 
 .nav-bar li a {
     color: rgb(255, 255, 255);
     display: block;
-    padding: 8px
+    padding: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.15rem;
+}
+
+.nav-bar li a:hover {
+    text-shadow: 0 0 10px rgb(45, 83, 126);
+    text-shadow: 0 0 15px rgb(64, 120, 184);
+    text-shadow: 0 0 25px rgb(110, 175, 250);
 }
 
 /* MAIN CONTAINER */
 
 .container {
-    margin: auto;
+    margin: 40px auto;
     width: 70%;
-    padding: 40px 0 0 0;
 }
 
 /* Dashboard */
