@@ -36,8 +36,8 @@ class Login extends React.Component {
 
 
     render() {
-        return <div className="account_form">
-           <div className="account_title"><h2>Login</h2></div>
+        return <div className="account-form">
+           <div className="account-title"><h2>Login</h2></div>
             <form className="form">
             <p>Username:</p>
                 <input

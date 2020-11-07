@@ -25,30 +25,42 @@ var NavBar = function (_React$Component) {
                     'ul',
                     null,
                     React.createElement(
-                        'li',
-                        null,
+                        'div',
+                        { className: 'nav-item' },
                         React.createElement(
-                            'a',
-                            { href: '/dashboard' },
-                            'User Dashboard'
+                            'li',
+                            null,
+                            React.createElement(
+                                'a',
+                                { href: '/dashboard' },
+                                'User Dashboard'
+                            )
                         )
                     ),
                     React.createElement(
-                        'li',
-                        null,
+                        'div',
+                        { className: 'nav-item' },
                         React.createElement(
-                            'a',
-                            { href: '/join-league' },
-                            'Join League'
+                            'li',
+                            null,
+                            React.createElement(
+                                'a',
+                                { href: '/join-league' },
+                                'Join League'
+                            )
                         )
                     ),
                     React.createElement(
-                        'li',
-                        null,
+                        'div',
+                        { className: 'nav-item right' },
                         React.createElement(
-                            'a',
-                            { href: '/login' },
-                            'Logout'
+                            'li',
+                            null,
+                            React.createElement(
+                                'a',
+                                { href: '/login' },
+                                'Logout'
+                            )
                         )
                     )
                 )
