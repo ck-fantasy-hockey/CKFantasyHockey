@@ -2,11 +2,9 @@ from flask import Flask, render_template, request, jsonify
 import json
 import os
 
-# test
-
 app = Flask(__name__)
 
-# Configuration
+# Configurations
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
