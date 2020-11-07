@@ -1,5 +1,4 @@
-.player-select {
-    display: flex;
+.player-select, .player-selected {
     background: linear-gradient(
         0deg,
          rgb(114, 114, 114) 0%,
@@ -7,23 +6,25 @@
          rgba(200,200,200,1) 60%,
          rgb(114, 114, 114) 100%
     );
+    margin: 0;
+    background: linear-gradient(
+        0deg,
+         rgb(114, 114, 114) 0%,
+         rgba(200,200,200,1) 40%,
+         rgba(200,200,200,1) 60%,
+         rgb(114, 114, 114) 100%
+    );
+    display: flex;
+    flex-grow: 1;
 }
 
-.player-available {
-    flex: 1;
+.player-available, .player-selected {
     box-shadow: none;
     min-width: 45%;
-    background: linear-gradient(
-        0deg,
-         rgb(114, 114, 114) 0%,
-         rgba(200,200,200,1) 40%,
-         rgba(200,200,200,1) 60%,
-         rgb(114, 114, 114) 100%
-    );
+    margin: 0;
 }
 
-.player-select .spacer {
-    flex:2;
+.spacer {
     width: 50px;
     background: linear-gradient(
         0deg,
@@ -32,12 +33,7 @@
          rgba(200,200,200,1) 60%,
          rgb(114, 114, 114) 100%
     );
-}
-
-.player-selected {
-    flex: 3;
-    box-shadow: none;
-    min-width: 45%;
+    flex-grow: 1;
 }
 
 .form-item input {
@@ -63,4 +59,15 @@
     margin: 0;
     text-align: left;
     text-transform: uppercase;
+}
+
+.roster-main {
+    display: flex;
+    height: 80%;
+}
+
+.roster-left, .roster-center, .roster-right {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
 }

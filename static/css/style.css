@@ -178,6 +178,11 @@ body {
     color: white;
     justify-content: center;
     display: flex;
+    height: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
 }
 
 .roster-section span {
@@ -237,7 +242,7 @@ body {
 
 .team-info {
     background-color: rgba(200,200,200,1);
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     margin-bottom: 30px;
 }
 

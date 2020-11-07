@@ -1,4 +1,4 @@
-export default class PlayerSelectRow extends React.Component {
+export default class PlayerChosenRow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -6,9 +6,9 @@ export default class PlayerSelectRow extends React.Component {
         }
     }
 
-    handleSelectPlayer = () => {
+    handleDeselectPlayer = () => {
         var player = this.state.player
-        this.props.selectPlayer(player)
+        this.props.deselectPlayer(player)
     }
 
     render() {
@@ -19,7 +19,7 @@ export default class PlayerSelectRow extends React.Component {
             <td>{this.state.player.wins}</td>
             <td>{this.state.player.losses}</td>
             <td>{this.state.player.points}</td>
-            <td><button className="btn" onClick={this.handleSelectPlayer}>Select</button></td>
+            <td><button className="btn" onClick={this.handleDeselectPlayer}>Remove</button></td>
         </tr>
     }
 }

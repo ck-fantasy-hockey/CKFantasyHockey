@@ -10,164 +10,84 @@ export default {
     },
     players: [
         {
-            playerID: "1",
+            playerID: 1,
             name: "Henrik Lundqvist",
             position: "G",
-            wins: "54",
-            losses: "18",
-            points: "105"
+            wins: 57,
+            losses: 745,
+            points: 23426
         },
         {
-            playerID: "2",
+            playerID: 2,
             name: "Ron Hextall",
             position: "G",
-            wins: "78",
-            losses: "23",
-            points: "178"
+            wins: 8595,
+            losses: 456,
+            points: 3457
         },
         {
-            playerID: "3",
+            playerID: 3,
             name: "Wayne Gretzky",
             position: "C",
-            wins: "8234",
-            losses: "1251",
-            points: "15821"
+            wins: 285,
+            losses: 2342,
+            points: 2342342
         },
         {
-            playerID: "4",
+            playerID: 4,
             name: "Sidney Crosby",
             position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
+            wins: 474,
+            losses: 46,
+            points: 43
         },
         {
-            playerID: "5",
+            playerID: 5,
             name: "Mario Lemieux",
             position: "RW",
-            wins: "2039",
-            losses: "1002",
-            points: "5029"
+            wins: 45345,
+            losses: 3453,
+            points: 734
         },
         {
-            playerID: "5",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
+            playerID: 6,
+            name: "Jaromir Jagr",
+            position: "D",
+            wins: 4354,
+            losses: 34,
+            points: 242
         },
         {
-            playerID: "6",
-            name: "Sidney Crosby",
+            playerID: 7,
+            name: "Mark Messier",
             position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
+            wins: 234,
+            losses: 63,
+            points: 325
         },
         {
-            playerID: "7",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
+            playerID: 8,
+            name: "Gordie Howe",
+            position: "LW",
+            wins: 9952,
+            losses: 234,
+            points: 16123
         },
         {
-            playerID: "8",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
+            playerID: 9,
+            name: "Joe Sakic",
+            position: "D",
+            wins: 32463,
+            losses: 345,
+            points: 324634
         },
         {
-            playerID: "9",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "10",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "11",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "12",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "13",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "14",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "15",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "16",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "17",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "18",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
-        },
-        {
-            playerID: "19",
-            name: "Sidney Crosby",
-            position: "C",
-            wins: "44",
-            losses: "36",
-            points: "55"
+            playerID: 10,
+            name: "Adam Oates",
+            position: "LW",
+            wins: 345,
+            losses: 84,
+            points: 846
         }
     ],
     teamInformation: {

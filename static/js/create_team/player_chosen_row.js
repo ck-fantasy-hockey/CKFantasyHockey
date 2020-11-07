@@ -6,17 +6,17 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var PlayerSelectRow = function (_React$Component) {
-    _inherits(PlayerSelectRow, _React$Component);
+var PlayerChosenRow = function (_React$Component) {
+    _inherits(PlayerChosenRow, _React$Component);
 
-    function PlayerSelectRow(props) {
-        _classCallCheck(this, PlayerSelectRow);
+    function PlayerChosenRow(props) {
+        _classCallCheck(this, PlayerChosenRow);
 
-        var _this = _possibleConstructorReturn(this, (PlayerSelectRow.__proto__ || Object.getPrototypeOf(PlayerSelectRow)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (PlayerChosenRow.__proto__ || Object.getPrototypeOf(PlayerChosenRow)).call(this, props));
 
-        _this.handleSelectPlayer = function () {
+        _this.handleDeselectPlayer = function () {
             var player = _this.state.player;
-            _this.props.selectPlayer(player);
+            _this.props.deselectPlayer(player);
         };
 
         _this.state = {
@@ -25,7 +25,7 @@ var PlayerSelectRow = function (_React$Component) {
         return _this;
     }
 
-    _createClass(PlayerSelectRow, [{
+    _createClass(PlayerChosenRow, [{
         key: "render",
         value: function render() {
             return React.createElement(
@@ -66,15 +66,15 @@ var PlayerSelectRow = function (_React$Component) {
                     null,
                     React.createElement(
                         "button",
-                        { className: "btn", onClick: this.handleSelectPlayer },
-                        "Select"
+                        { className: "btn", onClick: this.handleDeselectPlayer },
+                        "Remove"
                     )
                 )
             );
         }
     }]);
 
-    return PlayerSelectRow;
+    return PlayerChosenRow;
 }(React.Component);
 
-export default PlayerSelectRow;
+export default PlayerChosenRow;
