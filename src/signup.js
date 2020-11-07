@@ -28,10 +28,10 @@ export default class Signup extends React.Component {
     }
 
     render() {
-        return <div className="account_form">
-            <div className="account_title"><h2>Create account</h2></div>
+        return <div className="account-form">
+            <div className="account-title"><h2>Create account</h2></div>
             <form className="form">
-            <p>Username:</p>
+            <p>Username</p>
                 <input
                     text="Username"
                     ref="user"
@@ -43,7 +43,7 @@ export default class Signup extends React.Component {
                     emptyMessage="Email can't be empty"
                 />
 
-                <p>Email Address:</p>
+                <p>Email Address</p>
                 <input
                     text="Email Address"
                     ref="email"
@@ -54,7 +54,7 @@ export default class Signup extends React.Component {
                     errorMessage="Email is invalid"
                     emptyMessage="Email can't be empty"
                 />
-                <p>Password:</p>
+                <p>Password</p>
                 <input
                     text="Password"
                     type="password"
@@ -67,7 +67,7 @@ export default class Signup extends React.Component {
                     emptyMessage="Password is invalid"
                     onChange={this.handlePasswordInput}
                 />
-                <p>Confirm Password:</p>
+                <p>Confirm Password</p>
                 <input
                     text="Confirm password"
                     ref="passwordConfirm"
@@ -78,10 +78,10 @@ export default class Signup extends React.Component {
                     emptyMessage="Please confirm your password"
                     errorMessage="Passwords don't match"
                 />
-                <div className="submit_area">
+                <div className="submit-area">
                 <button
                     type="submit"
-                    className="button button_wide"
+                    className="button button-wide"
                     onClick={this.handleSubmit}>
                     CREATE ACCOUNT
                 </button>

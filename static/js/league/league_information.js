@@ -23,10 +23,10 @@ var LeagueInformation = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 "div",
-                { className: "team_info" },
+                { className: "team-info" },
                 React.createElement(
                     "div",
-                    { className: "team_info_text" },
+                    { className: "team-info-text" },
                     React.createElement(
                         "h1",
                         null,

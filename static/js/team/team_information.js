@@ -19,41 +19,59 @@ var TeamInformation = function (_React$Component) {
     }
 
     _createClass(TeamInformation, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                { className: 'team_info' },
+                "div",
+                { className: "team-info" },
                 React.createElement(
-                    'div',
-                    null,
-                    React.createElement('img', { className: 'team_info_image', src: '/static/img/' + this.state.teamLogo })
+                    "div",
+                    { className: "team-info-primary" },
+                    React.createElement(
+                        "div",
+                        { className: "team-info-header" },
+                        React.createElement("img", { className: "team-info-image", src: '/static/img/' + this.state.teamLogo })
+                    ),
+                    React.createElement(
+                        "div",
+                        { className: "team-info-text" },
+                        React.createElement(
+                            "h1",
+                            null,
+                            this.state.teamName
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "Created: ",
+                            this.state.createdOn
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "League: ",
+                            this.state.leagueName
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "League ID: ",
+                            this.state.leagueID
+                        )
+                    )
                 ),
                 React.createElement(
-                    'div',
-                    { className: 'team_info_text' },
+                    "div",
+                    { className: "team-info-subheader" },
                     React.createElement(
-                        'h1',
-                        null,
-                        this.state.teamName
+                        "button",
+                        { className: "btn" },
+                        "Edit Team Attributes"
                     ),
                     React.createElement(
-                        'p',
-                        null,
-                        'Created: ',
-                        this.state.createdOn
-                    ),
-                    React.createElement(
-                        'p',
-                        null,
-                        'League: ',
-                        this.state.leagueName
-                    ),
-                    React.createElement(
-                        'p',
-                        null,
-                        'League ID: ',
-                        this.state.leagueID
+                        "button",
+                        { className: "btn" },
+                        "Delete Team"
                     )
                 )
             );

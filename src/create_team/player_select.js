@@ -5,12 +5,19 @@ export default class PlayerSelect extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            players: data.players
+            players: data.players,
+            players_selected: []
         }
     }
+
+
     render() {
-        return <div className='player-select'>
-            <div className='player-available'>
+        return <div className='roster'>
+            <div className='roster-title'>
+            <h2>Player Select</h2>
+            </div>
+            <div className='player-select'>
+            <div className='roster player-available'>
                 <table>
                     <thead>
                     <tr>
@@ -20,16 +27,18 @@ export default class PlayerSelect extends React.Component {
                         <th>Wins</th>
                         <th>Losses</th>
                         <th>Points</th>
+                        <th>Select</th>
                     </tr>
                     </thead>
                     <tbody>
                         {this.state.players.map(element =>
-                            <PlayerSelectRow key={element.playerID} {...element}/>
+                            <PlayerSelectRow key={element.playerID} player={element}/>
                             )}
                     </tbody>
                 </table>
             </div>
-            <div className='player-selected'>
+            <div className='spacer'></div>
+            <div className='roster player-selected'>
                 <table>
                     <thead>
                     <tr>
@@ -39,12 +48,17 @@ export default class PlayerSelect extends React.Component {
                         <th>Wins</th>
                         <th>Losses</th>
                         <th>Points</th>
+                        <th>Selected</th>
                     </tr>
                     </thead>
                     <tbody>
                    </tbody>
                 </table>
             </div>
+        </div>
+        <div className='roster-instructions'>
+            <p>Pick a player on the left, and it gets added to the table on the right to compose your team.</p>
+        </div>
         </div>
     }
 }

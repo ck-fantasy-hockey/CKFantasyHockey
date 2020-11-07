@@ -9,11 +9,11 @@ class Dashboard extends React.Component {
         return <div>
             <NavBar />
             <div className='container'>
-                <div className="split_widgets"></div>
+                <div className="split-widgets"></div>
                 <UserInfo data={data} />
-                <div className="split_widgets"></div>
+                <div className="split-widgets"></div>
                 <UserLeagues data={data} />
-                <div className="split_widgets"></div>
+                <div className="split-widgets"></div>
                 <UserTeams data={data} />
             </div>
         </div>

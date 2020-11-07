@@ -9,14 +9,14 @@ export default class UserLeagues extends React.Component {
 
     render() {
         return <div className='roster'>
-            <div className='roster_title'>
+            <div className='roster-title'>
                 <h2>Leagues</h2>
             </div>
             
             <table>
             <thead>
                 <tr>
-                    <th>  </th>
+                    <th className="league-functions">  </th>
                     <th>League ID</th>
                     <th>League Name</th>
                     <th>No. of Teams</th>

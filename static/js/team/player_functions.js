@@ -6,56 +6,68 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var TeamAttributesForm = function (_React$Component) {
-    _inherits(TeamAttributesForm, _React$Component);
+var PlayerFunctions = function (_React$Component) {
+    _inherits(PlayerFunctions, _React$Component);
 
-    function TeamAttributesForm() {
-        _classCallCheck(this, TeamAttributesForm);
+    function PlayerFunctions() {
+        _classCallCheck(this, PlayerFunctions);
 
-        return _possibleConstructorReturn(this, (TeamAttributesForm.__proto__ || Object.getPrototypeOf(TeamAttributesForm)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (PlayerFunctions.__proto__ || Object.getPrototypeOf(PlayerFunctions)).apply(this, arguments));
     }
 
-    _createClass(TeamAttributesForm, [{
-        key: 'render',
+    _createClass(PlayerFunctions, [{
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                { className: 'form' },
+                "div",
+                null,
                 React.createElement(
-                    'form',
-                    { action: '/', method: 'GET' },
+                    "button",
+                    null,
                     React.createElement(
-                        'div',
-                        { className: 'form-item' },
+                        "div",
+                        { className: "tooltip" },
                         React.createElement(
-                            'label',
-                            null,
-                            'Team Name'
+                            "span",
+                            { className: "tooltiptext" },
+                            "Drop Player"
                         ),
-                        React.createElement('input', { type: 'text', name: 'teamName' })
-                    ),
+                        React.createElement("i", { className: "fas fa-arrow-down" })
+                    )
+                ),
+                React.createElement(
+                    "button",
+                    null,
                     React.createElement(
-                        'div',
-                        { className: 'form-item' },
+                        "div",
+                        { className: "tooltip" },
                         React.createElement(
-                            'label',
-                            null,
-                            'League ID'
+                            "span",
+                            { className: "tooltiptext" },
+                            "Trade Player"
                         ),
-                        React.createElement('input', { type: 'text', name: 'leagueID', defaultValue: dataFromServer.leagueID, disabled: true })
-                    ),
+                        React.createElement("i", { className: "fas fa-arrows-alt-h" })
+                    )
+                ),
+                React.createElement(
+                    "button",
+                    null,
                     React.createElement(
-                        'div',
-                        { className: 'form-item submit-button' },
-                        ' ',
-                        React.createElement('input', { type: 'submit', value: 'Make Team' })
+                        "div",
+                        { className: "tooltip" },
+                        React.createElement(
+                            "span",
+                            { className: "tooltiptext" },
+                            "Bench Player"
+                        ),
+                        React.createElement("i", { className: "fas fa-couch" })
                     )
                 )
             );
         }
     }]);
 
-    return TeamAttributesForm;
+    return PlayerFunctions;
 }(React.Component);
 
-export default TeamAttributesForm;
+export default PlayerFunctions;

@@ -18,20 +18,28 @@ var TeamAttributes = function (_React$Component) {
     }
 
     _createClass(TeamAttributes, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "div",
-                { className: "team_info" },
+                'div',
+                { className: 'roster' },
                 React.createElement(
-                    "div",
-                    null,
-                    React.createElement("i", { className: "fas fa-hockey-puck" })
+                    'div',
+                    { className: 'roster-title' },
+                    React.createElement(
+                        'h2',
+                        null,
+                        'Team Information'
+                    )
                 ),
                 React.createElement(
-                    "div",
-                    { className: "team_info_text" },
-                    React.createElement(TeamAttributesForm, null)
+                    'div',
+                    { className: 'team-info' },
+                    React.createElement(
+                        'div',
+                        { className: 'team-info-text' },
+                        React.createElement(TeamAttributesForm, null)
+                    )
                 )
             );
         }

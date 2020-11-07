@@ -4,8 +4,8 @@ export default class LeagueInformation extends React.Component {
         this.state = this.props.data.leagues[0]
     }
     render() {
-    return <div className="team_info">
-        <div className='team_info_text'>
+    return <div className="team-info">
+        <div className='team-info-text'>
             <h1>League: {this.state.name}</h1>
             <p>League ID: {this.state.leagueID}</p>
             <p>Teams: {this.state.teams}</p>
