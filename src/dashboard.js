@@ -6,7 +6,7 @@ import data from '../json/data.js'
 
 class Dashboard extends React.Component {
     render() {
-        return <div>
+        return <div className='background-filter'>
             <NavBar />
             <div className='container'>
                 <div className="split-widgets"></div>

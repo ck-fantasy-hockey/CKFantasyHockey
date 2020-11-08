@@ -23,17 +23,21 @@ var LandingPage = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                { className: 'main' },
+                { className: 'background-filter' },
                 React.createElement(
                     'div',
-                    { className: 'front-page-title' },
+                    null,
                     React.createElement(
-                        'h1',
-                        null,
-                        'CK Fantasy Hockey'
-                    )
-                ),
-                React.createElement(Signup, null)
+                        'div',
+                        { className: 'front-page-title' },
+                        React.createElement(
+                            'h1',
+                            null,
+                            'CK Fantasy Hockey'
+                        )
+                    ),
+                    React.createElement(Signup, null)
+                )
             );
         }
     }]);

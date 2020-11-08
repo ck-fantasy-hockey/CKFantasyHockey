@@ -5,6 +5,7 @@ html {
     Also available:
     font-family: 'Roboto Condensed', sans-serif;
     */
+    height: 100%;
 }
 
 body {
@@ -14,32 +15,35 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: rgb(206, 213, 233);
+    background-color: rgb(255, 255, 255);
+    height: 100%;
 }
 
-.main {
-    position: relative;
-    margin: 0;
+.background-filter {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: fixed;
+    overflow-y: scroll;
+    width: 100vw;
 }
 
 .bg-image {
     width: 100%;
 }
 
-.content {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
 /* FRONT PAGE */
 .front-page-title {
-    padding-top: 40px;
+    padding: 40px;
     color: rgb(255, 255, 255);
     margin: auto;
     text-align: center;
     font-size: 3rem;
-    text-shadow: 2px 2px 5px rgba(37, 37, 37, 0.6);
+    text-shadow: 2px 2px 20px rgba(37, 37, 37, 1);
+    background: linear-gradient(
+        rgba(37, 37, 37, 1) 0%,
+        rgba(37, 37, 37, 0.2) 90%, 
+        rgba(37, 37, 37, 0.0) 100%
+    );
 }
 
 .front-page-title h1 {
