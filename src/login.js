@@ -34,6 +34,11 @@ class Login extends React.Component {
         })
     }
 
+    handleSignup = (event) => {
+        event.preventDefault();
+        window.location.href = "/";
+    }
+
 
     render() {
         return <div className='background-filter'>
@@ -65,13 +70,16 @@ class Login extends React.Component {
                     emptyMessage="Password is invalid"
                     onChange={this.handlePasswordInput}
                 />
-                <div className="submit_area">
+                <div className="submit-area">
                 <button
                     type="submit"
                     className="button button_wide"
                     onClick={this.handleSubmit}>
                     Login
                 </button>
+                
+                <p>Don't have an account?</p>
+                <button type="submit" className="button button_wide" onClick={this.handleSignup}>Signup</button>
                 </div>
 
             </form>

@@ -27,6 +27,11 @@ export default class Signup extends React.Component {
         window.location.href = "/dashboard";
     }
 
+    handleLogin = (event) => {
+        event.preventDefault();
+        window.location.href = "/login";
+    }
+
     render() {
         return <div className="account-form">
             <div className="account-title"><h2>Create account</h2></div>
@@ -86,7 +91,7 @@ export default class Signup extends React.Component {
                     CREATE ACCOUNT
                 </button>
                 <p>Already have an account?</p>
-                <a href='/login'>Login</a>
+                <button type="submit" className="button button_wide" onClick={this.handleLogin}>Login</button>
                 </div>
 
             </form>

@@ -35,6 +35,11 @@ var Signup = function (_React$Component) {
             window.location.href = "/dashboard";
         };
 
+        _this.handleLogin = function (event) {
+            event.preventDefault();
+            window.location.href = "/login";
+        };
+
         _this.state = { username: '', email: '', password: '', passwordConfirm: '' };
         return _this;
     }
@@ -136,8 +141,8 @@ var Signup = function (_React$Component) {
                             'Already have an account?'
                         ),
                         React.createElement(
-                            'a',
-                            { href: '/login' },
+                            'button',
+                            { type: 'submit', className: 'button button_wide', onClick: this.handleLogin },
                             'Login'
                         )
                     )

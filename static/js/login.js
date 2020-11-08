@@ -43,6 +43,11 @@ var Login = function (_React$Component) {
             });
         };
 
+        _this.handleSignup = function (event) {
+            event.preventDefault();
+            window.location.href = "/";
+        };
+
         _this.state = { username: '', password: '' };
         return _this;
     }
@@ -102,7 +107,7 @@ var Login = function (_React$Component) {
                         }),
                         React.createElement(
                             'div',
-                            { className: 'submit_area' },
+                            { className: 'submit-area' },
                             React.createElement(
                                 'button',
                                 {
@@ -110,6 +115,16 @@ var Login = function (_React$Component) {
                                     className: 'button button_wide',
                                     onClick: this.handleSubmit },
                                 'Login'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'Don\'t have an account?'
+                            ),
+                            React.createElement(
+                                'button',
+                                { type: 'submit', className: 'button button_wide', onClick: this.handleSignup },
+                                'Signup'
                             )
                         )
                     )
