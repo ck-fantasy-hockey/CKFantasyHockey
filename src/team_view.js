@@ -5,7 +5,7 @@ import data from '../json/data.js'
 
 class TeamView extends React.Component {
     render() {
-        return <div>
+        return <div className='background-filter'>
             <NavBar />
             <div className='container'>
                 <TeamInformation data={data} />

@@ -4,7 +4,7 @@ import PlayerSelect from './create_team/player_select.js'
 
 class JoinLeague extends React.Component {
     render() {
-        return <div>
+        return <div className='background-filter'>
             <NavBar />
             <div className='container'>
                 <TeamAttributes />
@@ -17,4 +17,4 @@ class JoinLeague extends React.Component {
 ReactDOM.render(
     <JoinLeague />,
     document.getElementById('root')
-  );
+    );

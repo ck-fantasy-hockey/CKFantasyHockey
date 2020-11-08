@@ -36,7 +36,8 @@ class Login extends React.Component {
 
 
     render() {
-        return <div className="account-form">
+        return <div className='background-filter'>
+            <div className="account-form">
            <div className="account-title"><h2>Login</h2></div>
             <form className="form">
             <p>Username:</p>
@@ -75,6 +76,7 @@ class Login extends React.Component {
 
             </form>
         </div>
+    </div>
     }
 }
 

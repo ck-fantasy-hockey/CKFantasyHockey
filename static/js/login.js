@@ -52,61 +52,65 @@ var Login = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'div',
-                { className: 'account-form' },
+                { className: 'background-filter' },
                 React.createElement(
                     'div',
-                    { className: 'account-title' },
-                    React.createElement(
-                        'h2',
-                        null,
-                        'Login'
-                    )
-                ),
-                React.createElement(
-                    'form',
-                    { className: 'form' },
-                    React.createElement(
-                        'p',
-                        null,
-                        'Username:'
-                    ),
-                    React.createElement('input', {
-                        text: 'Username',
-                        ref: 'user',
-                        type: 'text',
-                        defaultValue: this.state.username,
-                        value: this.state.username,
-                        onChange: this.handleUsernameInput,
-                        errorMessage: 'Email is invalid',
-                        emptyMessage: 'Email can\'t be empty'
-                    }),
-                    React.createElement(
-                        'p',
-                        null,
-                        'Password:'
-                    ),
-                    React.createElement('input', {
-                        text: 'Password',
-                        type: 'password',
-                        ref: 'password',
-                        validator: 'true',
-                        minCharacters: '8',
-                        requireCapitals: '1',
-                        requireNumbers: '1',
-                        value: this.state.password,
-                        emptyMessage: 'Password is invalid',
-                        onChange: this.handlePasswordInput
-                    }),
+                    { className: 'account-form' },
                     React.createElement(
                         'div',
-                        { className: 'submit_area' },
+                        { className: 'account-title' },
                         React.createElement(
-                            'button',
-                            {
-                                type: 'submit',
-                                className: 'button button_wide',
-                                onClick: this.handleSubmit },
+                            'h2',
+                            null,
                             'Login'
+                        )
+                    ),
+                    React.createElement(
+                        'form',
+                        { className: 'form' },
+                        React.createElement(
+                            'p',
+                            null,
+                            'Username:'
+                        ),
+                        React.createElement('input', {
+                            text: 'Username',
+                            ref: 'user',
+                            type: 'text',
+                            defaultValue: this.state.username,
+                            value: this.state.username,
+                            onChange: this.handleUsernameInput,
+                            errorMessage: 'Email is invalid',
+                            emptyMessage: 'Email can\'t be empty'
+                        }),
+                        React.createElement(
+                            'p',
+                            null,
+                            'Password:'
+                        ),
+                        React.createElement('input', {
+                            text: 'Password',
+                            type: 'password',
+                            ref: 'password',
+                            validator: 'true',
+                            minCharacters: '8',
+                            requireCapitals: '1',
+                            requireNumbers: '1',
+                            value: this.state.password,
+                            emptyMessage: 'Password is invalid',
+                            onChange: this.handlePasswordInput
+                        }),
+                        React.createElement(
+                            'div',
+                            { className: 'submit_area' },
+                            React.createElement(
+                                'button',
+                                {
+                                    type: 'submit',
+                                    className: 'button button_wide',
+                                    onClick: this.handleSubmit },
+                                'Login'
+                            )
                         )
                     )
                 )
