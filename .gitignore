@@ -7,3 +7,6 @@ test.txt
 testbranch.txt
 /CKFH_venv
 .venv
+/.vscode
+Pipfile
+Pipfile.lock
