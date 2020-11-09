@@ -32,7 +32,28 @@ var Signup = function (_React$Component) {
 
         _this.handleSubmit = function (event) {
             event.preventDefault();
-            window.location.href = "/dashboard";
+            var userdata = _this.state;
+            var url = "/submitsignup";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userdata)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data['response'] === true) {
+                    window.location.href = "/login";
+                } else {
+                    var element = React.createElement(
+                        'p',
+                        { className: 'incorrect-text' },
+                        'Username taken'
+                    );
+                    ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                }
+            });
         };
 
         _this.handleLogin = function (event) {
@@ -62,6 +83,7 @@ var Signup = function (_React$Component) {
                 React.createElement(
                     'form',
                     { className: 'form' },
+                    React.createElement('div', { className: 'incorrect-creds' }),
                     React.createElement(
                         'p',
                         null,

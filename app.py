@@ -63,6 +63,20 @@ def checklogin():
         if sent_info['username'] == account['username'] and sent_info['password'] == account['password']:
             return jsonify({'response': True})
     return jsonify({'response': False})
+
+@app.route('/submitsignup', methods=['POST'])
+def submit_signup():
+    """Verifies unique login and saves signup data"""
+    user_accounts = user_info['accounts']
+    sent_info = request.get_json()
+    for account in user_accounts:
+        if sent_info['username'] == account['username']:
+            return jsonify({'response': False})
+    user_accounts.append(sent_info)
+    with open('test_data/account_info_test.json', 'w') as outfile:
+        json.dump(user_info, outfile)
+    return jsonify({'response': True})
+
     
 
 if __name__ == '__main__':
