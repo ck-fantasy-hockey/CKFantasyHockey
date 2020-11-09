@@ -29,7 +29,8 @@ class Login extends React.Component {
             if (data['response'] === true) {
                 window.location.href = "/dashboard";
             } else {
-                // return error
+                const element = <p className="incorrect-text">Username or password is incorrect</p>;
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             }
         })
     }
@@ -45,6 +46,7 @@ class Login extends React.Component {
             <div className="account-form">
            <div className="account-title"><h2>Login</h2></div>
             <form className="form">
+            <div className="incorrect-creds"></div>
             <p>Username:</p>
                 <input
                     text="Username"
@@ -77,7 +79,6 @@ class Login extends React.Component {
                     onClick={this.handleSubmit}>
                     Login
                 </button>
-                
                 <p>Don't have an account?</p>
                 <button type="submit" className="button button_wide" onClick={this.handleSignup}>Signup</button>
                 </div>

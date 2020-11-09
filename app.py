@@ -57,11 +57,12 @@ with open('test_data/account_info_test.json') as f:
 # Client APIs
 @app.route('/checklogin', methods=['POST'])
 def checklogin():
+    user_accounts = user_info['accounts']
     sent_info = request.get_json()
-    if sent_info['username'] == user_info['username'] and sent_info['password'] == user_info['password']:
-        return jsonify({'response': True})
-    else:
-        return jsonify({'response': False})
+    for account in user_accounts:
+        if sent_info['username'] == account['username'] and sent_info['password'] == account['password']:
+            return jsonify({'response': True})
+    return jsonify({'response': False})
     
 
 if __name__ == '__main__':

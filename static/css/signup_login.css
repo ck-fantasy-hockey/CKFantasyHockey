@@ -82,6 +82,16 @@ button {
     text-align: center;
 }
 
+.form .incorrect-text {
+    text-align: center;
+    color: red;
+}
+
+.incorrect-creds {
+    margin: 0 auto;
+    padding-bottom: .25em;
+    text-align: center;
+}
 
 
 /* .submit_area {

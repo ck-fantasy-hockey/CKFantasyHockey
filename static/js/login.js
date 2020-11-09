@@ -38,7 +38,12 @@ var Login = function (_React$Component) {
                 if (data['response'] === true) {
                     window.location.href = "/dashboard";
                 } else {
-                    // return error
+                    var element = React.createElement(
+                        'p',
+                        { className: 'incorrect-text' },
+                        'Username or password is incorrect'
+                    );
+                    ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
                 }
             });
         };
@@ -73,6 +78,7 @@ var Login = function (_React$Component) {
                     React.createElement(
                         'form',
                         { className: 'form' },
+                        React.createElement('div', { className: 'incorrect-creds' }),
                         React.createElement(
                             'p',
                             null,
