@@ -3,6 +3,12 @@ export default class UserInfo extends React.Component {
         super(props);
         this.state = this.props.data.userInfo
     }
+
+    handleEditAccount = (event) => {
+        event.preventDefault();
+        window.location.href = "/account-page";
+    }
+
     render() {
     return <div className="team-info">
     <div className="team-info-primary">
@@ -18,7 +24,8 @@ export default class UserInfo extends React.Component {
         </div>
     </div>
     <div className="team-info-subheader">
-    <a href='/account-page'></a><button className="btn">Edit Account</button>
+    {/* <a href='/account-page'></a><button className="btn">Edit Account</button> */}
+    <button type="submit" className="button button_wide" onClick={this.handleEditAccount}>Edit Account</button>
     </div>
 </div> 
     }

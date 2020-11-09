@@ -41,6 +41,10 @@ def create_team():
         }
     return render_template('index.j2', page="create_team", css="style", css2="create_team", dataFromServer=dataFromServer)
 
+@app.route('/account-page')
+def account_page():
+    return render_template('index.j2', page="edit_account", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
 # @app.route('/signup')
 # def signup():
 #     return render_template('index.j2', page="signup", css="style", css2="signup_login", dataFromServer=dataFromServer)
