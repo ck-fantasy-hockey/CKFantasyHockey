@@ -27,4 +27,7 @@ def establish_connection():
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
     query = "SELECT * FROM Players;"
-    cursor.execute(quer
+    cursor.execute(query)
+    cursor.fetchall()
+    cursor.close()
+    cnx.close()
