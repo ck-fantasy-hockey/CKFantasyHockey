@@ -41,6 +41,10 @@ def create_team():
         }
     return render_template('index.j2', page="create_team", css="style", css2="create_team", dataFromServer=dataFromServer)
 
+@app.route('/account-page')
+def account_page():
+    return render_template('index.j2', page="edit_account", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
 # @app.route('/signup')
 # def signup():
 #     return render_template('index.j2', page="signup", css="style", css2="signup_login", dataFromServer=dataFromServer)
@@ -57,11 +61,26 @@ with open('test_data/account_info_test.json') as f:
 # Client APIs
 @app.route('/checklogin', methods=['POST'])
 def checklogin():
+    user_accounts = user_info['accounts']
     sent_info = request.get_json()
-    if sent_info['username'] == user_info['username'] and sent_info['password'] == user_info['password']:
-        return jsonify({'response': True})
-    else:
-        return jsonify({'response': False})
+    for account in user_accounts:
+        if sent_info['username'] == account['username'] and sent_info['password'] == account['password']:
+            return jsonify({'response': True})
+    return jsonify({'response': False})
+
+@app.route('/submitsignup', methods=['POST'])
+def submit_signup():
+    """Verifies unique login and saves signup data"""
+    user_accounts = user_info['accounts']
+    sent_info = request.get_json()
+    for account in user_accounts:
+        if sent_info['username'] == account['username']:
+            return jsonify({'response': False})
+    user_accounts.append(sent_info)
+    with open('test_data/account_info_test.json', 'w') as outfile:
+        json.dump(user_info, outfile)
+    return jsonify({'response': True})
+
     
 
 if __name__ == '__main__':

@@ -1,5 +1,3 @@
-
-
 export default class Signup extends React.Component {
     constructor(props) {
         super(props);
@@ -24,13 +22,36 @@ export default class Signup extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        window.location.href = "/dashboard";
+        const userdata = this.state
+        const url = "/submitsignup"
+        fetch(url, {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(userdata)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            if (data['response'] === true) {
+                window.location.href = "/login";
+            } else {
+                const element = <p className="incorrect-text">Username taken</p>;
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            }
+        })
+    }
+
+    handleLogin = (event) => {
+        event.preventDefault();
+        window.location.href = "/login";
     }
 
     render() {
         return <div className="account-form">
             <div className="account-title"><h2>Create account</h2></div>
             <form className="form">
+            <div className="incorrect-creds"></div>
             <p>Username</p>
                 <input
                     text="Username"
@@ -86,7 +107,7 @@ export default class Signup extends React.Component {
                     CREATE ACCOUNT
                 </button>
                 <p>Already have an account?</p>
-                <a href='/login'>Login</a>
+                <button type="submit" className="button button_wide" onClick={this.handleLogin}>Login</button>
                 </div>
 
             </form>

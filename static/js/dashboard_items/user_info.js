@@ -14,6 +14,11 @@ var UserInfo = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (UserInfo.__proto__ || Object.getPrototypeOf(UserInfo)).call(this, props));
 
+        _this.handleEditAccount = function (event) {
+            event.preventDefault();
+            window.location.href = "/account-page";
+        };
+
         _this.state = _this.props.data.userInfo;
         return _this;
     }
@@ -69,10 +74,9 @@ var UserInfo = function (_React$Component) {
                 React.createElement(
                     "div",
                     { className: "team-info-subheader" },
-                    React.createElement("a", { href: "/account-page" }),
                     React.createElement(
                         "button",
-                        { className: "btn" },
+                        { type: "submit", className: "button button_wide", onClick: this.handleEditAccount },
                         "Edit Account"
                     )
                 )

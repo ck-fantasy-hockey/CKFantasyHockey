@@ -29,6 +29,11 @@ form {
     width: 70%;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .form {
     /* display: flex; */
     background-color: darkgrey;
@@ -45,6 +50,7 @@ form {
     box-shadow: -10px -10px 30px rgba(37, 37, 37, 0.4);
     padding: 30px 150px 30px 150px;
     margin-top: 30px;
+    max-width: 60%;
 }
 
 .form input {
@@ -77,6 +83,20 @@ button {
     text-align: center;
 }
 
+.form .incorrect-text {
+    text-align: center;
+    color: red;
+}
+
+.incorrect-creds {
+    margin: 0 auto;
+    padding-bottom: .25em;
+    text-align: center;
+}
+
+.cancel-button {
+    margin-top: 2em;
+}
 
 
 /* .submit_area {
