@@ -21,7 +21,7 @@ def pull_roster():
     return roster_list
 
 # Pulls team for each player
-def pull_player_team():
+def pull_player_info():
     player_ids = pull_roster()
     player_stats = []
     for id in player_ids:
@@ -38,7 +38,7 @@ def pull_player_team():
 
 # Pulls single year stats for each player
 def pull_player_stats():
-    player_data = pull_player_team()
+    player_data = pull_player_info()
     player_stats = player_data['stats']
     player_ids = player_data['ids']
     # Iterates every player and pulls 2019-2020 stats
