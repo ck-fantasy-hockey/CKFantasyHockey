@@ -25,11 +25,13 @@ def pull_player_team():
     player_ids = pull_roster()
     player_stats = []
     for id in player_ids:
+        # iterates by player id
         response = requests.get('https://statsapi.web.nhl.com/api/v1/people/' + str(id))
         player = response.json()
         player_name = player['people'][0]['fullName']
         player_team = player['people'][0]['currentTeam']['name']
         player_pos = player['people'][0]['primaryPosition']['name']
+        # Stucture of data defined here
         player_info = {'id': id, 'name': player_name, 'team': player_team, 'position': player_pos, 'stats': None}
         player_stats.append(player_info)
     return {'ids': player_ids, 'stats': player_stats}
@@ -46,5 +48,6 @@ def pull_player_stats():
         if not player['stats'][0]['splits']:
             continue
         stats = player['stats'][0]['splits'][0]['stat']
+        # Adds stats hashmap to the stats key
         player_stats[i]['stats'] = stats
     return player_stats
