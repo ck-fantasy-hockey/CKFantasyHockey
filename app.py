@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, jsonify
+import requests
 import json
 import os
 import database.db_functions
+from playerstats import pull_roster, pull_player_stats
 
 app = Flask(__name__)
 
@@ -15,6 +17,12 @@ database.db_functions.establish_connection()
 dataFromServer = {}
 
 # Routes
+
+@app.route('/data')
+def data():
+    """Placeholder route for viewing stats"""
+    stats = pull_player_stats()
+    return str(stats)
 
 @app.route('/')
 def root():
