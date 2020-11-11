@@ -14,6 +14,9 @@ database.db_functions.establish_connection()
 
 # Data Transportation
 
+#This will eventually store the results of the NHL API call to import into DB
+dataFromNHL = []
+
 dataFromServer = {}
 
 # Routes
