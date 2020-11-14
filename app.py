@@ -5,6 +5,7 @@ import os
 import database.db_functions
 from playerstats import pull_roster, pull_player_stats
 
+
 app = Flask(__name__)
 
 # Configurations
@@ -21,11 +22,17 @@ dataFromServer = {}
 
 # Routes
 
-@app.route('/data')
-def data():
+@app.route('/player-data')
+def player_data():
     """Placeholder route for viewing stats"""
     stats = pull_player_stats()
-    return str(stats)
+    # return stats[21]
+    # # for i in range(len(stats)):
+    # #     if not stats[i]:
+    # #         print(i)
+    database.db_functions.insert_player_data(stats)
+    return "Player Data Inserted"
+
 
 @app.route('/')
 def root():

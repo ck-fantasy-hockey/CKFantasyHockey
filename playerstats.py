@@ -7,7 +7,7 @@ def pull_roster():
     roster_list = []
     count = 0
     # Iterates through all teams
-    for i in range(1,3):
+    for i in range(1,2):
         response = requests.get('https://statsapi.web.nhl.com/api/v1/teams/' + str(i) + "/roster")
         roster = response.json()
         # Handling bad data

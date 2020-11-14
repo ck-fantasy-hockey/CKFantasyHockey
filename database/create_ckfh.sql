@@ -1,5 +1,14 @@
 DROP TABLE IF EXISTS Users, Players, Teams, Leagues, TeamsPlayers, LeaguesPlayers;
 
+SET FOREIGN_KEY_CHECKS = 0;
+drop table if exists Users;
+drop table if exists Players;
+drop table if exists Teams;
+drop table if exists Leagues;
+drop table if exists TeamsPlayers;
+drop table if exists LeaguesPlayers;
+SET FOREIGN_KEY_CHECKS = 1;
+
 CREATE TABLE Users (
     userID int AUTO_INCREMENT NOT NULL,
     userName varchar(24) UNIQUE NOT NULL,
@@ -13,14 +22,15 @@ CREATE TABLE Users (
 
 CREATE TABLE Players (
     playerID int AUTO_INCREMENT NOT NULL UNIQUE,
+    playerName varchar(255) NOT NULL,
     team varchar(255) NOT NULL,
     status ENUM('injured', 'injured reserve', 'suspended', 'active') NOT NULL,
-    position varchar(3) NOT NULL,
+    position varchar(255) NOT NULL,
     gamesPlayed int NOT NULL,
     goals int,
     assists int,
     points int,
-    shootoutGoals int,
+    gameWinningGoals int,
     hatTricks int,
     plusMinus int,
     pointsPerGame int,
@@ -35,7 +45,7 @@ CREATE TABLE Players (
     goalsAllowed int,
     saves int,
     savePercentage DECIMAL(4,3),
-    minutesPlayed int,
+    minutesPlayed varchar(255),
     PRIMARY KEY (playerID)
 );
 
