@@ -13,8 +13,6 @@ app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 database.db_functions.establish_connection()
 
-# Data Transportation
-
 #This will eventually store the results of the NHL API call to import into DB
 dataFromNHL = []
 
@@ -64,10 +62,6 @@ def create_team():
 @app.route('/account-page')
 def account_page():
     return render_template('index.j2', page="edit_account", css="style", css2="signup_login", dataFromServer=dataFromServer)
-
-# @app.route('/signup')
-# def signup():
-#     return render_template('index.j2', page="signup", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
 @app.route('/login')
 def login():

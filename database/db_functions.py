@@ -40,6 +40,5 @@ def insert_player_data(players):
             print(count)
             count += 1
     cnx.commit()
-    # cursor.fetchall()
     cursor.close()
     cnx.close()
