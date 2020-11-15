@@ -1,5 +1,3 @@
-DROP TABLE IF EXISTS Users, Players, Teams, Leagues, TeamsPlayers, LeaguesPlayers;
-
 SET FOREIGN_KEY_CHECKS = 0;
 drop table if exists Users;
 drop table if exists Players;
