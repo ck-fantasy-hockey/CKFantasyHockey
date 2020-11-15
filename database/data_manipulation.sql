@@ -67,3 +67,9 @@ INSERT INTO TeamsPlayers (teamid, playerid) VALUES (:teamid, :playerid);
 -- Set player as taken in league
 INSERT INTO LeaguesPlayers (teamid, playerid) VALUES (:teamid, :playerid);
 
+-- Remove player from team
+DELETE FROM TeamsPlayers WHERE playerid = :playerid AND teamid = :teamid;
+
+-- Remove player from taken players in a league
+DELETE FROM LeaguesPlayers WHERE playerid = :playerid AND leagueid = :leagueid;
+
