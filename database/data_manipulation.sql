@@ -21,7 +21,7 @@ ON t.userid = :userid;
 -- Get Teams user has created
 SELECT teamName FROM Teams WHERE userid = :userid;
 
---Get user team
+-- Get user team
 SELECT teamName FROM Teams WHERE teamid= :teamid;
 
 -- Create new league
