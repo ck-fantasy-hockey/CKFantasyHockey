@@ -5,14 +5,13 @@ import os
 import database.db_functions
 from playerstats import pull_roster, pull_player_stats
 
+
 app = Flask(__name__)
 
 # Configurations
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 database.db_functions.establish_connection()
-
-# Data Transportation
 
 #This will eventually store the results of the NHL API call to import into DB
 dataFromNHL = []
@@ -21,11 +20,17 @@ dataFromServer = {}
 
 # Routes
 
-@app.route('/data')
-def data():
+@app.route('/player-data')
+def player_data():
     """Placeholder route for viewing stats"""
     stats = pull_player_stats()
-    return str(stats)
+    # return stats[21]
+    # # for i in range(len(stats)):
+    # #     if not stats[i]:
+    # #         print(i)
+    database.db_functions.insert_player_data(stats)
+    return "Player Data Inserted"
+
 
 @app.route('/')
 def root():
@@ -57,10 +62,6 @@ def create_team():
 @app.route('/account-page')
 def account_page():
     return render_template('index.j2', page="edit_account", css="style", css2="signup_login", dataFromServer=dataFromServer)
-
-# @app.route('/signup')
-# def signup():
-#     return render_template('index.j2', page="signup", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
 @app.route('/login')
 def login():

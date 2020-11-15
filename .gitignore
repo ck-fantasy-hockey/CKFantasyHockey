@@ -11,3 +11,4 @@ testbranch.txt
 /.vscode
 Pipfile
 Pipfile.lock
+.env
