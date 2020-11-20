@@ -70,6 +70,7 @@ def get_all_leagues() -> list:
     cnx.close()
 
     leagues = []
+    print(results)
     for league in results:
         if league[2] == 'public':
             joinable = True
