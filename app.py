@@ -25,6 +25,8 @@ def checklogin():
     sent_info = request.get_json()
     login_result = database.db_functions.check_login(sent_info)
     print(login_result)
+    # return jsonify({'response': True})
+#     return jsonify({'response': False})
 
 # Routes
 
@@ -79,16 +81,7 @@ def account_page():
 @app.route('/login')
 def login():
     return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
-
-# Client APIs
-# @app.route('/checklogin', methods=['POST'])
-# def checklogin():
-#     user_accounts = user_info['accounts']
-#     sent_info = request.get_json()
-#     for account in user_accounts:
-#         if sent_info['username'] == account['username'] and sent_info['password'] == account['password']:
-#             return jsonify({'response': True})
-#     return jsonify({'response': False})
+    
 
 @app.route('/submitsignup', methods=['POST'])
 def submit_signup():

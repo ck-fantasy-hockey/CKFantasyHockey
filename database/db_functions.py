@@ -63,7 +63,6 @@ def check_login(user_info):
     query = "SELECT count(*) FROM Users WHERE userName = %s AND password = %s"
     values = (username, password)
     cursor.execute(query, values)
-    # cnx.commit()
     results = cursor.fetchall()
     cursor.close()
     cnx.close()
