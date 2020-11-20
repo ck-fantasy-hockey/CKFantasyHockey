@@ -23,6 +23,12 @@ export default class Signup extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const userdata = this.state
+        let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
+        if (passMatch === false) {
+            const element = <p className="incorrect-text">Passwords do not match</p>;
+            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            return
+        }
         const url = "/submitsignup"
         fetch(url, {
            method: 'POST',
@@ -40,6 +46,13 @@ export default class Signup extends React.Component {
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             }
         })
+    }
+
+    checkPasswords = (password1, password2) =>{
+        if (password1 === password2) {
+            return true
+        }
+        return false
     }
 
     handleLogin = (event) => {

@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, make_response
+import jwt
 import requests
 import json
 import os
@@ -17,6 +18,13 @@ database.db_functions.establish_connection()
 dataFromNHL = []
 
 dataFromServer = {}
+
+# JWT Authentication
+@app.route('/checklogin', methods=['POST'])
+def checklogin():
+    sent_info = request.get_json()
+    login_result = database.db_functions.check_login(sent_info)
+    print(login_result)
 
 # Routes
 
@@ -78,27 +86,26 @@ with open('test_data/account_info_test.json') as f:
     user_info = json.load(f)
 
 # Client APIs
-@app.route('/checklogin', methods=['POST'])
-def checklogin():
-    user_accounts = user_info['accounts']
-    sent_info = request.get_json()
-    for account in user_accounts:
-        if sent_info['username'] == account['username'] and sent_info['password'] == account['password']:
-            return jsonify({'response': True})
-    return jsonify({'response': False})
+# @app.route('/checklogin', methods=['POST'])
+# def checklogin():
+#     user_accounts = user_info['accounts']
+#     sent_info = request.get_json()
+#     for account in user_accounts:
+#         if sent_info['username'] == account['username'] and sent_info['password'] == account['password']:
+#             return jsonify({'response': True})
+#     return jsonify({'response': False})
 
 @app.route('/submitsignup', methods=['POST'])
 def submit_signup():
-    """Verifies unique login and saves signup data"""
-    user_accounts = user_info['accounts']
     sent_info = request.get_json()
-    for account in user_accounts:
-        if sent_info['username'] == account['username']:
-            return jsonify({'response': False})
-    user_accounts.append(sent_info)
-    with open('test_data/account_info_test.json', 'w') as outfile:
-        json.dump(user_info, outfile)
-    return jsonify({'response': True})
+    check_unique = database.db_functions.check_if_unique(sent_info)
+    if check_unique == False:
+        return jsonify({'response': False})
+    else:
+        database.db_functions.insert_user(sent_info)
+        return jsonify({'response': True})
+
+
 
 @app.route('/add-new-league', methods=['POST'])
 def add_new_league():

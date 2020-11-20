@@ -28,6 +28,45 @@ def establish_connection():
     cursor.close()
     cnx.close()
 
+def check_if_unique(user_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    username = user_info['username']
+    query = "SELECT count(*) FROM Users WHERE userName = %s"
+    values = (username,)
+    cursor.execute(query, values)
+    # cnx.commit()
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    if results[0][0] >= 1:
+        return False
+    return True
+
+def insert_user(user_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    username = user_info['username']
+    password = user_info['password']
+    email = user_info['email']
+    
+
+def check_login(user_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    username = user_info['username']
+    password = user_info['password']
+    query = "SELECT count(*) FROM Users WHERE userName = %s AND password = %s"
+    values = (username, password)
+    cursor.execute(query, values)
+    # cnx.commit()
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    if results[0][0] == 1:
+        return True
+    return False
+
 def insert_player_data(players):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()

@@ -33,6 +33,16 @@ var Signup = function (_React$Component) {
         _this.handleSubmit = function (event) {
             event.preventDefault();
             var userdata = _this.state;
+            var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
+            if (passMatch === false) {
+                var element = React.createElement(
+                    'p',
+                    { className: 'incorrect-text' },
+                    'Passwords do not match'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                return;
+            }
             var url = "/submitsignup";
             fetch(url, {
                 method: 'POST',
@@ -46,14 +56,21 @@ var Signup = function (_React$Component) {
                 if (data['response'] === true) {
                     window.location.href = "/login";
                 } else {
-                    var element = React.createElement(
+                    var _element = React.createElement(
                         'p',
                         { className: 'incorrect-text' },
                         'Username taken'
                     );
-                    ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                    ReactDOM.render(_element, document.getElementsByClassName('incorrect-creds')[0]);
                 }
             });
+        };
+
+        _this.checkPasswords = function (password1, password2) {
+            if (password1 === password2) {
+                return true;
+            }
+            return false;
         };
 
         _this.handleLogin = function (event) {
