@@ -35,7 +35,6 @@ def check_if_unique(user_info):
     query = "SELECT count(*) FROM Users WHERE userName = %s"
     values = (username,)
     cursor.execute(query, values)
-    # cnx.commit()
     results = cursor.fetchall()
     cursor.close()
     cnx.close()
@@ -49,7 +48,12 @@ def insert_user(user_info):
     username = user_info['username']
     password = user_info['password']
     email = user_info['email']
-    
+    query = "INSERT INTO Users SET userName = %s, password = %s, email = %s"
+    values = (username, password, email)
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
 
 def check_login(user_info):
     cnx = mysql.connector.connect(**config)

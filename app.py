@@ -80,11 +80,6 @@ def account_page():
 def login():
     return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
-
-# import user info json for testing
-with open('test_data/account_info_test.json') as f:
-    user_info = json.load(f)
-
 # Client APIs
 # @app.route('/checklogin', methods=['POST'])
 # def checklogin():

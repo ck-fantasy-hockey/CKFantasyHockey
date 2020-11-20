@@ -11,7 +11,6 @@ CREATE TABLE Users (
     userID int AUTO_INCREMENT NOT NULL,
     userName varchar(24) UNIQUE NOT NULL,
     password varchar(255) NOT NULL,
-    salt varchar(24) NOT NULL,
     email varchar(255) NOT NULL,
     sessionID varchar(255),
     sessionExpires datetime,
