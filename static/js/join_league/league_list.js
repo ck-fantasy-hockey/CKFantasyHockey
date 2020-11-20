@@ -6,7 +6,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import data from '../../json/data.js';
 import LeagueRow from './league_row.js';
 
 var LeagueList = function (_React$Component) {
@@ -17,8 +16,59 @@ var LeagueList = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (LeagueList.__proto__ || Object.getPrototypeOf(LeagueList)).call(this, props));
 
+        _this.updateLeagueName = function (e) {
+            _this.setState({ modalInformation: {
+                    leagueName: e.target.value,
+                    visibility: _this.state.modalInformation.visibility
+                } });
+        };
+
+        _this.updateLeagueVisibility = function (e) {
+            _this.setState({ modalInformation: {
+                    leagueName: _this.state.modalInformation.leagueName,
+                    visibility: e.target.value
+                } });
+        };
+
+        _this.displayModal = function () {
+            _this.setState({ modalVisible: !_this.state.modalVisible });
+            if (_this.state.modalStyle.display === 'none') {
+                _this.setState({ modalStyle: { display: 'block' } });
+            } else {
+                _this.setState({ modalStyle: { display: 'none' } });
+            }
+        };
+
+        _this.handleNewLeague = function (e) {
+            e.preventDefault();
+            var leagueInfo = _this.state.modalInformation;
+            var url = '/add-new-league';
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(leagueInfo)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data['response'] === true) {
+                    window.location.href = '/join-league';
+                }
+            });
+        };
+
         _this.state = {
-            leagues: data.leagues
+            leagues: dataFromServer.leagues,
+            modalVisible: false,
+            modalStyle: {
+                display: 'none'
+            },
+            modalInformation: {
+                leagueName: '',
+                visibility: 'private'
+            }
         };
         return _this;
     }
@@ -36,6 +86,55 @@ var LeagueList = function (_React$Component) {
                         'h2',
                         null,
                         'Leagues'
+                    )
+                ),
+                React.createElement(
+                    'div',
+                    { className: 'roster-functions' },
+                    React.createElement(
+                        'button',
+                        { id: 'new-league-button', onClick: this.displayModal, className: 'btn' },
+                        'Create New League'
+                    )
+                ),
+                React.createElement(
+                    'div',
+                    { id: 'new-league-modal', style: this.state.modalStyle, className: 'modal' },
+                    React.createElement(
+                        'div',
+                        { className: 'modal-content' },
+                        React.createElement(
+                            'form',
+                            null,
+                            React.createElement(
+                                'label',
+                                null,
+                                'Team Name'
+                            ),
+                            React.createElement('input', { type: 'text', onChange: this.updateLeagueName }),
+                            React.createElement(
+                                'label',
+                                null,
+                                'Private'
+                            ),
+                            React.createElement('input', { type: 'radio', defaultChecked: true, onChange: this.updateLeagueVisibility, name: 'visibility', value: 'private' }),
+                            React.createElement(
+                                'label',
+                                null,
+                                'Public'
+                            ),
+                            React.createElement('input', { type: 'radio', onChange: this.updateLeagueVisibility, name: 'visibility', value: 'public' })
+                        ),
+                        React.createElement(
+                            'button',
+                            { onClick: this.displayModal },
+                            'Cancel'
+                        ),
+                        React.createElement(
+                            'button',
+                            { onClick: this.handleNewLeague },
+                            'Submit'
+                        )
                     )
                 ),
                 React.createElement(
