@@ -49,7 +49,12 @@ def league_view():
     return render_template('index.j2', page="league_view", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/join-league')
-def join_team():
+def join_league():
+    leagues = database.db_functions.get_all_leagues()
+    print(leagues)
+    dataFromServer = {
+        "leagues": leagues
+    }
     return render_template('index.j2', page="join_league", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/create-team')
@@ -95,7 +100,11 @@ def submit_signup():
         json.dump(user_info, outfile)
     return jsonify({'response': True})
 
-    
+@app.route('/add-new-league', methods=['POST'])
+def add_new_league():
+    """Adds a new league to the database"""
+    database.db_functions.create_league(request.get_json())
+    return jsonify({'response': True})
 
 if __name__ == '__main__':
     # Will set port to 5000 on local machine, but allow Heroku to bind on deployment.
