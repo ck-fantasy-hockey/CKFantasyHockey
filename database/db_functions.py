@@ -2,6 +2,8 @@ import mysql.connector
 import os
 from dotenv import load_dotenv
 load_dotenv()
+from datetime import date
+from dateutil.relativedelta import relativedelta
 
 # Get the environment variables where sensitive logon information securely stored
 config = {
@@ -42,3 +44,46 @@ def insert_player_data(players):
     cnx.commit()
     cursor.close()
     cnx.close()
+
+def create_league(new_league: dict):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "INSERT INTO leagues (leagueName, visibility, seasonEnds) VALUES (%s, %s, STR_TO_DATE(%s, '%m-%d-%Y'));"
+    now = date.today()
+    delta = relativedelta(months=6)
+    seasonEnds = now + delta
+    seasonEndsString = seasonEnds.strftime('%m-%d-%Y')
+    values = (new_league['leagueName'], new_league['visibility'], seasonEndsString)
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
+def get_all_leagues() -> list:
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT * FROM leagues;"
+    cursor.execute(query)
+    results = cursor.fetchall()
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
+    leagues = []
+    print(results)
+    for league in results:
+        if league[2] == 'public':
+            joinable = True
+        else:
+            joinable = False
+        temp = {
+            'leagueID': int(league[0]),
+            'name': str(league[1]),
+            'teams': 0,
+            'visibility': str(league[2]).title(),
+            'seasonEndDate': league[3].strftime('%m-%d-%Y'),
+            'joinable': joinable
+        }
+        leagues.append(temp)
+
+    return leagues

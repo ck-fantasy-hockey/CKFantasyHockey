@@ -44,12 +44,15 @@ CREATE TABLE Players (
     saves int,
     savePercentage DECIMAL(4,3),
     minutesPlayed varchar(255),
+    shootoutGoals int,
     PRIMARY KEY (playerID)
 );
 
 CREATE TABLE Leagues (
     leagueID int AUTO_INCREMENT NOT NULL UNIQUE,
     leagueName varchar(255),
+    visibility enum('private', 'public') NOT NULL, -- added after Step 4
+    seasonEnds date NOT NULL, -- added after Step 4
     PRIMARY KEY (leagueID)
 );
 
