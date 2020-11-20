@@ -28,6 +28,7 @@ def establish_connection():
     cursor.close()
     cnx.close()
 
+# Checks if username when signing up is unique
 def check_if_unique(user_info):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -42,6 +43,7 @@ def check_if_unique(user_info):
         return False
     return True
 
+# inserts new user via signup
 def insert_user(user_info):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -55,6 +57,7 @@ def insert_user(user_info):
     cursor.close()
     cnx.close()
 
+# Confirms username and password matches a user in db
 def check_login(user_info):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -70,6 +73,7 @@ def check_login(user_info):
         return True
     return False
 
+# inserts player data via NHL API
 def insert_player_data(players):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
