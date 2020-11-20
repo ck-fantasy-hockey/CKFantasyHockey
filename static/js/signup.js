@@ -34,6 +34,7 @@ var Signup = function (_React$Component) {
             event.preventDefault();
             var userdata = _this.state;
             var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
+            // if password do not match it displays error
             if (passMatch === false) {
                 var element = React.createElement(
                     'p',
@@ -53,8 +54,10 @@ var Signup = function (_React$Component) {
             }).then(function (response) {
                 return response.json();
             }).then(function (data) {
+                // if username unique, redirects to login
                 if (data['response'] === true) {
                     window.location.href = "/login";
+                    // if username is taken displays error
                 } else {
                     var _element = React.createElement(
                         'p',
@@ -81,6 +84,12 @@ var Signup = function (_React$Component) {
         _this.state = { username: '', email: '', password: '', passwordConfirm: '' };
         return _this;
     }
+
+    // handles submission of signup form
+
+
+    // Confirms password match
+
 
     _createClass(Signup, [{
         key: 'render',
@@ -192,8 +201,5 @@ var Signup = function (_React$Component) {
 
     return Signup;
 }(React.Component);
-
-// ReactDOM.render(<Signup />, document.getElementById('root'));
-
 
 export default Signup;
