@@ -44,6 +44,7 @@ CREATE TABLE Players (
     saves int,
     savePercentage DECIMAL(4,3),
     minutesPlayed varchar(255),
+    shootoutGoals int,
     PRIMARY KEY (playerID)
 );
 
