@@ -20,10 +20,12 @@ export default class Signup extends React.Component {
         this.setState({ username: event.target.value });
     }
 
+    // handles submission of signup form
     handleSubmit = (event) => {
         event.preventDefault();
         const userdata = this.state
         let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
+        // if password do not match it displays error
         if (passMatch === false) {
             const element = <p className="incorrect-text">Passwords do not match</p>;
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
@@ -39,8 +41,10 @@ export default class Signup extends React.Component {
         })
         .then((response) => response.json())
         .then(data => {
+            // if username unique, redirects to login
             if (data['response'] === true) {
                 window.location.href = "/login";
+            // if username is taken displays error
             } else {
                 const element = <p className="incorrect-text">Username taken</p>;
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
@@ -48,6 +52,7 @@ export default class Signup extends React.Component {
         })
     }
 
+    // Confirms password match
     checkPasswords = (password1, password2) =>{
         if (password1 === password2) {
             return true
@@ -127,5 +132,3 @@ export default class Signup extends React.Component {
         </div>
     }
 }
-
-// ReactDOM.render(<Signup />, document.getElementById('root'));
