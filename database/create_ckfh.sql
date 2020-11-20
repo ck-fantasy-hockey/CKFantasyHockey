@@ -50,6 +50,8 @@ CREATE TABLE Players (
 CREATE TABLE Leagues (
     leagueID int AUTO_INCREMENT NOT NULL UNIQUE,
     leagueName varchar(255),
+    visibility enum('private', 'public') NOT NULL, -- added after Step 4
+    seasonEnds date NOT NULL, -- added after Step 4
     PRIMARY KEY (leagueID)
 );
 
