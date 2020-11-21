@@ -27,7 +27,9 @@ class Login extends React.Component {
         .then((response) => response.json())
         .then(data => {
             if (data['response'] === true) {
-                window.location.href = "/dashboard";
+                let token = data['token']
+                console.log(token)
+                // window.location.href = "/dashboard";
             } else {
                 const element = <p className="incorrect-text">Username or password is incorrect</p>;
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);

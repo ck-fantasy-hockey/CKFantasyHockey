@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, make_response
 import jwt
+import datetime
 import requests
 import json
 import os
@@ -12,6 +13,7 @@ app = Flask(__name__)
 # Configurations
 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.config['SECRET_KEY'] = 'secretkey'
 database.db_functions.establish_connection()
 
 #This will eventually store the results of the NHL API call to import into DB
@@ -25,7 +27,8 @@ def checklogin():
     sent_info = request.get_json()
     login_result = database.db_functions.check_login(sent_info)
     if login_result == True:
-        return jsonify({'response': True})
+        token = jwt.encode({'username': sent_info['username'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=30)}, app.config['SECRET_KEY'])
+        return jsonify({'response': True, 'token': token.decode('UTF-8')})
     return jsonify({'response': False})
 
 # Routes
