@@ -24,9 +24,9 @@ dataFromServer = {}
 def checklogin():
     sent_info = request.get_json()
     login_result = database.db_functions.check_login(sent_info)
-    print(login_result)
-    # return jsonify({'response': True})
-#     return jsonify({'response': False})
+    if login_result == True:
+        return jsonify({'response': True})
+    return jsonify({'response': False})
 
 # Routes
 
