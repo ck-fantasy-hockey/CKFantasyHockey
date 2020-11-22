@@ -1,3 +1,5 @@
+window.history.replaceState({}, document.title, "/account-page");
+
 class EditAccount extends React.Component {
     constructor(props) {
         super(props);

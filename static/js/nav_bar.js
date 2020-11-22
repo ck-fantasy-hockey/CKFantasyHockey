@@ -32,7 +32,7 @@ var NavBar = function (_React$Component) {
                             null,
                             React.createElement(
                                 'a',
-                                { href: '/dashboard' },
+                                { href: '/dashboard?token=' },
                                 'User Dashboard'
                             )
                         )

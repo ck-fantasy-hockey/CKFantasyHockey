@@ -22,6 +22,26 @@ dataFromNHL = []
 
 dataFromServer = {}
 
+# JWT Authentication wrapper
+
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        print(request.args)
+        token = request.args.get('token')
+
+        if not token:
+            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
+        try:
+            data = jwt.decode(token, app.config['SECRET_KEY'])
+        except:
+            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
+        return f(*args, **kwargs)
+    
+    return decorated
+
 # Routes
 
 @app.route('/player-data')
@@ -82,26 +102,6 @@ def account_page():
 @token_required
 def login():
     return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
-
-# JWT Authentication wrapper
-
-def token_required(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        print(request.args)
-        token = request.args.get('token')
-
-        if not token:
-            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
-
-        try:
-            data = jwt.decode(token, app.config['SECRET_KEY'])
-        except:
-            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
-
-        return f(*args, **kwargs)
-    
-    return decorated
 
 # Client APIs
 

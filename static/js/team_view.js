@@ -11,6 +11,8 @@ import TeamInformation from './team/team_information.js';
 import NavBar from './nav_bar.js';
 import data from '../json/data.js';
 
+window.history.replaceState({}, document.title, "/team-view");
+
 var TeamView = function (_React$Component) {
     _inherits(TeamView, _React$Component);
 

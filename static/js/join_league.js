@@ -9,6 +9,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import NavBar from './nav_bar.js';
 import LeagueList from './join_league/league_list.js';
 
+window.history.replaceState({}, document.title, "/join-league");
+
 var JoinLeague = function (_React$Component) {
     _inherits(JoinLeague, _React$Component);
 

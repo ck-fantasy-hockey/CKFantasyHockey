@@ -4,7 +4,7 @@ export default class NavBar extends React.Component {
             <ul>
                 <div className="nav-item">
                 <li>
-                    <a href='/dashboard'>User Dashboard</a>
+                    <a href='/dashboard?token='>User Dashboard</a>
                 </li>
                 </div>
                 <div className="nav-item">
