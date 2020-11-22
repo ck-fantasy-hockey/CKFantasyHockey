@@ -98,6 +98,25 @@ body {
     text-shadow: 0 0 25px rgb(110, 175, 250);
 }
 
+.nav-bar li button {
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.15rem;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.nav-bar li button:hover {
+    text-shadow: 0 0 10px rgb(45, 83, 126);
+    text-shadow: 0 0 15px rgb(64, 120, 184);
+    text-shadow: 0 0 25px rgb(110, 175, 250);
+}
+
 /* MAIN CONTAINER */
 
 .container {
