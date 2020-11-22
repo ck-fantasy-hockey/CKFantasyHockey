@@ -5,6 +5,7 @@ import requests
 import json
 import os
 import database.db_functions
+from functools import wraps
 from playerstats import pull_roster, pull_player_stats
 
 
@@ -31,6 +32,23 @@ def checklogin():
         return jsonify({'response': True, 'token': token.decode('UTF-8')})
     return jsonify({'response': False})
 
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        print(request.args)
+        token = request.args.get('token')
+
+        if not token:
+            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
+        try:
+            data = jwt.decode(token, app.config['SECRET_KEY'])
+        except:
+            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
+        return f(*args, **kwargs)
+    
+    return decorated
 # Routes
 
 @app.route('/player-data')
@@ -50,18 +68,22 @@ def root():
     return render_template('index.j2', page="landing_page", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
 @app.route('/dashboard')
+@token_required
 def dashboard():
     return render_template('index.j2', page="dashboard", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/team-view')
+@token_required
 def team_view():
     return render_template('index.j2', page="team_view", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/league-view')
+@token_required
 def league_view():
     return render_template('index.j2', page="league_view", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/join-league')
+@token_required
 def join_league():
     leagues = database.db_functions.get_all_leagues()
     print(leagues)
@@ -71,6 +93,7 @@ def join_league():
     return render_template('index.j2', page="join_league", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/create-team')
+@token_required
 def create_team():
     dataFromServer = {
         "leagueID": request.args.get('leagueID') 
@@ -78,10 +101,12 @@ def create_team():
     return render_template('index.j2', page="create_team", css="style", css2="create_team", dataFromServer=dataFromServer)
 
 @app.route('/account-page')
+@token_required
 def account_page():
     return render_template('index.j2', page="edit_account", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
 @app.route('/login')
+@token_required
 def login():
     return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
     

@@ -36,10 +36,9 @@ var Login = function (_React$Component) {
                 return response.json();
             }).then(function (data) {
                 if (data['response'] === true) {
-                    console.log(data);
                     var token = data['token'];
-                    console.log(token);
-                    // window.location.href = "/dashboard";
+                    localStorage.setItem('usertoken', token);
+                    window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
                 } else {
                     var element = React.createElement(
                         'p',
