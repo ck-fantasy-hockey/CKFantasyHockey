@@ -11,6 +11,8 @@ import LeagueInformation from './league/league_information.js';
 import NavBar from './nav_bar.js';
 import data from '../json/data.js';
 
+// window.history.replaceState({}, document.title, "/league-view");
+
 var LeagueView = function (_React$Component) {
     _inherits(LeagueView, _React$Component);
 

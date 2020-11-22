@@ -12,6 +12,8 @@ import UserTeams from './dashboard_items/user_teams.js';
 import NavBar from './nav_bar.js';
 import data from '../json/data.js';
 
+// window.history.replaceState({}, document.title, "/dashboard");
+
 var Dashboard = function (_React$Component) {
     _inherits(Dashboard, _React$Component);
 

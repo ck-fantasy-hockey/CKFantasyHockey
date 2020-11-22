@@ -1,3 +1,5 @@
+// window.history.replaceState({}, document.title, "/account-page");
+
 class EditAccount extends React.Component {
     constructor(props) {
         super(props);
@@ -6,7 +8,7 @@ class EditAccount extends React.Component {
 
     handleCancel = (event) => {
         event.preventDefault();
-        window.location.href = "/dashboard";
+        window.location.href = "/dashboard?token="+localStorage.getItem('usertoken');
     }
 
     render() {

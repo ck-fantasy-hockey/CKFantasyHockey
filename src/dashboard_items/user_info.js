@@ -6,7 +6,7 @@ export default class UserInfo extends React.Component {
 
     handleEditAccount = (event) => {
         event.preventDefault();
-        window.location.href = "/account-page";
+        window.location.href = "/account-page?token="+localStorage.getItem('usertoken');
     }
 
     render() {

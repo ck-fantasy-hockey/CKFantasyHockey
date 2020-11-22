@@ -10,62 +10,68 @@ var UserTeamRow = function (_React$Component) {
     _inherits(UserTeamRow, _React$Component);
 
     function UserTeamRow() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, UserTeamRow);
 
-        return _possibleConstructorReturn(this, (UserTeamRow.__proto__ || Object.getPrototypeOf(UserTeamRow)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserTeamRow.__proto__ || Object.getPrototypeOf(UserTeamRow)).call.apply(_ref, [this].concat(args))), _this), _this.handleTeamView = function () {
+            window.location.href = "/team-view?token=" + localStorage.getItem('usertoken');
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(UserTeamRow, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'tr',
+                "tr",
                 null,
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     React.createElement(
-                        'a',
-                        { href: '/team-view' },
-                        React.createElement(
-                            'button',
-                            null,
-                            'View'
-                        )
+                        "button",
+                        { onClick: this.handleTeamView },
+                        "View"
                     )
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.teamID
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.teamName
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.rank
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.win
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.loss
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.createdOn
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.leagueName
                 )

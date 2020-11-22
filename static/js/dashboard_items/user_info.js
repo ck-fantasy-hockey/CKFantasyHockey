@@ -16,7 +16,7 @@ var UserInfo = function (_React$Component) {
 
         _this.handleEditAccount = function (event) {
             event.preventDefault();
-            window.location.href = "/account-page";
+            window.location.href = "/account-page?token=" + localStorage.getItem('usertoken');
         };
 
         _this.state = _this.props.data.userInfo;
