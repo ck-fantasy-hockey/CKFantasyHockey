@@ -168,11 +168,17 @@ body {
 }
 
 .roster-title {
-    border-bottom: 1px solid black;
     border-radius: 10px 10px 0 0;
     text-transform: uppercase;
     padding: 10px 0 10px 10px;
     background-color: rgba(37, 37, 37, 0.8);
+}
+
+.roster-functions {
+    background: linear-gradient(rgba(37,37,37,0.8) 0%,
+    rgba(37,37,37,0.95) 20%,
+    rgba(37,37,37,0.95) 100%);
+    padding: 20px 10px 10px 10px;
 }
 
 .roster-title h2 {
