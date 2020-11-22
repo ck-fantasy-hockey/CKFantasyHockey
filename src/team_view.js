@@ -3,7 +3,7 @@ import TeamInformation from './team/team_information.js'
 import NavBar from './nav_bar.js'
 import data from '../json/data.js'
 
-window.history.replaceState({}, document.title, "/team-view");
+// window.history.replaceState({}, document.title, "/team-view");
 
 class TeamView extends React.Component {
     render() {

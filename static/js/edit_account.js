@@ -18,7 +18,7 @@ var EditAccount = function (_React$Component) {
 
         _this.handleCancel = function (event) {
             event.preventDefault();
-            window.location.href = "/dashboard";
+            window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
         };
 
         _this.state = { username: '', email: '', password: '', passwordConfirm: '' };

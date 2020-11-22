@@ -110,7 +110,7 @@ def checklogin():
     sent_info = request.get_json()
     login_result = database.db_functions.check_login(sent_info)
     if login_result == True:
-        token = jwt.encode({'username': sent_info['username'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=30)}, app.config['SECRET_KEY'])
+        token = jwt.encode({'username': sent_info['username'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=60)}, app.config['SECRET_KEY'])
         return jsonify({'response': True, 'token': token.decode('UTF-8')})
     return jsonify({'response': False})
 
