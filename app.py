@@ -22,33 +22,6 @@ dataFromNHL = []
 
 dataFromServer = {}
 
-# JWT Authentication
-@app.route('/checklogin', methods=['POST'])
-def checklogin():
-    sent_info = request.get_json()
-    login_result = database.db_functions.check_login(sent_info)
-    if login_result == True:
-        token = jwt.encode({'username': sent_info['username'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=30)}, app.config['SECRET_KEY'])
-        return jsonify({'response': True, 'token': token.decode('UTF-8')})
-    return jsonify({'response': False})
-
-def token_required(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        print(request.args)
-        token = request.args.get('token')
-
-        if not token:
-            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
-
-        try:
-            data = jwt.decode(token, app.config['SECRET_KEY'])
-        except:
-            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
-
-        return f(*args, **kwargs)
-    
-    return decorated
 # Routes
 
 @app.route('/player-data')
@@ -109,7 +82,37 @@ def account_page():
 @token_required
 def login():
     return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
+# JWT Authentication wrapper
+
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        print(request.args)
+        token = request.args.get('token')
+
+        if not token:
+            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
+        try:
+            data = jwt.decode(token, app.config['SECRET_KEY'])
+        except:
+            return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
+        return f(*args, **kwargs)
     
+    return decorated
+
+# Client APIs
+
+@app.route('/checklogin', methods=['POST'])
+def checklogin():
+    sent_info = request.get_json()
+    login_result = database.db_functions.check_login(sent_info)
+    if login_result == True:
+        token = jwt.encode({'username': sent_info['username'], 'exp': datetime.datetime.utcnow() + datetime.timedelta(seconds=30)}, app.config['SECRET_KEY'])
+        return jsonify({'response': True, 'token': token.decode('UTF-8')})
+    return jsonify({'response': False})
 
 @app.route('/submitsignup', methods=['POST'])
 def submit_signup():
@@ -120,8 +123,6 @@ def submit_signup():
     else:
         database.db_functions.insert_user(sent_info)
         return jsonify({'response': True})
-
-
 
 @app.route('/add-new-league', methods=['POST'])
 def add_new_league():
