@@ -4,7 +4,7 @@ import UserTeams from './dashboard_items/user_teams.js'
 import NavBar from './nav_bar.js'
 import data from '../json/data.js'
 
-window.history.replaceState({}, document.title, "/dashboard");
+// window.history.replaceState({}, document.title, "/dashboard");
 
 class Dashboard extends React.Component {
     render() {

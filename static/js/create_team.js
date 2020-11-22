@@ -10,7 +10,7 @@ import NavBar from './nav_bar.js';
 import TeamAttributes from './create_team/team_attributes.js';
 import PlayerSelect from './create_team/player_select.js';
 
-window.history.replaceState({}, document.title, "/create-team");
+// window.history.replaceState({}, document.title, "/create-team");
 
 var JoinLeague = function (_React$Component) {
     _inherits(JoinLeague, _React$Component);

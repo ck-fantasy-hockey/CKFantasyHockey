@@ -3,7 +3,7 @@ import LeagueInformation from './league/league_information.js'
 import NavBar from './nav_bar.js'
 import data from '../json/data.js'
 
-window.history.replaceState({}, document.title, "/league-view");
+// window.history.replaceState({}, document.title, "/league-view");
 
 class LeagueView extends React.Component {
     render() {
