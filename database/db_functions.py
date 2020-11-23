@@ -73,6 +73,16 @@ def check_login(user_info):
         return True
     return False
 
+# updates user email from edit account page
+def udpate_email(sent_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "UPDATE Users SET email = %s WHERE username = %s"
+    values = (sent_info['email'], sent_info['username'])
+    cursor.execute(query, values)
+    cursor.close()
+    cnx.close()
+
 # pulls user info for dashboard
 def user_info(userid):
     cnx = mysql.connector.connect(**config)

@@ -119,12 +119,12 @@ var EditAccount = function (_React$Component) {
                                 React.createElement(
                                     'p',
                                     null,
-                                    'Cancel and return to dashboard'
+                                    'Return to dashboard'
                                 ),
                                 React.createElement(
                                     'button',
                                     { type: 'submit', className: 'button button_wide', onClick: this.handleCancel },
-                                    'Cancel'
+                                    'Return'
                                 )
                             )
                         )

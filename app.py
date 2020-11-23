@@ -139,6 +139,11 @@ def submit_signup():
     else:
         database.db_functions.insert_user(sent_info)
         return jsonify({'response': True})
+
+@app.route('update-email', methods=['POST'])
+def update_email():
+    sent_info = request.get_json()
+    database.db_functions.update_email(sent_info)
     
 
 @app.route('/add-new-league', methods=['POST'])
