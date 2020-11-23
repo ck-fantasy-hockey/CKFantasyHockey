@@ -49,6 +49,12 @@ var EditAccount = function (_React$Component) {
             }).then(function (data) {
                 _this.setState({ email: data.email });
                 _this.setState({ emailgrey: true });
+                var element = React.createElement(
+                    'p',
+                    { className: 'email-response' },
+                    'email updated'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             });
         };
 
