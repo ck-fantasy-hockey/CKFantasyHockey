@@ -23,7 +23,7 @@ var TeamAttributesForm = function (_React$Component) {
                 { className: 'form' },
                 React.createElement(
                     'form',
-                    { action: '/', method: 'GET' },
+                    { onSubmit: this.props.functions.handleNewTeam, action: '/', method: 'GET' },
                     React.createElement(
                         'div',
                         { className: 'form-item' },
@@ -32,7 +32,12 @@ var TeamAttributesForm = function (_React$Component) {
                             null,
                             'Team Name'
                         ),
-                        React.createElement('input', { type: 'text', name: 'teamName' })
+                        React.createElement('input', { type: 'text', name: 'teamName', onChange: this.props.functions.updateTeamName }),
+                        React.createElement(
+                            'span',
+                            { className: 'error', style: this.props.error.style },
+                            this.props.error.message
+                        )
                     ),
                     React.createElement(
                         'div',

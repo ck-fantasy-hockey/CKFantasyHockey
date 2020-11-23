@@ -8,7 +8,7 @@ export default class TeamAttributes extends React.Component {
             </div>
             <div className="team-info">
                 <div className='team-info-text'>
-                    <TeamAttributesForm />
+                    <TeamAttributesForm {...this.props}/>
                 </div>
             </div>
         </div>

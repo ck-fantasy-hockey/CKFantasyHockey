@@ -6,7 +6,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import data from '../../json/data.js';
 import PlayerSelectRow from './player_select_row.js';
 import PlayerChosenRow from './player_chosen_row.js';
 
@@ -16,65 +15,7 @@ var PlayerSelect = function (_React$Component) {
     function PlayerSelect(props) {
         _classCallCheck(this, PlayerSelect);
 
-        var _this = _possibleConstructorReturn(this, (PlayerSelect.__proto__ || Object.getPrototypeOf(PlayerSelect)).call(this, props));
-
-        _this.selectPlayer = function (player) {
-
-            _this.setState(function (state) {
-                var players = _this.state.players;
-
-                var playersNotSelected = state.playersNotSelected.filter(function (p) {
-                    return p.playerID !== player.playerID;
-                });
-                playersNotSelected.sort(function (a, b) {
-                    return a.playerID > b.playerID ? 1 : -1;
-                });
-
-                var playersSelected = state.playersSelected.concat(player);
-                playersSelected.sort(function (a, b) {
-                    return a.playerID > b.playerID ? 1 : -1;
-                });
-
-                return {
-                    players: players,
-                    playersSelected: playersSelected,
-                    playersNotSelected: playersNotSelected
-                };
-            });
-        };
-
-        _this.deselectPlayer = function (player) {
-
-            _this.setState(function (state) {
-                var players = _this.state.players;
-
-                var playersNotSelected = state.playersNotSelected.concat(player);
-                playersNotSelected.sort(function (a, b) {
-                    return a.playerID > b.playerID ? 1 : -1;
-                });
-
-                var playersSelected = state.playersSelected.filter(function (p) {
-                    return p.playerID !== player.playerID;
-                });
-                playersSelected.sort(function (a, b) {
-                    return a.playerID > b.playerID ? 1 : -1;
-                });
-
-                return {
-                    players: players,
-                    playersSelected: playersSelected,
-                    playersNotSelected: playersNotSelected
-                };
-            });
-        };
-
-        _this.state = {
-            players: data.players,
-            playersSelected: [],
-            playersNotSelected: data.players
-        };
-        _this.selectPlayer = _this.selectPlayer.bind(_this);
-        return _this;
+        return _possibleConstructorReturn(this, (PlayerSelect.__proto__ || Object.getPrototypeOf(PlayerSelect)).call(this, props));
     }
 
     _createClass(PlayerSelect, [{
@@ -138,12 +79,12 @@ var PlayerSelect = function (_React$Component) {
                                             React.createElement(
                                                 'th',
                                                 null,
-                                                'Wins'
+                                                'Goals'
                                             ),
                                             React.createElement(
                                                 'th',
                                                 null,
-                                                'Losses'
+                                                'Assists'
                                             ),
                                             React.createElement(
                                                 'th',
@@ -160,8 +101,8 @@ var PlayerSelect = function (_React$Component) {
                                     React.createElement(
                                         'tbody',
                                         null,
-                                        this.state.playersNotSelected.map(function (element) {
-                                            return React.createElement(PlayerSelectRow, { key: element.playerID, selectPlayer: _this2.selectPlayer, player: element });
+                                        this.props.data.playersNotSelected.map(function (element) {
+                                            return React.createElement(PlayerSelectRow, { key: element.playerID, selectPlayer: _this2.props.functions.selectPlayer, player: element });
                                         })
                                     )
                                 )
@@ -212,12 +153,12 @@ var PlayerSelect = function (_React$Component) {
                                         React.createElement(
                                             'th',
                                             null,
-                                            'Wins'
+                                            'Goals'
                                         ),
                                         React.createElement(
                                             'th',
                                             null,
-                                            'Losses'
+                                            'Assists'
                                         ),
                                         React.createElement(
                                             'th',
@@ -234,8 +175,8 @@ var PlayerSelect = function (_React$Component) {
                                 React.createElement(
                                     'tbody',
                                     null,
-                                    this.state.playersSelected.map(function (element) {
-                                        return React.createElement(PlayerChosenRow, { key: element.playerID, deselectPlayer: _this2.deselectPlayer, player: element });
+                                    this.props.data.playersSelected.map(function (element) {
+                                        return React.createElement(PlayerChosenRow, { key: element.playerID, deselectPlayer: _this2.props.functions.deselectPlayer, player: element });
                                     })
                                 )
                             )

@@ -54,7 +54,8 @@ export default class LeagueList extends React.Component {
          .then((response) => response.json())
          .then(data => {
              if (data['response'] === true) {
-                 window.location.href = '/join-league';
+                 window.location.href = ('/join-league?token=' + localStorage.getItem('usertoken'));
+
              }
          })
     }

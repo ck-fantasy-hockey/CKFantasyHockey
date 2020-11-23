@@ -71,3 +71,7 @@
     flex-grow: 1;
     flex-direction: column;
 }
+
+.player-select{
+    overflow-y: auto
+}

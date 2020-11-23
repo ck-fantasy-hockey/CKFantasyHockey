@@ -64,7 +64,7 @@ def root():
 @token_required
 def dashboard():
     username = jwt.decode(request.args.get('token'), app.config['SECRET_KEY'])['username']
-    userid = database.db_functions.user_id(username)
+    userid = database.db_functions.get_user_id_from_username(username)
     data = {'username': "",'email': "",'team_count': "", 'team_info': "", 'league_info': ""}
     user_info = database.db_functions.user_info(userid)
     data['username'] = user_info[0]
@@ -101,8 +101,11 @@ def join_league():
 @app.route('/create-team')
 @token_required
 def create_team():
+    leagueID = request.args.get('leagueID')
+    players = database.db_functions.select_available_players_in_league(leagueID)
     dataFromServer = {
-        "leagueID": request.args.get('leagueID') 
+        "leagueID": leagueID,
+        "players": players
         }
     return render_template('index.j2', page="create_team", css="style", css2="create_team", dataFromServer=dataFromServer)
 
@@ -142,6 +145,21 @@ def submit_signup():
 def add_new_league():
     """Adds a new league to the database"""
     database.db_functions.create_league(request.get_json())
+    return jsonify({'response': True})
+
+@app.route('/add-new-team', methods=['POST'])
+def add_new_team():
+    """Adds a new team to the database"""
+
+    # Get the information from the client and convert to dict
+    sent_info = request.get_json()
+
+    # Get the username from the token
+    data = jwt.decode(sent_info['token'], app.config['SECRET_KEY'])
+    sent_info['username'] = data['username']
+
+    # Create the new team
+    database.db_functions.create_new_team(sent_info)
     return jsonify({'response': True})
 
 if __name__ == '__main__':

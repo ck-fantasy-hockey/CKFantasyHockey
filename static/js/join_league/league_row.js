@@ -21,7 +21,7 @@ var LeagueRow = function (_React$Component) {
             if (this.props.joinable) {
                 return React.createElement(
                     'a',
-                    { href: '/create-team?leagueID=' + this.props.leagueID },
+                    { href: '/create-team?leagueID=' + this.props.leagueID + '&token=' + localStorage.getItem('usertoken') },
                     React.createElement(
                         'button',
                         { className: 'btn btn-join' },
