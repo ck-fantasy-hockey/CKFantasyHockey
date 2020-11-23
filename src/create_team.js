@@ -22,6 +22,12 @@ class CreateTeam extends React.Component {
                 playersSelected: [],
                 playersNotSelected: dataFromServer.players,
                 token: localStorage.getItem('usertoken')
+            },
+            error: {
+                style: {
+                    display: 'hidden'
+                },
+                message: ""
             }
         }
     }
@@ -79,20 +85,30 @@ class CreateTeam extends React.Component {
         const teamInfo = this.state.data
         const url = '/add-new-team'
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(teamInfo)
-         })
-         .then((response) => response.json())
-         .then(data => {
-             if (data['response'] === true) {
-                 window.location.href = ('/dashboard?token=' + localStorage.getItem('usertoken'));
+        if (teamInfo.teamName === '') {
+            this.setState(prevState => {
+                const error = Object.assign({}, prevState.error);
+                console.log(error)
+                error.message = 'You must enter a team name.'
+                return { error }
+            })
+        } else {
 
-             }
-         })
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(teamInfo)
+            })
+            .then((response) => response.json())
+            .then(data => {
+                if (data['response'] === true) {
+                    window.location.href = ('/dashboard?token=' + localStorage.getItem('usertoken'));
+
+                }
+            })
+        }
     }
 
 

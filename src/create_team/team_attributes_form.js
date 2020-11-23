@@ -5,6 +5,7 @@ export default class TeamAttributesForm extends React.Component {
             <div className='form-item'>
             <label>Team Name</label>
             <input type="text" name='teamName' onChange={this.props.functions.updateTeamName}></input>
+            <span className='error' style={this.props.error.style}>{this.props.error.message}</span>
             </div>
             <div className='form-item'><label>League ID</label>
             <input type="text" name='leagueID' defaultValue={dataFromServer.leagueID} disabled></input></div>

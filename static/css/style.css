@@ -345,3 +345,7 @@ body {
 .team-functions {
     width: 180px
 }
+
+.error-message {
+    color: red
+}
