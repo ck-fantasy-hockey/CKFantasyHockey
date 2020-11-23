@@ -107,7 +107,7 @@ def insert_player_data(players):
 # selects all players from the players table
 def select_all_players():
     cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    cursor = cnx.cursor(dictionary=True)
     select_all_players_query = 'SELECT * FROM Players;'
     cursor.execute(select_all_players_query)
     results = cursor.fetchall()
