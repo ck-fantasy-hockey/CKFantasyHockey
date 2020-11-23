@@ -88,9 +88,11 @@ def join_league():
 @app.route('/create-team')
 @token_required
 def create_team():
+    leagueID = request.args.get('leagueID')
+    players = database.db_functions.select_available_players_in_league(leagueID)
     dataFromServer = {
-        "leagueID": request.args.get('leagueID'),
-        "players": database.db_functions.select_all_players() 
+        "leagueID": leagueID,
+        "players": players
         }
     return render_template('index.j2', page="create_team", css="style", css2="create_team", dataFromServer=dataFromServer)
 
