@@ -24,7 +24,8 @@ class Dashboard extends React.Component {
         })
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
+            this.state = data;
+            console.log(this.state)
         })
     }
 

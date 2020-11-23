@@ -33,13 +33,13 @@ var Dashboard = function (_React$Component) {
             }).then(function (response) {
                 return response.json();
             }).then(function (data) {
-                console.log(data);
+                _this.state = data;
+                console.log(_this.state);
             });
         };
 
         _this.state = {};
         _this.pullData();
-        console.log(localStorage.getItem('usertoken'));
         return _this;
     }
 

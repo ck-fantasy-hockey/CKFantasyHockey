@@ -127,10 +127,15 @@ def submit_signup():
 @app.route('/pull-dashboard', methods=['POST'])
 def pull_dashboard():
     username = jwt.decode(request.get_json(), app.config['SECRET_KEY'])['username']
-    user_info = database.db_functions.user_info(username)
-    # user_leagues = database.db_functions.user_leagues(username)
-    # user_teams = database.db_functions.create_league(username)
-    print(user_info)
+    userid = database.db_functions.user_id(username)
+    data = {'username': "",'email': "",'team_count': "", 'team_info': "", 'league_info': ""}
+    user_info = database.db_functions.user_info(userid)
+    data['username'] = user_info[0]
+    data['email'] = user_info[1]
+    data['team_count'] = user_info[2]
+    data['team_info'] = database.db_functions.user_teams(userid)
+    data['league_info'] = database.db_functions.user_leagues(userid)
+    return jsonify(data)
     
 
 @app.route('/add-new-league', methods=['POST'])

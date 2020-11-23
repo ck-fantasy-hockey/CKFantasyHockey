@@ -73,14 +73,50 @@ def check_login(user_info):
         return True
     return False
 
-# pulls user info for dashboard
-def user_info(username):
+# pulls userid based on username
+def user_id(username):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
-    query = "SELECT Users.username, Users.email, COUNT(Teams.userID) FROM Users LEFT JOIN Teams ON Users.UserID = Teams.userID WHERE userName = %s"
+    query = "SELECT userID FROM Users WHERE userName = %s"
     values = (username,)
     cursor.execute(query, values)
+    results = cursor.fetchall()[0][0]
+    cursor.close()
+    cnx.close()
+    return results
+
+# pulls user info for dashboard
+def user_info(userid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT Users.username, Users.email, COUNT(Teams.userID) FROM Users LEFT JOIN Teams ON Users.UserID = Teams.userID WHERE Users.userID = %s"
+    values = (userid,)
+    cursor.execute(query, values)
     results = cursor.fetchall()[0]
+    cursor.close()
+    cnx.close()
+    return results
+
+# Pulls user's team info for dashboard
+def user_teams(userid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT teamID, teamName, Leagues.leagueName FROM Teams LEFT JOIN Leagues ON Teams.leagueid = Leagues.leagueID WHERE Teams.userID = %s"
+    values = (userid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    return results
+
+# Pulls user's league info for dashboard
+def user_leagues(userid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT Leagues.leagueID, leagueName, seasonEnds FROM Leagues INNER JOIN Teams ON Leagues.leagueID = Teams.leagueID WHERE Teams.userID = %s"
+    values = (userid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()
     cursor.close()
     cnx.close()
     return results
