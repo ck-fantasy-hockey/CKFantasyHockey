@@ -22,7 +22,6 @@ var Dashboard = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).call(this));
 
         _this.state = dataFromServer;
-        console.log(_this.state);
         return _this;
     }
 

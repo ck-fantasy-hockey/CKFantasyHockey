@@ -2,7 +2,6 @@ import UserLeagueRow from './user_league_row.js'
 export default class UserLeagues extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props.data.league_info[0])
     }
 
     render() {
