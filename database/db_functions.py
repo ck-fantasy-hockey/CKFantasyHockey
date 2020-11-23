@@ -113,7 +113,21 @@ def select_all_players():
     results = cursor.fetchall()
     cursor.close()
     cnx.close()
-    print(results)
+    return results
+
+def select_available_players_in_league(leagueID: int) -> dict:
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    select_available_players_query = """
+        SELECT Players.playerID AS `playerID`, playerName, position, goals, assists, points FROM Players
+        LEFT JOIN ( SELECT * FROM LeaguesPlayers WHERE leagueID = %s
+        ) AS LP ON LP.playerID = Players.playerID WHERE LP.playerID IS NULL;
+        """
+    select_available_players_values = (leagueID,)
+    cursor.execute(select_available_players_query, select_available_players_values)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
     return results
     
 
