@@ -20,7 +20,8 @@ class CreateTeam extends React.Component {
                 leagueID: dataFromServer.leagueID,
                 players: data.players,
                 playersSelected: [],
-                playersNotSelected: data.players
+                playersNotSelected: data.players,
+                token: localStorage.getItem('usertoken')
             }
         }
     }
