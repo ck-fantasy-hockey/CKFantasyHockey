@@ -14,57 +14,51 @@ class CreateTeam extends React.Component {
                 selectPlayer: this.selectPlayer,
                 deselectPlayer: this.deselectPlayer
             },
-            teamName: '',
-            leagueID: dataFromServer.leagueID,
-            players: data.players,
-            playersSelected: [],
-            playersNotSelected: data.players
-
-
+            data: {
+                teamName: '',
+                leagueID: dataFromServer.leagueID,
+                players: data.players,
+                playersSelected: [],
+                playersNotSelected: data.players
+            }
         }
     }
 
     selectPlayer = (player) => {
         
         this.setState(state => {
-            const players = this.state.players
 
-            const playersNotSelected = state.playersNotSelected.filter(p => p.playerID !== player.playerID)
-            playersNotSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+            const data = Object.assign({}, state.data)
 
-            const playersSelected = state.playersSelected.concat(player);
-            playersSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+            const playersNotSelected = data.playersNotSelected.filter(p => p.playerID !== player.playerID)
+            data.playersNotSelected = playersNotSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
 
-            return {
-                players,
-                playersSelected,
-                playersNotSelected
-            }
+            const playersSelected = data.playersSelected.concat(player);
+            data.playersSelected = playersSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+
+            return { data }
         })
     }
 
     deselectPlayer = (player) => {
 
         this.setState(state => {
-            const players = this.state.players
-            
-            const playersNotSelected = state.playersNotSelected.concat(player)
-            playersNotSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
-            
-            const playersSelected = state.playersSelected.filter(p => p.playerID !== player.playerID)
-            playersSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
 
-            return {
-                players,
-                playersSelected,
-                playersNotSelected
-            }
+            const data = Object.assign({}, state.data)
+            
+            const playersNotSelected = data.playersNotSelected.concat(player)
+            data.playersNotSelected = playersNotSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+            
+            const playersSelected = data.playersSelected.filter(p => p.playerID !== player.playerID)
+            data.playersSelected = playersSelected.sort((a, b) => (a.playerID > b.playerID) ? 1 : -1)
+
+            return { data }
         })
     }
 
     updatePlayers = (e) => {
         this.setState(prevState => {
-            let players = Object.assign({}, prevState.players);
+            let players = Object.assign({}, prevState.data.players);
             players = e.taget.value;
             return { players }
         })
@@ -72,28 +66,28 @@ class CreateTeam extends React.Component {
 
     updateTeamName = (e) => {
         this.setState(prevState => {
-            let teamName = Object.assign({}, prevState.teamName);
-            teamName = e.target.value;
-            return { teamName }
+            let data = Object.assign({}, prevState.data);
+            data.teamName = e.target.value;
+            return { data }
         })
     }
 
     handleNewTeam = (e) => {
         e.preventDefault()
-        const leagueInfo = this.state.modalInformation
-        const url = '/add-new-league'
+        const teamInfo = this.state.data
+        const url = '/add-new-team'
 
         fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(leagueInfo)
+            body: JSON.stringify(teamInfo)
          })
          .then((response) => response.json())
          .then(data => {
              if (data['response'] === true) {
-                 window.location.href = ('/join-league?token=' + localStorage.getItem('usertoken'));
+                 window.location.href = ('/dashboard?token=' + localStorage.getItem('usertoken'));
 
              }
          })
