@@ -12,4 +12,3 @@ testbranch.txt
 Pipfile
 Pipfile.lock
 .env
-/static/js
