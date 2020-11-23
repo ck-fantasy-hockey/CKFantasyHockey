@@ -3,7 +3,7 @@
 class EditAccount extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', email: '', password: '', passwordConfirm: '' };
+        this.state = { username: '', email: 'test@email.com', password: '', passwordConfirm: '' };
     }
 
     handleCancel = (event) => {

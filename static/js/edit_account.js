@@ -21,7 +21,7 @@ var EditAccount = function (_React$Component) {
             window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
         };
 
-        _this.state = { username: '', email: '', password: '', passwordConfirm: '' };
+        _this.state = { username: '', email: 'test@email.com', password: '', passwordConfirm: '' };
         return _this;
     }
 
