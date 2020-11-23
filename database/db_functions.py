@@ -73,6 +73,55 @@ def check_login(user_info):
         return True
     return False
 
+# pulls user info for dashboard
+def user_info(userid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT Users.username, Users.email, COUNT(Teams.userID) FROM Users LEFT JOIN Teams ON Users.UserID = Teams.userID WHERE Users.userID = %s"
+    values = (userid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()[0]
+    cursor.close()
+    cnx.close()
+    return results
+
+# Pulls user's team info for dashboard
+def user_teams(userid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT teamID, teamName, Leagues.leagueName FROM Teams LEFT JOIN Leagues ON Teams.leagueid = Leagues.leagueID WHERE Teams.userID = %s"
+    values = (userid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    return results
+
+# Pulls user's league info for dashboard
+def user_leagues(userid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT Leagues.leagueID, leagueName, seasonEnds FROM Leagues INNER JOIN Teams ON Leagues.leagueID = Teams.leagueID WHERE Teams.userID = %s"
+    values = (userid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    results = [list(elem) for elem in results]
+    cursor.close()
+    cnx.close()
+    return results
+
+# Counts number of teams in a league
+def count_teams(leagueid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT count(*) FROM Teams WHERE leagueid = %s"
+    values = (leagueid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    return results
+
 # Returns the userID for an associated username
 def get_user_id_from_username(userName: str) -> int:
     cnx = mysql.connector.connect(**config)
@@ -146,7 +195,7 @@ def create_league(new_league: dict):
     cursor.close()
     cnx.close()
 
-# Returns a list of all leagues
+# Returns all current leagues in create league page
 def get_all_leagues() -> list:
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()

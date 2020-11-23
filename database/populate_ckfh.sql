@@ -202,7 +202,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`userID`, `userName`, `password`, `salt`, `email`, `sessionID`, `sessionExpires`) VALUES (1,'ckadmin','admin','MNxGK8KV0K','admin@ckfantasyhockey.com','HTdzXil6LY','2020-11-15 20:53:19'),(2,'wcoiner','william','oPDVohxuul','wcoiner@ckfantasyhockey.com','MNxGK8KV0K','2020-11-16 16:54:53'),(3,'gkochera','george','5ZY82qX7sW','gkochera@ckfantasyhockey.com','TF6VBnxzPF','2020-11-17 16:55:42'),(4,'bsmith','brandon','kAob9UpoRd','bsmith100@gmail.com','HTdzXil6LY','2020-11-15 22:56:16');
+INSERT INTO `users` (`userID`, `userName`, `password`, `email`, `sessionID`, `sessionExpires`) VALUES (1,'ckadmin','admin','admin@ckfantasyhockey.com','HTdzXil6LY','2020-11-15 20:53:19'),(2,'wcoiner','william','wcoiner@ckfantasyhockey.com','MNxGK8KV0K','2020-11-16 16:54:53'),(3,'gkochera','george','5ZY82qX7sW','gkochera@ckfantasyhockey.com','2020-11-17 16:55:42'),(4,'bsmith','brandon','kAob9UpoRd','bsmith100@gmail.com','2020-11-15 22:56:16');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
