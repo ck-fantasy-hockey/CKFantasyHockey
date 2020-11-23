@@ -8,21 +8,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import UserTeamRow from './user_team_row.js';
 
-var UserLeagues = function (_React$Component) {
-    _inherits(UserLeagues, _React$Component);
+var UserTeams = function (_React$Component) {
+    _inherits(UserTeams, _React$Component);
 
-    function UserLeagues(props) {
-        _classCallCheck(this, UserLeagues);
+    function UserTeams(props) {
+        _classCallCheck(this, UserTeams);
 
-        var _this = _possibleConstructorReturn(this, (UserLeagues.__proto__ || Object.getPrototypeOf(UserLeagues)).call(this, props));
-
-        _this.state = {
-            userteams: _this.props.data.userTeams
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (UserTeams.__proto__ || Object.getPrototypeOf(UserTeams)).call(this, props));
     }
 
-    _createClass(UserLeagues, [{
+    _createClass(UserTeams, [{
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -91,8 +86,8 @@ var UserLeagues = function (_React$Component) {
                     React.createElement(
                         'tbody',
                         null,
-                        this.state.userteams.map(function (element) {
-                            return React.createElement(UserTeamRow, Object.assign({ key: element.teamID }, element));
+                        this.props.data.team_info.map(function (element) {
+                            return React.createElement(UserTeamRow, Object.assign({ key: element[0] }, element));
                         })
                     )
                 )
@@ -100,7 +95,7 @@ var UserLeagues = function (_React$Component) {
         }
     }]);
 
-    return UserLeagues;
+    return UserTeams;
 }(React.Component);
 
-export default UserLeagues;
+export default UserTeams;

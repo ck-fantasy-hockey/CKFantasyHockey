@@ -16,9 +16,7 @@ var UserLeagues = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (UserLeagues.__proto__ || Object.getPrototypeOf(UserLeagues)).call(this, props));
 
-        _this.state = {
-            userleagues: _this.props.data.userLeagues
-        };
+        console.log(_this.props.data.league_info[0]);
         return _this;
     }
 
@@ -81,8 +79,8 @@ var UserLeagues = function (_React$Component) {
                     React.createElement(
                         'tbody',
                         null,
-                        this.state.userleagues.map(function (element) {
-                            return React.createElement(UserLeagueRow, Object.assign({ key: element.leagueID }, element));
+                        this.props.data.league_info.map(function (element) {
+                            return React.createElement(UserLeagueRow, Object.assign({ key: element[0] }, element));
                         })
                     )
                 )

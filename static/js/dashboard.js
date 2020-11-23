@@ -10,7 +10,6 @@ import UserInfo from './dashboard_items/user_info.js';
 import UserLeagues from './dashboard_items/user_leagues.js';
 import UserTeams from './dashboard_items/user_teams.js';
 import NavBar from './nav_bar.js';
-import data from '../json/data.js';
 
 // window.history.replaceState({}, document.title, "/dashboard");
 
@@ -22,24 +21,8 @@ var Dashboard = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).call(this));
 
-        _this.pullData = function () {
-            var url = "/pull-dashboard";
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(localStorage.getItem('usertoken'))
-            }).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                _this.state = data;
-                console.log(_this.state);
-            });
-        };
-
-        _this.state = {};
-        _this.pullData();
+        _this.state = dataFromServer;
+        console.log(_this.state);
         return _this;
     }
 
@@ -54,11 +37,11 @@ var Dashboard = function (_React$Component) {
                     'div',
                     { className: 'container' },
                     React.createElement('div', { className: 'split-widgets' }),
-                    React.createElement(UserInfo, { data: data }),
+                    React.createElement(UserInfo, { data: this.state }),
                     React.createElement('div', { className: 'split-widgets' }),
-                    React.createElement(UserLeagues, { data: data }),
+                    React.createElement(UserLeagues, { data: this.state }),
                     React.createElement('div', { className: 'split-widgets' }),
-                    React.createElement(UserTeams, { data: data })
+                    React.createElement(UserTeams, { data: this.state })
                 )
             );
         }

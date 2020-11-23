@@ -19,7 +19,6 @@ var UserInfo = function (_React$Component) {
             window.location.href = "/account-page?token=" + localStorage.getItem('usertoken');
         };
 
-        _this.state = _this.props.data.userInfo;
         return _this;
     }
 
@@ -32,42 +31,31 @@ var UserInfo = function (_React$Component) {
                 React.createElement(
                     "div",
                     { className: "team-info-primary" },
-                    React.createElement(
-                        "div",
-                        { className: "team-info-header" },
-                        React.createElement("img", { className: "team-info-image", src: '/static/img/' + this.state.userAvatar })
-                    ),
+                    React.createElement("div", { className: "team-info-header" }),
                     React.createElement(
                         "div",
                         { className: "team-info-text" },
                         React.createElement(
                             "h1",
                             null,
-                            this.state.userName
-                        ),
-                        React.createElement(
-                            "p",
-                            null,
-                            "User ID: ",
-                            this.state.userID
+                            this.props.data.username
                         ),
                         React.createElement(
                             "p",
                             null,
                             "Email: ",
-                            this.state.email
+                            this.props.data.email
                         ),
                         React.createElement(
                             "p",
                             null,
                             "No. of Teams: ",
-                            this.state.teams
+                            this.props.data.team_count
                         ),
                         React.createElement(
                             "p",
                             null,
-                            "League Wins: ",
-                            this.state.leagueWins
+                            "League Wins: 0"
                         )
                     )
                 ),

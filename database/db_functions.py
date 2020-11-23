@@ -117,6 +117,19 @@ def user_leagues(userid):
     values = (userid,)
     cursor.execute(query, values)
     results = cursor.fetchall()
+    results = [list(elem) for elem in results]
+    cursor.close()
+    cnx.close()
+    return results
+
+# Counts number of teams in a league
+def count_teams(leagueid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT count(*) FROM Teams WHERE leagueid = %s"
+    values = (leagueid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()
     cursor.close()
     cnx.close()
     return results

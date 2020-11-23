@@ -43,12 +43,12 @@ var UserTeamRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.teamID
+                    this.props[0]
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.teamName
+                    this.props[1]
                 ),
                 React.createElement(
                     "td",
@@ -73,7 +73,7 @@ var UserTeamRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.leagueName
+                    this.props[2]
                 )
             );
         }

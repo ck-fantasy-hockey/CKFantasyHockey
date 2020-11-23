@@ -2,9 +2,7 @@ import UserLeagueRow from './user_league_row.js'
 export default class UserLeagues extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            userleagues: this.props.data.userLeagues
-        }
+        console.log(this.props.data.league_info[0])
     }
 
     render() {
@@ -25,8 +23,8 @@ export default class UserLeagues extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                {this.state.userleagues.map(element =>
-                    <UserLeagueRow key={element.leagueID} {...element}/>
+                {this.props.data.league_info.map(element =>
+                    <UserLeagueRow key={element[0]} {...element}/>
                     )}
             </tbody>
         </table>

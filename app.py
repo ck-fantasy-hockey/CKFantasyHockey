@@ -63,6 +63,20 @@ def root():
 @app.route('/dashboard')
 @token_required
 def dashboard():
+    username = jwt.decode(request.args.get('token'), app.config['SECRET_KEY'])['username']
+    userid = database.db_functions.user_id(username)
+    data = {'username': "",'email': "",'team_count': "", 'team_info': "", 'league_info': ""}
+    user_info = database.db_functions.user_info(userid)
+    data['username'] = user_info[0]
+    data['email'] = user_info[1]
+    data['team_count'] = user_info[2]
+    data['team_info'] = database.db_functions.user_teams(userid)
+    data['league_info'] = database.db_functions.user_leagues(userid)
+    for i in range(len(data['league_info'])):
+        no_of_teams = database.db_functions.count_teams(data['league_info'][i][0])
+        data['league_info'][i].append(no_of_teams[0])
+    print(data['league_info'])
+    dataFromServer = data
     return render_template('index.j2', page="dashboard", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/team-view')
@@ -123,19 +137,6 @@ def submit_signup():
     else:
         database.db_functions.insert_user(sent_info)
         return jsonify({'response': True})
-
-@app.route('/pull-dashboard', methods=['POST'])
-def pull_dashboard():
-    username = jwt.decode(request.get_json(), app.config['SECRET_KEY'])['username']
-    userid = database.db_functions.user_id(username)
-    data = {'username': "",'email': "",'team_count': "", 'team_info': "", 'league_info': ""}
-    user_info = database.db_functions.user_info(userid)
-    data['username'] = user_info[0]
-    data['email'] = user_info[1]
-    data['team_count'] = user_info[2]
-    data['team_info'] = database.db_functions.user_teams(userid)
-    data['league_info'] = database.db_functions.user_leagues(userid)
-    return jsonify(data)
     
 
 @app.route('/add-new-league', methods=['POST'])
