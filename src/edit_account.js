@@ -42,6 +42,7 @@ class EditAccount extends React.Component {
         .then((response) => response.json())
         .then(data => {
             this.setState({email: data.email})
+            this.setState({emailgrey: true})
         })
     }
 

@@ -48,6 +48,7 @@ var EditAccount = function (_React$Component) {
                 return response.json();
             }).then(function (data) {
                 _this.setState({ email: data.email });
+                _this.setState({ emailgrey: true });
             });
         };
 
