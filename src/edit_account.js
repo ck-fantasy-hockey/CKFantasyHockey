@@ -67,8 +67,8 @@ class EditAccount extends React.Component {
                     UPDATE PASSWORD
                 </button>
                 <div className="cancel-button">
-                    <p>Cancel and return to dashboard</p>
-                    <button type="submit" className="button button_wide" onClick={this.handleCancel}>Cancel</button>
+                    <p>Return to dashboard</p>
+                    <button type="submit" className="button button_wide" onClick={this.handleCancel}>Return</button>
                 </div>
                 </div>
 
