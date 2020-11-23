@@ -133,8 +133,16 @@ def add_new_league():
 @app.route('/add-new-team', methods=['POST'])
 def add_new_team():
     """Adds a new team to the database"""
-    sent_info = json.loads(request.get_json())
-    
+
+    # Get the information from the client and convert to dict
+    sent_info = request.get_json()
+
+    # Get the username from the token
+    data = jwt.decode(sent_info['token'], app.config['SECRET_KEY'])
+    sent_info['username'] = data['username']
+
+    # Create the new team
+    database.db_functions.create_new_team(sent_info)
     return jsonify({'response': True})
 
 if __name__ == '__main__':

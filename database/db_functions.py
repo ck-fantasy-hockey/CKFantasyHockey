@@ -73,6 +73,19 @@ def check_login(user_info):
         return True
     return False
 
+# Returns the userID for an associated username
+def get_user_id_from_username(userName: str) -> int:
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT userID FROM Users WHERE userName = %s LIMIT 0,1"
+    print(userName)
+    values = userName,
+    cursor.execute(query, values)
+    results = cursor.fetchone()
+    cursor.close()
+    cnx.close()
+    return int(results[0])
+
 # inserts player data via NHL API
 def insert_player_data(players):
     cnx = mysql.connector.connect(**config)
@@ -91,6 +104,7 @@ def insert_player_data(players):
     cursor.close()
     cnx.close()
 
+# Creates a new league in the database
 def create_league(new_league: dict):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -105,6 +119,7 @@ def create_league(new_league: dict):
     cursor.close()
     cnx.close()
 
+# Returns a list of all leagues
 def get_all_leagues() -> list:
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -133,3 +148,42 @@ def get_all_leagues() -> list:
         leagues.append(temp)
 
     return leagues
+
+# Creates a new team in the database
+def create_new_team(new_team: dict) -> bool:
+    """Creates a new team in the database, returns True if it was successful, and False if there was an error"""
+    user_id = get_user_id_from_username(new_team['username'])
+    
+    # Create the row in the Teams Table
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    insert_teams_query =  'INSERT INTO teams (teamName, userID, leagueID) VALUES ('
+    insert_teams_query += '%s, %s, %s);'
+    insert_teams_values = (new_team['teamName'], user_id, new_team['leagueID'])
+    cursor.execute(insert_teams_query, insert_teams_values)
+
+    # Get the new team ID
+    get_team_id_query = 'SELECT teamID FROM Teams WHERE teamName = %s;'
+    get_team_id_values = (new_team['teamName'],)
+    cursor.execute(get_team_id_query, get_team_id_values)
+    team_id = cursor.fetchone()[0]
+
+    # Add all the relationships between players and the new team in TeamsPlayers
+    for player in new_team['playersSelected']:
+        add_teams_players_row_query = 'INSERT INTO TeamsPlayers (teamID, playerID) VALUES (%s, %s);'
+        add_teams_players_row_values = (team_id, player['playerID'])
+        cursor.execute(add_teams_players_row_query, add_teams_players_row_values)
+
+    # Add all the relationships between players and the current league in LeaguesPlayers
+    for player in new_team['playersSelected']:
+        add_leagues_players_row_query = 'INSERT INTO LeaguesPlayers (leagueID, playerID) VALUES (%s, %s);'
+        add_leagues_players_row_values = (new_team['leagueID'], player['playerID'])
+        cursor.execute(add_leagues_players_row_query, add_leagues_players_row_values)
+    
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
+
+    
+
