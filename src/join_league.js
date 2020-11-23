@@ -1,8 +1,6 @@
 import NavBar from './nav_bar.js'
 import LeagueList from './join_league/league_list.js';
 
-// window.history.replaceState({}, document.title, "/join-league");
-
 class JoinLeague extends React.Component {
     render() {
         return <div className='background-filter'>
