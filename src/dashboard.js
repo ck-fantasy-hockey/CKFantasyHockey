@@ -9,7 +9,6 @@ class Dashboard extends React.Component {
     constructor() {
         super();
         this.state = dataFromServer;
-        console.log(this.state)
     }
 
     render() { 

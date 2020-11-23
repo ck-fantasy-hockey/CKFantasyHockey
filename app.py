@@ -75,7 +75,6 @@ def dashboard():
     for i in range(len(data['league_info'])):
         no_of_teams = database.db_functions.count_teams(data['league_info'][i][0])
         data['league_info'][i].append(no_of_teams[0])
-    print(data['league_info'])
     dataFromServer = data
     return render_template('index.j2', page="dashboard", css="style", css2="style", dataFromServer=dataFromServer)
 
