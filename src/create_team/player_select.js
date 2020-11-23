@@ -30,7 +30,7 @@ export default class PlayerSelect extends React.Component {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    {this.props.playersNotSelected.map(element =>
+                                    {this.props.data.playersNotSelected.map(element =>
                                         <PlayerSelectRow key={element.playerID} selectPlayer={this.props.functions.selectPlayer} player={element}/>
                                         )}
                                 </tbody>
@@ -58,7 +58,7 @@ export default class PlayerSelect extends React.Component {
                         </tr>
                         </thead>
                         <tbody>
-                        {this.props.playersSelected.map(element =>
+                        {this.props.data.playersSelected.map(element =>
                                 <PlayerChosenRow key={element.playerID} deselectPlayer={this.props.functions.deselectPlayer} player={element}/>
                                 )}
                         </tbody>
