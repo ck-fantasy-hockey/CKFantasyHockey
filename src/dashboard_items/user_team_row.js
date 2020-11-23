@@ -1,7 +1,7 @@
 export default class UserTeamRow extends React.Component {
 
     handleTeamView = () => {
-        window.location.href = "/team-view?token="+localStorage.getItem('usertoken');
+        window.location.href = "/team-view?token="+localStorage.getItem('usertoken')+"&teamid="+this.props[0];
     }
 
     render() {
