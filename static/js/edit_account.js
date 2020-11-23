@@ -50,7 +50,7 @@ var EditAccount = function (_React$Component) {
                 _this.setState({ email: data.email });
                 _this.setState({ emailgrey: true });
                 var element = React.createElement(
-                    'p',
+                    'h3',
                     { className: 'email-response' },
                     'email updated'
                 );

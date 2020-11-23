@@ -43,7 +43,7 @@ class EditAccount extends React.Component {
         .then(data => {
             this.setState({email: data.email})
             this.setState({emailgrey: true})
-            const element = <p className="email-response">email updated</p>;
+            const element = <h3 className="email-response">email updated</h3>;
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
         })
     }
