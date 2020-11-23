@@ -73,6 +73,18 @@ def check_login(user_info):
         return True
     return False
 
+# pulls user info for dashboard
+def user_info(username):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT Users.username, Users.email, COUNT(Teams.userID) FROM Users LEFT JOIN Teams ON Users.UserID = Teams.userID WHERE userName = %s"
+    values = (username,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()[0]
+    cursor.close()
+    cnx.close()
+    return results
+
 # inserts player data via NHL API
 def insert_player_data(players):
     cnx = mysql.connector.connect(**config)

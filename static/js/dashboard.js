@@ -20,7 +20,27 @@ var Dashboard = function (_React$Component) {
     function Dashboard() {
         _classCallCheck(this, Dashboard);
 
-        return _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).call(this));
+
+        _this.pullData = function () {
+            var url = "/pull-dashboard";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(localStorage.getItem('usertoken'))
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                console.log(data);
+            });
+        };
+
+        _this.state = {};
+        _this.pullData();
+        console.log(localStorage.getItem('usertoken'));
+        return _this;
     }
 
     _createClass(Dashboard, [{

@@ -124,6 +124,15 @@ def submit_signup():
         database.db_functions.insert_user(sent_info)
         return jsonify({'response': True})
 
+@app.route('/pull-dashboard', methods=['POST'])
+def pull_dashboard():
+    username = jwt.decode(request.get_json(), app.config['SECRET_KEY'])['username']
+    user_info = database.db_functions.user_info(username)
+    # user_leagues = database.db_functions.user_leagues(username)
+    # user_teams = database.db_functions.create_league(username)
+    print(user_info)
+    
+
 @app.route('/add-new-league', methods=['POST'])
 def add_new_league():
     """Adds a new league to the database"""

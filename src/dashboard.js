@@ -7,6 +7,27 @@ import data from '../json/data.js'
 // window.history.replaceState({}, document.title, "/dashboard");
 
 class Dashboard extends React.Component {
+    constructor() {
+        super();
+        this.state = {};
+        this.pullData();
+    }
+
+    pullData = () => {
+        const url = "/pull-dashboard"
+        fetch(url, {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(localStorage.getItem('usertoken'))
+        })
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
+
     render() {
         return <div className='background-filter'>
             <NavBar />
@@ -21,6 +42,7 @@ class Dashboard extends React.Component {
         </div>
     }
 }
+
 
 ReactDOM.render(
     <Dashboard />,
