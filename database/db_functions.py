@@ -169,7 +169,7 @@ def create_new_team(new_team: dict) -> bool:
     
     # Create the row in the Teams Table
     cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor()
+    cursor = cnx.cursor(buffered=True)
     insert_teams_query =  'INSERT INTO teams (teamName, userID, leagueID) VALUES ('
     insert_teams_query += '%s, %s, %s);'
     insert_teams_values = (new_team['teamName'], user_id, new_team['leagueID'])
@@ -185,6 +185,7 @@ def create_new_team(new_team: dict) -> bool:
     for player in new_team['playersSelected']:
         add_teams_players_row_query = 'INSERT INTO TeamsPlayers (teamID, playerID) VALUES (%s, %s);'
         add_teams_players_row_values = (team_id, player['playerID'])
+        print(add_teams_players_row_values)
         cursor.execute(add_teams_players_row_query, add_teams_players_row_values)
 
     # Add all the relationships between players and the current league in LeaguesPlayers
