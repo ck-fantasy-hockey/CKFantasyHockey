@@ -12,7 +12,8 @@ class CreateTeam extends React.Component {
                 updateTeamName: this.updateTeamName,
                 updatePlayers: this.updatePlayers,
                 selectPlayer: this.selectPlayer,
-                deselectPlayer: this.deselectPlayer
+                deselectPlayer: this.deselectPlayer,
+                handleNewTeam: this.handleNewTeam
             },
             data: {
                 teamName: '',

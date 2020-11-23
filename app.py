@@ -130,6 +130,13 @@ def add_new_league():
     database.db_functions.create_league(request.get_json())
     return jsonify({'response': True})
 
+@app.route('/add-new-team', methods=['POST'])
+def add_new_team():
+    """Adds a new team to the database"""
+    sent_info = json.loads(request.get_json())
+    
+    return jsonify({'response': True})
+
 if __name__ == '__main__':
     # Will set port to 5000 on local machine, but allow Heroku to bind on deployment.
     port = int(os.environ.get('PORT', 5000))
