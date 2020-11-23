@@ -22,7 +22,6 @@ export default class UserInfo extends React.Component {
         </div>
     </div>
     <div className="team-info-subheader">
-    {/* <a href='/account-page'></a><button className="btn">Edit Account</button> */}
     <button type="submit" className="button button_wide" onClick={this.handleEditAccount}>Edit Account</button>
     </div>
 </div> 
