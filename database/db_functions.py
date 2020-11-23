@@ -113,7 +113,8 @@ def select_all_players():
     results = cursor.fetchall()
     cursor.close()
     cnx.close()
-    print results()
+    print(results)
+    return results
     
 
 # Creates a new league in the database
