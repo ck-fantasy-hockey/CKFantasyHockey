@@ -38,7 +38,7 @@ var TeamAttributes = function (_React$Component) {
                     React.createElement(
                         'div',
                         { className: 'team-info-text' },
-                        React.createElement(TeamAttributesForm, null)
+                        React.createElement(TeamAttributesForm, this.props)
                     )
                 )
             );

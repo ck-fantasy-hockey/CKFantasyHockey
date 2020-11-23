@@ -39,7 +39,7 @@ var PlayerChosenRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.state.player.name
+                    this.state.player.playerName
                 ),
                 React.createElement(
                     "td",
@@ -49,12 +49,12 @@ var PlayerChosenRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.state.player.wins
+                    this.state.player.goals
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.state.player.losses
+                    this.state.player.assists
                 ),
                 React.createElement(
                     "td",
