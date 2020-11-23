@@ -16,7 +16,16 @@ var EditAccount = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (EditAccount.__proto__ || Object.getPrototypeOf(EditAccount)).call(this, props));
 
+        _this.emailInput = function () {
+            _this.setState({ email: '' });
+        };
+
+        _this.blurEmail = function () {
+            _this.setState({ emailgrey: true });
+        };
+
         _this.handleEmailInput = function (event) {
+            _this.setState({ emailgrey: false });
             _this.setState({ email: event.target.value });
         };
 
@@ -38,18 +47,23 @@ var EditAccount = function (_React$Component) {
             }).then(function (response) {
                 return response.json();
             }).then(function (data) {
-                console.log(data);
-                // this.setState(data)
+                _this.setState({ email: data.email });
             });
         };
 
-        _this.state = { username: '', email: 'test@test.com', password: '', passwordConfirm: '' };
+        _this.state = { username: dataFromServer.username,
+            email: dataFromServer.email,
+            password: '',
+            passwordConfirm: '',
+            emailgrey: true };
         return _this;
     }
 
     _createClass(EditAccount, [{
         key: 'render',
         value: function render() {
+            var emailgrey = this.state.emailgrey;
+
             return React.createElement(
                 'div',
                 { className: 'background-filter' },
@@ -75,13 +89,16 @@ var EditAccount = function (_React$Component) {
                             'Email Address'
                         ),
                         React.createElement('input', {
+                            className: emailgrey ? "email-grey" : "",
                             text: 'Email Address',
                             ref: 'email',
                             type: 'text',
                             defaultValue: this.state.email,
                             value: this.state.email,
                             onChange: this.handleEmailInput,
-                            errorMessage: 'Email is invalid',
+                            onFocus: this.emailInput
+                            // onBLur={this.blurEmail}
+                            , errorMessage: 'Email is invalid',
                             emptyMessage: 'Email can\'t be empty'
                         }),
                         React.createElement(

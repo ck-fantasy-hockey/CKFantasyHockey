@@ -349,3 +349,13 @@ body {
 .error-message {
     color: red
 }
+
+/* Edit Account Page */
+
+.email-field {
+    color:red;
+}
+
+.email-grey {
+    color: lightgrey;
+}

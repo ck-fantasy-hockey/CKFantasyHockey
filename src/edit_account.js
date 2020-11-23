@@ -3,10 +3,23 @@
 class EditAccount extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', email: 'test@test.com', password: '', passwordConfirm: '' };
+        this.state = { username: dataFromServer.username,
+            email: dataFromServer.email,
+            password: '',
+            passwordConfirm: '',
+            emailgrey: true };
     }
 
+    emailInput = () => {
+        this.setState({email: ''})
+    }
+
+    blurEmail = () => {
+        this.setState({emailgrey: true})
+    } 
+
     handleEmailInput = (event) => {
+        this.setState({emailgrey: false})
         this.setState({ email: event.target.value });
     }
 
@@ -28,12 +41,12 @@ class EditAccount extends React.Component {
         })
         .then((response) => response.json())
         .then(data => {
-            console.log(data)
-            // this.setState(data)
+            this.setState({email: data.email})
         })
     }
 
     render() {
+        const{ emailgrey } = this.state;
         return <div className='background-filter'>
             <div className="account-form">
             <div className="account-title"><h2>Edit Account</h2></div>
@@ -41,12 +54,15 @@ class EditAccount extends React.Component {
             <div className="incorrect-creds"></div>
                 <p>Email Address</p>
                 <input
+                    className={(emailgrey? "email-grey":"")}
                     text="Email Address"
                     ref="email"
                     type="text"
                     defaultValue={this.state.email}
                     value={this.state.email}
                     onChange={this.handleEmailInput}
+                    onFocus={this.emailInput}
+                    // onBLur={this.blurEmail}
                     errorMessage="Email is invalid"
                     emptyMessage="Email can't be empty"
                 />
