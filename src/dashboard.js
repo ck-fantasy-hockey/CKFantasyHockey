@@ -17,9 +17,9 @@ class Dashboard extends React.Component {
             <div className='container'>
                 <div className="split-widgets"></div>
                 <UserInfo data={this.state} />
-                {/* <div className="split-widgets"></div>
-                <UserLeagues data={this.state} />
                 <div className="split-widgets"></div>
+                <UserLeagues data={this.state} />
+                {/* <div className="split-widgets"></div>
                 <UserTeams data={this.state} /> */}
             </div>
         </div> 
