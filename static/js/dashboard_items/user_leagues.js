@@ -14,10 +14,7 @@ var UserLeagues = function (_React$Component) {
     function UserLeagues(props) {
         _classCallCheck(this, UserLeagues);
 
-        var _this = _possibleConstructorReturn(this, (UserLeagues.__proto__ || Object.getPrototypeOf(UserLeagues)).call(this, props));
-
-        console.log(_this.props.data.league_info[0]);
-        return _this;
+        return _possibleConstructorReturn(this, (UserLeagues.__proto__ || Object.getPrototypeOf(UserLeagues)).call(this, props));
     }
 
     _createClass(UserLeagues, [{

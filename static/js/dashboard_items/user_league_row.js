@@ -21,7 +21,7 @@ var UserLeagueRow = function (_React$Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserLeagueRow.__proto__ || Object.getPrototypeOf(UserLeagueRow)).call.apply(_ref, [this].concat(args))), _this), _this.handleLeagueView = function () {
-            window.location.href = "/league-view?token=" + localStorage.getItem('usertoken');
+            window.location.href = "/league-view?token=" + localStorage.getItem('usertoken') + "&leagueid=" + _this.props[0];
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 

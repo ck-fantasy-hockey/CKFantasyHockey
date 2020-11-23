@@ -1,7 +1,7 @@
 export default class UserLeagueRow extends React.Component {
 
     handleLeagueView = () => {
-        window.location.href = "/league-view?token="+localStorage.getItem('usertoken');
+        window.location.href = "/league-view?token="+localStorage.getItem('usertoken')+"&leagueid="+this.props[0];
     }
     
     render() {
