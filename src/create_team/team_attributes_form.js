@@ -1,7 +1,7 @@
 export default class TeamAttributesForm extends React.Component {
     render() {
         return <div className='form'>
-            <form action='/' method='GET'>
+            <form onSubmit={this.props.functions.handleNewTeam} action='/' method='GET'>
             <div className='form-item'>
             <label>Team Name</label>
             <input type="text" name='teamName' onChange={this.props.functions.updateTeamName}></input>
