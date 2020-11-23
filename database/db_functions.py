@@ -74,7 +74,7 @@ def check_login(user_info):
     return False
 
 # updates user email from edit account page
-def udpate_email(sent_info):
+def update_email(sent_info):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
     query = "UPDATE Users SET email = %s WHERE username = %s"
