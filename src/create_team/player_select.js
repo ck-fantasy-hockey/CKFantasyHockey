@@ -23,8 +23,8 @@ export default class PlayerSelect extends React.Component {
                                     <th>Player ID</th>
                                     <th>Name</th>
                                     <th>Position</th>
-                                    <th>Wins</th>
-                                    <th>Losses</th>
+                                    <th>Goals</th>
+                                    <th>Assists</th>
                                     <th>Points</th>
                                     <th>Select</th>
                                 </tr>
@@ -51,8 +51,8 @@ export default class PlayerSelect extends React.Component {
                             <th>Player ID</th>
                             <th>Name</th>
                             <th>Position</th>
-                            <th>Wins</th>
-                            <th>Losses</th>
+                            <th>Goals</th>
+                            <th>Assists</th>
                             <th>Points</th>
                             <th>Selected</th>
                         </tr>
