@@ -3,12 +3,34 @@
 class EditAccount extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: '', email: 'test@email.com', password: '', passwordConfirm: '' };
+        this.state = { username: '', email: 'test@test.com', password: '', passwordConfirm: '' };
+    }
+
+    handleEmailInput = (event) => {
+        this.setState({ email: event.target.value });
     }
 
     handleCancel = (event) => {
         event.preventDefault();
         window.location.href = "/dashboard?token="+localStorage.getItem('usertoken');
+    }
+
+    handleEmailSubmit = (event) => { 
+        event.preventDefault();
+        const userdata = this.state
+        const url = "/update-email"
+        fetch(url, {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(userdata)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+            // this.setState(data)
+        })
     }
 
     render() {
@@ -31,7 +53,7 @@ class EditAccount extends React.Component {
                 <button
                     type="submit"
                     className="button button-wide"
-                    onClick={this.handleSubmit}>
+                    onClick={this.handleEmailSubmit}>
                     UPDATE EMAIL
                 </button>
 
@@ -63,7 +85,7 @@ class EditAccount extends React.Component {
                 <button
                     type="submit"
                     className="button button-wide"
-                    onClick={this.handleSubmit}>
+                    onClick={this.handlePasswordSubmit}>
                     UPDATE PASSWORD
                 </button>
                 <div className="cancel-button">

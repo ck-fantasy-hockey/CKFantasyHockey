@@ -77,6 +77,7 @@ def check_login(user_info):
 def update_email(sent_info):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
+    print(sent_info)
     query = "UPDATE Users SET email = %s WHERE username = %s"
     values = (sent_info['email'], sent_info['username'])
     cursor.execute(query, values)

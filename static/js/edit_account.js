@@ -16,12 +16,34 @@ var EditAccount = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (EditAccount.__proto__ || Object.getPrototypeOf(EditAccount)).call(this, props));
 
+        _this.handleEmailInput = function (event) {
+            _this.setState({ email: event.target.value });
+        };
+
         _this.handleCancel = function (event) {
             event.preventDefault();
             window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
         };
 
-        _this.state = { username: '', email: 'test@email.com', password: '', passwordConfirm: '' };
+        _this.handleEmailSubmit = function (event) {
+            event.preventDefault();
+            var userdata = _this.state;
+            var url = "/update-email";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userdata)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                console.log(data);
+                // this.setState(data)
+            });
+        };
+
+        _this.state = { username: '', email: 'test@test.com', password: '', passwordConfirm: '' };
         return _this;
     }
 
@@ -67,7 +89,7 @@ var EditAccount = function (_React$Component) {
                             {
                                 type: 'submit',
                                 className: 'button button-wide',
-                                onClick: this.handleSubmit },
+                                onClick: this.handleEmailSubmit },
                             'UPDATE EMAIL'
                         ),
                         React.createElement(
@@ -110,7 +132,7 @@ var EditAccount = function (_React$Component) {
                                 {
                                     type: 'submit',
                                     className: 'button button-wide',
-                                    onClick: this.handleSubmit },
+                                    onClick: this.handlePasswordSubmit },
                                 'UPDATE PASSWORD'
                             ),
                             React.createElement(
