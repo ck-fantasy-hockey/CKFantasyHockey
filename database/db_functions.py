@@ -152,6 +152,7 @@ def insert_player_data(players):
     cursor.close()
     cnx.close()
 
+# Creates new league in join league page
 def create_league(new_league: dict):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
@@ -166,6 +167,7 @@ def create_league(new_league: dict):
     cursor.close()
     cnx.close()
 
+# Returns all current leagues in create league page
 def get_all_leagues() -> list:
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
