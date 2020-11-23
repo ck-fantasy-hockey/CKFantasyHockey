@@ -104,6 +104,18 @@ def insert_player_data(players):
     cursor.close()
     cnx.close()
 
+# selects all players from the players table
+def select_all_players():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    select_all_players_query = 'SELECT * FROM Players;'
+    cursor.execute(select_all_players_query)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    print results()
+    
+
 # Creates a new league in the database
 def create_league(new_league: dict):
     cnx = mysql.connector.connect(**config)
