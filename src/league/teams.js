@@ -27,8 +27,8 @@ export default class Teams extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                {this.state.teams.map(element =>
-                    <TeamRow key={element.teamID} {...element}/>
+                {this.props.data.map(element =>
+                    <TeamRow key={element[0]} {...element}/>
                     )}
             </tbody>
         </table>

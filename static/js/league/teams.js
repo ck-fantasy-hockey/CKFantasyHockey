@@ -28,7 +28,7 @@ var Teams = function (_React$Component) {
     _createClass(Teams, [{
         key: 'render',
         value: function render() {
-            this.sortByRank();
+            // this.sortByRank();
             return React.createElement(
                 'div',
                 { className: 'roster' },
@@ -85,8 +85,8 @@ var Teams = function (_React$Component) {
                     React.createElement(
                         'tbody',
                         null,
-                        this.state.teams.map(function (element) {
-                            return React.createElement(TeamRow, Object.assign({ key: element.teamID }, element));
+                        this.props.data.map(function (element) {
+                            return React.createElement(TeamRow, Object.assign({ key: element[0] }, element));
                         })
                     )
                 )

@@ -35,7 +35,8 @@ var LeagueView = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
-                    React.createElement(LeagueInformation, { data: this.state.leaguedata })
+                    React.createElement(LeagueInformation, { data: this.state.leaguedata }),
+                    React.createElement(Teams, { data: this.state.teamdata })
                 )
             );
         }

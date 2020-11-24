@@ -12,10 +12,7 @@ var LeagueInformation = function (_React$Component) {
     function LeagueInformation(props) {
         _classCallCheck(this, LeagueInformation);
 
-        var _this = _possibleConstructorReturn(this, (LeagueInformation.__proto__ || Object.getPrototypeOf(LeagueInformation)).call(this, props));
-
-        console.log(props);
-        return _this;
+        return _possibleConstructorReturn(this, (LeagueInformation.__proto__ || Object.getPrototypeOf(LeagueInformation)).call(this, props));
     }
 
     _createClass(LeagueInformation, [{
