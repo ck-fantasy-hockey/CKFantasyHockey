@@ -14,7 +14,7 @@ var LeagueInformation = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (LeagueInformation.__proto__ || Object.getPrototypeOf(LeagueInformation)).call(this, props));
 
-        _this.state = _this.props.data.leagues[0];
+        console.log(props);
         return _this;
     }
 
@@ -31,25 +31,25 @@ var LeagueInformation = function (_React$Component) {
                         "h1",
                         null,
                         "League: ",
-                        this.state.name
+                        this.props.data[1]
                     ),
                     React.createElement(
                         "p",
                         null,
                         "League ID: ",
-                        this.state.leagueID
+                        this.props.data[0]
                     ),
                     React.createElement(
                         "p",
                         null,
                         "Teams: ",
-                        this.state.teams
+                        this.props.data[2]
                     ),
                     React.createElement(
                         "p",
                         null,
                         "Season End Date: ",
-                        this.state.seasonEndDate
+                        this.props.data[3]
                     )
                 )
             );

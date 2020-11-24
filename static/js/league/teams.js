@@ -22,9 +22,6 @@ var Teams = function (_React$Component) {
             });
         };
 
-        _this.state = {
-            teams: _this.props.data.leagueInformation
-        };
         return _this;
     }
 

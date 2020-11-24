@@ -9,7 +9,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import Teams from './league/teams.js';
 import LeagueInformation from './league/league_information.js';
 import NavBar from './nav_bar.js';
-import data from '../json/data.js';
 
 // window.history.replaceState({}, document.title, "/league-view");
 
@@ -19,7 +18,11 @@ var LeagueView = function (_React$Component) {
     function LeagueView() {
         _classCallCheck(this, LeagueView);
 
-        return _possibleConstructorReturn(this, (LeagueView.__proto__ || Object.getPrototypeOf(LeagueView)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (LeagueView.__proto__ || Object.getPrototypeOf(LeagueView)).call(this));
+
+        _this.state = dataFromServer;
+        console.log(_this.state);
+        return _this;
     }
 
     _createClass(LeagueView, [{
@@ -32,8 +35,7 @@ var LeagueView = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
-                    React.createElement(LeagueInformation, { data: data }),
-                    React.createElement(Teams, { data: data })
+                    React.createElement(LeagueInformation, { data: this.state.leaguedata })
                 )
             );
         }
