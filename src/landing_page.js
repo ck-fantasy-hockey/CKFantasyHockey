@@ -6,7 +6,12 @@ class LandingPage extends React.Component {
         return <div className= 'background-filter'>
             <div className='welcome-content'>
                 <div className='front-page-title'>
-                    <h1>CK Fantasy Hockey</h1>
+                    <div className='title-initials'><span>CK</span></div>
+                    <div className='title-text'>
+                        <span>Fantasy</span>
+                        <span>Hockey</span>
+                    </div>
+
                 </div> 
                 <Signup />
                 <div className='footer'>
