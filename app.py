@@ -86,7 +86,6 @@ def team_view():
 @app.route('/league-view')
 @token_required
 def league_view():
-    username = jwt.decode(request.args.get('token'), app.config['SECRET_KEY'])['username']
     leagueid = request.args.get('leagueid')
     leaguedata = database.db_functions.league_info(leagueid)
     teamdata = database.db_functions.teams_in_league(leagueid)
