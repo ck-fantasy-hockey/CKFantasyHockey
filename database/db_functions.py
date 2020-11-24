@@ -221,7 +221,7 @@ def get_roster_for_player_team(teamID: int) -> dict:
     cursor = cnx.cursor(dictionary=True)
     team_roster_query = """
     SELECT p.playerID as playerID, team, status, playerName,
-    position, gamesPlayed, goals, assists, shootoutGoals, hatTricks, 
+    position, gamesPlayed, points, goals, assists, shootoutGoals, hatTricks, 
     plusMinus, pointsPerGame, shorthandedGoals, penaltyMinutes, blocks, 
     wins, losses, overtimeLosses, shutOuts, goalsAllowedAverage, goalsAllowed, 
     saves, savePercentage, minutesPlayed  FROM teamsplayers
@@ -235,6 +235,11 @@ def get_roster_for_player_team(teamID: int) -> dict:
     results = cursor.fetchall()
     cursor.close()
     cnx.close()
+
+    # fix floating points that come back for goalsAllowedAverage, savePercentage
+    for result in results:
+        result['goalsAllowedAverage'] = str(result['goalsAllowedAverage'])
+        result['savePercentage'] = str(result['savePercentage'])
     return results
 
 # Get league information from team ID
@@ -267,7 +272,7 @@ def get_team_name_from_team_id(teamID: int) -> str:
     results = cursor.fetchone()
     cursor.close()
     cnx.close()
-    return results
+    return results['teamname']
 
 # Creates a new league in the database
 def create_league(new_league: dict):
