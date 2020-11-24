@@ -31,9 +31,27 @@ var LandingPage = function (_React$Component) {
                         'div',
                         { className: 'front-page-title' },
                         React.createElement(
-                            'h1',
-                            null,
-                            'CK Fantasy Hockey'
+                            'div',
+                            { className: 'title-initials' },
+                            React.createElement(
+                                'span',
+                                null,
+                                'CK'
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'title-text' },
+                            React.createElement(
+                                'span',
+                                null,
+                                'Fantasy'
+                            ),
+                            React.createElement(
+                                'span',
+                                null,
+                                'Hockey'
+                            )
                         )
                     ),
                     React.createElement(Signup, null),
