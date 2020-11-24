@@ -62,7 +62,7 @@ class EditAccount extends React.Component {
         let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         // if password do not match it displays error
         if (passMatch === false) {
-            const element = <p className="incorrect-text">Passwords do not match</p>;
+            const element = <h3 className="password-match">Passwords do not match</h3>;
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             return
         }
@@ -127,7 +127,7 @@ class EditAccount extends React.Component {
                     minCharacters="8"
                     requireCapitals="1"
                     requireNumbers="1"
-                    value={this.state.passsword}
+                    value={this.state.password}
                     emptyMessage="Password is invalid"
                     onChange={this.handlePasswordInput}
                 />
@@ -137,7 +137,7 @@ class EditAccount extends React.Component {
                     ref="passwordConfirm"
                     type="password"
                     validate={this.isConfirmedPassword}
-                    value={this.state.confirmPassword}
+                    value={this.state.passwordConfirm}
                     onChange={this.handleConfirmPasswordInput}
                     emptyMessage="Please confirm your password"
                     errorMessage="Passwords don't match"
