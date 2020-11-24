@@ -98,6 +98,8 @@ var EditAccount = function (_React$Component) {
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
                 _this.setState({ password: '' });
                 _this.setState({ passwordConfirm: '' });
+                _this.handleConfirmPasswordInput();
+                console.log(_this.state);
             });
         };
 

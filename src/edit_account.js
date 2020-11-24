@@ -80,6 +80,8 @@ class EditAccount extends React.Component {
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             this.setState({password: ''})
             this.setState({passwordConfirm: ''})
+            this.handleConfirmPasswordInput();
+            console.log(this.state)
         })
     }
 
