@@ -95,6 +95,17 @@ def update_email(sent_info):
     cursor.close()
     cnx.close()
 
+# updates user password from edit account page
+def update_password(sent_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "UPDATE Users SET password = %s WHERE userName = %s"
+    values = (sent_info['password'], sent_info['username'])
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
 # pulls user info for dashboard
 def user_info(userid):
     cnx = mysql.connector.connect(**config)

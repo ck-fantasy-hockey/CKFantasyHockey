@@ -28,6 +28,14 @@ class EditAccount extends React.Component {
         window.location.href = "/dashboard?token="+localStorage.getItem('usertoken');
     }
 
+    handlePasswordInput = (event) => {
+        this.setState({password: event.target.value})
+    }
+
+    handleConfirmPasswordInput = (event) => {
+        this.setState({passwordConfirm: event.target.value})
+    }
+
     handleEmailSubmit = (event) => { 
         event.preventDefault();
         const userdata = this.state
@@ -46,6 +54,40 @@ class EditAccount extends React.Component {
             const element = <h3 className="email-response">email updated</h3>;
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
         })
+    }
+
+    handlePasswordSubmit = (event) => {
+        event.preventDefault();
+        const userdata = this.state
+        let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
+        // if password do not match it displays error
+        if (passMatch === false) {
+            const element = <p className="incorrect-text">Passwords do not match</p>;
+            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            return
+        }
+        const url = "/update-password"
+        fetch(url, {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(userdata)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            const element = <h3 className="email-response">password updated</h3>;
+            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            this.setState({password: ''})
+            this.setState({passwordConfirm: ''})
+        })
+    }
+
+    checkPasswords = (password1, password2) =>{
+        if (password1 === password2) {
+            return true
+        }
+        return false
     }
 
     render() {

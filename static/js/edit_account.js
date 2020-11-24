@@ -34,6 +34,14 @@ var EditAccount = function (_React$Component) {
             window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
         };
 
+        _this.handlePasswordInput = function (event) {
+            _this.setState({ password: event.target.value });
+        };
+
+        _this.handleConfirmPasswordInput = function (event) {
+            _this.setState({ passwordConfirm: event.target.value });
+        };
+
         _this.handleEmailSubmit = function (event) {
             event.preventDefault();
             var userdata = _this.state;
@@ -56,6 +64,48 @@ var EditAccount = function (_React$Component) {
                 );
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             });
+        };
+
+        _this.handlePasswordSubmit = function (event) {
+            event.preventDefault();
+            var userdata = _this.state;
+            var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
+            // if password do not match it displays error
+            if (passMatch === false) {
+                var element = React.createElement(
+                    'p',
+                    { className: 'incorrect-text' },
+                    'Passwords do not match'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                return;
+            }
+            var url = "/update-password";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userdata)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                var element = React.createElement(
+                    'h3',
+                    { className: 'email-response' },
+                    'password updated'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                _this.setState({ password: '' });
+                _this.setState({ passwordConfirm: '' });
+            });
+        };
+
+        _this.checkPasswords = function (password1, password2) {
+            if (password1 === password2) {
+                return true;
+            }
+            return false;
         };
 
         _this.state = { username: dataFromServer.username,

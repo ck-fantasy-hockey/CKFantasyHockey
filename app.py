@@ -149,7 +149,13 @@ def update_email():
     sent_info = request.get_json()
     database.db_functions.update_email(sent_info)
     return jsonify({'email': sent_info['email']})
-    
+
+@app.route('/update-password', methods=['POST'])
+def update_password():
+    sent_info = request.get_json()
+    print(sent_info)
+    database.db_functions.update_password(sent_info)
+    return jsonify({'password': True})
 
 @app.route('/add-new-league', methods=['POST'])
 def add_new_league():
