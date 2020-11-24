@@ -26,17 +26,17 @@ var GoalieRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.name
+                    this.props.playerName
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.team
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.status
                 ),
                 React.createElement(
                     "td",
@@ -51,67 +51,67 @@ var GoalieRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.gamesPlayed
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.goals
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.assists
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.points
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.wins
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.losses
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.overtimeLosses
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.shutOuts
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.goalsAllowedAverage
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.goalsAllowed
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.saves
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.savePercentage
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.minutesPlayed
                 ),
                 React.createElement(
                     "td",

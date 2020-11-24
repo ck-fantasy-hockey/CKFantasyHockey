@@ -21,7 +21,7 @@ var UserTeamRow = function (_React$Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserTeamRow.__proto__ || Object.getPrototypeOf(UserTeamRow)).call.apply(_ref, [this].concat(args))), _this), _this.handleTeamView = function () {
-            window.location.href = "/team-view?token=" + localStorage.getItem('usertoken') + "&teamid=" + _this.props[0];
+            window.location.href = "/team-view?token=" + localStorage.getItem('usertoken') + "&teamID=" + _this.props[0];
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 

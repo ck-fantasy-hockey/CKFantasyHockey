@@ -26,17 +26,17 @@ var PlayerRow = function (_React$Component) {
                 React.createElement(
                     'td',
                     null,
-                    this.props.name
+                    this.props.playerName
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.team
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.status
                 ),
                 React.createElement(
                     'td',
@@ -51,57 +51,57 @@ var PlayerRow = function (_React$Component) {
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.gamesPlayed
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.goals
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.assists
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.points
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.shootoutGoals
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.hatTricks
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.plusMinus
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.pointsPerGame
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.shorthandedGoals
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.penaltyMinutes
                 ),
                 React.createElement(
                     'td',
                     null,
-                    '-'
+                    this.props.blocks
                 ),
                 React.createElement(
                     'td',

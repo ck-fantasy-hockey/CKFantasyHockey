@@ -9,13 +9,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var TeamInformation = function (_React$Component) {
     _inherits(TeamInformation, _React$Component);
 
-    function TeamInformation(props) {
+    function TeamInformation() {
         _classCallCheck(this, TeamInformation);
 
-        var _this = _possibleConstructorReturn(this, (TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call(this, props));
-
-        _this.state = _this.props.data.teamInformation;
-        return _this;
+        return _possibleConstructorReturn(this, (TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).apply(this, arguments));
     }
 
     _createClass(TeamInformation, [{
@@ -30,7 +27,7 @@ var TeamInformation = function (_React$Component) {
                     React.createElement(
                         "div",
                         { className: "team-info-header" },
-                        React.createElement("img", { className: "team-info-image", src: '/static/img/' + this.state.teamLogo })
+                        React.createElement("img", { className: "team-info-image", src: '/static/img/hockey1_unsplash.jpg' })
                     ),
                     React.createElement(
                         "div",
@@ -38,25 +35,25 @@ var TeamInformation = function (_React$Component) {
                         React.createElement(
                             "h1",
                             null,
-                            this.state.teamName
+                            this.props.teamName
                         ),
                         React.createElement(
                             "p",
                             null,
-                            "Created: ",
-                            this.state.createdOn
+                            "Season Ends: ",
+                            this.props.leagueInfo.seasonEnds
                         ),
                         React.createElement(
                             "p",
                             null,
                             "League: ",
-                            this.state.leagueName
+                            this.props.leagueInfo.leagueName
                         ),
                         React.createElement(
                             "p",
                             null,
                             "League ID: ",
-                            this.state.leagueID
+                            this.props.leagueInfo.leagueID
                         )
                     )
                 ),
