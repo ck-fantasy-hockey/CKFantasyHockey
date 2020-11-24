@@ -24,32 +24,32 @@ var TeamRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.rank
+                    "-"
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.teamID
+                    this.props[0]
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.teamName
+                    this.props[1]
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.userName
+                    this.props[2]
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.wins
+                    "-"
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.losses
+                    "-"
                 )
             );
         }

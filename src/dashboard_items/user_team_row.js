@@ -11,10 +11,10 @@ export default class UserTeamRow extends React.Component {
             </td>
             <td>{this.props[0]}</td>
             <td>{this.props[1]}</td>
-            <td>{this.props.rank}</td>
-            <td>{this.props.win}</td>
-            <td>{this.props.loss}</td>
-            <td>{this.props.createdOn}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
             <td>{this.props[2]}</td>
         </tr>
     }

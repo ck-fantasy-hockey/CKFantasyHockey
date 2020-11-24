@@ -2,9 +2,6 @@ import TeamRow from './team_row.js'
 export default class Teams extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            teams: this.props.data.leagueInformation
-        }
     }
 
     sortByRank = () => {
@@ -12,7 +9,7 @@ export default class Teams extends React.Component {
     }
 
     render() {
-        this.sortByRank();
+        // this.sortByRank();
         return <div className='roster'>
             <div className='roster-title'>
                 <h2>Teams</h2>
@@ -30,8 +27,8 @@ export default class Teams extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                {this.state.teams.map(element =>
-                    <TeamRow key={element.teamID} {...element}/>
+                {this.props.data.map(element =>
+                    <TeamRow key={element[0]} {...element}/>
                     )}
             </tbody>
         </table>

@@ -22,16 +22,13 @@ var Teams = function (_React$Component) {
             });
         };
 
-        _this.state = {
-            teams: _this.props.data.leagueInformation
-        };
         return _this;
     }
 
     _createClass(Teams, [{
         key: 'render',
         value: function render() {
-            this.sortByRank();
+            // this.sortByRank();
             return React.createElement(
                 'div',
                 { className: 'roster' },
@@ -88,8 +85,8 @@ var Teams = function (_React$Component) {
                     React.createElement(
                         'tbody',
                         null,
-                        this.state.teams.map(function (element) {
-                            return React.createElement(TeamRow, Object.assign({ key: element.teamID }, element));
+                        this.props.data.map(function (element) {
+                            return React.createElement(TeamRow, Object.assign({ key: element[0] }, element));
                         })
                     )
                 )

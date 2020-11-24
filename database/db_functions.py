@@ -187,6 +187,33 @@ def insert_player_data(players):
     cursor.close()
     cnx.close()
 
+# pulls league info for league-view page
+def league_info(leagueid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT l.leagueid, l.leaguename, count(t.leagueid), l.seasonEnds FROM Leagues AS l LEFT JOIN Teams AS t ON l.leagueid = t.leagueid WHERE l.leagueid = %s"
+    values = (leagueid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    results = [list(elem) for elem in results][0]
+    cursor.close()
+    cnx.close()
+    return results
+
+# pulls teams info in league for league-view page
+def teams_in_league(leagueid):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT t.teamid, t.teamname, u.username FROM Teams AS t LEFT JOIN Users AS u ON t.userid = u.userid WHERE t.leagueid = %s"
+    values = (leagueid,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    results = [list(elem) for elem in results]
+    print(results)
+    cursor.close()
+    cnx.close()
+    return results
+
 # selects all players from the players table
 def select_all_players():
     cnx = mysql.connector.connect(**config)

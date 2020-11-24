@@ -95,6 +95,10 @@ def team_view():
 @app.route('/league-view')
 @token_required
 def league_view():
+    leagueid = request.args.get('leagueid')
+    leaguedata = database.db_functions.league_info(leagueid)
+    teamdata = database.db_functions.teams_in_league(leagueid)
+    dataFromServer = {'leaguedata': leaguedata, 'teamdata': teamdata}
     return render_template('index.j2', page="league_view", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/join-league')

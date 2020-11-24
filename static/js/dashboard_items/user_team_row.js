@@ -53,22 +53,22 @@ var UserTeamRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.rank
+                    "-"
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.win
+                    "-"
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.loss
+                    "-"
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.createdOn
+                    "-"
                 ),
                 React.createElement(
                     "td",
