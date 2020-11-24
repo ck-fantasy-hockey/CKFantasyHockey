@@ -33,9 +33,11 @@ body {
 
 /* FRONT PAGE */
 .front-page-title {
-    padding: 40px;
+    padding: 10px;
     color: rgb(255, 255, 255);
     flex: 1;
+    display: flex;
+    justify-content: left;
     text-align: center;
     font-size: 3rem;
     text-shadow: 2px 2px 20px rgba(37, 37, 37, 1);
@@ -44,6 +46,42 @@ body {
         rgba(37, 37, 37, 0.2) 90%, 
         rgba(37, 37, 37, 0.0) 100%
     );
+}
+
+.title-initials {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3.0em;
+    padding-left: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1em;
+    background-image: linear-gradient( 90deg,
+        rgb(110, 175, 250) 0%,
+        rgb(255, 255, 255) 100%
+    );
+    background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.title-text {
+    display: flex;
+    flex-direction: column;
+    flex: 100;
+    padding-left: 15px;
+    align-items: flex-start;
+    justify-content: center;
+    line-height: .9em;
+    translate: 0 0.15em;
+}
+
+.title-text span {
+    margin: 0;
+    font-size: 1.1em;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .welcome-content {
