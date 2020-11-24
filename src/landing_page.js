@@ -20,7 +20,7 @@ class LandingPage extends React.Component {
                     <div className='footer-center'>
                         <div className='tagline'>
                             <h1>Sign up and join</h1>
-                            <h4>the most exciting platform in fantasy sports!</h4>
+                            <h4>the most exciting platform in fantasy hockey!</h4>
                         </div>
                     </div>
                     <div className='footer-right'>

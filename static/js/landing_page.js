@@ -84,7 +84,7 @@ var LandingPage = function (_React$Component) {
                                 React.createElement(
                                     'h4',
                                     null,
-                                    'the most exciting platform in fantasy sports!'
+                                    'the most exciting platform in fantasy hockey!'
                                 )
                             )
                         ),
