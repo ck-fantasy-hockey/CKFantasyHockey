@@ -12,15 +12,10 @@ import GoalieRow from './goalie_row.js';
 var Roster = function (_React$Component) {
     _inherits(Roster, _React$Component);
 
-    function Roster(props) {
+    function Roster() {
         _classCallCheck(this, Roster);
 
-        var _this = _possibleConstructorReturn(this, (Roster.__proto__ || Object.getPrototypeOf(Roster)).call(this, props));
-
-        _this.state = {
-            players: _this.props.data.players
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (Roster.__proto__ || Object.getPrototypeOf(Roster)).apply(this, arguments));
     }
 
     _createClass(Roster, [{
@@ -280,8 +275,8 @@ var Roster = function (_React$Component) {
                         React.createElement(
                             'tbody',
                             null,
-                            this.state.players.map(function (element) {
-                                if (element.position !== "G") return React.createElement(PlayerRow, Object.assign({ key: element.playerID }, element));
+                            this.props.players.map(function (element) {
+                                if (element.position !== "Goalie") return React.createElement(PlayerRow, Object.assign({ key: element.playerID }, element));
                             })
                         )
                     )
@@ -565,8 +560,8 @@ var Roster = function (_React$Component) {
                         React.createElement(
                             'tbody',
                             null,
-                            this.state.players.map(function (element) {
-                                if (element.position === "G") return React.createElement(GoalieRow, Object.assign({ key: element.playerID }, element));
+                            this.props.players.map(function (element) {
+                                if (element.position === "Goalie") return React.createElement(GoalieRow, Object.assign({ key: element.playerID }, element));
                             })
                         )
                     )
