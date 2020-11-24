@@ -13,7 +13,7 @@ export default class UserLeagueRow extends React.Component {
             <td>{this.props[1]}</td>
             <td>{this.props[3]}</td>
             <td>{this.props[2]}</td>
-            <td>{this.props.leader}</td>
+            <td>-</td>
         </tr>
     }
 }

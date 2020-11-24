@@ -63,7 +63,7 @@ var UserLeagueRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.leader
+                    "-"
                 )
             );
         }
