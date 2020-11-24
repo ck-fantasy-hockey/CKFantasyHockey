@@ -1,7 +1,22 @@
 export default class UserTeamRow extends React.Component {
 
-    handleTeamView = () => {
-        window.location.href = "/team-view?token="+localStorage.getItem('usertoken')+"&teamid="+this.props[0];
+    handleTeamView = (event) => {
+        event.preventDefault();
+        const pageData = {
+            teamID: this.props[0]
+        }
+        const url = "/team-view?token=" + localStorage.getItem('usertoken');
+        fetch(url, {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(pageData)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data)
+        })
     }
 
     render() {
