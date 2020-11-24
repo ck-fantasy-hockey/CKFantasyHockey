@@ -20,73 +20,58 @@ var UserTeamRow = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserTeamRow.__proto__ || Object.getPrototypeOf(UserTeamRow)).call.apply(_ref, [this].concat(args))), _this), _this.handleTeamView = function (event) {
-            event.preventDefault();
-            var pageData = {
-                teamID: _this.props[0]
-            };
-            var url = "/team-view?token=" + localStorage.getItem('usertoken');
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(pageData)
-            }).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                console.log(data);
-            });
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserTeamRow.__proto__ || Object.getPrototypeOf(UserTeamRow)).call.apply(_ref, [this].concat(args))), _this), _this.handleTeamView = function () {
+            window.location.href = "/team-view?token=" + localStorage.getItem('usertoken') + "&teamID=" + _this.props[0];
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(UserTeamRow, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'tr',
+                "tr",
                 null,
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     React.createElement(
-                        'button',
+                        "button",
                         { onClick: this.handleTeamView },
-                        'View'
+                        "View"
                     )
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props[0]
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props[1]
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.rank
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.win
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.loss
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props.createdOn
                 ),
                 React.createElement(
-                    'td',
+                    "td",
                     null,
                     this.props[2]
                 )
