@@ -27,7 +27,6 @@ dataFromServer = {}
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        print(request.args)
         token = request.args.get('token')
 
         if not token:
@@ -78,9 +77,19 @@ def dashboard():
     dataFromServer = data
     return render_template('index.j2', page="dashboard", css="style", css2="style", dataFromServer=dataFromServer)
 
-@app.route('/team-view')
+@app.route('/team-view', methods=['GET'])
 @token_required
 def team_view():
+
+    teamID = request.args.get('teamID')
+    players = database.db_functions.get_roster_for_player_team(teamID)
+    team_name = database.db_functions.get_team_name_from_team_id(teamID)
+    league_info = database.db_functions.get_league_information_from_team_id(teamID)
+    dataFromServer = {
+        'players': players,
+        'teamName': team_name,
+        'leagueInfo': league_info
+    }
     return render_template('index.j2', page="team_view", css="style", css2="style", dataFromServer=dataFromServer)
 
 @app.route('/league-view')
@@ -92,7 +101,6 @@ def league_view():
 @token_required
 def join_league():
     leagues = database.db_functions.get_all_leagues()
-    print(leagues)
     dataFromServer = {
         "leagues": leagues
     }
