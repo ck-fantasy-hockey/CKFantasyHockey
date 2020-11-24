@@ -112,6 +112,10 @@ def create_team():
 @app.route('/account-page')
 @token_required
 def account_page():
+    username = jwt.decode(request.args.get('token'), app.config['SECRET_KEY'])['username']
+    email = database.db_functions.user_email(username)[0]
+    dataFromServer = {'username': username, 'email': email}
+
     return render_template('index.j2', page="edit_account", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
 @app.route('/login')
@@ -139,7 +143,18 @@ def submit_signup():
     else:
         database.db_functions.insert_user(sent_info)
         return jsonify({'response': True})
-    
+
+@app.route('/update-email', methods=['POST'])
+def update_email():
+    sent_info = request.get_json()
+    database.db_functions.update_email(sent_info)
+    return jsonify({'email': sent_info['email']})
+
+@app.route('/update-password', methods=['POST'])
+def update_password():
+    sent_info = request.get_json()
+    database.db_functions.update_password(sent_info)
+    return jsonify({'password': True})
 
 @app.route('/add-new-league', methods=['POST'])
 def add_new_league():

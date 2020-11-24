@@ -16,18 +16,111 @@ var EditAccount = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (EditAccount.__proto__ || Object.getPrototypeOf(EditAccount)).call(this, props));
 
+        _this.emailInput = function () {
+            _this.setState({ email: '' });
+        };
+
+        _this.blurEmail = function () {
+            _this.setState({ emailgrey: true });
+        };
+
+        _this.handleEmailInput = function (event) {
+            _this.setState({ emailgrey: false });
+            _this.setState({ email: event.target.value });
+        };
+
         _this.handleCancel = function (event) {
             event.preventDefault();
             window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
         };
 
-        _this.state = { username: '', email: '', password: '', passwordConfirm: '' };
+        _this.handlePasswordInput = function (event) {
+            _this.setState({ password: event.target.value });
+        };
+
+        _this.handleConfirmPasswordInput = function (event) {
+            _this.setState({ passwordConfirm: event.target.value });
+        };
+
+        _this.handleEmailSubmit = function (event) {
+            event.preventDefault();
+            var userdata = _this.state;
+            var url = "/update-email";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userdata)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                _this.setState({ email: data.email });
+                _this.setState({ emailgrey: true });
+                var element = React.createElement(
+                    'h3',
+                    { className: 'email-response' },
+                    'email updated'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            });
+        };
+
+        _this.handlePasswordSubmit = function (event) {
+            event.preventDefault();
+            var userdata = _this.state;
+            var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
+            // if password do not match it displays error
+            if (passMatch === false) {
+                var element = React.createElement(
+                    'h3',
+                    { className: 'password-match' },
+                    'Passwords do not match'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                return;
+            }
+            var url = "/update-password";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userdata)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                var element = React.createElement(
+                    'h3',
+                    { className: 'email-response' },
+                    'password updated'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                _this.setState({ password: '' });
+                _this.setState({ passwordConfirm: '' });
+            });
+        };
+
+        _this.checkPasswords = function (password1, password2) {
+            if (password1 === password2) {
+                return true;
+            }
+            return false;
+        };
+
+        _this.state = { username: dataFromServer.username,
+            email: dataFromServer.email,
+            password: '',
+            passwordConfirm: '',
+            emailgrey: true };
         return _this;
     }
 
     _createClass(EditAccount, [{
         key: 'render',
         value: function render() {
+            var emailgrey = this.state.emailgrey;
+
             return React.createElement(
                 'div',
                 { className: 'background-filter' },
@@ -53,13 +146,16 @@ var EditAccount = function (_React$Component) {
                             'Email Address'
                         ),
                         React.createElement('input', {
+                            className: emailgrey ? "email-grey" : "",
                             text: 'Email Address',
                             ref: 'email',
                             type: 'text',
                             defaultValue: this.state.email,
                             value: this.state.email,
                             onChange: this.handleEmailInput,
-                            errorMessage: 'Email is invalid',
+                            onFocus: this.emailInput
+                            // onBLur={this.blurEmail}
+                            , errorMessage: 'Email is invalid',
                             emptyMessage: 'Email can\'t be empty'
                         }),
                         React.createElement(
@@ -67,7 +163,7 @@ var EditAccount = function (_React$Component) {
                             {
                                 type: 'submit',
                                 className: 'button button-wide',
-                                onClick: this.handleSubmit },
+                                onClick: this.handleEmailSubmit },
                             'UPDATE EMAIL'
                         ),
                         React.createElement(
@@ -83,7 +179,7 @@ var EditAccount = function (_React$Component) {
                             minCharacters: '8',
                             requireCapitals: '1',
                             requireNumbers: '1',
-                            value: this.state.passsword,
+                            value: this.state.password,
                             emptyMessage: 'Password is invalid',
                             onChange: this.handlePasswordInput
                         }),
@@ -97,7 +193,7 @@ var EditAccount = function (_React$Component) {
                             ref: 'passwordConfirm',
                             type: 'password',
                             validate: this.isConfirmedPassword,
-                            value: this.state.confirmPassword,
+                            value: this.state.passwordConfirm,
                             onChange: this.handleConfirmPasswordInput,
                             emptyMessage: 'Please confirm your password',
                             errorMessage: 'Passwords don\'t match'
@@ -110,7 +206,7 @@ var EditAccount = function (_React$Component) {
                                 {
                                     type: 'submit',
                                     className: 'button button-wide',
-                                    onClick: this.handleSubmit },
+                                    onClick: this.handlePasswordSubmit },
                                 'UPDATE PASSWORD'
                             ),
                             React.createElement(
@@ -119,12 +215,12 @@ var EditAccount = function (_React$Component) {
                                 React.createElement(
                                     'p',
                                     null,
-                                    'Cancel and return to dashboard'
+                                    'Return to dashboard'
                                 ),
                                 React.createElement(
                                     'button',
                                     { type: 'submit', className: 'button button_wide', onClick: this.handleCancel },
-                                    'Cancel'
+                                    'Return'
                                 )
                             )
                         )

@@ -349,3 +349,23 @@ body {
 .error-message {
     color: red
 }
+
+/* Edit Account Page */
+
+.email-grey {
+    color: lightgrey;
+}
+
+.email-response {
+    margin: 0;
+    color: green;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.password-match {
+    text-align: center;
+    color: red;
+    font-size: 1.5em;
+    margin: 0;
+}

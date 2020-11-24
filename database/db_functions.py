@@ -73,6 +73,40 @@ def check_login(user_info):
         return True
     return False
 
+# pulls current user email
+def user_email(username):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT email FROM Users WHERE username = %s"
+    values = (username,)
+    cursor.execute(query, values)
+    results = cursor.fetchall()[0]
+    cursor.close()
+    cnx.close()
+    return results
+
+# updates user email from edit account page
+def update_email(sent_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "UPDATE Users SET email = %s WHERE userName = %s"
+    values = (sent_info['email'], sent_info['username'])
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
+# updates user password from edit account page
+def update_password(sent_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "UPDATE Users SET password = %s WHERE userName = %s"
+    values = (sent_info['password'], sent_info['username'])
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
 # pulls user info for dashboard
 def user_info(userid):
     cnx = mysql.connector.connect(**config)
