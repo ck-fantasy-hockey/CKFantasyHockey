@@ -11,15 +11,16 @@ import TeamInformation from './team/team_information.js';
 import NavBar from './nav_bar.js';
 import data from '../json/data.js';
 
-// window.history.replaceState({}, document.title, "/team-view");
-
 var TeamView = function (_React$Component) {
     _inherits(TeamView, _React$Component);
 
-    function TeamView() {
+    function TeamView(props) {
         _classCallCheck(this, TeamView);
 
-        return _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).call(this, props));
+
+        _this.state = dataFromServer;
+        return _this;
     }
 
     _createClass(TeamView, [{
@@ -32,8 +33,8 @@ var TeamView = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
-                    React.createElement(TeamInformation, { data: data }),
-                    React.createElement(Roster, { data: data })
+                    React.createElement(TeamInformation, this.state),
+                    React.createElement(Roster, this.state)
                 )
             );
         }
