@@ -4,12 +4,32 @@ import Signup from './signup.js'
 class LandingPage extends React.Component {
     render() {
         return <div className= 'background-filter'>
-            <div>
+            <div className='welcome-content'>
                 <div className='front-page-title'>
                     <h1>CK Fantasy Hockey</h1>
                 </div> 
                 <Signup />
+                <div className='footer'>
+                    <div className='footer-left'>
+                        <a href='https://github.com/ck-fantasy-hockey/CKFantasyHockey'><i class="fab fa-github"></i> GitHub</a>
+                        <div className='divider'> </div>
+                        <p className='paragraph-header'>Developed with Pride by:</p>
+                        <p>William Coiner</p>
+                        <p>George Kochera</p>
+                    </div>
+                    <div className='footer-center'>
+                        <div className='tagline'>
+                            <h1>Sign up and join</h1>
+                            <h4>the most exciting platform in fantasy sports!</h4>
+                        </div>
+                    </div>
+                    <div className='footer-right'>
+                        <p>Powered by</p>
+                        <p><i className="fab fa-react"></i><i className="fas fa-flask"></i></p>
+                    </div>
+                </div>
             </div>
+            
         </div>
 
     }

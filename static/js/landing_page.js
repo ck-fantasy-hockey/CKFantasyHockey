@@ -26,7 +26,7 @@ var LandingPage = function (_React$Component) {
                 { className: 'background-filter' },
                 React.createElement(
                     'div',
-                    null,
+                    { className: 'welcome-content' },
                     React.createElement(
                         'div',
                         { className: 'front-page-title' },
@@ -36,7 +36,74 @@ var LandingPage = function (_React$Component) {
                             'CK Fantasy Hockey'
                         )
                     ),
-                    React.createElement(Signup, null)
+                    React.createElement(Signup, null),
+                    React.createElement(
+                        'div',
+                        { className: 'footer' },
+                        React.createElement(
+                            'div',
+                            { className: 'footer-left' },
+                            React.createElement(
+                                'a',
+                                { href: 'https://github.com/ck-fantasy-hockey/CKFantasyHockey' },
+                                React.createElement('i', { 'class': 'fab fa-github' }),
+                                ' GitHub'
+                            ),
+                            React.createElement(
+                                'div',
+                                { className: 'divider' },
+                                ' '
+                            ),
+                            React.createElement(
+                                'p',
+                                { className: 'paragraph-header' },
+                                'Developed with Pride by:'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'William Coiner'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'George Kochera'
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'footer-center' },
+                            React.createElement(
+                                'div',
+                                { className: 'tagline' },
+                                React.createElement(
+                                    'h1',
+                                    null,
+                                    'Sign up and join'
+                                ),
+                                React.createElement(
+                                    'h4',
+                                    null,
+                                    'the most exciting platform in fantasy sports!'
+                                )
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'footer-right' },
+                            React.createElement(
+                                'p',
+                                null,
+                                'Powered by'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                React.createElement('i', { className: 'fab fa-react' }),
+                                React.createElement('i', { className: 'fas fa-flask' })
+                            )
+                        )
+                    )
                 )
             );
         }
