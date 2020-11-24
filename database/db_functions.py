@@ -212,6 +212,13 @@ def select_available_players_in_league(leagueID: int) -> dict:
     cursor.close()
     cnx.close()
     return results
+
+# Pull the specific roster for a players team
+def get_roster_for_player_team(teamID: int) -> dict:
+    cnx = mysql.connctor.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    team_roster_query = """
+    SELECT """
     
 
 # Creates a new league in the database
