@@ -1,5 +1,5 @@
-SELECT p.playerID as playerID, team, status, playerName, position, gamesPlayed, goals, assists, shootoutGoals, hatTricks, plusMinus, pointsPerGame, shorthandedGoals, penaltyMinutes, blocks, wins, losses, overtimeLosses, shutOuts, goalsAllowedAverage, goalsAllowed, saves, savePercentage, minutesPlayed  FROM teamsplayers
+SELECT leagues.leagueID as leagueID, leagueName, seasonEnds FROM leagues
 INNER JOIN (
-    SELECT * FROM players
-    ) AS p ON p.playerID = teamsplayers.playerID
-WHERE teamID = 3
+    SELECT teamID, leagueID FROM teams WHERE teamID = 9
+    ) AS T ON T.leagueID = leagues.leagueID
+LIMIT 0,1;
