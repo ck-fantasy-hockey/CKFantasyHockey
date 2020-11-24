@@ -73,6 +73,7 @@ def check_login(user_info):
         return True
     return False
 
+# pulls current user email
 def user_email(username):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()

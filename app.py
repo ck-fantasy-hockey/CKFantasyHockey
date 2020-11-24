@@ -113,7 +113,7 @@ def create_team():
 @token_required
 def account_page():
     username = jwt.decode(request.args.get('token'), app.config['SECRET_KEY'])['username']
-    email = database.db_functions.user_email(username)
+    email = database.db_functions.user_email(username)[0]
     dataFromServer = {'username': username, 'email': email}
 
     return render_template('index.j2', page="edit_account", css="style", css2="signup_login", dataFromServer=dataFromServer)
@@ -153,7 +153,6 @@ def update_email():
 @app.route('/update-password', methods=['POST'])
 def update_password():
     sent_info = request.get_json()
-    print(sent_info)
     database.db_functions.update_password(sent_info)
     return jsonify({'password': True})
 
