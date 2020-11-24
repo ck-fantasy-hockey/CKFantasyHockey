@@ -215,11 +215,59 @@ def select_available_players_in_league(leagueID: int) -> dict:
 
 # Pull the specific roster for a players team
 def get_roster_for_player_team(teamID: int) -> dict:
-    cnx = mysql.connctor.connect(**config)
+
+    # connect to the database and run the query using the teamID
+    cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor(dictionary=True)
     team_roster_query = """
-    SELECT """
-    
+    SELECT p.playerID as playerID, team, status, playerName,
+    position, gamesPlayed, goals, assists, shootoutGoals, hatTricks, 
+    plusMinus, pointsPerGame, shorthandedGoals, penaltyMinutes, blocks, 
+    wins, losses, overtimeLosses, shutOuts, goalsAllowedAverage, goalsAllowed, 
+    saves, savePercentage, minutesPlayed  FROM teamsplayers
+    INNER JOIN (
+        SELECT * FROM players
+    ) AS p ON p.playerID = teamsplayers.playerID
+    WHERE teamID = %s
+    """
+    team_roster_values = (int(teamID),)
+    cursor.execute(team_roster_query, team_roster_values)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    return results
+
+# Get league information from team ID
+def get_league_information_from_team_id(teamID: int) -> dict:
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    get_league_information_query = """
+    SELECT leagues.leagueID as leagueID, leagueName, seasonEnds FROM leagues
+    INNER JOIN (
+        SELECT teamID, leagueID FROM teams WHERE teamID = %s
+    ) AS T ON T.leagueID = leagues.leagueID
+    LIMIT 0,1"""
+    get_league_information_values = (int(teamID),)
+    cursor.execute(get_league_information_query, get_league_information_values)
+    results = cursor.fetchone()
+    cursor.close()
+    cnx.close()
+
+    # convert league seasonEnds date
+    results['seasonEnds'] = results['seasonEnds'].strftime('%m/%d/%Y')
+    return results
+
+# Get team name from team ID
+def get_team_name_from_team_id(teamID: int) -> str:
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    get_team_name_query = "SELECT teamname FROM teams WHERE teamid = %s LIMIT 0,1"
+    get_team_name_values = (teamID,)
+    cursor.execute(get_team_name_query, get_team_name_values)
+    results = cursor.fetchone()
+    cursor.close()
+    cnx.close()
+    return results
 
 # Creates a new league in the database
 def create_league(new_league: dict):
