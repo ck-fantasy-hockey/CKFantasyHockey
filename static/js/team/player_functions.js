@@ -9,21 +9,25 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var PlayerFunctions = function (_React$Component) {
     _inherits(PlayerFunctions, _React$Component);
 
-    function PlayerFunctions() {
+    function PlayerFunctions(props) {
         _classCallCheck(this, PlayerFunctions);
 
-        return _possibleConstructorReturn(this, (PlayerFunctions.__proto__ || Object.getPrototypeOf(PlayerFunctions)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (PlayerFunctions.__proto__ || Object.getPrototypeOf(PlayerFunctions)).call(this, props));
     }
 
     _createClass(PlayerFunctions, [{
         key: "render",
         value: function render() {
+            var _this2 = this;
+
             return React.createElement(
                 "div",
                 null,
                 React.createElement(
                     "button",
-                    { className: "btn" },
+                    { className: "btn", onClick: function onClick() {
+                            _this2.props.functions.dropPlayer(_this2.props.playerID);
+                        } },
                     React.createElement(
                         "div",
                         { className: "tooltip" },

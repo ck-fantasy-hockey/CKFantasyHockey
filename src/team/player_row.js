@@ -1,6 +1,10 @@
 import PlayerFunctions from './player_functions.js'
 
 export default class PlayerRow extends React.Component {
+    constructor(props) {
+        super(props)
+
+    }
     render() {
         return <tr>
             <td>{this.props.playerName}</td>
@@ -21,7 +25,7 @@ export default class PlayerRow extends React.Component {
             <td>{this.props.blocks}</td>
 
             <td>
-                <PlayerFunctions />
+                <PlayerFunctions {...this.props} />
             </td>
         </tr>
     }

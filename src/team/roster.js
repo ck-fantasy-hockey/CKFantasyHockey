@@ -1,6 +1,10 @@
 import PlayerRow from './player_row.js'
 import GoalieRow from './goalie_row.js'
 export default class Roster extends React.Component {
+    constructor(props) {
+        super(props)
+
+    }
     render() {
         return <div className='roster'>
             <div className='roster-title'>
@@ -35,7 +39,7 @@ export default class Roster extends React.Component {
             <tbody>
             {this.props.players.map(element =>
                     { if (element.position !== "Goalie") 
-                    return <PlayerRow key={element.playerID} {...element}/>
+                    return <PlayerRow key={element.playerID} {...element} functions={this.props.functions}/>
                     }
                     )}
             </tbody>
@@ -72,7 +76,7 @@ export default class Roster extends React.Component {
             <tbody>
                 {this.props.players.map(element =>
                     { if (element.position === "Goalie") 
-                    return <GoalieRow key={element.playerID} {...element}/>
+                    return <GoalieRow key={element.playerID} {...element} functions={this.props.functions}/>
                     }
                     )}
             </tbody>

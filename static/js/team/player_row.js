@@ -11,10 +11,10 @@ import PlayerFunctions from './player_functions.js';
 var PlayerRow = function (_React$Component) {
     _inherits(PlayerRow, _React$Component);
 
-    function PlayerRow() {
+    function PlayerRow(props) {
         _classCallCheck(this, PlayerRow);
 
-        return _possibleConstructorReturn(this, (PlayerRow.__proto__ || Object.getPrototypeOf(PlayerRow)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (PlayerRow.__proto__ || Object.getPrototypeOf(PlayerRow)).call(this, props));
     }
 
     _createClass(PlayerRow, [{
@@ -106,7 +106,7 @@ var PlayerRow = function (_React$Component) {
                 React.createElement(
                     'td',
                     null,
-                    React.createElement(PlayerFunctions, null)
+                    React.createElement(PlayerFunctions, this.props)
                 )
             );
         }

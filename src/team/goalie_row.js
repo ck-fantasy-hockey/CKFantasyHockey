@@ -1,6 +1,9 @@
 import PlayerFunctions from "./player_functions.js";
 
 export default class GoalieRow extends React.Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
         return <tr>
             <td>{this.props.playerName}</td>
@@ -22,7 +25,7 @@ export default class GoalieRow extends React.Component {
             <td>{this.props.savePercentage}</td>
             <td>{this.props.minutesPlayed}</td>
             <td>                
-                <PlayerFunctions />
+                <PlayerFunctions {...this.props} />
             </td>
         </tr>
     }

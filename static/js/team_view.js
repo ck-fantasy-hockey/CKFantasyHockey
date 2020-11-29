@@ -9,7 +9,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import Roster from './team/roster.js';
 import TeamInformation from './team/team_information.js';
 import NavBar from './nav_bar.js';
-import data from '../json/data.js';
 
 var TeamView = function (_React$Component) {
     _inherits(TeamView, _React$Component);
@@ -19,7 +18,14 @@ var TeamView = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).call(this, props));
 
+        _this.dropPlayer = function (playerID) {
+            console.log(playerID);
+        };
+
         _this.state = dataFromServer;
+        _this.state.functions = {
+            dropPlayer: _this.dropPlayer
+        };
         return _this;
     }
 

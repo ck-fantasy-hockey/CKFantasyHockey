@@ -1,7 +1,10 @@
 export default class PlayerFunctions extends React.Component {
+    constructor(props) {
+        super(props)
+    }
     render() {
         return <div>
-                <button className='btn'>
+                <button className='btn' onClick={() => {this.props.functions.dropPlayer(this.props.playerID)}}>
                     <div className="tooltip">
                         <span className="tooltiptext">Drop Player</span>
                         <i className="fas fa-arrow-down"></i>
