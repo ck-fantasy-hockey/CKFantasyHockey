@@ -242,23 +242,26 @@ body {
 /* ROSTER */
 
 .roster table {
-    width: 100%;
+    /* width: 100%; */
     border-collapse: collapse;
     table-layout: fixed;
     color: rgb(0, 0, 0);
 }
 
-.roster td, th {
-    height: 40px;
-}
-
 .roster td {
     text-align: center;
+    white-space: nowrap;
 }
 
 .roster th {
     border-bottom: 1px solid black;
     background-color: rgba(228, 228, 228);
+    padding: 0 20px 0 20px;
+}
+
+.roster th:last-of-type
+{
+    width: 100%
 }
 
 .roster tr:nth-child(even) {
