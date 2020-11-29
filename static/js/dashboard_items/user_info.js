@@ -64,7 +64,7 @@ var UserInfo = function (_React$Component) {
                     { className: "team-info-subheader" },
                     React.createElement(
                         "button",
-                        { type: "submit", className: "button button_wide", onClick: this.handleEditAccount },
+                        { type: "submit", className: "dashboard-button", onClick: this.handleEditAccount },
                         "Edit Account"
                     )
                 )

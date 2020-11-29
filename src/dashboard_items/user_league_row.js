@@ -7,7 +7,7 @@ export default class UserLeagueRow extends React.Component {
     render() {
         return <tr>
             <td>
-                <button onClick={this.handleLeagueView}>View</button>
+                <button className="dashboard-button" onClick={this.handleLeagueView}>View</button>
             </td>
             <td>{this.props[0]}</td>
             <td>{this.props[1]}</td>

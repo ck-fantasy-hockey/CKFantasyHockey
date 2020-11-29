@@ -36,7 +36,7 @@ var UserLeagueRow = function (_React$Component) {
                     null,
                     React.createElement(
                         "button",
-                        { onClick: this.handleLeagueView },
+                        { className: "dashboard-button", onClick: this.handleLeagueView },
                         "View"
                     )
                 ),

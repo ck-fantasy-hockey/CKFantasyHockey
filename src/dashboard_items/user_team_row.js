@@ -7,7 +7,7 @@ export default class UserTeamRow extends React.Component {
     render() {
         return <tr>
             <td>
-                <button onClick={this.handleTeamView}>View</button>
+                <button  className="dashboard-button" onClick={this.handleTeamView}>View</button>
             </td>
             <td>{this.props[0]}</td>
             <td>{this.props[1]}</td>
