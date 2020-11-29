@@ -12,7 +12,7 @@ export default class UserInfo extends React.Component {
     return <div className="team-info">
     <div className="team-info-primary">
         <div className="team-info-header">
-            {/* <img className='team-info-image' src={'/static/img/' + this.state.userAvatar} /> */}
+            <img className='team-info-image' src='/static/img/user-photo.png' />
         </div>
         <div className='team-info-text'>
             <h1>{this.props.data.username}</h1>

@@ -31,7 +31,11 @@ var UserInfo = function (_React$Component) {
                 React.createElement(
                     "div",
                     { className: "team-info-primary" },
-                    React.createElement("div", { className: "team-info-header" }),
+                    React.createElement(
+                        "div",
+                        { className: "team-info-header" },
+                        React.createElement("img", { className: "team-info-image", src: "/static/img/user-photo.png" })
+                    ),
                     React.createElement(
                         "div",
                         { className: "team-info-text" },
