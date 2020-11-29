@@ -23,7 +23,7 @@ var PlayerFunctions = function (_React$Component) {
                 null,
                 React.createElement(
                     "button",
-                    null,
+                    { className: "btn" },
                     React.createElement(
                         "div",
                         { className: "tooltip" },
@@ -37,7 +37,7 @@ var PlayerFunctions = function (_React$Component) {
                 ),
                 React.createElement(
                     "button",
-                    null,
+                    { className: "btn" },
                     React.createElement(
                         "div",
                         { className: "tooltip" },
@@ -51,7 +51,7 @@ var PlayerFunctions = function (_React$Component) {
                 ),
                 React.createElement(
                     "button",
-                    null,
+                    { className: "btn" },
                     React.createElement(
                         "div",
                         { className: "tooltip" },

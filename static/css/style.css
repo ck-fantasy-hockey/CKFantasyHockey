@@ -251,6 +251,7 @@ body {
 .roster td {
     text-align: center;
     white-space: nowrap;
+    font-size: 0.85rem;
 }
 
 .roster th {
@@ -437,6 +438,15 @@ body {
     border: 0;
     font-size: 1rem;
     margin: 3px;
+    background: linear-gradient( 90deg,
+        rgb(161, 161, 161) 0%,
+        rgb(190, 190, 190) 50%,
+        rgb(161, 161, 161) 100%
+    );
+}
+
+.btn svg {
+    font-size: 1.2rem;
 }
 
 .btn-join {
