@@ -34,8 +34,7 @@ export default class TeamInformation extends React.Component {
         </div>
         <div className="team-info-subheader">
             <button className="btn">Edit Team Attributes</button>
-            <button className="btn" onClick={this.deleteTeam}>Delete Team</button>
-            {/* {() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } } */}
+            <button className="btn" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } }>Delete Team</button>
         </div>
     </div>    
     }

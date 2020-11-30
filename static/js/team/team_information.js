@@ -43,6 +43,8 @@ var TeamInformation = function (_React$Component) {
     _createClass(TeamInformation, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return React.createElement(
                 'div',
                 { className: 'team-info' },
@@ -92,7 +94,9 @@ var TeamInformation = function (_React$Component) {
                     ),
                     React.createElement(
                         'button',
-                        { className: 'btn', onClick: this.deleteTeam },
+                        { className: 'btn', onClick: function onClick() {
+                                if (window.confirm('Are you sure you wish to delete this item?')) _this2.onCancel(item);
+                            } },
                         'Delete Team'
                     )
                 )
