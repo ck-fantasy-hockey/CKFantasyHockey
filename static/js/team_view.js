@@ -40,7 +40,7 @@ var TeamView = function (_React$Component) {
             var teamID = parseInt(urlParams.get('teamID'));
             var url = '/update-team-attributes';
 
-            var teamAttributesToUpdate = Object.assign({}, _this.state.teamAttributesToUpdate);
+            var teamAttributesToUpdate = Object.assign({}, _this.state.modifiedTeamInfo);
             teamAttributesToUpdate.teamID = teamID;
 
             fetch(url, {
@@ -95,7 +95,8 @@ var TeamView = function (_React$Component) {
         _this.state.functions = {
             dropPlayer: _this.dropPlayer,
             updateTeamName: _this.updateTeamName,
-            updateSeasonEnds: _this.updateSeasonEnds
+            updateSeasonEnds: _this.updateSeasonEnds,
+            commitUpdateTeamAttributes: _this.commitUpdateTeamAttributes
         };
         return _this;
     }

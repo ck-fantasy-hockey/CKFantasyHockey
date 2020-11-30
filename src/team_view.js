@@ -13,7 +13,8 @@ class TeamView extends React.Component {
         this.state.functions = {
             dropPlayer: this.dropPlayer,
             updateTeamName: this.updateTeamName,
-            updateSeasonEnds: this.updateSeasonEnds
+            updateSeasonEnds: this.updateSeasonEnds,
+            commitUpdateTeamAttributes: this.commitUpdateTeamAttributes
         }    
     }
 
@@ -39,7 +40,7 @@ class TeamView extends React.Component {
         const teamID = parseInt(urlParams.get('teamID'))
         const url = '/update-team-attributes'
 
-        const teamAttributesToUpdate = {...this.state.teamAttributesToUpdate}
+        const teamAttributesToUpdate = {...this.state.modifiedTeamInfo}
         teamAttributesToUpdate.teamID = teamID
 
         fetch(url, {

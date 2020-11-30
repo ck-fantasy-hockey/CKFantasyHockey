@@ -121,6 +121,13 @@ def create_team():
         }
     return render_template('index.j2', page="create_team", css="style", css2="create_team", dataFromServer=dataFromServer)
 
+@app.route('/update-team-attributes', methods=['POST'])
+def update_team():
+    sent_info = request.get_json()
+    print(sent_info)
+    return jsonify({'response': True})
+
+
 @app.route('/account-page')
 @token_required
 def account_page():

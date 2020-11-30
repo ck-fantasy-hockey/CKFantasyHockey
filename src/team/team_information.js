@@ -24,6 +24,7 @@ export default class TeamInformation extends React.Component {
         </div>
         <div className="team-info-subheader">
             <button className="btn" onClick={this.editAttributes}>Edit Team Attributes</button>
+            <button className="btn" onClick={this.props.functions.commitUpdateTeamAttributes}>Update Team Attributes</button>
             <button className="btn">Delete Team</button>
         </div>
     </div>    

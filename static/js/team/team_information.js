@@ -57,6 +57,11 @@ var TeamInformation = function (_React$Component) {
                     ),
                     React.createElement(
                         "button",
+                        { className: "btn", onClick: this.props.functions.commitUpdateTeamAttributes },
+                        "Update Team Attributes"
+                    ),
+                    React.createElement(
+                        "button",
                         { className: "btn" },
                         "Delete Team"
                     )
