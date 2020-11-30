@@ -18,18 +18,18 @@ class TeamView extends React.Component {
         const teamID = urlParams.get('teamID')
         const url = '/drop-player'
 
-        this.setState({playerToDrop: {
+        const playerToDrop = {
             playerID,
             teamID,
             leagueID: this.state.leagueInfo.leagueID
-        }})
+        }
 
         fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(this.state.playerToDrop)
+            body: JSON.stringify(playerID)
         })
         .then((response) => response.json())
         .then(data => {

@@ -189,6 +189,7 @@ def add_new_team():
     database.db_functions.create_new_team(sent_info)
     return jsonify({'response': True})
 
+@app.route('/drop-player', methods=['POST'])
 def drop_player():
     """Drops a player from a user's team"""
 

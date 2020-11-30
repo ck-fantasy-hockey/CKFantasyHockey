@@ -24,18 +24,18 @@ var TeamView = function (_React$Component) {
             var teamID = urlParams.get('teamID');
             var url = '/drop-player';
 
-            _this.setState({ playerToDrop: {
-                    playerID: playerID,
-                    teamID: teamID,
-                    leagueID: _this.state.leagueInfo.leagueID
-                } });
+            var playerToDrop = {
+                playerID: playerID,
+                teamID: teamID,
+                leagueID: _this.state.leagueInfo.leagueID
+            };
 
             fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(_this.state.playerToDrop)
+                body: JSON.stringify(playerID)
             }).then(function (response) {
                 return response.json();
             }).then(function (data) {
