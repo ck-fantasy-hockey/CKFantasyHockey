@@ -10,65 +10,90 @@ var TeamInformation = function (_React$Component) {
     _inherits(TeamInformation, _React$Component);
 
     function TeamInformation() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, TeamInformation);
 
-        return _possibleConstructorReturn(this, (TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call.apply(_ref, [this].concat(args))), _this), _this.deleteTeam = function (event) {
+            event.preventDefault();
+            confirmAlert({
+                title: 'Confirm to submit',
+                message: 'Are you sure to do delete this team?',
+                buttons: [{
+                    label: 'Yes',
+                    onClick: function onClick() {
+                        return alert('Click Yes');
+                    }
+                }, {
+                    label: 'No',
+                    onClick: function onClick() {
+                        return alert('Click No');
+                    }
+                }]
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(TeamInformation, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "div",
-                { className: "team-info" },
+                'div',
+                { className: 'team-info' },
                 React.createElement(
-                    "div",
-                    { className: "team-info-primary" },
+                    'div',
+                    { className: 'team-info-primary' },
                     React.createElement(
-                        "div",
-                        { className: "team-info-header" },
-                        React.createElement("img", { className: "team-info-image", src: '/static/img/hockey1_unsplash.jpg' })
+                        'div',
+                        { className: 'team-info-header' },
+                        React.createElement('img', { className: 'team-info-image', src: '/static/img/hockey1_unsplash.jpg' })
                     ),
                     React.createElement(
-                        "div",
-                        { className: "team-info-text" },
+                        'div',
+                        { className: 'team-info-text' },
                         React.createElement(
-                            "h1",
+                            'h1',
                             null,
                             this.props.teamName
                         ),
                         React.createElement(
-                            "p",
+                            'p',
                             null,
-                            "Season Ends: ",
+                            'Season Ends: ',
                             this.props.leagueInfo.seasonEnds
                         ),
                         React.createElement(
-                            "p",
+                            'p',
                             null,
-                            "League: ",
+                            'League: ',
                             this.props.leagueInfo.leagueName
                         ),
                         React.createElement(
-                            "p",
+                            'p',
                             null,
-                            "League ID: ",
+                            'League ID: ',
                             this.props.leagueInfo.leagueID
                         )
                     )
                 ),
                 React.createElement(
-                    "div",
-                    { className: "team-info-subheader" },
+                    'div',
+                    { className: 'team-info-subheader' },
                     React.createElement(
-                        "button",
-                        { className: "btn" },
-                        "Edit Team Attributes"
+                        'button',
+                        { className: 'btn' },
+                        'Edit Team Attributes'
                     ),
                     React.createElement(
-                        "button",
-                        { className: "btn" },
-                        "Delete Team"
+                        'button',
+                        { className: 'btn', onClick: this.deleteTeam },
+                        'Delete Team'
                     )
                 )
             );

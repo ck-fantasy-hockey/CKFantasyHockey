@@ -1,4 +1,24 @@
+
+
 export default class TeamInformation extends React.Component {
+    deleteTeam = (event) => {
+        event.preventDefault();
+        confirmAlert({
+            title: 'Confirm to submit',
+            message: 'Are you sure to do delete this team?',
+            buttons: [
+              {
+                label: 'Yes',
+                onClick: () => alert('Click Yes')
+              },
+              {
+                label: 'No',
+                onClick: () => alert('Click No')
+              }
+            ]
+          });
+    }
+
     render() {
     return <div className="team-info">
         <div className="team-info-primary">
@@ -14,7 +34,8 @@ export default class TeamInformation extends React.Component {
         </div>
         <div className="team-info-subheader">
             <button className="btn">Edit Team Attributes</button>
-            <button className="btn">Delete Team</button>
+            <button className="btn" onClick={this.deleteTeam}>Delete Team</button>
+            {/* {() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } } */}
         </div>
     </div>    
     }
