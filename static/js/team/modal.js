@@ -11,11 +11,24 @@ var Modal = function Modal(_ref) {
     React.createElement(
       "section",
       { className: "modal-main" },
-      children,
       React.createElement(
-        "button",
-        { onClick: handleClose },
-        "close"
+        "div",
+        { className: "button-container" },
+        React.createElement(
+          "p",
+          null,
+          "Are you sure you want to delete this team?"
+        ),
+        React.createElement(
+          "button",
+          { className: "dashboard-button", onClick: handleClose },
+          "Yes"
+        ),
+        React.createElement(
+          "button",
+          { className: "dashboard-button", onClick: handleClose },
+          "No"
+        )
       )
     )
   );

@@ -79,20 +79,7 @@ var TeamInformation = function (_React$Component) {
                         { className: "btn" },
                         "Edit Team Attributes"
                     ),
-                    React.createElement(
-                        Modal,
-                        { show: this.state.show, handleClose: this.hideModal },
-                        React.createElement(
-                            "p",
-                            null,
-                            "Modal"
-                        ),
-                        React.createElement(
-                            "p",
-                            null,
-                            "Data"
-                        )
-                    ),
+                    React.createElement(Modal, { show: this.state.show, handleClose: this.hideModal }),
                     React.createElement(
                         "button",
                         { className: "btn", onClick: this.showModal },

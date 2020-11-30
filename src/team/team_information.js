@@ -27,8 +27,6 @@ export default class TeamInformation extends React.Component {
         <div className="team-info-subheader">
             <button className="btn">Edit Team Attributes</button>
             <Modal show={this.state.show} handleClose={this.hideModal}>
-                <p>Modal</p>
-                <p>Data</p>
             </Modal>
             <button className="btn" onClick={this.showModal}>Delete Team</button>
         </div>
