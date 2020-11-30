@@ -6,69 +6,73 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import TeamInformationText from './team_info_text.js';
+
 var TeamInformation = function (_React$Component) {
     _inherits(TeamInformation, _React$Component);
 
-    function TeamInformation() {
+    function TeamInformation(props) {
         _classCallCheck(this, TeamInformation);
 
-        return _possibleConstructorReturn(this, (TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call(this, props));
+
+        _this.editAttributes = function () {
+            _this.setState({ editingAttributes: !_this.state.editingAttributes });
+        };
+
+        _this.state = {
+            editingAttributes: false
+        };
+
+        return _this;
     }
 
     _createClass(TeamInformation, [{
-        key: "render",
+        key: 'render',
         value: function render() {
+            var editButton = void 0;
+            if (this.state.editingAttributes) {
+                editButton = [React.createElement(
+                    'button',
+                    { key: '1', className: 'btn', onClick: this.editAttributes },
+                    'Clear'
+                ), React.createElement(
+                    'button',
+                    { key: '2', className: 'btn', onClick: this.props.functions.commitUpdateTeamAttributes },
+                    'Update Team Attributes'
+                )];
+            } else {
+                editButton = React.createElement(
+                    'button',
+                    { key: '3', className: 'btn', onClick: this.editAttributes },
+                    'Edit Team Attributes'
+                );
+            }
             return React.createElement(
-                "div",
-                { className: "team-info" },
+                'div',
+                { className: 'team-info' },
                 React.createElement(
-                    "div",
-                    { className: "team-info-primary" },
+                    'div',
+                    { className: 'team-info-primary' },
                     React.createElement(
-                        "div",
-                        { className: "team-info-header" },
-                        React.createElement("img", { className: "team-info-image", src: '/static/img/hockey1_unsplash.jpg' })
+                        'div',
+                        { className: 'team-info-header' },
+                        React.createElement('img', { className: 'team-info-image', src: '/static/img/hockey1_unsplash.jpg' })
                     ),
                     React.createElement(
-                        "div",
-                        { className: "team-info-text" },
-                        React.createElement(
-                            "h1",
-                            null,
-                            this.props.teamName
-                        ),
-                        React.createElement(
-                            "p",
-                            null,
-                            "Season Ends: ",
-                            this.props.leagueInfo.seasonEnds
-                        ),
-                        React.createElement(
-                            "p",
-                            null,
-                            "League: ",
-                            this.props.leagueInfo.leagueName
-                        ),
-                        React.createElement(
-                            "p",
-                            null,
-                            "League ID: ",
-                            this.props.leagueInfo.leagueID
-                        )
+                        'div',
+                        { className: 'team-info-text' },
+                        React.createElement(TeamInformationText, Object.assign({}, this.props, this.state))
                     )
                 ),
                 React.createElement(
-                    "div",
-                    { className: "team-info-subheader" },
+                    'div',
+                    { className: 'team-info-subheader' },
+                    editButton,
                     React.createElement(
-                        "button",
-                        { className: "btn" },
-                        "Edit Team Attributes"
-                    ),
-                    React.createElement(
-                        "button",
-                        { className: "btn" },
-                        "Delete Team"
+                        'button',
+                        { className: 'btn' },
+                        'Delete Team'
                     )
                 )
             );
