@@ -21,7 +21,7 @@ var TeamView = function (_React$Component) {
         _this.dropPlayer = function (playerID) {
             var queryString = window.location.search;
             var urlParams = new URLSearchParams(queryString);
-            var teamID = urlParams.get('teamID');
+            var teamID = parseInt(urlParams.get('teamID'));
             var url = '/drop-player';
 
             var playerToDrop = {
@@ -35,7 +35,7 @@ var TeamView = function (_React$Component) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(playerID)
+                body: JSON.stringify(playerToDrop)
             }).then(function (response) {
                 return response.json();
             }).then(function (data) {

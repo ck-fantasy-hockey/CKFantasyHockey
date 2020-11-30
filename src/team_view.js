@@ -15,7 +15,7 @@ class TeamView extends React.Component {
     dropPlayer = (playerID) => {
         const queryString = window.location.search
         const urlParams = new URLSearchParams(queryString);
-        const teamID = urlParams.get('teamID')
+        const teamID = parseInt(urlParams.get('teamID'))
         const url = '/drop-player'
 
         const playerToDrop = {
@@ -29,7 +29,7 @@ class TeamView extends React.Component {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(playerID)
+            body: JSON.stringify(playerToDrop)
         })
         .then((response) => response.json())
         .then(data => {
