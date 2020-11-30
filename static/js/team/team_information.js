@@ -44,6 +44,7 @@ var TeamInformation = function (_React$Component) {
             }).then(function (response) {
                 return response.json();
             }).then(function (data) {
+                console.log(data);
                 if (data['response'] === true) {
                     window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
                 } else {

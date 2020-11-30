@@ -160,6 +160,7 @@ def submit_signup():
 def delete_team():
     sent_info = request.get_json()
     delete = database.db_functions.deletes_team(sent_info)
+    print(delete)
     if delete:
         return jsonify({'response': True})
     else:

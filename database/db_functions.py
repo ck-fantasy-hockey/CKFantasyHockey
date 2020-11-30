@@ -326,6 +326,7 @@ def deletes_team(sent_info):
     cursor.close()
     cnx.close()
     del_team(sent_info)
+    return True
 
 # Deletes team after TeamPlayers records are deleted
 def del_team(sent_info):
@@ -337,7 +338,6 @@ def del_team(sent_info):
     cnx.commit()
     cursor.close()
     cnx.close()
-    return False
 
 
 # Get team name from team ID

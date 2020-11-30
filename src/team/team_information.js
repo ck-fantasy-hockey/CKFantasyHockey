@@ -31,6 +31,7 @@ export default class TeamInformation extends React.Component {
         })
         .then((response) => response.json())
         .then(data => {
+            console.log(data)
             if (data['response'] === true) {
                 window.location.href = "/dashboard?token="+localStorage.getItem('usertoken');
             } else {
