@@ -19,6 +19,7 @@ var TeamView = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).call(this, props));
 
         _this.dropPlayer = function (playerID) {
+            var queryString = window.location.search;
             var urlParams = new URLSearchParams(queryString);
             var teamID = urlParams.get('teamID');
             var url = '/drop-player';
