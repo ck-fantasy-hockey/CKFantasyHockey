@@ -403,10 +403,54 @@ def create_new_team(new_team: dict) -> bool:
         add_leagues_players_row_query = 'INSERT INTO LeaguesPlayers (leagueID, playerID) VALUES (%s, %s);'
         add_leagues_players_row_values = (new_team['leagueID'], player['playerID'])
         cursor.execute(add_leagues_players_row_query, add_leagues_players_row_values)
-    
+
     cnx.commit()
     cursor.close()
     cnx.close()
+    
+
+def update_team(updated_team_info: dict) -> bool:
+    if updated_team_info['teamID'] is None:
+        return False
+    
+    if updated_team_info['teamName'] is None and updated_team_info['seasonEnds'] is None:
+        return False
+    
+    teamName = updated_team_info['teamName']
+    seasonEnds = updated_team_info['seasonEnds']
+    teamID = updated_team_info['teamID']
+
+    update_team_name_query = 'UPDATE teams SET teamName = %s WHERE teamID = %s'
+    update_team_name_values = (teamName, teamID)
+
+    update_team_season_end_date_query = """
+    UPDATE leagues l
+    INNER JOIN (
+        SELECT * FROM teams where teamID = %s
+    ) AS t on t.leagueID = l.leagueID
+    SET l.seasonEnds = STR_TO_DATE(%s, '%Y-%m-%d')
+    WHERE t.teamID = %s;"""
+    update_team_season_end_date_values (teamID, seasonEnds, teamID)
+
+    if teamName is not None:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+        cursor.execute(update_team_name_query, update_team_name_values)
+        cnx.commit()
+        cursor.close()
+        cnx.close()
+
+    if seasonEnds is not None:
+        cnx = mysql.connector.connect(**config)
+        cursor = cnx.cursor()
+        cursor.execute(update_team_season_end_date_query, update_team_season_end_date_values)
+        cnx.commit()
+        cursor.close()
+        cnx.close()
+
+    return True
+
+
 
 
     
