@@ -18,6 +18,47 @@ var TeamView = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).call(this, props));
 
+        _this.updateTeamName = function (event) {
+            _this.setState(function (state) {
+                var newState = Object.assign({}, state);
+                newState.modifiedTeamInfo.teamName = event.target.value;
+                return { newState: newState };
+            });
+        };
+
+        _this.updateSeasonEnds = function (newValue) {
+            _this.setState(function (state) {
+                var newState = Object.assign({}, state);
+                newState.modifiedTeamInfo.seasonEnds = newValue;
+                return { newState: newState };
+            });
+        };
+
+        _this.commitUpdateTeamAttributes = function () {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var teamID = parseInt(urlParams.get('teamID'));
+            var url = '/update-team-attributes';
+
+            var teamAttributesToUpdate = Object.assign({}, _this.state.teamAttributesToUpdate);
+            teamAttributesToUpdate.teamID = teamID;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(teamAttributesToUpdate)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data['response'] === true) {
+                    var token = localStorage.getItem('usertoken');
+                    window.location.href = '/team-view?token=' + token + '&teamID=' + teamID;
+                }
+            });
+        };
+
         _this.dropPlayer = function (playerID) {
             var queryString = window.location.search;
             var urlParams = new URLSearchParams(queryString);
@@ -47,8 +88,14 @@ var TeamView = function (_React$Component) {
         };
 
         _this.state = dataFromServer;
+        _this.state.modifiedTeamInfo = {
+            seasonEnds: '',
+            teamName: ''
+        };
         _this.state.functions = {
-            dropPlayer: _this.dropPlayer
+            dropPlayer: _this.dropPlayer,
+            updateTeamName: _this.updateTeamName,
+            updateSeasonEnds: _this.updateSeasonEnds
         };
         return _this;
     }

@@ -6,11 +6,59 @@ class TeamView extends React.Component {
     constructor(props) {
         super(props)
         this.state = dataFromServer
+        this.state.modifiedTeamInfo = {
+            seasonEnds: '',
+            teamName: ''
+        }
         this.state.functions = {
-            dropPlayer: this.dropPlayer
+            dropPlayer: this.dropPlayer,
+            updateTeamName: this.updateTeamName,
+            updateSeasonEnds: this.updateSeasonEnds
         }    
     }
-    
+
+    updateTeamName = (event) => {
+        this.setState(state => {
+            const newState = Object.assign({}, state)
+            newState.modifiedTeamInfo.teamName = event.target.value
+            return { newState }
+        })
+    }
+
+    updateSeasonEnds = (newValue) => {
+        this.setState(state => {
+            const newState = Object.assign({}, state)
+            newState.modifiedTeamInfo.seasonEnds = newValue
+            return { newState }
+        })
+    }
+
+    commitUpdateTeamAttributes = () => {
+        const queryString = window.location.search
+        const urlParams = new URLSearchParams(queryString);
+        const teamID = parseInt(urlParams.get('teamID'))
+        const url = '/update-team-attributes'
+
+        const teamAttributesToUpdate = {...this.state.teamAttributesToUpdate}
+        teamAttributesToUpdate.teamID = teamID
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(teamAttributesToUpdate)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            if (data['response'] === true) {
+                const token = localStorage.getItem('usertoken')
+                window.location.href = (`/team-view?token=${token}&teamID=${teamID}`);
+            }
+        })
+
+
+    }
 
     dropPlayer = (playerID) => {
         const queryString = window.location.search
