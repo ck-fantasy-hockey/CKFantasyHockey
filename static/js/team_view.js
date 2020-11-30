@@ -9,7 +9,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import Roster from './team/roster.js';
 import TeamInformation from './team/team_information.js';
 import NavBar from './nav_bar.js';
-import data from '../json/data.js';
 
 var TeamView = function (_React$Component) {
     _inherits(TeamView, _React$Component);
@@ -19,7 +18,38 @@ var TeamView = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).call(this, props));
 
+        _this.dropPlayer = function (playerID) {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var teamID = parseInt(urlParams.get('teamID'));
+            var url = '/drop-player';
+
+            var playerToDrop = {
+                playerID: playerID,
+                teamID: teamID,
+                leagueID: _this.state.leagueInfo.leagueID
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(playerToDrop)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data['response'] === true) {
+                    var token = localStorage.getItem('usertoken');
+                    window.location.href = '/team-view?token=' + token + '&teamID=' + teamID;
+                }
+            });
+        };
+
         _this.state = dataFromServer;
+        _this.state.functions = {
+            dropPlayer: _this.dropPlayer
+        };
         return _this;
     }
 

@@ -11,10 +11,10 @@ import PlayerFunctions from "./player_functions.js";
 var GoalieRow = function (_React$Component) {
     _inherits(GoalieRow, _React$Component);
 
-    function GoalieRow() {
+    function GoalieRow(props) {
         _classCallCheck(this, GoalieRow);
 
-        return _possibleConstructorReturn(this, (GoalieRow.__proto__ || Object.getPrototypeOf(GoalieRow)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (GoalieRow.__proto__ || Object.getPrototypeOf(GoalieRow)).call(this, props));
     }
 
     _createClass(GoalieRow, [{
@@ -116,7 +116,7 @@ var GoalieRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    React.createElement(PlayerFunctions, null)
+                    React.createElement(PlayerFunctions, this.props)
                 )
             );
         }

@@ -12,15 +12,17 @@ import GoalieRow from './goalie_row.js';
 var Roster = function (_React$Component) {
     _inherits(Roster, _React$Component);
 
-    function Roster() {
+    function Roster(props) {
         _classCallCheck(this, Roster);
 
-        return _possibleConstructorReturn(this, (Roster.__proto__ || Object.getPrototypeOf(Roster)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Roster.__proto__ || Object.getPrototypeOf(Roster)).call(this, props));
     }
 
     _createClass(Roster, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return React.createElement(
                 'div',
                 { className: 'roster' },
@@ -276,7 +278,7 @@ var Roster = function (_React$Component) {
                             'tbody',
                             null,
                             this.props.players.map(function (element) {
-                                if (element.position !== "Goalie") return React.createElement(PlayerRow, Object.assign({ key: element.playerID }, element));
+                                if (element.position !== "Goalie") return React.createElement(PlayerRow, Object.assign({ key: element.playerID }, element, { functions: _this2.props.functions }));
                             })
                         )
                     )
@@ -561,7 +563,7 @@ var Roster = function (_React$Component) {
                             'tbody',
                             null,
                             this.props.players.map(function (element) {
-                                if (element.position === "Goalie") return React.createElement(GoalieRow, Object.assign({ key: element.playerID }, element));
+                                if (element.position === "Goalie") return React.createElement(GoalieRow, Object.assign({ key: element.playerID }, element, { functions: _this2.props.functions }));
                             })
                         )
                     )

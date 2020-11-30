@@ -12,3 +12,5 @@ testbranch.txt
 Pipfile
 Pipfile.lock
 .env
+.DS_Store
+/george_mac
