@@ -12,25 +12,25 @@ import TeamInformationText from './team_info_text.js';
 var TeamInformation = function (_React$Component) {
     _inherits(TeamInformation, _React$Component);
 
-    function TeamInformation() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
+    function TeamInformation(props) {
         _classCallCheck(this, TeamInformation);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+        var _this = _possibleConstructorReturn(this, (TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call(this, props));
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call.apply(_ref, [this].concat(args))), _this), _this.state = { show: false }, _this.showModal = function () {
+        _this.showModal = function () {
             _this.setState({ show: true });
-        }, _this.hideModalAccept = function () {
+        };
+
+        _this.hideModalAccept = function () {
             _this.setState({ show: false });
             _this.deleteTeam();
-        }, _this.hideModalReject = function () {
+        };
+
+        _this.hideModalReject = function () {
             _this.setState({ show: false });
-        }, _this.deleteTeam = function () {
+        };
+
+        _this.deleteTeam = function () {
             var queryString = window.location.search;
             var urlParams = new URLSearchParams(queryString);
             var teamID = parseInt(urlParams.get('teamID'));
@@ -49,24 +49,18 @@ var TeamInformation = function (_React$Component) {
                 if (data['response'] === true) {
                     window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
                 } else {
-                    console.log('yay');
-                    // const element = <p className="incorrect-text">Username or password is incorrect</p>;
-                    // ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                    console.log('error');
                 }
             });
-        }, _temp), _possibleConstructorReturn(_this, _ret);
-      
-    function TeamInformation(props) {
-        _classCallCheck(this, TeamInformation);
-
-        var _this = _possibleConstructorReturn(this, (TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call(this, props));
+        };
 
         _this.editAttributes = function () {
             _this.setState({ editingAttributes: !_this.state.editingAttributes });
         };
 
         _this.state = {
-            editingAttributes: false
+            editingAttributes: false,
+            show: false
         };
 
         return _this;
@@ -107,48 +101,17 @@ var TeamInformation = function (_React$Component) {
                     React.createElement(
                         'div',
                         { className: 'team-info-text' },
-                        React.createElement(
-                            'h1',
-                            null,
-                            this.props.teamName
-                        ),
-                        React.createElement(
-                            'p',
-                            null,
-                            'Season Ends: ',
-                            this.props.leagueInfo.seasonEnds
-                        ),
-                        React.createElement(
-                            'p',
-                            null,
-                            'League: ',
-                            this.props.leagueInfo.leagueName
-                        ),
-                        React.createElement(
-                            'p',
-                            null,
-                            'League ID: ',
-                            this.props.leagueInfo.leagueID
-                        )
                         React.createElement(TeamInformationText, Object.assign({}, this.props, this.state))
                     )
                 ),
                 React.createElement(
                     'div',
                     { className: 'team-info-subheader' },
-                    React.createElement(
-                        'button',
-                        { className: 'btn' },
-                        'Edit Team Attributes'
-                    ),
                     React.createElement(Modal, { show: this.state.show, handleCloseAccept: this.hideModalAccept, handleCloseReject: this.hideModalReject }),
-                    React.createElement(
-                        'button',
-                        { className: 'btn', onClick: this.showModal },
                     editButton,
                     React.createElement(
                         'button',
-                        { className: 'btn' },
+                        { className: 'btn', onClick: this.showModal },
                         'Delete Team'
                     )
                 )

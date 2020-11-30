@@ -43,9 +43,7 @@ export default class TeamInformation extends React.Component {
             if (data['response'] === true) {
                 window.location.href = "/dashboard?token="+localStorage.getItem('usertoken');
             } else {
-                console.log('yay')
-                // const element = <p className="incorrect-text">Username or password is incorrect</p>;
-                // ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                console.log('error')
             }
         })
     }
@@ -72,12 +70,10 @@ export default class TeamInformation extends React.Component {
             </div>
         </div>
         <div className="team-info-subheader">
-            <button className="btn">Edit Team Attributes</button>
             <Modal show={this.state.show} handleCloseAccept={this.hideModalAccept} handleCloseReject={this.hideModalReject}>
             </Modal>
-            <button className="btn" onClick={this.showModal}>Delete Team</button>
             {editButton}
-            <button className="btn">Delete Team</button>
+            <button className="btn" onClick={this.showModal}>Delete Team</button>
         </div>
     </div>    
     }
