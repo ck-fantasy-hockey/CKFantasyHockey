@@ -25,18 +25,18 @@ export default class TeamInformationText extends React.Component {
             result = <div className='team-info-text'>
             <form>
                 <h1> Team Name: 
-                    <input type='text' onChange={this.props.functions.updateTeamName} defaultValue={this.props.teamName}></input>
+                    <input type='text' className='tall-input' onChange={this.props.functions.updateTeamName} defaultValue={this.props.teamName}></input>
                 </h1>
                 <p>Season Ends:
-                    <input type='date' id='datepicker' onChange={this.forceDatePickerEvent} defaultValue={this.state.seasonEndsAlternate}></input>
+                    <input type='date' className='reg-input' id='datepicker' onChange={this.forceDatePickerEvent} defaultValue={this.state.seasonEndsAlternate}></input>
                 </p>
                 <p>
                     League:
-                    <input type='text' value={this.props.leagueInfo.leagueName} disabled></input>
+                    <input type='text' className='reg-input' value={this.props.leagueInfo.leagueName} disabled></input>
                 </p>
                 <p>
                     League ID:
-                    <input type='text' value={this.props.leagueInfo.leagueID} disabled></input>
+                    <input type='text' className='reg-input' value={this.props.leagueInfo.leagueID} disabled></input>
                 </p>
             </form>
         </div>

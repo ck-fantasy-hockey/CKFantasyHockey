@@ -90,7 +90,7 @@ def team_view():
         'teamName': team_name,
         'leagueInfo': league_info
     }
-    return render_template('index.j2', page="team_view", css="style", css2="style", dataFromServer=dataFromServer)
+    return render_template('index.j2', page="team_view", css="style", css2="team_view", dataFromServer=dataFromServer)
 
 @app.route('/league-view')
 @token_required

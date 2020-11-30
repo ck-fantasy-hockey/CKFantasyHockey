@@ -46,25 +46,25 @@ var TeamInformationText = function (_React$Component) {
                             'h1',
                             null,
                             ' Team Name:',
-                            React.createElement('input', { type: 'text', onChange: this.props.functions.updateTeamName, defaultValue: this.props.teamName })
+                            React.createElement('input', { type: 'text', className: 'tall-input', onChange: this.props.functions.updateTeamName, defaultValue: this.props.teamName })
                         ),
                         React.createElement(
                             'p',
                             null,
                             'Season Ends:',
-                            React.createElement('input', { type: 'date', id: 'datepicker', onChange: this.forceDatePickerEvent, defaultValue: this.state.seasonEndsAlternate })
+                            React.createElement('input', { type: 'date', className: 'reg-input', id: 'datepicker', onChange: this.forceDatePickerEvent, defaultValue: this.state.seasonEndsAlternate })
                         ),
                         React.createElement(
                             'p',
                             null,
                             'League:',
-                            React.createElement('input', { type: 'text', value: this.props.leagueInfo.leagueName, disabled: true })
+                            React.createElement('input', { type: 'text', className: 'reg-input', value: this.props.leagueInfo.leagueName, disabled: true })
                         ),
                         React.createElement(
                             'p',
                             null,
                             'League ID:',
-                            React.createElement('input', { type: 'text', value: this.props.leagueInfo.leagueID, disabled: true })
+                            React.createElement('input', { type: 'text', className: 'reg-input', value: this.props.leagueInfo.leagueID, disabled: true })
                         )
                     )
                 );
