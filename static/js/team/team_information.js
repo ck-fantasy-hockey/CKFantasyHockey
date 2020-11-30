@@ -24,7 +24,9 @@ var TeamInformation = function (_React$Component) {
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call.apply(_ref, [this].concat(args))), _this), _this.state = { show: false }, _this.showModal = function () {
             _this.setState({ show: true });
-        }, _this.hideModal = function () {
+        }, _this.hideModalAccept = function () {
+            _this.setState({ show: false });
+        }, _this.hideModalReject = function () {
             _this.setState({ show: false });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -79,7 +81,7 @@ var TeamInformation = function (_React$Component) {
                         { className: "btn" },
                         "Edit Team Attributes"
                     ),
-                    React.createElement(Modal, { show: this.state.show, handleClose: this.hideModal }),
+                    React.createElement(Modal, { show: this.state.show, handleCloseAccept: this.hideModalAccept, handleCloseReject: this.hideModalReject }),
                     React.createElement(
                         "button",
                         { className: "btn", onClick: this.showModal },

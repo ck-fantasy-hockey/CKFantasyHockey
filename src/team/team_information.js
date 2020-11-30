@@ -7,9 +7,15 @@ export default class TeamInformation extends React.Component {
         this.setState({ show: true });
       };
     
-    hideModal = () => {
+    hideModalAccept = () => {
         this.setState({ show: false });
     };
+
+    hideModalReject = () => {
+        this.setState({ show: false });
+    };
+
+
 
     render() {
     return <div className="team-info">
@@ -26,7 +32,7 @@ export default class TeamInformation extends React.Component {
         </div>
         <div className="team-info-subheader">
             <button className="btn">Edit Team Attributes</button>
-            <Modal show={this.state.show} handleClose={this.hideModal}>
+            <Modal show={this.state.show} handleCloseAccept={this.hideModalAccept} handleCloseReject={this.hideModalReject}>
             </Modal>
             <button className="btn" onClick={this.showModal}>Delete Team</button>
         </div>

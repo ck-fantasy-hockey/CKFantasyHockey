@@ -1,5 +1,6 @@
 var Modal = function Modal(_ref) {
-  var handleClose = _ref.handleClose,
+  var handleCloseAccept = _ref.handleCloseAccept,
+      handleCloseReject = _ref.handleCloseReject,
       show = _ref.show,
       children = _ref.children;
 
@@ -21,12 +22,12 @@ var Modal = function Modal(_ref) {
         ),
         React.createElement(
           "button",
-          { className: "dashboard-button", onClick: handleClose },
+          { className: "dashboard-button", onClick: handleCloseAccept },
           "Yes"
         ),
         React.createElement(
           "button",
-          { className: "dashboard-button", onClick: handleClose },
+          { className: "dashboard-button", onClick: handleCloseReject },
           "No"
         )
       )
