@@ -430,7 +430,7 @@ def update_team(updated_team_info: dict) -> bool:
     ) AS t on t.leagueID = l.leagueID
     SET l.seasonEnds = STR_TO_DATE(%s, '%Y-%m-%d')
     WHERE t.teamID = %s;"""
-    update_team_season_end_date_values (teamID, seasonEnds, teamID)
+    update_team_season_end_date_values = (teamID, seasonEnds, teamID)
 
     if teamName is not None:
         cnx = mysql.connector.connect(**config)

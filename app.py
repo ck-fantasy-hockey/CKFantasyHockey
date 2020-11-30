@@ -124,8 +124,8 @@ def create_team():
 @app.route('/update-team-attributes', methods=['POST'])
 def update_team():
     sent_info = request.get_json()
-    print(sent_info)
-    return jsonify({'response': True})
+    result = database.db_functions.update_team(sent_info)
+    return jsonify({'response': result})
 
 
 @app.route('/account-page')
