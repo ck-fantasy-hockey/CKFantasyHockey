@@ -12,7 +12,7 @@ export default class UserInfo extends React.Component {
     return <div className="team-info">
     <div className="team-info-primary">
         <div className="team-info-header">
-            {/* <img className='team-info-image' src={'/static/img/' + this.state.userAvatar} /> */}
+            <img className='team-info-image' src='/static/img/user-photo.png' />
         </div>
         <div className='team-info-text'>
             <h1>{this.props.data.username}</h1>
@@ -22,7 +22,7 @@ export default class UserInfo extends React.Component {
         </div>
     </div>
     <div className="team-info-subheader">
-    <button type="submit" className="button button_wide" onClick={this.handleEditAccount}>Edit Account</button>
+    <button type="submit" className="dashboard-button" onClick={this.handleEditAccount}>Edit Account</button>
     </div>
 </div> 
     }

@@ -31,7 +31,11 @@ var UserInfo = function (_React$Component) {
                 React.createElement(
                     "div",
                     { className: "team-info-primary" },
-                    React.createElement("div", { className: "team-info-header" }),
+                    React.createElement(
+                        "div",
+                        { className: "team-info-header" },
+                        React.createElement("img", { className: "team-info-image", src: "/static/img/user-photo.png" })
+                    ),
                     React.createElement(
                         "div",
                         { className: "team-info-text" },
@@ -64,7 +68,7 @@ var UserInfo = function (_React$Component) {
                     { className: "team-info-subheader" },
                     React.createElement(
                         "button",
-                        { type: "submit", className: "button button_wide", onClick: this.handleEditAccount },
+                        { type: "submit", className: "dashboard-button", onClick: this.handleEditAccount },
                         "Edit Account"
                     )
                 )

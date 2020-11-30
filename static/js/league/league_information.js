@@ -12,7 +12,14 @@ var LeagueInformation = function (_React$Component) {
     function LeagueInformation(props) {
         _classCallCheck(this, LeagueInformation);
 
-        return _possibleConstructorReturn(this, (LeagueInformation.__proto__ || Object.getPrototypeOf(LeagueInformation)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (LeagueInformation.__proto__ || Object.getPrototypeOf(LeagueInformation)).call(this, props));
+
+        _this.handleEditAccount = function (event) {
+            event.preventDefault();
+            window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
+        };
+
+        return _this;
     }
 
     _createClass(LeagueInformation, [{
@@ -23,30 +30,48 @@ var LeagueInformation = function (_React$Component) {
                 { className: "team-info" },
                 React.createElement(
                     "div",
-                    { className: "team-info-text" },
+                    { className: "team-info-primary" },
                     React.createElement(
-                        "h1",
-                        null,
-                        "League: ",
-                        this.props.data[1]
+                        "div",
+                        { className: "team-info-header" },
+                        React.createElement("img", { className: "team-info-image", src: "/static/img/hockey-team.jpg" })
                     ),
                     React.createElement(
-                        "p",
-                        null,
-                        "League ID: ",
-                        this.props.data[0]
-                    ),
+                        "div",
+                        { className: "team-info-text" },
+                        React.createElement(
+                            "h1",
+                            null,
+                            "League: ",
+                            this.props.data[1]
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "League ID: ",
+                            this.props.data[0]
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "Teams: ",
+                            this.props.data[2]
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "Season End Date: ",
+                            this.props.data[3]
+                        )
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { className: "team-info-subheader" },
                     React.createElement(
-                        "p",
-                        null,
-                        "Teams: ",
-                        this.props.data[2]
-                    ),
-                    React.createElement(
-                        "p",
-                        null,
-                        "Season End Date: ",
-                        this.props.data[3]
+                        "button",
+                        { type: "submit", className: "dashboard-button", onClick: this.handleEditAccount },
+                        "Back to Dashboard"
                     )
                 )
             );

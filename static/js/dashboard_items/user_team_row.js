@@ -36,7 +36,7 @@ var UserTeamRow = function (_React$Component) {
                     null,
                     React.createElement(
                         "button",
-                        { onClick: this.handleTeamView },
+                        { className: "dashboard-button", onClick: this.handleTeamView },
                         "View"
                     )
                 ),
