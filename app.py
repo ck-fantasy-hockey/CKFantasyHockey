@@ -189,6 +189,14 @@ def add_new_team():
     database.db_functions.create_new_team(sent_info)
     return jsonify({'response': True})
 
+def drop_player():
+    """Drops a player from a user's team"""
+
+    # Get the information from client
+    sent_info = request.get_json()
+    print(sent_info)
+    return jsonify({'response': True})
+
 if __name__ == '__main__':
     # Will set port to 5000 on local machine, but allow Heroku to bind on deployment.
     port = int(os.environ.get('PORT', 5000))
