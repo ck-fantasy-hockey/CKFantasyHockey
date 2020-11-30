@@ -9,11 +9,36 @@ export default class TeamInformation extends React.Component {
     
     hideModalAccept = () => {
         this.setState({ show: false });
+        this.deleteTeam();
     };
 
     hideModalReject = () => {
         this.setState({ show: false });
     };
+
+    deleteTeam = () => {
+        const queryString = window.location.search
+        const urlParams = new URLSearchParams(queryString);
+        const teamID = parseInt(urlParams.get('teamID'))
+        const userdata = {teamid: teamID};
+        const url = "/delete-team"
+        fetch(url, {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(userdata)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            if (data['response'] === true) {
+                window.location.href = "/dashboard?token="+localStorage.getItem('usertoken');
+            } else {
+                // const element = <p className="incorrect-text">Username or password is incorrect</p>;
+                // ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            }
+        })
+    }
 
 
 
