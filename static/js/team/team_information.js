@@ -28,42 +28,51 @@ var TeamInformation = function (_React$Component) {
     }
 
     _createClass(TeamInformation, [{
-        key: "render",
+        key: 'render',
         value: function render() {
+            var editButton = void 0;
+            if (this.state.editingAttributes) {
+                editButton = [React.createElement(
+                    'button',
+                    { key: '1', className: 'btn', onClick: this.editAttributes },
+                    'Clear'
+                ), React.createElement(
+                    'button',
+                    { key: '2', className: 'btn', onClick: this.props.functions.commitUpdateTeamAttributes },
+                    'Update Team Attributes'
+                )];
+            } else {
+                editButton = React.createElement(
+                    'button',
+                    { key: '3', className: 'btn', onClick: this.editAttributes },
+                    'Edit Team Attributes'
+                );
+            }
             return React.createElement(
-                "div",
-                { className: "team-info" },
+                'div',
+                { className: 'team-info' },
                 React.createElement(
-                    "div",
-                    { className: "team-info-primary" },
+                    'div',
+                    { className: 'team-info-primary' },
                     React.createElement(
-                        "div",
-                        { className: "team-info-header" },
-                        React.createElement("img", { className: "team-info-image", src: '/static/img/hockey1_unsplash.jpg' })
+                        'div',
+                        { className: 'team-info-header' },
+                        React.createElement('img', { className: 'team-info-image', src: '/static/img/hockey1_unsplash.jpg' })
                     ),
                     React.createElement(
-                        "div",
-                        { className: "team-info-text" },
+                        'div',
+                        { className: 'team-info-text' },
                         React.createElement(TeamInformationText, Object.assign({}, this.props, this.state))
                     )
                 ),
                 React.createElement(
-                    "div",
-                    { className: "team-info-subheader" },
+                    'div',
+                    { className: 'team-info-subheader' },
+                    editButton,
                     React.createElement(
-                        "button",
-                        { className: "btn", onClick: this.editAttributes },
-                        "Edit Team Attributes"
-                    ),
-                    React.createElement(
-                        "button",
-                        { className: "btn", onClick: this.props.functions.commitUpdateTeamAttributes },
-                        "Update Team Attributes"
-                    ),
-                    React.createElement(
-                        "button",
-                        { className: "btn" },
-                        "Delete Team"
+                        'button',
+                        { className: 'btn' },
+                        'Delete Team'
                     )
                 )
             );

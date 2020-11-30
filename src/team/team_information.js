@@ -13,6 +13,13 @@ export default class TeamInformation extends React.Component {
     }
 
     render() {
+    let editButton
+    if (this.state.editingAttributes) {
+        editButton = [<button key='1' className="btn" onClick={this.editAttributes}>Clear</button>,
+        <button key='2' className="btn" onClick={this.props.functions.commitUpdateTeamAttributes}>Update Team Attributes</button>]
+    } else {
+        editButton = <button key='3' className="btn" onClick={this.editAttributes}>Edit Team Attributes</button>
+    }
     return <div className="team-info">
         <div className="team-info-primary">
             <div className="team-info-header">
@@ -23,8 +30,7 @@ export default class TeamInformation extends React.Component {
             </div>
         </div>
         <div className="team-info-subheader">
-            <button className="btn" onClick={this.editAttributes}>Edit Team Attributes</button>
-            <button className="btn" onClick={this.props.functions.commitUpdateTeamAttributes}>Update Team Attributes</button>
+            {editButton}
             <button className="btn">Delete Team</button>
         </div>
     </div>    
