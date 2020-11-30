@@ -19,7 +19,30 @@ var TeamView = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (TeamView.__proto__ || Object.getPrototypeOf(TeamView)).call(this, props));
 
         _this.dropPlayer = function (playerID) {
-            console.log(playerID);
+            var urlParams = new URLSearchParams(queryString);
+            var teamID = urlParams.get('teamID');
+            var url = '/drop-player';
+
+            _this.setState({ playerToDrop: {
+                    playerID: playerID,
+                    teamID: teamID,
+                    leagueID: _this.state.leagueInfo.leagueID
+                } });
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(_this.state.playerToDrop)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data['response'] === true) {
+                    var token = localStorage.getItem('usertoken');
+                    window.location.href = '/team-view?token=' + token + '&teamID=' + teamID;
+                }
+            });
         };
 
         _this.state = dataFromServer;

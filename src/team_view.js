@@ -13,8 +13,32 @@ class TeamView extends React.Component {
     
 
     dropPlayer = (playerID) => {
-        console.log(playerID)
+        const urlParams = new URLSearchParams(queryString);
+        const teamID = urlParams.get('teamID')
+        const url = '/drop-player'
+
+        this.setState({playerToDrop: {
+            playerID,
+            teamID,
+            leagueID: this.state.leagueInfo.leagueID
+        }})
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.state.playerToDrop)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            if (data['response'] === true) {
+                const token = localStorage.getItem('usertoken')
+                window.location.href = (`/team-view?token=${token}&teamID=${teamID}`);
+            }
+        })
     }
+
 
     render() {
         return <div className='background-filter'>
