@@ -12,7 +12,14 @@ var LeagueInformation = function (_React$Component) {
     function LeagueInformation(props) {
         _classCallCheck(this, LeagueInformation);
 
-        return _possibleConstructorReturn(this, (LeagueInformation.__proto__ || Object.getPrototypeOf(LeagueInformation)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (LeagueInformation.__proto__ || Object.getPrototypeOf(LeagueInformation)).call(this, props));
+
+        _this.handleEditAccount = function (event) {
+            event.preventDefault();
+            window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
+        };
+
+        return _this;
     }
 
     _createClass(LeagueInformation, [{
@@ -27,7 +34,7 @@ var LeagueInformation = function (_React$Component) {
                     React.createElement(
                         "div",
                         { className: "team-info-header" },
-                        React.createElement("img", { className: "team-info-image", src: "/static/img/user-photo.png" })
+                        React.createElement("img", { className: "team-info-image", src: "/static/img/hockey-team.jpg" })
                     ),
                     React.createElement(
                         "div",
@@ -56,6 +63,15 @@ var LeagueInformation = function (_React$Component) {
                             "Season End Date: ",
                             this.props.data[3]
                         )
+                    )
+                ),
+                React.createElement(
+                    "div",
+                    { className: "team-info-subheader" },
+                    React.createElement(
+                        "button",
+                        { type: "submit", className: "dashboard-button", onClick: this.handleEditAccount },
+                        "Back to Dashboard"
                     )
                 )
             );
