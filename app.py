@@ -156,6 +156,15 @@ def submit_signup():
         database.db_functions.insert_user(sent_info)
         return jsonify({'response': True})
 
+@app.route('/delete-team', methods=['POST'])
+def delete_team():
+    sent_info = request.get_json()
+    delete = database.db_functions.deletes_team(sent_info)
+    if delete:
+        return jsonify({'response': True})
+    else:
+        return jsonify({'response': False})
+
 @app.route('/update-email', methods=['POST'])
 def update_email():
     sent_info = request.get_json()

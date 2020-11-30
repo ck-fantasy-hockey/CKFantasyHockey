@@ -315,6 +315,31 @@ def drop_player_from_team(team_player_league_dict: dict) -> bool:
 
     return True
 
+# Deletes all TeamsPlayers records for team to be deleted
+def deletes_team(sent_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "DELETE FROM TeamsPlayers WHERE teamID = %s"
+    values = (sent_info['teamid'], )
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+    del_team(sent_info)
+
+# Deletes team after TeamPlayers records are deleted
+def del_team(sent_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "DELETE FROM Teams WHERE teamID = %s"
+    values = (sent_info['teamid'], )
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+    return False
+
+
 # Get team name from team ID
 def get_team_name_from_team_id(teamID: int) -> str:
     cnx = mysql.connector.connect(**config)
