@@ -1,0 +1,35 @@
+.reg-input {
+    height: 25px;
+    font-size: 1rem;
+}
+
+.tall-input {
+    height: 50px;
+    font-size: 2.25rem;
+}
+
+.team-info p, .team-info h1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-info-text {
+    flex: 1;
+}
+
+.team-info-text input {
+    width: 400px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    background: linear-gradient( 180deg,
+        rgba(0,0,0,0.0) 0%,
+        rgba(0,0,0,0.2) 100%
+        );
+    text-align: center;
+    color: rgba(37,37,37,1);
+    text-shadow: 1px 1px 1px white;
+    font-weight: 700;
+    border:none;
+    border-bottom: 1px solid black;
+    margin: 3px 100px 3px 0;
+}

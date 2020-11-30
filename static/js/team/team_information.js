@@ -7,6 +7,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import Modal from './modal.js';
+import TeamInformationText from './team_info_text.js';
 
 var TeamInformation = function (_React$Component) {
     _inherits(TeamInformation, _React$Component);
@@ -54,11 +55,44 @@ var TeamInformation = function (_React$Component) {
                 }
             });
         }, _temp), _possibleConstructorReturn(_this, _ret);
+      
+    function TeamInformation(props) {
+        _classCallCheck(this, TeamInformation);
+
+        var _this = _possibleConstructorReturn(this, (TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call(this, props));
+
+        _this.editAttributes = function () {
+            _this.setState({ editingAttributes: !_this.state.editingAttributes });
+        };
+
+        _this.state = {
+            editingAttributes: false
+        };
+
+        return _this;
     }
 
     _createClass(TeamInformation, [{
         key: 'render',
         value: function render() {
+            var editButton = void 0;
+            if (this.state.editingAttributes) {
+                editButton = [React.createElement(
+                    'button',
+                    { key: '1', className: 'btn', onClick: this.editAttributes },
+                    'Clear'
+                ), React.createElement(
+                    'button',
+                    { key: '2', className: 'btn', onClick: this.props.functions.commitUpdateTeamAttributes },
+                    'Update Team Attributes'
+                )];
+            } else {
+                editButton = React.createElement(
+                    'button',
+                    { key: '3', className: 'btn', onClick: this.editAttributes },
+                    'Edit Team Attributes'
+                );
+            }
             return React.createElement(
                 'div',
                 { className: 'team-info' },
@@ -96,6 +130,7 @@ var TeamInformation = function (_React$Component) {
                             'League ID: ',
                             this.props.leagueInfo.leagueID
                         )
+                        React.createElement(TeamInformationText, Object.assign({}, this.props, this.state))
                     )
                 ),
                 React.createElement(
@@ -110,6 +145,10 @@ var TeamInformation = function (_React$Component) {
                     React.createElement(
                         'button',
                         { className: 'btn', onClick: this.showModal },
+                    editButton,
+                    React.createElement(
+                        'button',
+                        { className: 'btn' },
                         'Delete Team'
                     )
                 )

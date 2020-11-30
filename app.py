@@ -90,7 +90,7 @@ def team_view():
         'teamName': team_name,
         'leagueInfo': league_info
     }
-    return render_template('index.j2', page="team_view", css="style", css2="style", dataFromServer=dataFromServer)
+    return render_template('index.j2', page="team_view", css="style", css2="team_view", dataFromServer=dataFromServer)
 
 @app.route('/league-view')
 @token_required
@@ -120,6 +120,13 @@ def create_team():
         "players": players
         }
     return render_template('index.j2', page="create_team", css="style", css2="create_team", dataFromServer=dataFromServer)
+
+@app.route('/update-team-attributes', methods=['POST'])
+def update_team():
+    sent_info = request.get_json()
+    result = database.db_functions.update_team(sent_info)
+    return jsonify({'response': result})
+
 
 @app.route('/account-page')
 @token_required
