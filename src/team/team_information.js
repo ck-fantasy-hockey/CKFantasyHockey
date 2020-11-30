@@ -1,23 +1,15 @@
-
+import Modal from './modal.js'
 
 export default class TeamInformation extends React.Component {
-    deleteTeam = (event) => {
-        event.preventDefault();
-        confirmAlert({
-            title: 'Confirm to submit',
-            message: 'Are you sure to do delete this team?',
-            buttons: [
-              {
-                label: 'Yes',
-                onClick: () => alert('Click Yes')
-              },
-              {
-                label: 'No',
-                onClick: () => alert('Click No')
-              }
-            ]
-          });
-    }
+    state = {show: false};
+
+    showModal = () => {
+        this.setState({ show: true });
+      };
+    
+    hideModal = () => {
+        this.setState({ show: false });
+    };
 
     render() {
     return <div className="team-info">
@@ -34,7 +26,11 @@ export default class TeamInformation extends React.Component {
         </div>
         <div className="team-info-subheader">
             <button className="btn">Edit Team Attributes</button>
-            <button className="btn" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.onCancel(item) } }>Delete Team</button>
+            <Modal show={this.state.show} handleClose={this.hideModal}>
+                <p>Modal</p>
+                <p>Data</p>
+            </Modal>
+            <button className="btn" onClick={this.showModal}>Delete Team</button>
         </div>
     </div>    
     }

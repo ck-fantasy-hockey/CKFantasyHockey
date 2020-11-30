@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import Modal from './modal.js';
+
 var TeamInformation = function (_React$Component) {
     _inherits(TeamInformation, _React$Component);
 
@@ -20,84 +22,81 @@ var TeamInformation = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call.apply(_ref, [this].concat(args))), _this), _this.deleteTeam = function (event) {
-            event.preventDefault();
-            confirmAlert({
-                title: 'Confirm to submit',
-                message: 'Are you sure to do delete this team?',
-                buttons: [{
-                    label: 'Yes',
-                    onClick: function onClick() {
-                        return alert('Click Yes');
-                    }
-                }, {
-                    label: 'No',
-                    onClick: function onClick() {
-                        return alert('Click No');
-                    }
-                }]
-            });
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TeamInformation.__proto__ || Object.getPrototypeOf(TeamInformation)).call.apply(_ref, [this].concat(args))), _this), _this.state = { show: false }, _this.showModal = function () {
+            _this.setState({ show: true });
+        }, _this.hideModal = function () {
+            _this.setState({ show: false });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(TeamInformation, [{
-        key: 'render',
+        key: "render",
         value: function render() {
-            var _this2 = this;
-
             return React.createElement(
-                'div',
-                { className: 'team-info' },
+                "div",
+                { className: "team-info" },
                 React.createElement(
-                    'div',
-                    { className: 'team-info-primary' },
+                    "div",
+                    { className: "team-info-primary" },
                     React.createElement(
-                        'div',
-                        { className: 'team-info-header' },
-                        React.createElement('img', { className: 'team-info-image', src: '/static/img/hockey1_unsplash.jpg' })
+                        "div",
+                        { className: "team-info-header" },
+                        React.createElement("img", { className: "team-info-image", src: '/static/img/hockey1_unsplash.jpg' })
                     ),
                     React.createElement(
-                        'div',
-                        { className: 'team-info-text' },
+                        "div",
+                        { className: "team-info-text" },
                         React.createElement(
-                            'h1',
+                            "h1",
                             null,
                             this.props.teamName
                         ),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'Season Ends: ',
+                            "Season Ends: ",
                             this.props.leagueInfo.seasonEnds
                         ),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'League: ',
+                            "League: ",
                             this.props.leagueInfo.leagueName
                         ),
                         React.createElement(
-                            'p',
+                            "p",
                             null,
-                            'League ID: ',
+                            "League ID: ",
                             this.props.leagueInfo.leagueID
                         )
                     )
                 ),
                 React.createElement(
-                    'div',
-                    { className: 'team-info-subheader' },
+                    "div",
+                    { className: "team-info-subheader" },
                     React.createElement(
-                        'button',
-                        { className: 'btn' },
-                        'Edit Team Attributes'
+                        "button",
+                        { className: "btn" },
+                        "Edit Team Attributes"
                     ),
                     React.createElement(
-                        'button',
-                        { className: 'btn', onClick: function onClick() {
-                                if (window.confirm('Are you sure you wish to delete this item?')) _this2.onCancel(item);
-                            } },
-                        'Delete Team'
+                        Modal,
+                        { show: this.state.show, handleClose: this.hideModal },
+                        React.createElement(
+                            "p",
+                            null,
+                            "Modal"
+                        ),
+                        React.createElement(
+                            "p",
+                            null,
+                            "Data"
+                        )
+                    ),
+                    React.createElement(
+                        "button",
+                        { className: "btn", onClick: this.showModal },
+                        "Delete Team"
                     )
                 )
             );
