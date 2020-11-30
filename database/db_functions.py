@@ -289,6 +289,32 @@ def get_league_information_from_team_id(teamID: int) -> dict:
     results['seasonEnds'] = results['seasonEnds'].strftime('%m/%d/%Y')
     return results
 
+def drop_player_from_team(team_player_league_dict: dict) -> bool:
+
+    # unwrap the dictionary getting the required information
+    playerID = team_player_league_dict['playerID']
+    teamID = team_player_league_dict['teamID']
+    leagueID = team_player_league_dict['leagueID']
+
+    # make the connection and send the queries
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    drop_player_from_team_query = """
+    DELETE FROM teamsplayers WHERE playerID = %s AND teamID = %s"""
+    drop_player_from_team_values = (playerID, teamID)
+    drop_player_from_league_query = """
+    DELETE FROM leaguesplayers WHERE playerID = %s AND leagueID = %s"""
+    drop_player_from_league_values = (playerID, leagueID)
+    cursor.execute(drop_player_from_team_query, drop_player_from_team_values)
+    cursor.execute(drop_player_from_league_query, drop_player_from_league_values)
+
+    # commit the changes and return true after closing connection
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
+    return True
+
 # Get team name from team ID
 def get_team_name_from_team_id(teamID: int) -> str:
     cnx = mysql.connector.connect(**config)
