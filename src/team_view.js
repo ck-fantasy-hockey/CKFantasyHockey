@@ -7,8 +7,8 @@ class TeamView extends React.Component {
         super(props)
         this.state = dataFromServer
         this.state.modifiedTeamInfo = {
-            seasonEnds: '',
-            teamName: ''
+            seasonEnds: null,
+            teamName: null
         }
         this.state.functions = {
             dropPlayer: this.dropPlayer,

@@ -89,8 +89,8 @@ var TeamView = function (_React$Component) {
 
         _this.state = dataFromServer;
         _this.state.modifiedTeamInfo = {
-            seasonEnds: '',
-            teamName: ''
+            seasonEnds: null,
+            teamName: null
         };
         _this.state.functions = {
             dropPlayer: _this.dropPlayer,
