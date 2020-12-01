@@ -8,12 +8,12 @@ export default class LeagueRow extends React.Component {
     }
     render() {
         return <tr>
-            <td>{this.props.leagueID}</td>
-            <td>{this.props.name}</td>
-            <td>{this.props.teams}</td>
-            <td>{this.props.visibility}</td>
-            <td>{this.props.seasonEndDate}</td>
-            <td>{this.joinLeagueButton()}</td>
+            <td className='narrow hide-on-sm-and-down'>{this.props.leagueID}</td>
+            <td className='wide'>{this.props.name}</td>
+            <td className='wide hide-on-sm-and-down'>{this.props.teams}</td>
+            <td className='wide hide-on-sm-and-down'>{this.props.visibility}</td>
+            <td className='narrow'>{this.props.seasonEndDate}</td>
+            <td className='narrow'>{this.joinLeagueButton()}</td>
         </tr>
     }
 }

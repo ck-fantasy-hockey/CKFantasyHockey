@@ -44,32 +44,32 @@ var LeagueRow = function (_React$Component) {
                 null,
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'narrow hide-on-sm-and-down' },
                     this.props.leagueID
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'wide' },
                     this.props.name
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'wide hide-on-sm-and-down' },
                     this.props.teams
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'wide hide-on-sm-and-down' },
                     this.props.visibility
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'narrow' },
                     this.props.seasonEndDate
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'narrow' },
                     this.joinLeagueButton()
                 )
             );

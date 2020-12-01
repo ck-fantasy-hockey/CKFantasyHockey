@@ -86,10 +86,10 @@ export default class LeagueList extends React.Component {
         <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <th className='hide-on-sm-and-down'>ID</th>
                 <th>Name</th>
-                <th>Teams</th>
-                <th>Visibility</th>
+                <th className='hide-on-sm-and-down'>Teams</th>
+                <th className='hide-on-sm-and-down'>Visibility</th>
                 <th>Season Ends</th>
                 <th>Functions</th>
             </tr>
