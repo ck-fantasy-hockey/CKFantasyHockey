@@ -23,6 +23,8 @@ export default class Signup extends React.Component {
     // handles submission of signup form
     handleSubmit = (event) => {
         event.preventDefault();
+        ReactDOM.render(<p></p>, document.getElementsByClassName('incorrect-creds')[0]);
+        ReactDOM.render(<p></p>, document.getElementsByClassName('incorrect-creds')[1]);
         const userdata = this.state
         // check for blank fields
         let checkFields = this.checkBlank(userdata);
@@ -61,9 +63,7 @@ export default class Signup extends React.Component {
     }
 
     checkBlank = (userdata) => {
-        console.log(userdata)
         for (const property in userdata) {
-            console.log(userdata[property])
             if (userdata[property].length === 0) {
                 const element = <p className="incorrect-text">One or more fields are blank</p>;
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
@@ -76,7 +76,6 @@ export default class Signup extends React.Component {
     emailValidate = () => {
         let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (reg.test(this.state.email) === false) {
-            this.setState({ email: '' })
             const element = <p className="incorrect-text">Invalid email format</p>;
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[1]);
             return false;

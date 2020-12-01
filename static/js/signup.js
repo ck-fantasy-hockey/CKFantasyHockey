@@ -32,6 +32,8 @@ var Signup = function (_React$Component) {
 
         _this.handleSubmit = function (event) {
             event.preventDefault();
+            ReactDOM.render(React.createElement('p', null), document.getElementsByClassName('incorrect-creds')[0]);
+            ReactDOM.render(React.createElement('p', null), document.getElementsByClassName('incorrect-creds')[1]);
             var userdata = _this.state;
             // check for blank fields
             var checkFields = _this.checkBlank(userdata);
@@ -93,7 +95,6 @@ var Signup = function (_React$Component) {
         _this.emailValidate = function () {
             var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (reg.test(_this.state.email) === false) {
-                _this.setState({ email: '' });
                 var element = React.createElement(
                     'p',
                     { className: 'incorrect-text' },
