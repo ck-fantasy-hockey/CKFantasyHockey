@@ -1,22 +1,12 @@
 import PlayerFunctions from './player_functions.js'
-
+import { abbreviate } from '../utilities/string.js'
 export default class PlayerRow extends React.Component {
     constructor(props) {
         super(props)
-
+        this.abbreviate = abbreviate.bind(this)
     }
 
-    // Takes any string and returns the first letter of each in a 
-    // new string all uppercased
-    abbreviate = (string) => {
-        const stringWords = string.split(" ")
-        let abbreviation = ""
-        stringWords.forEach((word) => {
-            abbreviation += word[0]
-        })
-        abbreviation.toUpperCase()
-        return abbreviation
-    }
+
 
     render() {
         return <tr>
