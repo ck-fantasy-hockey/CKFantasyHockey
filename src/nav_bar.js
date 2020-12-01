@@ -13,6 +13,10 @@ export default class NavBar extends React.Component {
         window.location.href = "/login";
     }
 
+    handlefaq = () => {
+        window.location.href = "/faq?token="+localStorage.getItem('usertoken');
+    }
+
     render() {
         return <nav className='nav-bar'>
             <ul>
@@ -30,6 +34,11 @@ export default class NavBar extends React.Component {
                 <li>
                     <button type="submit" onClick={this.handleJoinLeague}>Join League</button>
                 </li>
+                </div>
+                <div className="nav-item right">
+                    <li>
+                        <button type="submit" onClick={this.handlefaq}>FAQ</button>
+                    </li>
                 </div>
                 <div className="nav-item right">
                 <li>
