@@ -37,15 +37,25 @@ var Signup = function (_React$Component) {
                 return;
             }
             var userdata = _this.state;
+            var checkFields = _this.checkBlank(userdata);
+            if (checkFields === false) {
+                var element = React.createElement(
+                    'p',
+                    { className: 'incorrect-text' },
+                    'One or more fields are blank'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                return;
+            }
             var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
             // if password do not match it displays error
             if (passMatch === false) {
-                var element = React.createElement(
+                var _element = React.createElement(
                     'p',
                     { className: 'incorrect-text' },
                     'Passwords do not match'
                 );
-                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                ReactDOM.render(_element, document.getElementsByClassName('incorrect-creds')[0]);
                 return;
             }
             var url = "/submitsignup";
@@ -63,14 +73,22 @@ var Signup = function (_React$Component) {
                     window.location.href = "/login";
                     // if username is taken displays error
                 } else {
-                    var _element = React.createElement(
+                    var _element2 = React.createElement(
                         'p',
                         { className: 'incorrect-text' },
                         'Username taken'
                     );
-                    ReactDOM.render(_element, document.getElementsByClassName('incorrect-creds')[0]);
+                    ReactDOM.render(_element2, document.getElementsByClassName('incorrect-creds')[0]);
                 }
             });
+        };
+
+        _this.checkBlank = function (userdata) {
+            for (var property in userdata) {
+                console.log(userdata[property]);
+                if (userdata[property].length === 0) return false;
+            }
+            return true;
         };
 
         _this.emailValidate = function () {

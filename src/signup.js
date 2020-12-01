@@ -28,6 +28,12 @@ export default class Signup extends React.Component {
             return;
         }
         const userdata = this.state
+        let checkFields = this.checkBlank(userdata);
+        if (checkFields === false) {
+            const element = <p className="incorrect-text">One or more fields are blank</p>;
+            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            return
+        }
         let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         // if password do not match it displays error
         if (passMatch === false) {
@@ -54,6 +60,16 @@ export default class Signup extends React.Component {
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             }
         })
+    }
+
+    checkBlank = (userdata) => {
+        console.log(userdata)
+        for (const property in userdata) {
+            console.log(userdata[property])
+            if (userdata[property].length === 0)
+                return false 
+        }
+        return true
     }
 
     emailValidate = () => {
