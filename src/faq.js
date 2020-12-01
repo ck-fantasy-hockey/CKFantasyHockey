@@ -17,9 +17,23 @@ class FAQ extends React.Component {
                             and manage your roster. 
                         </p>
                         <h3>
-                            Where does your player data come from?
+                            Where does the player data come from?
                         </h3>
-                        <p></p>
+                        <p>All data is pulled from the official NHL player statistics API. Once the season starts player data will updated daily. More information on this API can be found <a href="https://github.com/dword4/nhlapi">here</a>.</p>
+                        <h3>
+                            Can I join any league?
+                        </h3>
+                        <p>Leagues marked as private cannot be joined by any user. They are invite only. You can join any public league with team slots available!</p>
+                        <h3>
+                            How do I view the leagues I am in and the teams I have created?
+                        </h3>
+                        <p>You can view all of the leagues you have joined and the teams you have created from your User Dashboard. From the dashboard you can click 'View'
+                            on any of the leagues you are in or teams you have created to view their details and manage your roster.
+                        </p>
+                        <h3>
+                            Can I leave a league I have joined?
+                        </h3>
+                        <p>While you cannot leave a league once you have joined it, you can delete your team at any time if you no longer wish to participate.</p>
                     </div>
                 </div>
             </div>
