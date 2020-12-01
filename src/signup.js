@@ -23,19 +23,19 @@ export default class Signup extends React.Component {
     // handles submission of signup form
     handleSubmit = (event) => {
         event.preventDefault();
+        const userdata = this.state
+        // check for blank fields
+        let checkFields = this.checkBlank(userdata);
+        if (checkFields === false) {
+            return;
+        }
+        // check for valid email
         let email = this.emailValidate();
         if (email == false) {
             return;
         }
-        const userdata = this.state
-        let checkFields = this.checkBlank(userdata);
-        if (checkFields === false) {
-            const element = <p className="incorrect-text">One or more fields are blank</p>;
-            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
-            return
-        }
-        let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         // if password do not match it displays error
+        let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         if (passMatch === false) {
             const element = <p className="incorrect-text">Passwords do not match</p>;
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
@@ -67,6 +67,8 @@ export default class Signup extends React.Component {
         for (const property in userdata) {
             console.log(userdata[property])
             if (userdata[property].length === 0)
+                const element = <p className="incorrect-text">One or more fields are blank</p>;
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
                 return false 
         }
         return true

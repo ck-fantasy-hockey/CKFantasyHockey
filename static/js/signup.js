@@ -84,6 +84,7 @@ var Signup = function (_React$Component) {
         };
 
         _this.checkBlank = function (userdata) {
+            console.log(userdata);
             for (var property in userdata) {
                 console.log(userdata[property]);
                 if (userdata[property].length === 0) return false;
