@@ -209,6 +209,11 @@ def add_new_team():
     data = jwt.decode(sent_info['token'], app.config['SECRET_KEY'])
     sent_info['username'] = data['username']
 
+    # Check if teamname is unique
+    teamname_unique = database.db_function.check_teamname(sent_info)
+    if teamname_unique == False:
+        return jsonify({'response': False})
+
     # Create the new team
     database.db_functions.create_new_team(sent_info)
     return jsonify({'response': True})

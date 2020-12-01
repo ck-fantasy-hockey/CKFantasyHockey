@@ -104,6 +104,8 @@ var CreateTeam = function (_React$Component) {
                 }).then(function (data) {
                     if (data['response'] === true) {
                         window.location.href = '/dashboard?token=' + localStorage.getItem('usertoken');
+                    } else {
+                        console.log("Team name taken");
                     }
                 });
             }

@@ -106,6 +106,8 @@ class CreateTeam extends React.Component {
                 if (data['response'] === true) {
                     window.location.href = ('/dashboard?token=' + localStorage.getItem('usertoken'));
 
+                } else {
+                    console.log("Team name taken");
                 }
             })
         }
