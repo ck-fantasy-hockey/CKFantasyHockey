@@ -37,8 +37,6 @@ export default class Signup extends React.Component {
         // if password do not match it displays error
         let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         if (passMatch === false) {
-            const element = <p className="incorrect-text">Passwords do not match</p>;
-            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             return
         }
         const url = "/submitsignup"
@@ -66,12 +64,13 @@ export default class Signup extends React.Component {
         console.log(userdata)
         for (const property in userdata) {
             console.log(userdata[property])
-            if (userdata[property].length === 0)
+            if (userdata[property].length === 0) {
                 const element = <p className="incorrect-text">One or more fields are blank</p>;
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
                 return false 
         }
         return true
+        }
     }
 
     emailValidate = () => {
@@ -92,6 +91,8 @@ export default class Signup extends React.Component {
         if (password1 === password2) {
             return true
         }
+        const element = <p className="incorrect-text">Passwords do not match</p>;
+        ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
         return false
     }
 
