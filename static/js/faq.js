@@ -111,7 +111,8 @@ var FAQ = function (_React$Component) {
                                     'a',
                                     { href: 'https://github.com/ck-fantasy-hockey/CKFantasyHockey' },
                                     'here'
-                                )
+                                ),
+                                '.'
                             ),
                             React.createElement(
                                 'p',

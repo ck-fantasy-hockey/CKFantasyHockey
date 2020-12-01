@@ -273,7 +273,7 @@ body {
 
 .roster th:last-of-type
 {
-    width: 100%
+    width: 20%
 }
 
 .roster tr:nth-child(even) {
@@ -605,4 +605,8 @@ body {
 
 .faq-body {
     padding: 0px 30px 30px 30px;
+}
+
+.faq-body a {
+    color: inherit;
 }

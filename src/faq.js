@@ -37,7 +37,7 @@ class FAQ extends React.Component {
                         <h3>
                             How can I learn more about the amazing developers that created this incredible fantasy hockey app?
                         </h3>
-                        <p>The Github for this project can be found <a href="https://github.com/ck-fantasy-hockey/CKFantasyHockey">here</a></p>
+                        <p>The Github for this project can be found <a href="https://github.com/ck-fantasy-hockey/CKFantasyHockey">here</a>.</p>
                         <p>George Kochera can be found on <a href="https://github.com/gkochera">Github</a>.</p>
                         <p>Wil Coiner can be found on <a href="https://github.com/coinerwh">Github</a> and <a href="https://www.linkedin.com/in/william-coiner-a78b8398/">LinkedIn</a>.</p>
                     </div>
