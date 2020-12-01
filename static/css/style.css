@@ -180,14 +180,19 @@ body {
     padding: 0 10px;
     height: 100%;
 }
+.nav-bar li {
+    margin: 10px;
+}
 
 .nav-bar .nav-item {
+    float: left;
     display: flex;
     align-self: center;
     padding: 0 10px;
 }
 
 .nav-bar .right {
+    float: right;
     margin-left:auto;
 }
 
@@ -268,7 +273,7 @@ body {
 
 .roster th:last-of-type
 {
-    width: 100%
+    width: 20%
 }
 
 .roster tr:nth-child(even) {
@@ -584,4 +589,40 @@ body {
     .hide-on-sm-and-down {
         display: none;
     }
+}
+
+/* FAQ */
+
+.faq-container {
+    display: inline-block;
+    background-color: rgba(37, 37, 37, 0.0);
+    border-radius: 10px;
+    box-shadow: -10px -10px 30px rgba(37, 37, 37, 0.4);
+    margin-bottom: 30px;
+}
+
+.faq-head {
+    color: rgba(255, 255, 255, 1);
+    border-radius: 10px 10px 0 0;
+    background-color: rgba(37, 37, 37, 0.8);
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+}
+
+
+.faq-body {
+    background-color: rgb(206, 213, 233);
+    padding: 10px 30px 30px 30px;
+}
+
+.faq-body h3:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+
+.faq-body h3:nth-child(odd){
+    background-color: rgb(206, 213, 233);
+}
+
+.faq-body a {
+    color: inherit;
 }

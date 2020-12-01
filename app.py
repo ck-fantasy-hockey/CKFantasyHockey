@@ -78,6 +78,12 @@ def dashboard():
     dataFromServer = data
     return render_template('index.j2', page="dashboard", css="style", css2="style", dataFromServer=dataFromServer)
 
+@app.route('/faq', methods=['GET'])
+@token_required
+def faq():
+    dataFromServer = {}
+    return render_template('index.j2', page="faq", css="style", css2="style", dataFromServer=dataFromServer)
+
 @app.route('/team-view', methods=['GET'])
 @token_required
 def team_view():

@@ -27,6 +27,8 @@ var NavBar = function (_React$Component) {
         }, _this.handleLogout = function () {
             localStorage.setItem('usertoken', "");
             window.location.href = "/login";
+        }, _this.handlefaq = function () {
+            window.location.href = "/faq?token=" + localStorage.getItem('usertoken');
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -63,11 +65,7 @@ var NavBar = function (_React$Component) {
                                 { type: "submit", onClick: this.handleDashboard },
                                 "User Dashboard"
                             )
-                        )
-                    ),
-                    React.createElement(
-                        "div",
-                        { className: "nav-item" },
+                        ),
                         React.createElement(
                             "li",
                             null,
@@ -81,6 +79,15 @@ var NavBar = function (_React$Component) {
                     React.createElement(
                         "div",
                         { className: "nav-item right" },
+                        React.createElement(
+                            "li",
+                            null,
+                            React.createElement(
+                                "button",
+                                { type: "submit", onClick: this.handlefaq },
+                                "FAQ"
+                            )
+                        ),
                         React.createElement(
                             "li",
                             null,
