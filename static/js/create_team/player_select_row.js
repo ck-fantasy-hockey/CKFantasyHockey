@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import { abbreviate } from '../utilities/string.js';
+
 var PlayerSelectRow = function (_React$Component) {
     _inherits(PlayerSelectRow, _React$Component);
 
@@ -22,6 +24,7 @@ var PlayerSelectRow = function (_React$Component) {
         _this.state = {
             player: _this.props.player
         };
+        _this.abbreviate = abbreviate.bind(_this);
         return _this;
     }
 
@@ -44,7 +47,7 @@ var PlayerSelectRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.state.player.position
+                    this.abbreviate(this.state.player.position)
                 ),
                 React.createElement(
                     "td",

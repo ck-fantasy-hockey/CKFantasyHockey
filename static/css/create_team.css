@@ -79,10 +79,6 @@
     flex: 1;
 }
 
-.player-select{
-    overflow-y: auto
-}
-
 @media (max-width: 1339px) {
     .roster-main {
         flex-direction: column;
