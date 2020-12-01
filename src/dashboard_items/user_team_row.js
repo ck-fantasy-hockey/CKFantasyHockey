@@ -9,12 +9,12 @@ export default class UserTeamRow extends React.Component {
             <td>
                 <button  className="dashboard-button" onClick={this.handleTeamView}>View</button>
             </td>
-            <td>{this.props[0]}</td>
+            <td className='hide-on-sm-and-down'>{this.props[0]}</td>
             <td>{this.props[1]}</td>
             <td>-</td>
             <td>-</td>
-            <td>-</td>
-            <td>-</td>
+            <td className='hide-on-sm-and-down'>-</td>
+            <td className='hide-on-sm-and-down'>-</td>
             <td>{this.props[2]}</td>
         </tr>
     }

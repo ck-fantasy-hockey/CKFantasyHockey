@@ -9,10 +9,10 @@ export default class UserLeagueRow extends React.Component {
             <td>
                 <button className="dashboard-button" onClick={this.handleLeagueView}>View</button>
             </td>
-            <td>{this.props[0]}</td>
+            <td className='hide-on-sm-and-down'>{this.props[0]}</td>
             <td>{this.props[1]}</td>
             <td>{this.props[3]}</td>
-            <td>{this.props[2]}</td>
+            <td className='hide-on-sm-and-down'>{this.props[2]}</td>
             <td>-</td>
         </tr>
     }

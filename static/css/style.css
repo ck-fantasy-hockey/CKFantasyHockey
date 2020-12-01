@@ -324,6 +324,7 @@ body {
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
+    flex-shrink: 0;
 }
 
 .roster-section span {

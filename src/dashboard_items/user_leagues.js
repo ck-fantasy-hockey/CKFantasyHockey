@@ -14,10 +14,10 @@ export default class UserLeagues extends React.Component {
             <thead>
                 <tr>
                     <th className="league-functions">  </th>
-                    <th>League ID</th>
+                    <th className='hide-on-sm-and-down'>League ID</th>
                     <th>League Name</th>
-                    <th>No. of Teams</th>
-                    <th>Season End Date</th>
+                    <th># of Teams</th>
+                    <th className='hide-on-sm-and-down'>Season Ends</th>
                     <th>Leader</th>
                 </tr>
             </thead>
