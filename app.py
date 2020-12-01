@@ -210,7 +210,7 @@ def add_new_team():
     sent_info['username'] = data['username']
 
     # Check if teamname is unique
-    teamname_unique = database.db_function.check_teamname(sent_info)
+    teamname_unique = database.db_functions.check_teamname(sent_info)
     if teamname_unique == False:
         return jsonify({'response': False})
 

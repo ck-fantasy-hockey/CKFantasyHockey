@@ -402,14 +402,16 @@ def check_teamname(sent_info):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
     query = "SELECT COUNT(*) FROM Teams WHERE TeamName = %s"
-    values = sent_info['teamName']
+    values = (sent_info['teamName'], )
     cursor.execute(query, values)
     results = cursor.fetchall()
-    print(results)
+    count = results[0][0]
     cnx.commit()
     cursor.close()
     cnx.close()
-    return False
+    if count > 0:
+        return False
+    return True
 
 
 # Creates a new team in the database
