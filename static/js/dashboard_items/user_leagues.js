@@ -48,7 +48,7 @@ var UserLeagues = function (_React$Component) {
                             ),
                             React.createElement(
                                 'th',
-                                null,
+                                { className: 'hide-on-sm-and-down' },
                                 'League ID'
                             ),
                             React.createElement(
@@ -59,12 +59,12 @@ var UserLeagues = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'No. of Teams'
+                                '# of Teams'
                             ),
                             React.createElement(
                                 'th',
-                                null,
-                                'Season End Date'
+                                { className: 'hide-on-sm-and-down' },
+                                'Season Ends'
                             ),
                             React.createElement(
                                 'th',

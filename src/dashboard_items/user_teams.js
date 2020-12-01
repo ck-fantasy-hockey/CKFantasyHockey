@@ -14,12 +14,12 @@ export default class UserTeams extends React.Component {
             <thead>
                 <tr>
                     <th className="team-functions">  </th>
-                    <th>Team ID</th>
+                    <th className='hide-on-sm-and-down'>Team ID</th>
                     <th>Team</th>
                     <th>Rank</th>
                     <th>Wins</th>
-                    <th>Losses</th>
-                    <th>Created On</th>
+                    <th className='hide-on-sm-and-down'>Losses</th>
+                    <th className='hide-on-sm-and-down'>Created On</th>
                     <th>League Name</th>
                 </tr>
             </thead>

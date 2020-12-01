@@ -58,7 +58,7 @@ var Roster = function (_React$Component) {
                                 null,
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'wide' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -72,7 +72,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'wide hide-on-sm-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -86,7 +86,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'wide hide-on-med-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -100,7 +100,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-med-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -114,7 +114,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-sm-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -128,7 +128,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-med-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -142,7 +142,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-sm-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -156,7 +156,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-sm-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -170,7 +170,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -184,7 +184,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -198,7 +198,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -212,12 +212,12 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-med-and-down' },
                                     '+/-'
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -231,7 +231,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -245,7 +245,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -259,7 +259,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -271,7 +271,7 @@ var Roster = function (_React$Component) {
                                         'B'
                                     )
                                 ),
-                                React.createElement('th', { className: 'player-functions' })
+                                React.createElement('th', { className: 'wide player-functions' })
                             )
                         ),
                         React.createElement(
@@ -306,7 +306,7 @@ var Roster = function (_React$Component) {
                                 null,
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'wide' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -320,7 +320,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'wide hide-on-sm-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -334,7 +334,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'wide hide-on-med-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -348,7 +348,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-med-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -362,21 +362,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
-                                    React.createElement(
-                                        'div',
-                                        { className: 'tooltip' },
-                                        React.createElement(
-                                            'span',
-                                            { className: 'tooltiptext' },
-                                            'Position'
-                                        ),
-                                        'POS'
-                                    )
-                                ),
-                                React.createElement(
-                                    'th',
-                                    null,
+                                    { className: 'narrow hide-on-sm-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -390,7 +376,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-med-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -404,7 +390,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-med-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -418,7 +404,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -432,7 +418,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -446,7 +432,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -460,7 +446,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -474,7 +460,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -488,7 +474,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-sm-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -502,7 +488,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -516,7 +502,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -530,7 +516,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-sm-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -544,7 +530,7 @@ var Roster = function (_React$Component) {
                                 ),
                                 React.createElement(
                                     'th',
-                                    null,
+                                    { className: 'narrow hide-on-lg-and-down' },
                                     React.createElement(
                                         'div',
                                         { className: 'tooltip' },
@@ -556,7 +542,7 @@ var Roster = function (_React$Component) {
                                         'MIP'
                                     )
                                 ),
-                                React.createElement('th', { className: 'player-functions' })
+                                React.createElement('th', { className: 'wide player-functions' })
                             )
                         ),
                         React.createElement(

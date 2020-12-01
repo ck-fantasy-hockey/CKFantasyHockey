@@ -72,6 +72,7 @@ def dashboard():
     data['team_info'] = database.db_functions.user_teams(userid)
     data['league_info'] = database.db_functions.user_leagues(userid)
     for i in range(len(data['league_info'])):
+        data['league_info'][i][2] = data['league_info'][i][2].strftime('%m-%d-%Y')
         no_of_teams = database.db_functions.count_teams(data['league_info'][i][0])
         data['league_info'][i].append(no_of_teams[0])
     dataFromServer = data

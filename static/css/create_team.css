@@ -20,12 +20,12 @@
 
 .player-available, .player-selected {
     box-shadow: none;
-    min-width: 45%;
+    width: 100%;
     margin: 0;
 }
 
 .spacer {
-    width: 50px;
+    width: 100%;
     background: linear-gradient(
         0deg,
          rgb(114, 114, 114) 0%,
@@ -63,15 +63,28 @@
 
 .roster-main {
     display: flex;
-    height: 80%;
+    min-height: 80vh;
 }
 
 .roster-left, .roster-center, .roster-right {
     display: flex;
-    flex-grow: 1;
     flex-direction: column;
 }
 
-.player-select{
-    overflow-y: auto
+.roster-left, .roster-right {
+    flex: 20;
+}
+
+.roster-center {
+    flex: 1;
+}
+
+@media (max-width: 1339px) {
+    .roster-main {
+        flex-direction: column;
+    }
+
+    .roster-center .roster-section {
+        display: none;
+    }
 }

@@ -148,7 +148,7 @@ var LeagueList = function (_React$Component) {
                             null,
                             React.createElement(
                                 'th',
-                                null,
+                                { className: 'hide-on-sm-and-down' },
                                 'ID'
                             ),
                             React.createElement(
@@ -158,12 +158,12 @@ var LeagueList = function (_React$Component) {
                             ),
                             React.createElement(
                                 'th',
-                                null,
+                                { className: 'hide-on-sm-and-down' },
                                 'Teams'
                             ),
                             React.createElement(
                                 'th',
-                                null,
+                                { className: 'hide-on-sm-and-down' },
                                 'Visibility'
                             ),
                             React.createElement(

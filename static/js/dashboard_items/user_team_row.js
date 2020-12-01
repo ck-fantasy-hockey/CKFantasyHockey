@@ -42,7 +42,7 @@ var UserTeamRow = function (_React$Component) {
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "hide-on-sm-and-down" },
                     this.props[0]
                 ),
                 React.createElement(
@@ -62,12 +62,12 @@ var UserTeamRow = function (_React$Component) {
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "hide-on-sm-and-down" },
                     "-"
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "hide-on-sm-and-down" },
                     "-"
                 ),
                 React.createElement(

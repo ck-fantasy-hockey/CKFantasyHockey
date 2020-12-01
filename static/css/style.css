@@ -226,6 +226,13 @@ body {
     text-shadow: 0 0 25px rgb(110, 175, 250);
 }
 
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+}
+
 /* MAIN CONTAINER */
 
 .container {
@@ -242,9 +249,8 @@ body {
 /* ROSTER */
 
 .roster table {
-    /* width: 100%; */
+    width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
     color: rgb(0, 0, 0);
 }
 
@@ -252,12 +258,12 @@ body {
     text-align: center;
     white-space: nowrap;
     font-size: 0.85rem;
+    padding: 0
 }
 
 .roster th {
     border-bottom: 1px solid black;
     background-color: rgba(228, 228, 228);
-    padding: 0 20px 0 20px;
 }
 
 .roster th:last-of-type
@@ -271,6 +277,10 @@ body {
 
 .roster tr:nth-child(odd) {
     background-color: rgb(206, 213, 233);
+}
+
+.roster table tr {
+    height: 34px;
 }
 
 .roster {
@@ -325,6 +335,7 @@ body {
     font-weight: 700;
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
+    flex-shrink: 0;
 }
 
 .roster-section span {
@@ -540,4 +551,37 @@ body {
   
   .display-none {
     display: none;
-  }
+}
+
+/* Table column padding modifiers */
+
+.wide {
+    padding: 0 10px 0 10px;
+    min-width: 100px;
+}
+
+.narrow {
+    padding: 0 5px 0 5px;
+    min-width: 30px;
+}
+
+
+/* Media queries for responsive design */
+
+@media (max-width: 1523px) {
+    .hide-on-lg-and-down {
+        display: none;
+    }
+}
+
+@media (max-width: 1070px) {
+    .hide-on-med-and-down {
+        display: none;
+    }
+}
+
+@media (max-width: 728px) {
+    .hide-on-sm-and-down {
+        display: none;
+    }
+}

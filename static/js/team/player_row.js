@@ -7,6 +7,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import PlayerFunctions from './player_functions.js';
+import { abbreviate } from '../utilities/string.js';
 
 var PlayerRow = function (_React$Component) {
     _inherits(PlayerRow, _React$Component);
@@ -14,7 +15,10 @@ var PlayerRow = function (_React$Component) {
     function PlayerRow(props) {
         _classCallCheck(this, PlayerRow);
 
-        return _possibleConstructorReturn(this, (PlayerRow.__proto__ || Object.getPrototypeOf(PlayerRow)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (PlayerRow.__proto__ || Object.getPrototypeOf(PlayerRow)).call(this, props));
+
+        _this.abbreviate = abbreviate.bind(_this);
+        return _this;
     }
 
     _createClass(PlayerRow, [{
@@ -30,77 +34,77 @@ var PlayerRow = function (_React$Component) {
                 ),
                 React.createElement(
                     'td',
-                    null,
-                    this.props.team
+                    { className: 'hide-on-sm-and-down' },
+                    this.abbreviate(this.props.team)
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-med-and-down' },
                     this.props.status
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-med-and-down' },
                     this.props.playerID
                 ),
                 React.createElement(
                     'td',
-                    null,
-                    this.props.position
+                    { className: 'hide-on-sm-and-down' },
+                    this.abbreviate(this.props.position)
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-med-and-down' },
                     this.props.gamesPlayed
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-sm-and-down' },
                     this.props.goals
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-sm-and-down' },
                     this.props.assists
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-lg-and-down' },
                     this.props.points
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-lg-and-down' },
                     this.props.shootoutGoals
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-lg-and-down' },
                     this.props.hatTricks
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-med-and-down' },
                     this.props.plusMinus
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-lg-and-down' },
                     this.props.pointsPerGame
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-lg-and-down' },
                     this.props.shorthandedGoals
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-lg-and-down' },
                     this.props.penaltyMinutes
                 ),
                 React.createElement(
                     'td',
-                    null,
+                    { className: 'hide-on-lg-and-down' },
                     this.props.blocks
                 ),
                 React.createElement(

@@ -48,7 +48,7 @@ var UserTeams = function (_React$Component) {
                             ),
                             React.createElement(
                                 'th',
-                                null,
+                                { className: 'hide-on-sm-and-down' },
                                 'Team ID'
                             ),
                             React.createElement(
@@ -68,12 +68,12 @@ var UserTeams = function (_React$Component) {
                             ),
                             React.createElement(
                                 'th',
-                                null,
+                                { className: 'hide-on-sm-and-down' },
                                 'Losses'
                             ),
                             React.createElement(
                                 'th',
-                                null,
+                                { className: 'hide-on-sm-and-down' },
                                 'Created On'
                             ),
                             React.createElement(

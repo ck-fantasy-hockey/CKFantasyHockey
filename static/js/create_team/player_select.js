@@ -63,7 +63,7 @@ var PlayerSelect = function (_React$Component) {
                                             null,
                                             React.createElement(
                                                 'th',
-                                                null,
+                                                { className: 'hide-on-sm-and-down' },
                                                 'Player ID'
                                             ),
                                             React.createElement(
@@ -83,12 +83,12 @@ var PlayerSelect = function (_React$Component) {
                                             ),
                                             React.createElement(
                                                 'th',
-                                                null,
+                                                { className: 'hide-on-sm-and-down' },
                                                 'Assists'
                                             ),
                                             React.createElement(
                                                 'th',
-                                                null,
+                                                { className: 'hide-on-sm-and-down' },
                                                 'Points'
                                             ),
                                             React.createElement(
@@ -137,7 +137,7 @@ var PlayerSelect = function (_React$Component) {
                                         null,
                                         React.createElement(
                                             'th',
-                                            null,
+                                            { className: 'hide-on-sm-and-down' },
                                             'Player ID'
                                         ),
                                         React.createElement(
@@ -157,12 +157,12 @@ var PlayerSelect = function (_React$Component) {
                                         ),
                                         React.createElement(
                                             'th',
-                                            null,
+                                            { className: 'hide-on-sm-and-down' },
                                             'Assists'
                                         ),
                                         React.createElement(
                                             'th',
-                                            null,
+                                            { className: 'hide-on-sm-and-down' },
                                             'Points'
                                         ),
                                         React.createElement(
