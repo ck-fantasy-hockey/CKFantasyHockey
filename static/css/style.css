@@ -272,6 +272,10 @@ body {
     background-color: rgb(206, 213, 233);
 }
 
+.roster table tr {
+    height: 34px;
+}
+
 .roster {
     background-color: rgba(37, 37, 37, 0.0);
     border-radius: 10px;
