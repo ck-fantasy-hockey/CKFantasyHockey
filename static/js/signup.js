@@ -76,11 +76,15 @@ var Signup = function (_React$Component) {
         _this.emailValidate = function () {
             var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (reg.test(_this.state.email) === false) {
-                console.log("Email is Not Correct");
                 _this.setState({ email: '' });
+                var element = React.createElement(
+                    'p',
+                    { className: 'incorrect-text' },
+                    'Invalid email format'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[1]);
                 return false;
             } else {
-                console.log("Email is Correct");
                 return true;
             }
         };
@@ -141,6 +145,7 @@ var Signup = function (_React$Component) {
                         errorMessage: 'Email is invalid',
                         emptyMessage: 'Email can\'t be empty'
                     }),
+                    React.createElement('div', { className: 'incorrect-creds' }),
                     React.createElement(
                         'p',
                         null,

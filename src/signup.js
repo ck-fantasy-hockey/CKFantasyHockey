@@ -59,12 +59,12 @@ export default class Signup extends React.Component {
     emailValidate = () => {
         let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (reg.test(this.state.email) === false) {
-            console.log("Email is Not Correct");
             this.setState({ email: '' })
+            const element = <p className="incorrect-text">Invalid email format</p>;
+            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[1]);
             return false;
           }
           else {
-            console.log("Email is Correct");
             return true;
           }
     }
@@ -98,7 +98,7 @@ export default class Signup extends React.Component {
                     errorMessage="Email is invalid"
                     emptyMessage="Email can't be empty"
                 />
-
+                <div className="incorrect-creds"></div>
                 <p>Email Address</p>
                 <input
                     text="Email Address"
