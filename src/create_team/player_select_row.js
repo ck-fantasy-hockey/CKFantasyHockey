@@ -15,12 +15,12 @@ export default class PlayerSelectRow extends React.Component {
 
     render() {
         return <tr>
-            <td>{this.state.player.playerID}</td>
+            <td className='hide-on-sm-and-down'>{this.state.player.playerID}</td>
             <td>{this.state.player.playerName}</td>
             <td>{this.abbreviate(this.state.player.position)}</td>
             <td>{this.state.player.goals}</td>
-            <td>{this.state.player.assists}</td>
-            <td>{this.state.player.points}</td>
+            <td className='hide-on-sm-and-down'>{this.state.player.assists}</td>
+            <td className='hide-on-sm-and-down'>{this.state.player.points}</td>
             <td><button className="btn" onClick={this.handleSelectPlayer}>Select</button></td>
         </tr>
     }

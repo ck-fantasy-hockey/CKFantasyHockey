@@ -20,12 +20,12 @@ export default class PlayerSelect extends React.Component {
                             <table>
                                 <thead>
                                 <tr>
-                                    <th>Player ID</th>
+                                    <th className='hide-on-sm-and-down'>Player ID</th>
                                     <th>Name</th>
                                     <th>Position</th>
                                     <th>Goals</th>
-                                    <th>Assists</th>
-                                    <th>Points</th>
+                                    <th className='hide-on-sm-and-down'>Assists</th>
+                                    <th className='hide-on-sm-and-down'>Points</th>
                                     <th>Select</th>
                                 </tr>
                                 </thead>
@@ -48,12 +48,12 @@ export default class PlayerSelect extends React.Component {
                     <table>
                         <thead>
                         <tr>
-                            <th>Player ID</th>
+                            <th className='hide-on-sm-and-down'>Player ID</th>
                             <th>Name</th>
                             <th>Position</th>
                             <th>Goals</th>
-                            <th>Assists</th>
-                            <th>Points</th>
+                            <th className='hide-on-sm-and-down'>Assists</th>
+                            <th className='hide-on-sm-and-down'>Points</th>
                             <th>Selected</th>
                         </tr>
                         </thead>

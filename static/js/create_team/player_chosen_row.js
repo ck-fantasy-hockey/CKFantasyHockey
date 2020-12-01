@@ -29,48 +29,48 @@ var PlayerChosenRow = function (_React$Component) {
     }
 
     _createClass(PlayerChosenRow, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "tr",
+                'tr',
                 null,
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-sm-and-down' },
                     this.state.player.playerID
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
                     this.state.player.playerName
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
                     this.abbreviate(this.state.player.position)
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
                     this.state.player.goals
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-sm-and-down' },
                     this.state.player.assists
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-sm-and-down' },
                     this.state.player.points
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
                     React.createElement(
-                        "button",
-                        { className: "btn", onClick: this.handleDeselectPlayer },
-                        "Remove"
+                        'button',
+                        { className: 'btn', onClick: this.handleDeselectPlayer },
+                        'Remove'
                     )
                 )
             );
