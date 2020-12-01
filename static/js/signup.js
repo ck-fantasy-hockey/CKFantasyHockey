@@ -32,6 +32,10 @@ var Signup = function (_React$Component) {
 
         _this.handleSubmit = function (event) {
             event.preventDefault();
+            var email = _this.emailValidate();
+            if (email == false) {
+                return;
+            }
             var userdata = _this.state;
             var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
             // if password do not match it displays error
@@ -67,6 +71,18 @@ var Signup = function (_React$Component) {
                     ReactDOM.render(_element, document.getElementsByClassName('incorrect-creds')[0]);
                 }
             });
+        };
+
+        _this.emailValidate = function () {
+            var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (reg.test(_this.state.email) === false) {
+                console.log("Email is Not Correct");
+                _this.setState({ email: '' });
+                return false;
+            } else {
+                console.log("Email is Correct");
+                return true;
+            }
         };
 
         _this.checkPasswords = function (password1, password2) {
@@ -133,7 +149,7 @@ var Signup = function (_React$Component) {
                     React.createElement('input', {
                         text: 'Email Address',
                         ref: 'email',
-                        type: 'text',
+                        type: 'email',
                         defaultValue: this.state.email,
                         value: this.state.email,
                         onChange: this.handleEmailInput,

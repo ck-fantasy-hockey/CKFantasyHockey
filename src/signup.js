@@ -23,6 +23,10 @@ export default class Signup extends React.Component {
     // handles submission of signup form
     handleSubmit = (event) => {
         event.preventDefault();
+        let email = this.emailValidate();
+        if (email == false) {
+            return;
+        }
         const userdata = this.state
         let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         // if password do not match it displays error
@@ -50,6 +54,19 @@ export default class Signup extends React.Component {
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             }
         })
+    }
+
+    emailValidate = () => {
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (reg.test(this.state.email) === false) {
+            console.log("Email is Not Correct");
+            this.setState({ email: '' })
+            return false;
+          }
+          else {
+            console.log("Email is Correct");
+            return true;
+          }
     }
 
     // Confirms password match
@@ -86,7 +103,7 @@ export default class Signup extends React.Component {
                 <input
                     text="Email Address"
                     ref="email"
-                    type="text"
+                    type="email"
                     defaultValue={this.state.email}
                     value={this.state.email}
                     onChange={this.handleEmailInput}
