@@ -33,9 +33,6 @@ var Signup = function (_React$Component) {
         _this.handleSubmit = function (event) {
             event.preventDefault();
             var email = _this.emailValidate();
-            if (email == false) {
-                return;
-            }
             var userdata = _this.state;
             var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
             // if password do not match it displays error
@@ -46,31 +43,34 @@ var Signup = function (_React$Component) {
                     'Passwords do not match'
                 );
                 ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
-                return;
             }
             var url = "/submitsignup";
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userdata)
-            }).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                // if username unique, redirects to login
-                if (data['response'] === true) {
-                    window.location.href = "/login";
-                    // if username is taken displays error
-                } else {
-                    var _element = React.createElement(
-                        'p',
-                        { className: 'incorrect-text' },
-                        'Username taken'
-                    );
-                    ReactDOM.render(_element, document.getElementsByClassName('incorrect-creds')[0]);
-                }
-            });
+
+            // if password matches and email is valid, perform the signup
+            if (email && passMatch) {
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userdata)
+                }).then(function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    // if username unique, redirects to login
+                    if (data['response'] === true) {
+                        window.location.href = "/login";
+                        // if username is taken displays error
+                    } else {
+                        var _element = React.createElement(
+                            'p',
+                            { className: 'incorrect-text' },
+                            'Username taken'
+                        );
+                        ReactDOM.render(_element, document.getElementsByClassName('incorrect-creds')[0]);
+                    }
+                });
+            }
         };
 
         _this.emailValidate = function () {

@@ -24,36 +24,36 @@ export default class Signup extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         let email = this.emailValidate();
-        if (email == false) {
-            return;
-        }
         const userdata = this.state
         let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         // if password do not match it displays error
         if (passMatch === false) {
             const element = <p className="incorrect-text">Passwords do not match</p>;
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
-            return
         }
         const url = "/submitsignup"
-        fetch(url, {
-           method: 'POST',
-           headers: {
-               'Content-Type': 'application/json',
-           },
-           body: JSON.stringify(userdata)
-        })
-        .then((response) => response.json())
-        .then(data => {
-            // if username unique, redirects to login
-            if (data['response'] === true) {
-                window.location.href = "/login";
-            // if username is taken displays error
-            } else {
-                const element = <p className="incorrect-text">Username taken</p>;
-                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
-            }
-        })
+
+        // if password matches and email is valid, perform the signup
+        if (email && passMatch) {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userdata)
+             })
+             .then((response) => response.json())
+             .then(data => {
+                 // if username unique, redirects to login
+                 if (data['response'] === true) {
+                     window.location.href = "/login";
+                 // if username is taken displays error
+                 } else {
+                     const element = <p className="incorrect-text">Username taken</p>;
+                     ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                 }
+             })
+        }
     }
 
     emailValidate = () => {
