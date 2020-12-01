@@ -1,75 +1,163 @@
 -- These are some Database Manipulation queries for a partially implemented CK Fantasy Hockey web app 
 -- using the ckfantasy database.
 
--- get userid user logs in
-SELECT userid FROM Users WHERE userName = :username;
+-- Gets the number of occurences of a specific username [!]
+SELECT count(*) FROM Users WHERE userName = :username;
 
--- insert to create new user
-INSERT INTO Users (userName, password, salt, email, sessionID, sessionExpires) VALUES (:username, :password, :salt, :email, :sessionid, sessionExpires);
+-- Gets the userID for a specific username [!]
+SELECT userID FROM Users WHERE userName = :username LIMIT 0,1;
 
--- Update email address
+-- insert to create new user [!]
+INSERT INTO Users SET userName = :username, password = :password, email = :email;
+
+-- verify username and password combination is correct [!]
+SELECT count(*) FROM Users WHERE userName = :userName AND password = :password;
+
+-- gets current users email [!]
+SELECT email FROM Users WHERE username = :username;
+
+-- Update email address [!]
 UPDATE Users SET email = :newemail WHERE userid = :userid;
 
--- Update password
+-- Update password [!]
 UPDATE Users SET password = :newpassword WHERE userid = :userid;
 
--- Get leagues user is in
-SELECT leagueName FROM Leagues AS l
-INNER JOIN Teams AS t ON l.leagueid = t.leagueid
-ON t.userid = :userid;
+-- Retrive the users username, email address and number of teams they are on
+-- for the dashboard [!]
+SELECT Users.username,
+       Users.email,
+       COUNT(Teams.userID)
+FROM Users
+LEFT JOIN Teams ON Users.UserID = Teams.userID
+WHERE Users.userID = :userID;
 
--- Get Teams user has created
-SELECT teamName FROM Teams WHERE userid = :userid;
+-- Retrieve the list of teams that the logged in user belongs to [!]
+SELECT teamID,
+       teamName,
+       Leagues.leagueName
+FROM Teams
+LEFT JOIN Leagues ON Teams.leagueid = Leagues.leagueID
+WHERE Teams.userID = :userid;
 
--- Get user team
-SELECT teamName FROM Teams WHERE teamid= :teamid;
+-- Retrieve the list of leagues that the logged in user belongs to [!]
+SELECT Leagues.leagueID, leagueName, seasonEnds
+FROM Leagues
+INNER JOIN Teams ON Leagues.leagueID = Teams.leagueID
+WHERE Teams.userID = :userid;
 
--- Create new league
-INSERT INTO Leagues (leagueName) VALUES (:leaguename);
+-- Get user team from teamID [!]
+SELECT teamName FROM Teams WHERE teamid= :teamid LIMIT 0,1;
 
--- Create new team
+-- Create new league [!]
+INSERT INTO leagues (leagueName, visibility, seasonEnds)
+VALUES (:leagueName, :visibility, STR_TO_DATE(:seasonEnds, '%m-%d-%Y'));
+
+-- Get all leagues [!]
+SELECT * FROM leagues;
+
+-- Create new team [!]
 INSERT INTO Teams (teamName, userid, leagueid) VALUES (:teamname, :userid, :leagueid);
 
--- Delete team
+-- Get Team ID from team name [!]
+SELECT teamID FROM Teams WHERE teamName = :teamName;
+
+-- Delete team [!]
 DELETE FROM Teams WHERE teamid = :teamid;
 
--- Get Players
+-- Delete player associations with a specific team when deleting a team [!]
+DELETE FROM TeamsPlayers WHERE teamID = :teamID;
+
+-- Get Players [!]
 SELECT * From Players;
 
--- Get Skaters
-SELECT * FROM Players WHERE NOT position = 'Goalie';
+-- Insert Player [!]
+INSERT INTO Players (playerName,
+                     team,
+                     position,
+                     gamesPlayed,
+                     goals,
+                     assists,
+                     points,
+                     gameWinningGoals,
+                     plusMinus,
+                     shortHandedGoals,
+                     penaltyMinutes,
+                     blocks,
+                     minutesPlayed)
+VALUES (:playerName,
+        :team,
+        :position,
+        :gamesPlayed,
+        :goals,
+        :assists,
+        :points,
+        :gameWinningGoals,
+        :plusMinus,
+        :shortHandedGoals,
+        :penaltyMinutes,
+        :blocks,
+        :minutesPlayed);
 
--- Get Goalies
-SELECT * FROM Players WHERE position = 'Goalie';
+-- Get available players in league [!]
+SELECT Players.playerID AS `playerID`, playerName, position, goals, assists, points FROM Players
+    LEFT JOIN (
+        SELECT * FROM LeaguesPlayers WHERE leagueID = :leaugeID
+    ) AS LP ON LP.playerID = Players.playerID
+WHERE LP.playerID IS NULL;
 
--- Insert Player
-INSERT INTO players (playerName, team, position, gamesPlayed, goals, assists, points, gameWinningGoals, plusMinus, shortHandedGoals, penaltyMinutes, blocks, minutesPlayed)
-VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+-- Gets general league information for a specific league [!]
+SELECT l.leagueid, l.leaguename, count(t.leagueid), l.seasonEnds
+FROM Leagues AS l
+    LEFT JOIN Teams AS t ON l.leagueid = t.leagueid
+WHERE l.leagueid = :leagueid;
 
--- Update Player
-UPDATE Players SET playerName = :playername, team = :team, position = :position, gamesPlayed = :gamesplayed, goals = :goals, assists = :assists, points = :points,
-gameWinningGoals = :gamewinninggoals, plusMinus = :plusminus, shortHandedGoals = :shorthandedgoals, penaltyMinutes = :penaltyminutes, blocks = :blocks, minutesPlayed = :minutesplayed
-WHERE playerid = :playerid
+-- Gets league information based on a teamID [!]
+SELECT leagues.leagueID as leagueID, leagueName, seasonEnds FROM leagues
+INNER JOIN (
+    SELECT teamID, leagueID FROM teams WHERE teamID = :teamID
+) AS T ON T.leagueID = leagues.leagueID
+LIMIT 0,1;
 
--- Get players on a team
-SELECT playerName, team, position, gamesPlayed, goals, assists, points, gameWinningGoals, plusMinus, shortHandedGoals, penaltyMinutes, blocks, minutesPlayed FROM Players AS p
-INNER JOIN TeamsPlayers AS tp ON p.playerid=tp.playerid
-ON tp.teamid = :teamid;
+-- Gets team level information based on league ID [!]
+SELECT t.teamid, t.teamname, u.username
+FROM Teams AS t
+    LEFT JOIN Users AS u ON t.userid = u.userid
+WHERE t.leagueid = :leagueID;
 
--- Get available players in league
-SELECT playerName, team, position, gamesPlayed, goals, assists, points, gameWinningGoals, plusMinus, shortHandedGoals, penaltyMinutes, blocks, minutesPlayed FROM Players AS p
-LEFT JOIN LeaguesPlayers AS lp ON p.playerid=lp.playerid 
-WHERE lp.playerid IS NULL;
+-- Get number of teams in a league [!]
+SELECT count(*) FROM Teams WHERE leagueid = :leagueid;
 
--- Add player to team
+-- Get players that are on a team [!]
+SELECT p.playerID as playerID, team, status, playerName,
+    position, gamesPlayed, points, goals, assists, shootoutGoals, hatTricks,
+    plusMinus, pointsPerGame, shorthandedGoals, penaltyMinutes, blocks,
+    wins, losses, overtimeLosses, shutOuts, goalsAllowedAverage, goalsAllowed,
+    saves, savePercentage, minutesPlayed  FROM teamsplayers
+INNER JOIN (
+    SELECT * FROM players
+) AS p ON p.playerID = teamsplayers.playerID
+WHERE teamID = :teamID;
+
+-- Update team name [!]
+UPDATE teams SET teamName = :teamName WHERE teamID = :teamID;
+
+-- Update the season ends date of the league for a given team [!]
+UPDATE leagues l
+INNER JOIN (
+    SELECT * FROM teams where teamID = :teamID
+) AS t on t.leagueID = l.leagueID
+SET l.seasonEnds = STR_TO_DATE(:seasonEndsDate, '%Y-%m-%d')
+WHERE t.teamID = :teamID;
+
+-- Add player to team [!]
 INSERT INTO TeamsPlayers (teamid, playerid) VALUES (:teamid, :playerid);
 
--- Set player as taken in league
-INSERT INTO LeaguesPlayers (teamid, playerid) VALUES (:teamid, :playerid);
+-- Set player as taken in league [!]
+INSERT INTO LeaguesPlayers (leagueID, playerid) VALUES (:leagueID, :playerID);
 
--- Remove player from team
+-- Remove player from team [!]
 DELETE FROM TeamsPlayers WHERE playerid = :playerid AND teamid = :teamid;
 
--- Remove player from taken players in a league
+-- Remove player from taken players in a league [!]
 DELETE FROM LeaguesPlayers WHERE playerid = :playerid AND leagueid = :leagueid;
 
