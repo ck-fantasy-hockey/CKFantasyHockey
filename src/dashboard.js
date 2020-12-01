@@ -3,8 +3,6 @@ import UserLeagues from './dashboard_items/user_leagues.js'
 import UserTeams from './dashboard_items/user_teams.js'
 import NavBar from './nav_bar.js'
 
-// window.history.replaceState({}, document.title, "/dashboard");
-
 class Dashboard extends React.Component {
     constructor() {
         super();
