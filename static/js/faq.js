@@ -8,16 +8,16 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import NavBar from './nav_bar.js';
 
-var Dashboard = function (_React$Component) {
-    _inherits(Dashboard, _React$Component);
+var FAQ = function (_React$Component) {
+    _inherits(FAQ, _React$Component);
 
-    function Dashboard() {
-        _classCallCheck(this, Dashboard);
+    function FAQ() {
+        _classCallCheck(this, FAQ);
 
-        return _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (FAQ.__proto__ || Object.getPrototypeOf(FAQ)).apply(this, arguments));
     }
 
-    _createClass(Dashboard, [{
+    _createClass(FAQ, [{
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -29,39 +29,43 @@ var Dashboard = function (_React$Component) {
                     { className: 'container' },
                     React.createElement(
                         'div',
-                        { className: 'faq-head' },
+                        { className: 'faq-container' },
                         React.createElement(
-                            'h1',
-                            null,
-                            'FAQ'
+                            'div',
+                            { className: 'faq-head' },
+                            React.createElement(
+                                'h1',
+                                null,
+                                'FAQ'
+                            )
+                        ),
+                        React.createElement(
+                            'div',
+                            { className: 'faq-body' },
+                            React.createElement(
+                                'h3',
+                                null,
+                                'How does CK Fantasy Hockey work?'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'CK Fantasy Hockey is a fantasy hockey application that allows you to join leagues, create teams, add players to your team, create your own personalized roster, and manage your roster.'
+                            ),
+                            React.createElement(
+                                'h3',
+                                null,
+                                'Where does your player data come from?'
+                            ),
+                            React.createElement('p', null)
                         )
-                    ),
-                    React.createElement(
-                        'div',
-                        { className: 'faq-body' },
-                        React.createElement(
-                            'h3',
-                            null,
-                            'How does CK Fantasy Hockey work?'
-                        ),
-                        React.createElement(
-                            'p',
-                            null,
-                            'CK Fantasy Hockey is a fantasy hockey application that allows you to join leagues, create teams, add players to your team, create your own personalized roster, and manage your roster.'
-                        ),
-                        React.createElement(
-                            'h3',
-                            null,
-                            'Where does your player data come from?'
-                        ),
-                        React.createElement('p', null)
                     )
                 )
             );
         }
     }]);
 
-    return Dashboard;
+    return FAQ;
 }(React.Component);
 
 ReactDOM.render(React.createElement(FAQ, null), document.getElementById('root'));

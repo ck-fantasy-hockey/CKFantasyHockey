@@ -590,3 +590,19 @@ body {
         display: none;
     }
 }
+
+/* FAQ */
+
+.faq-container {
+    background-color: rgba(200,200,200,1);
+    border-radius: 10px;
+}
+
+.faq-head {
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+}
+
+.faq-body {
+    padding: 0px 30px 30px 30px;
+}
