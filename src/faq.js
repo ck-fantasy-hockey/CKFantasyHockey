@@ -34,6 +34,12 @@ class FAQ extends React.Component {
                             Can I leave a league I have joined?
                         </h3>
                         <p>While you cannot leave a league once you have joined it, you can delete your team at any time if you no longer wish to participate.</p>
+                        <h3>
+                            How can I learn more about the amazing developers that created this incredible fantasy hockey app?
+                        </h3>
+                        <p>The Github for this project can be found <a href="https://github.com/ck-fantasy-hockey/CKFantasyHockey">here</a></p>
+                        <p>George Kochera can be found on <a href="https://github.com/gkochera">Github</a>.</p>
+                        <p>Wil Coiner can be found on <a href="https://github.com/coinerwh">Github</a> and <a href="https://www.linkedin.com/in/william-coiner-a78b8398/">LinkedIn</a>.</p>
                     </div>
                 </div>
             </div>

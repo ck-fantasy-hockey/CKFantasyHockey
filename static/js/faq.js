@@ -55,9 +55,92 @@ var FAQ = function (_React$Component) {
                             React.createElement(
                                 'h3',
                                 null,
-                                'Where does your player data come from?'
+                                'Where does the player data come from?'
                             ),
-                            React.createElement('p', null)
+                            React.createElement(
+                                'p',
+                                null,
+                                'All data is pulled from the official NHL player statistics API. Once the season starts player data will updated daily. More information on this API can be found ',
+                                React.createElement(
+                                    'a',
+                                    { href: 'https://github.com/dword4/nhlapi' },
+                                    'here'
+                                ),
+                                '.'
+                            ),
+                            React.createElement(
+                                'h3',
+                                null,
+                                'Can I join any league?'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'Leagues marked as private cannot be joined by any user. They are invite only. You can join any public league with team slots available!'
+                            ),
+                            React.createElement(
+                                'h3',
+                                null,
+                                'How do I view the leagues I am in and the teams I have created?'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'You can view all of the leagues you have joined and the teams you have created from your User Dashboard. From the dashboard you can click \'View\' on any of the leagues you are in or teams you have created to view their details and manage your roster.'
+                            ),
+                            React.createElement(
+                                'h3',
+                                null,
+                                'Can I leave a league I have joined?'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'While you cannot leave a league once you have joined it, you can delete your team at any time if you no longer wish to participate.'
+                            ),
+                            React.createElement(
+                                'h3',
+                                null,
+                                'How can I learn more about the amazing developers that created this incredible fantasy hockey app?'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'The Github for this project can be found ',
+                                React.createElement(
+                                    'a',
+                                    { href: 'https://github.com/ck-fantasy-hockey/CKFantasyHockey' },
+                                    'here'
+                                )
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'George Kochera can be found on ',
+                                React.createElement(
+                                    'a',
+                                    { href: 'https://github.com/gkochera' },
+                                    'Github'
+                                ),
+                                '.'
+                            ),
+                            React.createElement(
+                                'p',
+                                null,
+                                'Wil Coiner can be found on ',
+                                React.createElement(
+                                    'a',
+                                    { href: 'https://github.com/coinerwh' },
+                                    'Github'
+                                ),
+                                ' and ',
+                                React.createElement(
+                                    'a',
+                                    { href: 'https://www.linkedin.com/in/william-coiner-a78b8398/' },
+                                    'LinkedIn'
+                                ),
+                                '.'
+                            )
                         )
                     )
                 )
