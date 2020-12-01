@@ -32,9 +32,9 @@ var FAQ = function (_React$Component) {
                         { className: 'faq-container' },
                         React.createElement(
                             'div',
-                            { className: 'faq-head' },
+                            { className: 'roster-title' },
                             React.createElement(
-                                'h1',
+                                'h2',
                                 null,
                                 'FAQ'
                             )
@@ -122,6 +122,12 @@ var FAQ = function (_React$Component) {
                                     'a',
                                     { href: 'https://github.com/gkochera' },
                                     'Github'
+                                ),
+                                ' and ',
+                                React.createElement(
+                                    'a',
+                                    { href: 'https://www.linkedin.com/in/george-kochera/' },
+                                    'LinkedIn'
                                 ),
                                 '.'
                             ),

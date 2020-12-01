@@ -6,8 +6,8 @@ class FAQ extends React.Component {
             <NavBar />
             <div className='container'>
                 <div className='faq-container'>
-                    <div className='faq-head'>
-                        <h1>FAQ</h1>
+                    <div className='roster-title'>
+                        <h2>FAQ</h2>
                     </div>
                     <div className='faq-body'>
                         <h3>
@@ -38,7 +38,7 @@ class FAQ extends React.Component {
                             How can I learn more about the amazing developers that created this incredible fantasy hockey app?
                         </h3>
                         <p>The Github for this project can be found <a href="https://github.com/ck-fantasy-hockey/CKFantasyHockey">here</a>.</p>
-                        <p>George Kochera can be found on <a href="https://github.com/gkochera">Github</a>.</p>
+                        <p>George Kochera can be found on <a href="https://github.com/gkochera">Github</a> and <a href='https://www.linkedin.com/in/george-kochera/'>LinkedIn</a>.</p>
                         <p>Wil Coiner can be found on <a href="https://github.com/coinerwh">Github</a> and <a href="https://www.linkedin.com/in/william-coiner-a78b8398/">LinkedIn</a>.</p>
                     </div>
                 </div>
