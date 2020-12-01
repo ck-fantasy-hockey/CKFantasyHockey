@@ -33,13 +33,3 @@
     border-bottom: 1px solid black;
     margin: 3px 100px 3px 0;
 }
-
-.wide {
-    padding: 0 10px 0 10px;
-    min-width: 100px;
-}
-
-.narrow {
-    padding: 0 5px 0 5px;
-    min-width: 30px;
-}

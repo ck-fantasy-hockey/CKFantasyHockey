@@ -539,7 +539,19 @@ body {
   
   .display-none {
     display: none;
-  }
+}
+
+/* Table column padding modifiers */
+
+.wide {
+    padding: 0 10px 0 10px;
+    min-width: 100px;
+}
+
+.narrow {
+    padding: 0 5px 0 5px;
+    min-width: 30px;
+}
 
 
 /* Media queries for responsive design */
