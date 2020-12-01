@@ -180,14 +180,19 @@ body {
     padding: 0 10px;
     height: 100%;
 }
+.nav-bar li {
+    margin: 10px;
+}
 
 .nav-bar .nav-item {
+    float: left;
     display: flex;
     align-self: center;
     padding: 0 10px;
 }
 
 .nav-bar .right {
+    float: right;
     margin-left:auto;
 }
 

@@ -29,8 +29,6 @@ export default class NavBar extends React.Component {
                 <li>
                     <button type="submit" onClick={this.handleDashboard}>User Dashboard</button>
                 </li>
-                </div>
-                <div className="nav-item">
                 <li>
                     <button type="submit" onClick={this.handleJoinLeague}>Join League</button>
                 </li>
@@ -39,11 +37,9 @@ export default class NavBar extends React.Component {
                     <li>
                         <button type="submit" onClick={this.handlefaq}>FAQ</button>
                     </li>
-                </div>
-                <div className="nav-item right">
-                <li>
-                    <button type="submit" onClick={this.handleLogout}>Logout</button>
-                </li>
+                    <li>
+                        <button type="submit" onClick={this.handleLogout}>Logout</button>
+                    </li>
                 </div>
             </ul>
         </nav>
