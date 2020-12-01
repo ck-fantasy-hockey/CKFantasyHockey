@@ -5,10 +5,21 @@ export default class PlayerRow extends React.Component {
         super(props)
 
     }
+
+    shortenTeamName = (teamName) => {
+        const teamNameWords = teamName.split(" ")
+        let abbreviatedTeamName = ""
+        teamNameWords.forEach((word) => {
+            abbreviatedTeamName += word[0]
+            console.log(abbreviatedTeamName)
+        })
+        return abbreviatedTeamName
+    }
+
     render() {
         return <tr>
             <td>{this.props.playerName}</td>
-            <td>{this.props.team}</td>
+            <td>{this.shortenTeamName(this.props.team)}</td>
             <td>{this.props.status}</td>
             <td>{this.props.playerID}</td>
             <td>{this.props.position}</td>
