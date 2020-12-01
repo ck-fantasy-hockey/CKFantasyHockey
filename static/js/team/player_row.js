@@ -16,18 +16,22 @@ var PlayerRow = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (PlayerRow.__proto__ || Object.getPrototypeOf(PlayerRow)).call(this, props));
 
-        _this.shortenTeamName = function (teamName) {
-            var teamNameWords = teamName.split(" ");
-            var abbreviatedTeamName = "";
-            teamNameWords.forEach(function (word) {
-                abbreviatedTeamName += word[0];
-                console.log(abbreviatedTeamName);
+        _this.abbreviate = function (string) {
+            var stringWords = string.split(" ");
+            var abbreviation = "";
+            stringWords.forEach(function (word) {
+                abbreviation += word[0];
             });
-            return abbreviatedTeamName;
+            abbreviation.toUpperCase();
+            return abbreviation;
         };
 
         return _this;
     }
+
+    // Takes any string and returns the first letter of each in a 
+    // new string all uppercased
+
 
     _createClass(PlayerRow, [{
         key: "render",
@@ -37,87 +41,87 @@ var PlayerRow = function (_React$Component) {
                 null,
                 React.createElement(
                     "td",
-                    null,
+                    { className: "wide" },
                     this.props.playerName
                 ),
                 React.createElement(
                     "td",
-                    null,
-                    this.shortenTeamName(this.props.team)
+                    { className: "wide" },
+                    this.abbreviate(this.props.team)
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "wide" },
                     this.props.status
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.playerID
                 ),
                 React.createElement(
                     "td",
-                    null,
-                    this.props.position
+                    { className: "narrow" },
+                    this.abbreviate(this.props.position)
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.gamesPlayed
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.goals
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.assists
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.points
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.shootoutGoals
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.hatTricks
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.plusMinus
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.pointsPerGame
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.shorthandedGoals
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.penaltyMinutes
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "narrow" },
                     this.props.blocks
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: "wide" },
                     React.createElement(PlayerFunctions, this.props)
                 )
             );
