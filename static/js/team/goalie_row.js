@@ -18,103 +18,98 @@ var GoalieRow = function (_React$Component) {
     }
 
     _createClass(GoalieRow, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "tr",
+                'tr',
                 null,
                 React.createElement(
-                    "td",
+                    'td',
                     null,
                     this.props.playerName
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-sm-and-down' },
                     this.props.team
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-med-and-down' },
                     this.props.status
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-med-and-down' },
                     this.props.playerID
                 ),
                 React.createElement(
-                    "td",
-                    null,
-                    this.props.position
-                ),
-                React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-sm-and-down' },
                     this.props.gamesPlayed
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-med-and-down' },
                     this.props.goals
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-med-and-down' },
                     this.props.assists
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-lg-and-down' },
                     this.props.points
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-lg-and-down' },
                     this.props.wins
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-lg-and-down' },
                     this.props.losses
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-lg-and-down' },
                     this.props.overtimeLosses
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-lg-and-down' },
                     this.props.shutOuts
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-sm-and-down' },
                     this.props.goalsAllowedAverage
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-lg-and-down' },
                     this.props.goalsAllowed
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-lg-and-down' },
                     this.props.saves
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-sm-and-down' },
                     this.props.savePercentage
                 ),
                 React.createElement(
-                    "td",
-                    null,
+                    'td',
+                    { className: 'hide-on-lg-and-down' },
                     this.props.minutesPlayed
                 ),
                 React.createElement(
-                    "td",
+                    'td',
                     null,
                     React.createElement(PlayerFunctions, this.props)
                 )

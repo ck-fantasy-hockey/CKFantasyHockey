@@ -41,87 +41,87 @@ var PlayerRow = function (_React$Component) {
                 null,
                 React.createElement(
                     "td",
-                    { className: "wide" },
+                    null,
                     this.props.playerName
                 ),
                 React.createElement(
                     "td",
-                    { className: "wide" },
+                    { className: "hide-on-sm-and-down" },
                     this.abbreviate(this.props.team)
                 ),
                 React.createElement(
                     "td",
-                    { className: "wide" },
+                    { className: "hide-on-med-and-down" },
                     this.props.status
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-med-and-down" },
                     this.props.playerID
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-sm-and-down" },
                     this.abbreviate(this.props.position)
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-med-and-down" },
                     this.props.gamesPlayed
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-sm-and-down" },
                     this.props.goals
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-sm-and-down" },
                     this.props.assists
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-lg-and-down" },
                     this.props.points
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-lg-and-down" },
                     this.props.shootoutGoals
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-lg-and-down" },
                     this.props.hatTricks
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-med-and-down" },
                     this.props.plusMinus
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-lg-and-down" },
                     this.props.pointsPerGame
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-lg-and-down" },
                     this.props.shorthandedGoals
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-lg-and-down" },
                     this.props.penaltyMinutes
                 ),
                 React.createElement(
                     "td",
-                    { className: "narrow" },
+                    { className: "hide-on-lg-and-down" },
                     this.props.blocks
                 ),
                 React.createElement(
                     "td",
-                    { className: "wide" },
+                    null,
                     React.createElement(PlayerFunctions, this.props)
                 )
             );

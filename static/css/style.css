@@ -242,9 +242,8 @@ body {
 /* ROSTER */
 
 .roster table {
-    /* width: 100%; */
+    width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
     color: rgb(0, 0, 0);
 }
 
@@ -252,12 +251,12 @@ body {
     text-align: center;
     white-space: nowrap;
     font-size: 0.85rem;
+    padding: 0
 }
 
 .roster th {
     border-bottom: 1px solid black;
     background-color: rgba(228, 228, 228);
-    padding: 0 20px 0 20px;
 }
 
 .roster th:last-of-type
