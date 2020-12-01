@@ -41,6 +41,19 @@ var NavBar = function (_React$Component) {
                     null,
                     React.createElement(
                         "div",
+                        { className: "nav-logo" },
+                        React.createElement(
+                            "div",
+                            { className: "title-initials" },
+                            React.createElement(
+                                "span",
+                                null,
+                                "CK"
+                            )
+                        )
+                    ),
+                    React.createElement(
+                        "div",
                         { className: "nav-item" },
                         React.createElement(
                             "li",

@@ -16,6 +16,11 @@ export default class NavBar extends React.Component {
     render() {
         return <nav className='nav-bar'>
             <ul>
+                <div className="nav-logo">
+                    <div className='title-initials'>
+                        <span>CK</span>
+                    </div>
+                </div>
                 <div className="nav-item">
                 <li>
                     <button type="submit" onClick={this.handleDashboard}>User Dashboard</button>
