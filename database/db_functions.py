@@ -107,6 +107,17 @@ def update_password(sent_info):
     cursor.close()
     cnx.close()
 
+# gets all user data
+def get_all_users():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    query = "SELECT * FROM Users;"
+    cursor.execute(query)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    return results
+
 # pulls user info for dashboard
 def user_info(userid):
     cnx = mysql.connector.connect(**config)
