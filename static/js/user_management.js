@@ -7,6 +7,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import NavBar from './nav_bar.js';
+import UserRoster from './user_management/user_roster.js';
 
 var UserManagement = function (_React$Component) {
     _inherits(UserManagement, _React$Component);
@@ -27,11 +28,7 @@ var UserManagement = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
-                    React.createElement(
-                        'p',
-                        null,
-                        JSON.stringify(dataFromServer)
-                    )
+                    React.createElement(UserRoster, { users: dataFromServer })
                 )
             );
         }
