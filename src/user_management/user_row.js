@@ -5,6 +5,7 @@ export default class UserRow extends React.Component {
 
     render() {
         return <tr>
+            <td>{this.props.userID}</td>
             <td>{this.props.email}</td>
             <td className='hide-on-sm-and-down'>{this.props.password}</td>
             <td className='hide-on-med-and-down'>{this.props.sessionID}</td>

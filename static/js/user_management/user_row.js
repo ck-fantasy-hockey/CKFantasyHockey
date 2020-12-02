@@ -24,6 +24,11 @@ var UserRow = function (_React$Component) {
                 React.createElement(
                     'td',
                     null,
+                    this.props.userID
+                ),
+                React.createElement(
+                    'td',
+                    null,
                     this.props.email
                 ),
                 React.createElement(
