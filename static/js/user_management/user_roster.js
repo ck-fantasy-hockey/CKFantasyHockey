@@ -20,8 +20,6 @@ var Roster = function (_React$Component) {
     _createClass(Roster, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             return React.createElement(
                 'div',
                 { className: 'roster' },
@@ -46,6 +44,20 @@ var Roster = function (_React$Component) {
                             React.createElement(
                                 'tr',
                                 null,
+                                React.createElement(
+                                    'th',
+                                    { className: 'wide' },
+                                    React.createElement(
+                                        'div',
+                                        { className: 'tooltip' },
+                                        React.createElement(
+                                            'span',
+                                            { className: 'tooltiptext' },
+                                            'User ID'
+                                        ),
+                                        'User ID'
+                                    )
+                                ),
                                 React.createElement(
                                     'th',
                                     { className: 'wide' },
@@ -109,7 +121,7 @@ var Roster = function (_React$Component) {
                             'tbody',
                             null,
                             this.props.users.map(function (element) {
-                                return React.createElement(UserRow, Object.assign({ key: element.playerID }, element, { functions: _this2.props.functions }));
+                                return React.createElement(UserRow, Object.assign({ key: element.userID }, element));
                             })
                         )
                     )

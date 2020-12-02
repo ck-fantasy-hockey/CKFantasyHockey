@@ -15,6 +15,12 @@ export default class Roster extends React.Component {
                 <tr>
                     <th className='wide'>
                         <div className="tooltip">
+                            <span className="tooltiptext">User ID</span>
+                            User ID
+                        </div>
+                    </th>
+                    <th className='wide'>
+                        <div className="tooltip">
                             <span className="tooltiptext">Email</span>
                             Email
                         </div>
@@ -42,7 +48,7 @@ export default class Roster extends React.Component {
             </thead>
             <tbody>
             {this.props.users.map(element =>
-                    <UserRow key={element.playerID} {...element} functions={this.props.functions}/>
+                    <UserRow key={element.userID} {...element}/>
             )}
             </tbody>
         </table>
