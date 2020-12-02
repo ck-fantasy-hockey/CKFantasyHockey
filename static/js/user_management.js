@@ -27,7 +27,11 @@ var UserManagement = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
-                    dataFromServer
+                    React.createElement(
+                        'p',
+                        null,
+                        JSON.stringify(dataFromServer)
+                    )
                 )
             );
         }

@@ -5,7 +5,7 @@ class UserManagement extends React.Component {
         return <div className='background-filter'>
             <NavBar />
             <div className='container'>
-                {dataFromServer}
+                <p>{JSON.stringify(dataFromServer)}</p>
             </div> 
         </div> 
     }
