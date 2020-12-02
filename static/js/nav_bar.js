@@ -82,12 +82,16 @@ var NavBar = function (_React$Component) {
                         "div",
                         { className: "nav-item right" },
                         React.createElement(
-                            "li",
-                            null,
+                            "div",
+                            { className: "mod-func" },
                             React.createElement(
-                                "button",
-                                { type: "submit", "class": "mod-func-btn", onClick: this.handleUserManagement },
-                                "User Management"
+                                "li",
+                                null,
+                                React.createElement(
+                                    "button",
+                                    { type: "submit", onClick: this.handleUserManagement },
+                                    "User Management"
+                                )
                             )
                         ),
                         React.createElement(

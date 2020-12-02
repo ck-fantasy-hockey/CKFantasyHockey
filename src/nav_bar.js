@@ -38,9 +38,12 @@ export default class NavBar extends React.Component {
                 </li>
                 </div>
                 <div className="nav-item right">
+                    <div className='mod-func'>
                     <li>
-                        <button type="submit" class="mod-func-btn" onClick={this.handleUserManagement}>User Management</button>
+                        <button type="submit" onClick={this.handleUserManagement}>User Management</button>
                     </li>
+                    {/* Put player management here */}
+                    </div>
                     <li>
                         <button type="submit" onClick={this.handlefaq}>FAQ</button>
                     </li>
