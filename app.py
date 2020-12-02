@@ -137,7 +137,7 @@ def update_team():
 @app.route('/user-management')
 def user_management():
     dataFromServer = database.db_functions.get_all_users()
-    return render_template('index.j2', page="user_managment", css="style", css2="user_management", dataFromServer=dataFromServer)
+    return render_template('index.j2', page="user_management", css="style", css2="user_management", dataFromServer=dataFromServer)
 
 
 @app.route('/account-page')
