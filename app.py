@@ -134,6 +134,11 @@ def update_team():
     result = database.db_functions.update_team(sent_info)
     return jsonify({'response': result})
 
+@app.route('/user-management')
+def user_management():
+    dataFromServer = database.db_functions.get_all_users()
+    return render_template('index.j2', page="user_managment", css="style", css2="user_management", dataFromServer=dataFromServer)
+
 
 @app.route('/account-page')
 @token_required
