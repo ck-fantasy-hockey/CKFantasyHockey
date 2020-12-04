@@ -107,6 +107,20 @@ def update_password(sent_info):
     cursor.close()
     cnx.close()
 
+<<<<<<< HEAD
+=======
+# gets all user data
+def get_all_users():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    query = "SELECT * FROM Users;"
+    cursor.execute(query)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    return results
+
+>>>>>>> parent of d5658e6... can now delete users from the database
 # pulls user info for dashboard
 def user_info(userid):
     cnx = mysql.connector.connect(**config)

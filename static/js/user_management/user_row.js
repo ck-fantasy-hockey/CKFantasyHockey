@@ -18,8 +18,6 @@ var UserRow = function (_React$Component) {
     _createClass(UserRow, [{
         key: 'render',
         value: function render() {
-            var _this2 = this;
-
             return React.createElement(
                 'tr',
                 null,
@@ -53,9 +51,7 @@ var UserRow = function (_React$Component) {
                     null,
                     React.createElement(
                         'button',
-                        { onClick: function onClick() {
-                                _this2.props.deleteUser(_this2.props.userID);
-                            } },
+                        null,
                         'Delete'
                     ),
                     React.createElement(
