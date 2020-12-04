@@ -268,9 +268,9 @@ def add_player(player_data):
 def add_goalie(player_data):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
-    query = "INSERT INTO players (playerName, team, status, position, gamesPlayed, goals, assists, points, gameWinningGoals, penaltyMinutes, minutesPlayed, blocks)\
+    query = "INSERT INTO players (playerName, team, status, position, gamesPlayed, goals, assists, shutOuts, goalsAllowedAverage, savePercentage)\
     VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-    values = (player_data['name'],player_data['team'],player_data['status'],player_data['position'],player_data['gamesPlayed'],player_data['goals'],player_data['assists'],player_data['points'],player_data['gameWinningGoals'],player_data['penaltyMinutes'], player_data['minutesPlayed'],player_data['blocks'],)
+    values = (player_data['name'],player_data['team'],player_data['status'],player_data['position'],player_data['gamesPlayed'],player_data['goals'],player_data['assists'],player_data['shutOuts'],player_data['goalsAllowedAverage'],player_data['savePercentage'],)
     cursor.execute(query, values)
     cnx.commit()
     cursor.close()

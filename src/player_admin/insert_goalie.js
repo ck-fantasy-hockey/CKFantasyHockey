@@ -72,10 +72,6 @@ export default class InsertGoalie extends React.Component {
         this.setState({ savePercentage: event.target.value });
     }
 
-
-
-
-
     render() {
         return <tr>
             <td><input className="player_input player_text" onChange={this.handleName} type="text" id="name" name="name" /></td>
