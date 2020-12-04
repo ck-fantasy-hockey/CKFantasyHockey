@@ -14,7 +14,7 @@ class PlayerView extends React.Component {
             <NavBar />
             <div className='container'>
                 <PlayerInformation />
-                <Players data={this.state} />
+                <Players data={this.state.players} />
             </div>
         </div>
     }

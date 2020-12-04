@@ -6,7 +6,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import PlayerRow from './team_row.js';
+import PlayerRow from './player_row.js';
 
 var Players = function (_React$Component) {
     _inherits(Players, _React$Component);
@@ -28,7 +28,6 @@ var Players = function (_React$Component) {
     _createClass(Players, [{
         key: 'render',
         value: function render() {
-            // this.sortByRank();
             return React.createElement(
                 'div',
                 { className: 'roster' },
@@ -38,7 +37,7 @@ var Players = function (_React$Component) {
                     React.createElement(
                         'h2',
                         null,
-                        'Teams'
+                        'Players'
                     )
                 ),
                 React.createElement(
@@ -53,12 +52,7 @@ var Players = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'Rank'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Team ID'
+                                'ID'
                             ),
                             React.createElement(
                                 'th',
@@ -68,7 +62,67 @@ var Players = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'User'
+                                'Team'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Status'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Position'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Goals'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Assists'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Points'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Game Winning Goals'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Hat Tricks'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Plus Minus'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'PPG'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'SHG'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Penalty Min'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Blocks'
                             ),
                             React.createElement(
                                 'th',
@@ -79,6 +133,11 @@ var Players = function (_React$Component) {
                                 'th',
                                 null,
                                 'Losses'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Overtime Losses'
                             )
                         )
                     ),
