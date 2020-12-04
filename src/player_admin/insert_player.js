@@ -32,8 +32,7 @@ export default class InsertPlayer extends React.Component {
         .then((response) => response.json())
         .then(data => {
             if (data['response'] === true) {
-                console.log("yay")
-                // window.location.href = "/playeradmin?token="+localStorage.getItem('usertoken');
+                window.location.href = "/playeradmin?token="+localStorage.getItem('usertoken');
             } else {
                 // const element = <p className="incorrect-text">Username or password is incorrect</p>;
                 // ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
