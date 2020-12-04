@@ -136,7 +136,7 @@ CREATE TABLE `teams` (
   KEY `leagueID` (`leagueID`),
   CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE,
   CONSTRAINT `teams_ibfk_2` FOREIGN KEY (`leagueID`) REFERENCES `leagues` (`leagueID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `teams` (
 
 LOCK TABLES `teams` WRITE;
 /*!40000 ALTER TABLE `teams` DISABLE KEYS */;
-INSERT INTO `teams` VALUES (1,'The Big One',2,1),(2,'Savior Swiss',2,2),(4,'Better Late!',4,1),(6,'The Fashionistas',4,2),(7,'Rosy Robins',3,3),(8,'Grow!',3,7),(9,'Thunderous Birds',3,1);
+INSERT INTO `teams` VALUES (1,'The Big One',2,1),(2,'Savior Swiss',2,2),(7,'Rosy Robins',3,3),(8,'Grow!',3,7),(9,'Thunderous Birds',3,1),(10,'Glorius Gophers',3,1);
 /*!40000 ALTER TABLE `teams` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +161,7 @@ CREATE TABLE `teamsplayers` (
   `playerID` int NOT NULL,
   PRIMARY KEY (`teamID`,`playerID`),
   KEY `playerID` (`playerID`),
-  CONSTRAINT `teamsplayers_ibfk_1` FOREIGN KEY (`teamID`) REFERENCES `teams` (`teamID`),
+  CONSTRAINT `teamsplayers_ibfk_1` FOREIGN KEY (`teamID`) REFERENCES `teams` (`teamID`) ON DELETE CASCADE,
   CONSTRAINT `teamsplayers_ibfk_2` FOREIGN KEY (`playerID`) REFERENCES `players` (`playerID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -172,7 +172,7 @@ CREATE TABLE `teamsplayers` (
 
 LOCK TABLES `teamsplayers` WRITE;
 /*!40000 ALTER TABLE `teamsplayers` DISABLE KEYS */;
-INSERT INTO `teamsplayers` VALUES (2,1),(9,1),(1,2),(2,2),(1,3),(2,3),(8,3),(1,4),(2,4),(1,5),(2,5),(7,6),(7,7),(7,8),(9,8),(7,9),(7,10),(8,10),(4,11),(6,11),(4,12),(6,12),(8,12),(4,13),(6,13),(4,14),(6,14),(4,15),(6,15),(9,17),(8,18),(9,18),(8,19),(9,19),(8,21),(9,21),(9,22),(9,24),(8,25),(9,25),(8,28),(9,28),(8,33),(9,33);
+INSERT INTO `teamsplayers` VALUES (2,1),(9,1),(1,2),(2,2),(1,3),(2,3),(8,3),(1,4),(2,4),(1,5),(2,5),(7,6),(7,7),(7,8),(9,8),(7,9),(7,10),(8,10),(8,12),(9,17),(8,18),(9,18),(8,19),(9,19),(8,21),(9,21),(9,22),(9,24),(8,25),(9,25),(8,28),(9,28),(8,33),(9,33);
 /*!40000 ALTER TABLE `teamsplayers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,7 +192,7 @@ CREATE TABLE `users` (
   `sessionExpires` datetime DEFAULT NULL,
   PRIMARY KEY (`userID`),
   UNIQUE KEY `userName` (`userName`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +201,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'ckadmin','admin','admin@ckfantasyhockey.com','HTdzXil6LY','2020-11-15 20:53:19'),(2,'wcoiner','william','wcoiner@ckfantasyhockey.com','MNxGK8KV0K','2020-11-16 16:54:53'),(3,'gkochera','george','5ZY82qX7sW','gkochera@ckfantasyhockey.com','2020-11-17 16:55:42'),(4,'bsmith','brandon','kAob9UpoRd','bsmith100@gmail.com','2020-11-15 22:56:16');
+INSERT INTO `users` VALUES (1,'ckadmin','admin','admin@ckfantasyhockey.com','HTdzXil6LY','2020-11-15 20:53:19'),(2,'wcoiner','william','wcoiner@ckfantasyhockey.com','MNxGK8KV0K','2020-11-16 16:54:53'),(3,'gkochera','george','kocherag@oregonstate.edu','gkochera@ckfantasyhockey.com','2020-11-17 16:55:42');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -214,4 +214,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-01 14:05:38
+-- Dump completed on 2020-12-03 21:04:58
