@@ -19,7 +19,7 @@ export default class InsertGoalie extends React.Component {
         event.preventDefault();
         const playerdata = this.state
         console.log(playerdata)
-        const url = "/insertplayer"
+        const url = "/insertgoalie"
         fetch(url, {
            method: 'POST',
            headers: {

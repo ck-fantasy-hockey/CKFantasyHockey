@@ -27,7 +27,6 @@ export default class GoalieInformation extends React.Component {
                     <th>Name</th>
                     <th>Team</th>
                     <th>Status</th>
-                    <th>Position</th>
                     <th>GP</th>
                     <th>Goals</th>
                     <th>Assists</th>

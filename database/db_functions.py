@@ -247,6 +247,11 @@ def get_all_players():
     query = "SELECT * FROM Players"
     cursor.execute(query)
     results = cursor.fetchall()
+    for player in results:
+        if player['savePercentage'] != None:
+            player['savePercentage'] = float(player['savePercentage'])
+        if player['goalsAllowedAverage'] != None:
+            player['goalsAllowedAverage'] = float(player['goalsAllowedAverage'])
     cursor.close()
     cnx.close()
     return results
@@ -269,7 +274,7 @@ def add_goalie(player_data):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
     query = "INSERT INTO players (playerName, team, status, position, gamesPlayed, goals, assists, shutOuts, goalsAllowedAverage, savePercentage)\
-    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     values = (player_data['name'],player_data['team'],player_data['status'],player_data['position'],player_data['gamesPlayed'],player_data['goals'],player_data['assists'],player_data['shutOuts'],player_data['goalsAllowedAverage'],player_data['savePercentage'],)
     cursor.execute(query, values)
     cnx.commit()

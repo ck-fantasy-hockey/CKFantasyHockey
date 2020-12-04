@@ -78,11 +78,6 @@ var GoalieInformation = function (_React$Component) {
                                 React.createElement(
                                     'th',
                                     null,
-                                    'Position'
-                                ),
-                                React.createElement(
-                                    'th',
-                                    null,
                                     'GP'
                                 ),
                                 React.createElement(

@@ -4,6 +4,7 @@ import datetime
 import requests
 import json
 import os
+from decimal import Decimal
 import database.db_functions
 from functools import wraps
 from playerstats import pull_roster, pull_player_stats

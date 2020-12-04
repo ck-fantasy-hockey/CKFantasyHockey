@@ -18,7 +18,7 @@ var InsertGoalie = function (_React$Component) {
             event.preventDefault();
             var playerdata = _this.state;
             console.log(playerdata);
-            var url = "/insertplayer";
+            var url = "/insertgoalie";
             fetch(url, {
                 method: 'POST',
                 headers: {
