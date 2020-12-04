@@ -255,8 +255,8 @@ def get_all_players():
 def add_player(player_data):
     cnx = mysql.connector.connect(**config)
     cursor = cnx.cursor()
-    query = "INSERT INTO players (playerName, team, position, gamesPlayed, goals, assists, points, gameWinningGoals, plusMinus, shortHandedGoals, penaltyMinutes, blocks, minutesPlayed)\
-    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    query = "INSERT INTO players (playerName, team, status, position, gamesPlayed, goals, assists, points, gameWinningGoals, penaltyMinutes, minutesPlayed, blocks)\
+    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     values = (player_data['name'],player_data['team'],player_data['position'],)
     cursor.execute(query, values)
     cnx.commit()
