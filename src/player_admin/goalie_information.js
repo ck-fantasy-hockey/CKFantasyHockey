@@ -28,13 +28,12 @@ export default class GoalieInformation extends React.Component {
                     <th>Team</th>
                     <th>Status</th>
                     <th>Position</th>
+                    <th>GP</th>
                     <th>Goals</th>
                     <th>Assists</th>
-                    <th>Points</th>
-                    <th>GWG</th>
-                    <th>P/M</th>
-                    <th>Min P</th>
-                    <th>Blocks</th>
+                    <th>Shutouts</th>
+                    <th>GAA</th>
+                    <th>S%</th>
                 </tr>
             </thead>
             <tbody>

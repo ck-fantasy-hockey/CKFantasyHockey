@@ -83,6 +83,11 @@ var GoalieInformation = function (_React$Component) {
                                 React.createElement(
                                     'th',
                                     null,
+                                    'GP'
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
                                     'Goals'
                                 ),
                                 React.createElement(
@@ -93,27 +98,17 @@ var GoalieInformation = function (_React$Component) {
                                 React.createElement(
                                     'th',
                                     null,
-                                    'Points'
+                                    'Shutouts'
                                 ),
                                 React.createElement(
                                     'th',
                                     null,
-                                    'GWG'
+                                    'GAA'
                                 ),
                                 React.createElement(
                                     'th',
                                     null,
-                                    'P/M'
-                                ),
-                                React.createElement(
-                                    'th',
-                                    null,
-                                    'Min P'
-                                ),
-                                React.createElement(
-                                    'th',
-                                    null,
-                                    'Blocks'
+                                    'S%'
                                 )
                             )
                         ),

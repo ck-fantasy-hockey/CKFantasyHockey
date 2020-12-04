@@ -49,6 +49,11 @@ var GoalieRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
+                    this.props.gamesPlayed
+                ),
+                React.createElement(
+                    "td",
+                    null,
                     this.props.goals
                 ),
                 React.createElement(
@@ -59,27 +64,17 @@ var GoalieRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.points
+                    this.props.shutOuts
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.gameWinningGoals
+                    this.props.goalsAllowedAverage
                 ),
                 React.createElement(
                     "td",
                     null,
-                    this.props.penaltyMinutes
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.minutesPlayed
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.blocks
+                    this.props.savePercentage
                 )
             );
         }

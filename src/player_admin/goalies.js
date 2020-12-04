@@ -22,13 +22,13 @@ export default class Goalies extends React.Component {
                     <th>Team</th>
                     <th>Status</th>
                     <th>Position</th>
+                    <th>Games Played</th>
                     <th>Goals</th>
                     <th>Assists</th>
-                    <th>Points</th>
-                    <th>GWG</th>
-                    <th>P/M</th>
-                    <th>Min Played</th>
-                    <th>Blocks</th>
+                    <th>Shutouts</th>
+                    <th>GAA</th>
+                    <th>S%</th>
+
                     {/* <th>Update/Delete</th> */}
                 </tr>
             </thead>
