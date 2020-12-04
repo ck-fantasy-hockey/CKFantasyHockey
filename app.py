@@ -232,8 +232,9 @@ def drop_player():
 
 @app.route('/insertplayer', methods=['POST'])
 def insert_player():
-    sent_info = request.get_json
-    print(sent_info)
+    """Adds new player from admin page"""
+    sent_info = request.get_json()
+    database.db_functions.add_player(sent_info)
     return jsonify({'response': True})
 
 if __name__ == '__main__':

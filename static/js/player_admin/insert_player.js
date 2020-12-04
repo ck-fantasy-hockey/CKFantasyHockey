@@ -29,8 +29,7 @@ var InsertPlayer = function (_React$Component) {
                 return response.json();
             }).then(function (data) {
                 if (data['response'] === true) {
-                    console.log("yay");
-                    // window.location.href = "/playeradmin?token="+localStorage.getItem('usertoken');
+                    window.location.href = "/playeradmin?token=" + localStorage.getItem('usertoken');
                 } else {
                     // const element = <p className="incorrect-text">Username or password is incorrect</p>;
                     // ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);

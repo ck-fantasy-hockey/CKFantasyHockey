@@ -251,6 +251,18 @@ def get_all_players():
     cnx.close()
     return results
 
+# Add Player from admin page
+def add_player(player_data):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "INSERT INTO players (playerName, team, position, gamesPlayed, goals, assists, points, gameWinningGoals, plusMinus, shortHandedGoals, penaltyMinutes, blocks, minutesPlayed)\
+    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    values = (player_data['name'],player_data['team'],player_data['position'],)
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+
 # Pull the specific roster for a players team
 def get_roster_for_player_team(teamID: int) -> dict:
 
