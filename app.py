@@ -234,8 +234,9 @@ def drop_player():
 def insert_player():
     """Adds new player from admin page"""
     sent_info = request.get_json()
-    database.db_functions.add_player(sent_info)
-    return jsonify({'response': True})
+    new_player = database.db_functions.add_player(sent_info)
+    if new_player == True:
+        return jsonify({'response': True})
 
 if __name__ == '__main__':
     # Will set port to 5000 on local machine, but allow Heroku to bind on deployment.
