@@ -6,41 +6,44 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import Players from './league/teams.js';
-import PlayerInformation from './league/league_information.js';
-import NavBar from './nav_bar.js';
+var PlayerRow = function (_React$Component) {
+    _inherits(PlayerRow, _React$Component);
 
-var PlayerView = function (_React$Component) {
-    _inherits(PlayerView, _React$Component);
+    function PlayerRow() {
+        _classCallCheck(this, PlayerRow);
 
-    function PlayerView() {
-        _classCallCheck(this, PlayerView);
-
-        var _this = _possibleConstructorReturn(this, (PlayerView.__proto__ || Object.getPrototypeOf(PlayerView)).call(this));
-
-        _this.state = dataFromServer;
-        console.log(_this.state);
-        return _this;
+        return _possibleConstructorReturn(this, (PlayerRow.__proto__ || Object.getPrototypeOf(PlayerRow)).apply(this, arguments));
     }
 
-    _createClass(PlayerView, [{
-        key: 'render',
+    _createClass(PlayerRow, [{
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                { className: 'background-filter' },
-                React.createElement(NavBar, null),
+                "tr",
+                null,
                 React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(PlayerInformation, null),
-                    React.createElement(Players, { data: this.state })
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement("td", null),
+                React.createElement("td", null),
+                React.createElement("td", null),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    "-"
                 )
             );
         }
     }]);
 
-    return PlayerView;
+    return PlayerRow;
 }(React.Component);
 
-ReactDOM.render(React.createElement(PlayerView, null), document.getElementById('root'));
+export default PlayerRow;

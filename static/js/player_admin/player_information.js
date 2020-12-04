@@ -6,41 +6,52 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import Players from './league/teams.js';
-import PlayerInformation from './league/league_information.js';
-import NavBar from './nav_bar.js';
+var PlayerInformation = function (_React$Component) {
+    _inherits(PlayerInformation, _React$Component);
 
-var PlayerView = function (_React$Component) {
-    _inherits(PlayerView, _React$Component);
+    function PlayerInformation(props) {
+        _classCallCheck(this, PlayerInformation);
 
-    function PlayerView() {
-        _classCallCheck(this, PlayerView);
+        var _this = _possibleConstructorReturn(this, (PlayerInformation.__proto__ || Object.getPrototypeOf(PlayerInformation)).call(this, props));
 
-        var _this = _possibleConstructorReturn(this, (PlayerView.__proto__ || Object.getPrototypeOf(PlayerView)).call(this));
+        _this.handleEditAccount = function (event) {
+            event.preventDefault();
+            window.location.href = "/dashboard?token=" + localStorage.getItem('usertoken');
+        };
 
-        _this.state = dataFromServer;
-        console.log(_this.state);
         return _this;
     }
 
-    _createClass(PlayerView, [{
-        key: 'render',
+    _createClass(PlayerInformation, [{
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                { className: 'background-filter' },
-                React.createElement(NavBar, null),
+                "div",
+                { className: "team-info" },
                 React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(PlayerInformation, null),
-                    React.createElement(Players, { data: this.state })
+                    "div",
+                    { className: "team-info-primary" },
+                    React.createElement(
+                        "div",
+                        { className: "team-info-header" },
+                        React.createElement("img", { className: "team-info-image", src: "/static/img/hockey-team.jpg" })
+                    ),
+                    React.createElement("div", { className: "team-info-text" })
+                ),
+                React.createElement(
+                    "div",
+                    { className: "team-info-subheader" },
+                    React.createElement(
+                        "button",
+                        { type: "submit", className: "dashboard-button", onClick: this.handleEditAccount },
+                        "Back to Dashboard"
+                    )
                 )
             );
         }
     }]);
 
-    return PlayerView;
+    return PlayerInformation;
 }(React.Component);
 
-ReactDOM.render(React.createElement(PlayerView, null), document.getElementById('root'));
+export default PlayerInformation;

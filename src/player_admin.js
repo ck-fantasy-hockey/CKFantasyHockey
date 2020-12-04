@@ -1,5 +1,5 @@
-import Players from './league/teams.js'
-import PlayerInformation from './league/league_information.js'
+import Players from './player_admin/players.js'
+import PlayerInformation from './player_admin/player_information.js'
 import NavBar from './nav_bar.js'
 
 class PlayerView extends React.Component {
@@ -13,8 +13,8 @@ class PlayerView extends React.Component {
         return <div className='background-filter'>
             <NavBar />
             <div className='container'>
-                <PlayerInformation data={} />
-                <Players data={} />
+                <PlayerInformation />
+                <Players data={this.state} />
             </div>
         </div>
     }
