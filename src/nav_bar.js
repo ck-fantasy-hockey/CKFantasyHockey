@@ -17,6 +17,10 @@ export default class NavBar extends React.Component {
         window.location.href = "/faq?token="+localStorage.getItem('usertoken');
     }
 
+    handleUserManagement = () => {
+        window.location.href = "/user-management?token="+localStorage.getItem('userToken');
+    }
+
     render() {
         return <nav className='nav-bar'>
         <ul>
