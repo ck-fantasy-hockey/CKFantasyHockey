@@ -46,31 +46,18 @@ export default class NavBar extends React.Component {
                 <li>
                     <button type="submit" onClick={this.handleUserManagement}>User Management</button>
                 </li>
-                {/* Put player management here */}
-                </div>
                 <li>
-                    <button type="submit" onClick={this.handlefaq}>FAQ</button>
-                </li>
-                </div>
-                <div className="nav-item right">
-                    <li>
                     <button type="submit" onClick={this.handlePlayer}>Player Admin</button>
-                    </li>
-                    <li>
-                        <button type="submit" onClick={this.handlefaq}>FAQ</button>
-                    </li>
-                    <li>
-                        <button type="submit" onClick={this.handleLogout}>Logout</button>
-                    </li>
+                </li>
+            </div>
+            <li>
+                <button type="submit" onClick={this.handlefaq}>FAQ</button>
+            </li>
+            <li>
+                <button type="submit" onClick={this.handleLogout}>Logout</button>
+            </li>
                 </div>
             </ul>
         </nav>
     }
-                <li>
-                    <button type="submit" onClick={this.handleLogout}>Logout</button>
-                </li>
-            </div>
-        </ul>
-    </nav>
-}
 }

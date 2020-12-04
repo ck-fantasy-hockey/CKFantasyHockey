@@ -94,15 +94,15 @@ var NavBar = function (_React$Component) {
                                     { type: "submit", onClick: this.handleUserManagement },
                                     "User Management"
                                 )
-                            )
-                        ),
-                        React.createElement(
-                            "li",
-                            null,
+                            ),
                             React.createElement(
-                                "button",
-                                { type: "submit", onClick: this.handlePlayer },
-                                "Player Admin"
+                                "li",
+                                null,
+                                React.createElement(
+                                    "button",
+                                    { type: "submit", onClick: this.handlePlayer },
+                                    "Player Admin"
+                                )
                             )
                         ),
                         React.createElement(
