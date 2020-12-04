@@ -107,29 +107,6 @@ def update_password(sent_info):
     cursor.close()
     cnx.close()
 
-# gets all user data
-def get_all_users():
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor(dictionary=True)
-    query = "SELECT * FROM Users;"
-    cursor.execute(query)
-    results = cursor.fetchall()
-    cursor.close()
-    cnx.close()
-    return results
-
-# delete a specific user
-def delete_user(userID: int) -> bool:
-    cnx = mysql.connector.connect(**config)
-    cursor = cnx.cursor(dictionary=True)
-    query = "DELETE FROM Users WHERE UserID = %s;"
-    values = (userID,)
-    cursor.execute(query, values)
-    cnx.commit()
-    cursor.close()
-    cnx.close()
-    return True
-
 # pulls user info for dashboard
 def user_info(userid):
     cnx = mysql.connector.connect(**config)
@@ -419,6 +396,23 @@ def get_all_leagues() -> list:
         leagues.append(temp)
 
     return leagues
+
+# Checks to see if team name is unique
+def check_teamname(sent_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT COUNT(*) FROM Teams WHERE TeamName = %s"
+    values = (sent_info['teamName'], )
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    count = results[0][0]
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+    if count > 0:
+        return False
+    return True
+
 
 # Creates a new team in the database
 def create_new_team(new_team: dict) -> bool:

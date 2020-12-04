@@ -1,7 +1,6 @@
 import NavBar from './nav_bar.js'
 import TeamAttributes from './create_team/team_attributes.js'
 import PlayerSelect from './create_team/player_select.js'
-import data from './../json/data.js'
 
 
 class CreateTeam extends React.Component {
@@ -106,6 +105,13 @@ class CreateTeam extends React.Component {
                 if (data['response'] === true) {
                     window.location.href = ('/dashboard?token=' + localStorage.getItem('usertoken'));
 
+                } else {
+                    this.setState(prevState => {
+                        const error = Object.assign({}, prevState.error);
+                        console.log(error)
+                        error.message = 'Team name taken.'
+                        return { error }
+                    })
                 }
             })
         }

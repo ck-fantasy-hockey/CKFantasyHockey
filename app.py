@@ -134,17 +134,6 @@ def update_team():
     result = database.db_functions.update_team(sent_info)
     return jsonify({'response': result})
 
-@app.route('/user-management')
-def user_management():
-    dataFromServer = database.db_functions.get_all_users()
-    return render_template('index.j2', page="user_management", css="style", css2="style", dataFromServer=dataFromServer)
-
-@app.route('/delete-user', methods=['POST'])
-def delete_user():
-    sent_info = request.get_json()
-    print(sent_info)
-    result = database.db_functions.delete_user(sent_info)
-    return jsonify({'response': result})
 
 @app.route('/account-page')
 @token_required
@@ -219,6 +208,11 @@ def add_new_team():
     # Get the username from the token
     data = jwt.decode(sent_info['token'], app.config['SECRET_KEY'])
     sent_info['username'] = data['username']
+
+    # Check if teamname is unique
+    teamname_unique = database.db_functions.check_teamname(sent_info)
+    if teamname_unique == False:
+        return jsonify({'response': False})
 
     # Create the new team
     database.db_functions.create_new_team(sent_info)
