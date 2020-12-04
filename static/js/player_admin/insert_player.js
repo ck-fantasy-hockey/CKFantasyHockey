@@ -127,7 +127,7 @@ var InsertPlayer = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_text", onChange: this.handleStatus, type: "text", id: "status", name: "status" })
+                    React.createElement("input", { className: "player_input player_text", onChange: this.handleStatus, type: "number", min: "1", max: "4", id: "status", name: "status" })
                 ),
                 React.createElement(
                     "td",

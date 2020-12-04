@@ -88,7 +88,7 @@ export default class InsertPlayer extends React.Component {
         return <tr>
             <td><input className="player_input player_text" onChange={this.handleName} type="text" id="name" name="name" /></td>
             <td><input className="player_input player_text" onChange={this.handleTeam} type="text" id="team" name="team" /></td>
-            <td><input className="player_input player_text" onChange={this.handleStatus} type="text" id="status" name="status" /></td>
+            <td><input className="player_input player_text" onChange={this.handleStatus} type="number" min="1" max="4" id="status" name="status" /></td>
             <td><input className="player_input player_text" onChange={this.handlePosition} type="text" id="position" name="position" /></td>
             <td><input className="player_input player_num" onChange={this.handleGP} type="text" id="gamesplayed" name="gamesplayed" /></td>
             <td><input className="player_input player_num" onChange={this.handleGoals} type="text" id="goals" name="goals" /></td>
