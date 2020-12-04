@@ -5,19 +5,17 @@ export default class InsertGoalie extends React.Component {
             name: "",
             team: "",
             status: "",
-            position: "",
+            position: "Goalie",
             gamesPlayed: "",
             goals: "",
             assists: "",
-            points: "",
-            gameWinningGoals: "",
-            penaltyMinutes: "",
-            minutesPlayed: "",
-            blocks: "",
+            shutOuts: "",
+            goalsAllowedAverage: "",
+            savePercentage: ""
         };
     }
 
-    handleSubmitPlayer = (event) => {
+    handleSubmitGoalie = (event) => {
         event.preventDefault();
         const playerdata = this.state
         console.log(playerdata)
@@ -52,9 +50,6 @@ export default class InsertGoalie extends React.Component {
     handleTeam = (event) => {
         this.setState({ team: event.target.value });
     }
-    handlePosition = (event) => {
-        this.setState({ position: event.target.value });
-    }
     handleStatus = (event) => {
         this.setState({ status: event.target.value });
     }
@@ -67,37 +62,32 @@ export default class InsertGoalie extends React.Component {
     handleAssists = (event) => {
         this.setState({ assists: event.target.value });
     }
-    handlePoints = (event) => {
-        this.setState({ points: event.target.value });
+    handleShutouts = (event) => {
+        this.setState({ shutOuts: event.target.value });
     }
-    handleGWG = (event) => {
-        this.setState({ gameWinningGoals: event.target.value });
+    handleGAA = (event) => {
+        this.setState({ goalsAllowedAverage: event.target.value });
     }
-    handlePM = (event) => {
-        this.setState({ penaltyMinutes: event.target.value });
+    handleSP = (event) => {
+        this.setState({ savePercentage: event.target.value });
     }
-    handleMP = (event) => {
-        this.setState({ minutesPlayed: event.target.value });
-    }
-    handleBlocks = (event) => {
-        this.setState({ blocks: event.target.value });
-    }
+
+
 
 
 
     render() {
         return <tr>
-            <td><input className="player_input player_text" type="text" id="name" name="name" /></td>
-            <td><input className="player_input player_text" type="text" id="team" name="team" /></td>
-            <td><input className="player_input player_text" type="text" id="status" name="status" /></td>
-            <td><input className="player_input player_text" type="text" id="position" name="position" /></td>
-            <td><input className="player_input player_num" type="text" id="gamesplayed" name="gamesplayed" /></td>
-            <td><input className="player_input player_num" type="text" id="goals" name="goals" /></td>
-            <td><input className="player_input player_num" type="text" id="assists" name="assists" /></td>
-            <td><input className="player_input player_num" type="text" id="shutouts" name="shutouts" /></td>
-            <td><input className="player_input player_num" type="text" id="goalsagainstaverage" name="goalsagainstaverage" /></td>
-            <td><input className="player_input player_num" type="text" id="savepercentage" name="savepercentage" /></td>
-            <td><button className="player_button">Save</button></td>
+            <td><input className="player_input player_text" onChange={this.handleName} type="text" id="name" name="name" /></td>
+            <td><input className="player_input player_text" onChange={this.handleTeam} type="text" id="team" name="team" /></td>
+            <td><input className="player_input player_text" onChange={this.handleStatus} type="text" id="status" name="status" /></td>
+            <td><input className="player_input player_num" onChange={this.handleGP} type="text" id="gamesplayed" name="gamesplayed" /></td>
+            <td><input className="player_input player_num" onChange={this.handleGoals} type="text" id="goals" name="goals" /></td>
+            <td><input className="player_input player_num" onChange={this.handleAssists} type="text" id="assists" name="assists" /></td>
+            <td><input className="player_input player_num" onChange={this.handleShutouts} type="text" id="shutouts" name="shutouts" /></td>
+            <td><input className="player_input player_num" onChange={this.handleGAA} type="text" id="goalsagainstaverage" name="goalsagainstaverage" /></td>
+            <td><input className="player_input player_num" onChange={this.handleSP} type="text" id="savepercentage" name="savepercentage" /></td>
+            <td><button className="player_button" onClick={this.handleSubmitGoalie}>Save</button></td>
         </tr>
     }
 }
