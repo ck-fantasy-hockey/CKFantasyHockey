@@ -239,8 +239,8 @@ def insert_player():
         return jsonify({'response': True})
 
 @app.route('/insertgoalie', methods=['POST'])
-def insert_player():
-    """Adds new player from admin page"""
+def insert_goalie():
+    """Adds new goalie from admin page"""
     sent_info = request.get_json()
     new_player = database.db_functions.add_goalie(sent_info)
     if new_player == True:
