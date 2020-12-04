@@ -264,6 +264,19 @@ def add_player(player_data):
     cnx.close()
     return True
 
+# Add Goalie from admin page
+def add_goalie(player_data):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "INSERT INTO players (playerName, team, status, position, gamesPlayed, goals, assists, points, gameWinningGoals, penaltyMinutes, minutesPlayed, blocks)\
+    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    values = (player_data['name'],player_data['team'],player_data['status'],player_data['position'],player_data['gamesPlayed'],player_data['goals'],player_data['assists'],player_data['points'],player_data['gameWinningGoals'],player_data['penaltyMinutes'], player_data['minutesPlayed'],player_data['blocks'],)
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+    return True
+
 # Pull the specific roster for a players team
 def get_roster_for_player_team(teamID: int) -> dict:
 
