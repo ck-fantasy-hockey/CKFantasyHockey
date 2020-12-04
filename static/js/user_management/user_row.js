@@ -6,41 +6,64 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import Teams from './league/teams.js';
-import LeagueInformation from './league/league_information.js';
-import NavBar from './nav_bar.js';
+var UserRow = function (_React$Component) {
+    _inherits(UserRow, _React$Component);
 
-var LeagueView = function (_React$Component) {
-    _inherits(LeagueView, _React$Component);
+    function UserRow(props) {
+        _classCallCheck(this, UserRow);
 
-    function LeagueView() {
-        _classCallCheck(this, LeagueView);
-
-        var _this = _possibleConstructorReturn(this, (LeagueView.__proto__ || Object.getPrototypeOf(LeagueView)).call(this));
-
-        _this.state = dataFromServer;
-        console.log(_this.state);
-        return _this;
+        return _possibleConstructorReturn(this, (UserRow.__proto__ || Object.getPrototypeOf(UserRow)).call(this, props));
     }
 
-    _createClass(LeagueView, [{
+    _createClass(UserRow, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return React.createElement(
-                'div',
-                { className: 'background-filter' },
-                React.createElement(NavBar, null),
+                'tr',
+                null,
                 React.createElement(
-                    'div',
-                    { className: 'container' },
-                    React.createElement(LeagueInformation, { data: this.state.leaguedata }),
-                    React.createElement(Teams, { data: this.state.teamdata })
+                    'td',
+                    null,
+                    this.props.userID
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    this.props.email
+                ),
+                React.createElement(
+                    'td',
+                    { className: 'hide-on-sm-and-down' },
+                    this.props.password
+                ),
+                React.createElement(
+                    'td',
+                    { className: 'hide-on-med-and-down' },
+                    this.props.sessionID
+                ),
+                React.createElement(
+                    'td',
+                    { className: 'hide-on-med-and-down' },
+                    this.props.sessionExpires
+                ),
+                React.createElement(
+                    'td',
+                    null,
+                    React.createElement(
+                        'button',
+                        { className: 'btn', onClick: function onClick() {
+                                _this2.props.deleteUser(_this2.props.userID);
+                            } },
+                        'Delete'
+                    )
                 )
             );
         }
     }]);
 
-    return LeagueView;
+    return UserRow;
 }(React.Component);
 
-ReactDOM.render(React.createElement(LeagueView, null), document.getElementById('root'));
+export default UserRow;

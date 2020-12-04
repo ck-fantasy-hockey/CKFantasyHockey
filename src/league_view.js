@@ -2,8 +2,6 @@ import Teams from './league/teams.js'
 import LeagueInformation from './league/league_information.js'
 import NavBar from './nav_bar.js'
 
-// window.history.replaceState({}, document.title, "/league-view");
-
 class LeagueView extends React.Component {
     constructor() {
         super();

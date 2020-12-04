@@ -9,7 +9,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import NavBar from './nav_bar.js';
 import TeamAttributes from './create_team/team_attributes.js';
 import PlayerSelect from './create_team/player_select.js';
-import data from './../json/data.js';
 
 var CreateTeam = function (_React$Component) {
     _inherits(CreateTeam, _React$Component);
@@ -104,6 +103,13 @@ var CreateTeam = function (_React$Component) {
                 }).then(function (data) {
                     if (data['response'] === true) {
                         window.location.href = '/dashboard?token=' + localStorage.getItem('usertoken');
+                    } else {
+                        _this.setState(function (prevState) {
+                            var error = Object.assign({}, prevState.error);
+                            console.log(error);
+                            error.message = 'Team name taken.';
+                            return { error: error };
+                        });
                     }
                 });
             }

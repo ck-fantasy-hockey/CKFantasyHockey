@@ -252,21 +252,19 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `teams`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `teams`
-(
-    `teamID`   int          NOT NULL AUTO_INCREMENT,
-    `teamName` varchar(255) NOT NULL,
-    `userID`   int DEFAULT NULL,
-    `leagueID` int DEFAULT NULL,
-    PRIMARY KEY (`teamID`),
-    UNIQUE KEY `teamID` (`teamID`),
-    KEY `userID` (`userID`),
-    KEY `leagueID` (`leagueID`),
-    CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`),
-    CONSTRAINT `teams_ibfk_2` FOREIGN KEY (`leagueID`) REFERENCES `leagues` (`leagueID`)
-) ENGINE = InnoDB
-  AUTO_INCREMENT = 9
-  DEFAULT CHARSET = utf8;
+
+CREATE TABLE `teams` (
+  `teamID` int NOT NULL AUTO_INCREMENT,
+  `teamName` varchar(255) NOT NULL,
+  `userID` int DEFAULT NULL,
+  `leagueID` int DEFAULT NULL,
+  PRIMARY KEY (`teamID`),
+  UNIQUE KEY `teamID` (`teamID`),
+  KEY `userID` (`userID`),
+  KEY `leagueID` (`leagueID`),
+  CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `users` (`userID`) ON DELETE CASCADE,
+  CONSTRAINT `teams_ibfk_2` FOREIGN KEY (`leagueID`) REFERENCES `leagues` (`leagueID`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

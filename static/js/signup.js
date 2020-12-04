@@ -32,20 +32,21 @@ var Signup = function (_React$Component) {
 
         _this.handleSubmit = function (event) {
             event.preventDefault();
+
+            var userdata = _this.state;
+            // check for blank fields
+            var checkFields = _this.checkBlank(userdata);
+            if (checkFields === false) {
+                return;
+            }
+            // check for valid email
             var email = _this.emailValidate();
             if (email == false) {
                 return;
             }
-            var userdata = _this.state;
-            var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
             // if password do not match it displays error
+            var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
             if (passMatch === false) {
-                var element = React.createElement(
-                    'p',
-                    { className: 'incorrect-text' },
-                    'Passwords do not match'
-                );
-                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
                 return;
             }
             var url = "/submitsignup";
@@ -63,20 +64,34 @@ var Signup = function (_React$Component) {
                     window.location.href = "/login";
                     // if username is taken displays error
                 } else {
-                    var _element = React.createElement(
+                    var element = React.createElement(
                         'p',
                         { className: 'incorrect-text' },
                         'Username taken'
                     );
-                    ReactDOM.render(_element, document.getElementsByClassName('incorrect-creds')[0]);
+                    ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
                 }
             });
+        };
+
+        _this.checkBlank = function (userdata) {
+            for (var property in userdata) {
+                if (userdata[property].length === 0) {
+                    var element = React.createElement(
+                        'p',
+                        { className: 'incorrect-text' },
+                        'One or more fields are blank'
+                    );
+                    ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                    return false;
+                }
+                return true;
+            }
         };
 
         _this.emailValidate = function () {
             var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             if (reg.test(_this.state.email) === false) {
-                _this.setState({ email: '' });
                 var element = React.createElement(
                     'p',
                     { className: 'incorrect-text' },
@@ -93,6 +108,12 @@ var Signup = function (_React$Component) {
             if (password1 === password2) {
                 return true;
             }
+            var element = React.createElement(
+                'p',
+                { className: 'incorrect-text' },
+                'Passwords do not match'
+            );
+            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             return false;
         };
 
@@ -108,7 +129,7 @@ var Signup = function (_React$Component) {
     // handles submission of signup form
 
 
-    // Confirms password match
+    // Confirms password match or not
 
 
     _createClass(Signup, [{
