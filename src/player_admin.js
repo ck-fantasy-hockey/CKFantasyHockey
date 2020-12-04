@@ -1,6 +1,7 @@
 import Players from './player_admin/players.js'
 import Goalies from './player_admin/goalies.js'
 import PlayerInformation from './player_admin/player_information.js'
+import GoalieInformation from './player_admin/goalie_information.js'
 import NavBar from './nav_bar.js'
 
 class PlayerView extends React.Component {
@@ -16,6 +17,7 @@ class PlayerView extends React.Component {
             <div className='container'>
                 <PlayerInformation />
                 <Players data={this.state.players} />
+                <GoalieInformation />
                 <Goalies data={this.state.players} />
             </div>
         </div>

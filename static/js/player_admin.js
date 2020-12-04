@@ -9,6 +9,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 import Players from './player_admin/players.js';
 import Goalies from './player_admin/goalies.js';
 import PlayerInformation from './player_admin/player_information.js';
+import GoalieInformation from './player_admin/goalie_information.js';
 import NavBar from './nav_bar.js';
 
 var PlayerView = function (_React$Component) {
@@ -36,6 +37,7 @@ var PlayerView = function (_React$Component) {
                     { className: 'container' },
                     React.createElement(PlayerInformation, null),
                     React.createElement(Players, { data: this.state.players }),
+                    React.createElement(GoalieInformation, null),
                     React.createElement(Goalies, { data: this.state.players })
                 )
             );
