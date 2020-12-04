@@ -11,9 +11,8 @@ export default class UserRow extends React.Component {
             <td className='hide-on-med-and-down'>{this.props.sessionID}</td>
             <td className='hide-on-med-and-down'>{this.props.sessionExpires}</td>
             <td>
-                <button>Delete</button>
-                <button>Reset Password</button>
+                <button className='btn' onClick={() => {this.props.deleteUser(this.props.userID)}}>Delete</button>
             </td>
         </tr>
-    }
+}
 }
