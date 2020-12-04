@@ -139,6 +139,12 @@ def user_management():
     dataFromServer = database.db_functions.get_all_users()
     return render_template('index.j2', page="user_management", css="style", css2="user_management", dataFromServer=dataFromServer)
 
+@app.route('/delete-user', methods=['POST'])
+def delete_user():
+    sent_info = request.get_json()
+    print(sent_info)
+    result = database.db_functions.delete_user(sent_info)
+    return jsonify({'response': result})
 
 @app.route('/account-page')
 @token_required
