@@ -2,8 +2,6 @@ import Players from './league/teams.js'
 import PlayerInformation from './league/league_information.js'
 import NavBar from './nav_bar.js'
 
-// window.history.replaceState({}, document.title, "/league-view");
-
 class PlayerView extends React.Component {
     constructor() {
         super();

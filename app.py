@@ -149,6 +149,12 @@ def account_page():
 def login():
     return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
+@app.route('/playeradmin')
+@token_required
+def player_admin():
+    return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+
+
 # Client APIs
 
 @app.route('/checklogin', methods=['POST'])
