@@ -630,7 +630,7 @@ body {
 /* Player Admin Page */
 
 .player_button {
-    all: unset;
+    width: 100px;
 }
 
 .player_input {
@@ -638,9 +638,9 @@ body {
 }
 
 .player_text {
-    width: 100px;;
+    width: 80px;;
 }
 
 .player_num {
-    width: 60px;
+    width: 70px;
 }

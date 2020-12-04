@@ -7,6 +7,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import Players from './player_admin/players.js';
+import Goalies from './player_admin/goalies.js';
 import PlayerInformation from './player_admin/player_information.js';
 import NavBar from './nav_bar.js';
 
@@ -34,7 +35,8 @@ var PlayerView = function (_React$Component) {
                     'div',
                     { className: 'container' },
                     React.createElement(PlayerInformation, null),
-                    React.createElement(Players, { data: this.state.players })
+                    React.createElement(Players, { data: this.state.players }),
+                    React.createElement(Goalies, { data: this.state.players })
                 )
             );
         }
