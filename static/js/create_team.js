@@ -104,6 +104,13 @@ var CreateTeam = function (_React$Component) {
                 }).then(function (data) {
                     if (data['response'] === true) {
                         window.location.href = '/dashboard?token=' + localStorage.getItem('usertoken');
+                    } else {
+                        _this.setState(function (prevState) {
+                            var error = Object.assign({}, prevState.error);
+                            console.log(error);
+                            error.message = 'Team name taken.';
+                            return { error: error };
+                        });
                     }
                 });
             }

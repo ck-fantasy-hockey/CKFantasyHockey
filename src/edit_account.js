@@ -1,5 +1,3 @@
-// window.history.replaceState({}, document.title, "/account-page");
-
 class EditAccount extends React.Component {
     constructor(props) {
         super(props);
@@ -39,6 +37,10 @@ class EditAccount extends React.Component {
     handleEmailSubmit = (event) => { 
         event.preventDefault();
         const userdata = this.state
+        let validateEmail = this.emailValidate(this.state.email)
+        if (validateEmail == false) {
+            return;
+        }
         const url = "/update-email"
         fetch(url, {
            method: 'POST',
@@ -81,6 +83,18 @@ class EditAccount extends React.Component {
             this.setState({password: ''})
             this.setState({passwordConfirm: ''})
         })
+    }
+
+    emailValidate = () => {
+        let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (reg.test(this.state.email) === false) {
+            const element = <h3 className="password-match">Invalid email format</h3>;
+            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            return false;
+          }
+          else {
+            return true;
+          }
     }
 
     checkPasswords = (password1, password2) =>{

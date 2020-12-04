@@ -397,6 +397,23 @@ def get_all_leagues() -> list:
 
     return leagues
 
+# Checks to see if team name is unique
+def check_teamname(sent_info):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "SELECT COUNT(*) FROM Teams WHERE TeamName = %s"
+    values = (sent_info['teamName'], )
+    cursor.execute(query, values)
+    results = cursor.fetchall()
+    count = results[0][0]
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+    if count > 0:
+        return False
+    return True
+
+
 # Creates a new team in the database
 def create_new_team(new_team: dict) -> bool:
     """Creates a new team in the database, returns True if it was successful, and False if there was an error"""

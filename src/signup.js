@@ -23,16 +23,22 @@ export default class Signup extends React.Component {
     // handles submission of signup form
     handleSubmit = (event) => {
         event.preventDefault();
+        ReactDOM.render(<p></p>, document.getElementsByClassName('incorrect-creds')[0]);
+        ReactDOM.render(<p></p>, document.getElementsByClassName('incorrect-creds')[1]);
+        const userdata = this.state
+        // check for blank fields
+        let checkFields = this.checkBlank(userdata);
+        if (checkFields === false) {
+            return;
+        }
+        // check for valid email
         let email = this.emailValidate();
         if (email == false) {
             return;
         }
-        const userdata = this.state
-        let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         // if password do not match it displays error
+        let passMatch = this.checkPasswords(userdata['password'], userdata['passwordConfirm'])
         if (passMatch === false) {
-            const element = <p className="incorrect-text">Passwords do not match</p>;
-            ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
             return
         }
         const url = "/submitsignup"
@@ -56,10 +62,20 @@ export default class Signup extends React.Component {
         })
     }
 
+    checkBlank = (userdata) => {
+        for (const property in userdata) {
+            if (userdata[property].length === 0) {
+                const element = <p className="incorrect-text">One or more fields are blank</p>;
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                return false 
+        }
+        return true
+        }
+    }
+
     emailValidate = () => {
         let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if (reg.test(this.state.email) === false) {
-            this.setState({ email: '' })
             const element = <p className="incorrect-text">Invalid email format</p>;
             ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[1]);
             return false;
@@ -74,6 +90,8 @@ export default class Signup extends React.Component {
         if (password1 === password2) {
             return true
         }
+        const element = <p className="incorrect-text">Passwords do not match</p>;
+        ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
         return false
     }
 
