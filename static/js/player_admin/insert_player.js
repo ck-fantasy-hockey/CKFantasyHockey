@@ -137,42 +137,42 @@ var InsertPlayer = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGP, type: "text", id: "gamesplayed", name: "gamesplayed" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGP, type: "number", id: "gamesplayed", name: "gamesplayed" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGoals, type: "text", id: "goals", name: "goals" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGoals, type: "number", id: "goals", name: "goals" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleAssists, type: "text", id: "assists", name: "assists" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleAssists, type: "number", id: "assists", name: "assists" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handlePoints, type: "text", id: "points", name: "points" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handlePoints, type: "number", id: "points", name: "points" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGWG, type: "text", id: "gamewinninggoals", name: "gamewinninggoals" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGWG, type: "number", id: "gamewinninggoals", name: "gamewinninggoals" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handlePM, type: "text", id: "penaltyminutes", name: "penaltyminutes" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handlePM, type: "number", id: "penaltyminutes", name: "penaltyminutes" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleMP, type: "text", id: "minutesplayed", name: "minutesplayed" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleMP, type: "number", id: "minutesplayed", name: "minutesplayed" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleBlocks, type: "text", id: "blocks", name: "blocks" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleBlocks, type: "number", id: "blocks", name: "blocks" })
                 ),
                 React.createElement(
                     "td",

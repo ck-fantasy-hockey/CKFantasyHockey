@@ -90,14 +90,14 @@ export default class InsertPlayer extends React.Component {
             <td><input className="player_input player_text" onChange={this.handleTeam} type="text" id="team" name="team" /></td>
             <td><input className="player_input player_text" onChange={this.handleStatus} type="number" min="1" max="4" id="status" name="status" /></td>
             <td><input className="player_input player_text" onChange={this.handlePosition} type="text" id="position" name="position" /></td>
-            <td><input className="player_input player_num" onChange={this.handleGP} type="text" id="gamesplayed" name="gamesplayed" /></td>
-            <td><input className="player_input player_num" onChange={this.handleGoals} type="text" id="goals" name="goals" /></td>
-            <td><input className="player_input player_num" onChange={this.handleAssists} type="text" id="assists" name="assists" /></td>
-            <td><input className="player_input player_num" onChange={this.handlePoints} type="text" id="points" name="points" /></td>
-            <td><input className="player_input player_num" onChange={this.handleGWG} type="text" id="gamewinninggoals" name="gamewinninggoals" /></td>
-            <td><input className="player_input player_num" onChange={this.handlePM} type="text" id="penaltyminutes" name="penaltyminutes" /></td>
-            <td><input className="player_input player_num" onChange={this.handleMP} type="text" id="minutesplayed" name="minutesplayed" /></td>
-            <td><input className="player_input player_num" onChange={this.handleBlocks} type="text" id="blocks" name="blocks" /></td>
+            <td><input className="player_input player_num" onChange={this.handleGP} type="number" id="gamesplayed" name="gamesplayed" /></td>
+            <td><input className="player_input player_num" onChange={this.handleGoals} type="number" id="goals" name="goals" /></td>
+            <td><input className="player_input player_num" onChange={this.handleAssists} type="number" id="assists" name="assists" /></td>
+            <td><input className="player_input player_num" onChange={this.handlePoints} type="number" id="points" name="points" /></td>
+            <td><input className="player_input player_num" onChange={this.handleGWG} type="number" id="gamewinninggoals" name="gamewinninggoals" /></td>
+            <td><input className="player_input player_num" onChange={this.handlePM} type="number" id="penaltyminutes" name="penaltyminutes" /></td>
+            <td><input className="player_input player_num" onChange={this.handleMP} type="number" id="minutesplayed" name="minutesplayed" /></td>
+            <td><input className="player_input player_num" onChange={this.handleBlocks} type="number" id="blocks" name="blocks" /></td>
             <td><button className="player_button" onClick={this.handleSubmitPlayer}>Save</button></td>
         </tr>
     }

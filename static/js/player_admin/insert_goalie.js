@@ -118,32 +118,32 @@ var InsertGoalie = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGP, type: "text", id: "gamesplayed", name: "gamesplayed" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGP, type: "number", id: "gamesplayed", name: "gamesplayed" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGoals, type: "text", id: "goals", name: "goals" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGoals, type: "number", id: "goals", name: "goals" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleAssists, type: "text", id: "assists", name: "assists" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleAssists, type: "number", id: "assists", name: "assists" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleShutouts, type: "text", id: "shutouts", name: "shutouts" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleShutouts, type: "number", id: "shutouts", name: "shutouts" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGAA, type: "text", id: "goalsagainstaverage", name: "goalsagainstaverage" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGAA, type: "number", id: "goalsagainstaverage", name: "goalsagainstaverage" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", onChange: this.handleSP, type: "text", id: "savepercentage", name: "savepercentage" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleSP, type: "number", id: "savepercentage", name: "savepercentage" })
                 ),
                 React.createElement(
                     "td",
