@@ -13,9 +13,34 @@ var UserManagement = function (_React$Component) {
     _inherits(UserManagement, _React$Component);
 
     function UserManagement() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         _classCallCheck(this, UserManagement);
 
-        return _possibleConstructorReturn(this, (UserManagement.__proto__ || Object.getPrototypeOf(UserManagement)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = UserManagement.__proto__ || Object.getPrototypeOf(UserManagement)).call.apply(_ref, [this].concat(args))), _this), _this.deleteUser = function (userID) {
+            var url = "/delete-user";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userID)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data['response'] === true) {
+                    window.location.href = "/user-management?token=" + localStorage.getItem('usertoken');
+                } else {
+                    console.log('error');
+                }
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     // Takes a userID and sends it via POST to be removed from the DB
