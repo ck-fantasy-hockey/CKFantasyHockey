@@ -240,6 +240,17 @@ def select_available_players_in_league(leagueID: int) -> dict:
     cnx.close()
     return results
 
+# Pulls all players for admin page
+def get_all_players():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    query = "SELECT * FROM Players"
+    cursor.execute(query)
+    results = cursor.fetchall()
+    cursor.close()
+    cnx.close()
+    return results
+
 # Pull the specific roster for a players team
 def get_roster_for_player_team(teamID: int) -> dict:
 
