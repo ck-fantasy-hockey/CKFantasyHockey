@@ -114,7 +114,9 @@ var Players = function (_React$Component) {
                     React.createElement(
                         'tbody',
                         null,
-                        this.props.data.map(function (element) {
+                        this.props.data.filter(function (player) {
+                            return player.position != 'Goalie';
+                        }).map(function (element) {
                             return React.createElement(PlayerRow, Object.assign({ key: element.playerID }, element));
                         })
                     )

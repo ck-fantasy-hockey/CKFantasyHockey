@@ -33,7 +33,7 @@ export default class Players extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                {this.props.data.map(element =>
+                {this.props.data.filter(player => player.position != 'Goalie').map(element =>
                     <PlayerRow key={element.playerID} {...element}/>
                     )}
             </tbody>
