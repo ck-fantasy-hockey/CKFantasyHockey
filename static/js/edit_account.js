@@ -6,8 +6,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// window.history.replaceState({}, document.title, "/account-page");
-
 var EditAccount = function (_React$Component) {
     _inherits(EditAccount, _React$Component);
 
@@ -45,6 +43,10 @@ var EditAccount = function (_React$Component) {
         _this.handleEmailSubmit = function (event) {
             event.preventDefault();
             var userdata = _this.state;
+            var validateEmail = _this.emailValidate(_this.state.email);
+            if (validateEmail == false) {
+                return;
+            }
             var url = "/update-email";
             fetch(url, {
                 method: 'POST',
@@ -99,6 +101,21 @@ var EditAccount = function (_React$Component) {
                 _this.setState({ password: '' });
                 _this.setState({ passwordConfirm: '' });
             });
+        };
+
+        _this.emailValidate = function () {
+            var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (reg.test(_this.state.email) === false) {
+                var element = React.createElement(
+                    'h3',
+                    { className: 'password-match' },
+                    'Invalid email format'
+                );
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                return false;
+            } else {
+                return true;
+            }
         };
 
         _this.checkPasswords = function (password1, password2) {
