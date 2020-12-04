@@ -14,5 +14,5 @@ export default class UserRow extends React.Component {
                 <button className='btn' onClick={() => {this.props.deleteUser(this.props.userID)}}>Delete</button>
             </td>
         </tr>
-}
+    }
 }

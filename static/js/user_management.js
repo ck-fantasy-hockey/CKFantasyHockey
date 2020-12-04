@@ -43,9 +43,6 @@ var UserManagement = function (_React$Component) {
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    // Takes a userID and sends it via POST to be removed from the DB
-
-
     _createClass(UserManagement, [{
         key: 'render',
         value: function render() {
@@ -56,7 +53,7 @@ var UserManagement = function (_React$Component) {
                 React.createElement(
                     'div',
                     { className: 'container' },
-                    React.createElement(UserRoster, { users: dataFromServer })
+                    React.createElement(UserRoster, { users: dataFromServer, deleteUser: this.deleteUser })
                 )
             );
         }

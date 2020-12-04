@@ -20,6 +20,8 @@ var Roster = function (_React$Component) {
     _createClass(Roster, [{
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return React.createElement(
                 'div',
                 { className: 'roster' },
@@ -121,7 +123,7 @@ var Roster = function (_React$Component) {
                             'tbody',
                             null,
                             this.props.users.map(function (element) {
-                                return React.createElement(UserRow, Object.assign({ key: element.userID }, element));
+                                return React.createElement(UserRow, Object.assign({ key: element.userID }, element, { deleteUser: _this2.props.deleteUser }));
                             })
                         )
                     )

@@ -48,7 +48,7 @@ export default class Roster extends React.Component {
             </thead>
             <tbody>
             {this.props.users.map(element =>
-                    <UserRow key={element.userID} {...element}/>
+                    <UserRow key={element.userID} {...element} deleteUser={this.props.deleteUser}/>
             )}
             </tbody>
         </table>

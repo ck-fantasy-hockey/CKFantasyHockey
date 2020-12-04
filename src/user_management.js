@@ -1,9 +1,6 @@
 import NavBar from './nav_bar.js'
 import UserRoster from './user_management/user_roster.js'
 class UserManagement extends React.Component {
-
-
-    // Takes a userID and sends it via POST to be removed from the DB
     deleteUser = (userID) => {
         const url = "/delete-user"
         fetch(url, {
@@ -27,7 +24,7 @@ class UserManagement extends React.Component {
         return <div className='background-filter'>
             <NavBar />
             <div className='container'>
-                <UserRoster users={dataFromServer} />
+                <UserRoster users={dataFromServer} deleteUser={this.deleteUser} />
             </div> 
         </div> 
     }
