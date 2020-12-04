@@ -69,22 +69,7 @@ var PlayerRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.hatTricks
-                ),
-                React.createElement(
-                    "td",
-                    null,
                     this.props.penaltyMinutes
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.pointsPerGame
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.shootOutGoals
                 ),
                 React.createElement(
                     "td",
@@ -99,22 +84,16 @@ var PlayerRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    this.props.wins
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.losses
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.playerID
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    this.props.overtimeLosses
+                    React.createElement(
+                        "button",
+                        null,
+                        "Update"
+                    ),
+                    React.createElement(
+                        "button",
+                        null,
+                        "Delete"
+                    )
                 )
             );
         }

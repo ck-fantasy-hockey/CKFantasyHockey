@@ -97,47 +97,17 @@ var Players = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'Hat Tricks'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
                                 'P/M'
                             ),
                             React.createElement(
                                 'th',
                                 null,
-                                'PPG'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'SHG'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Pen Min'
+                                'Min Played'
                             ),
                             React.createElement(
                                 'th',
                                 null,
                                 'Blocks'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Wins'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Losses'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'OT Loss'
                             ),
                             React.createElement(
                                 'th',

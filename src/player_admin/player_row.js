@@ -10,16 +10,10 @@ export default class PlayerRow extends React.Component {
             <td>{this.props.assists}</td>
             <td>{this.props.points}</td>
             <td>{this.props.gameWinningGoals}</td>
-            <td>{this.props.hatTricks}</td>
             <td>{this.props.penaltyMinutes}</td>
-            <td>{this.props.pointsPerGame}</td>
-            <td>{this.props.shootOutGoals}</td>
             <td>{this.props.minutesPlayed}</td>
             <td>{this.props.blocks}</td>
-            <td>{this.props.wins}</td>
-            <td>{this.props.losses}</td>
-            <td>{this.props.playerID}</td>
-            <td>{this.props.overtimeLosses}</td>
+            <td><button className="player_button">Update</button><button className="player_button">Delete</button></td>
         </tr>
     }
 }

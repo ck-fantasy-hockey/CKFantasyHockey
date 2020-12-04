@@ -26,15 +26,9 @@ export default class Players extends React.Component {
                     <th>Assists</th>
                     <th>Points</th>
                     <th>GWG</th>
-                    <th>Hat Tricks</th>
                     <th>P/M</th>
-                    <th>PPG</th>
-                    <th>SHG</th>
-                    <th>Pen Min</th>
+                    <th>Min Played</th>
                     <th>Blocks</th>
-                    <th>Wins</th>
-                    <th>Losses</th>
-                    <th>OT Loss</th>
                     <th>Update/Delete</th>
                 </tr>
             </thead>
