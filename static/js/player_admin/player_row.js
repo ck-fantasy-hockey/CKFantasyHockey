@@ -86,12 +86,12 @@ var PlayerRow = function (_React$Component) {
                     null,
                     React.createElement(
                         "button",
-                        null,
+                        { className: "player_button" },
                         "Update"
                     ),
                     React.createElement(
                         "button",
-                        null,
+                        { className: "player_button" },
                         "Delete"
                     )
                 )

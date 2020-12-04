@@ -15,14 +15,30 @@ export default class PlayerInformation extends React.Component {
                 <img className='team-info-image' src='/static/img/hockey-team.jpg' />
             </div>
             <div className='team-info-text'>
-                {/* <h1>League: {this.props.data[1]}</h1>
-                <p>League ID: {this.props.data[0]}</p>
-                <p>Teams: {this.props.data[2]}</p>
-                <p>Season End Date: {this.props.data[3]}</p> */}
+                <h1>Add Player</h1>
             </div>
         </div>
         <div className="team-info-subheader">
-                <button type="submit" className="dashboard-button" onClick={this.handleEditAccount}>Back to Dashboard</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>Status</th>
+                    <th>Position</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Points</th>
+                    <th>GWG</th>
+                    <th>P/M</th>
+                    <th>Min Played</th>
+                    <th>Blocks</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
         </div>
     </div>    
     }

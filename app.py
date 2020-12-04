@@ -154,7 +154,7 @@ def login():
 def player_admin():
     players = database.db_functions.get_all_players()
     dataFromServer = {'players': players}
-    return render_template('index.j2', page="player_admin", css="style", css2="signup_login", dataFromServer=dataFromServer)
+    return render_template('index.j2', page="player_admin", css="style", css2="style", dataFromServer=dataFromServer)
 
 
 # Client APIs

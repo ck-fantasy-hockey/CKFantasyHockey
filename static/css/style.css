@@ -626,3 +626,9 @@ body {
 .faq-body a {
     color: inherit;
 }
+
+/* Player Admin Page */
+
+.player_button {
+    all: unset;
+}

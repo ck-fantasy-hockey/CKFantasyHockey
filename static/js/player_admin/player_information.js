@@ -36,15 +36,85 @@ var PlayerInformation = function (_React$Component) {
                         { className: "team-info-header" },
                         React.createElement("img", { className: "team-info-image", src: "/static/img/hockey-team.jpg" })
                     ),
-                    React.createElement("div", { className: "team-info-text" })
+                    React.createElement(
+                        "div",
+                        { className: "team-info-text" },
+                        React.createElement(
+                            "h1",
+                            null,
+                            "Add Player"
+                        )
+                    )
                 ),
                 React.createElement(
                     "div",
                     { className: "team-info-subheader" },
                     React.createElement(
-                        "button",
-                        { type: "submit", className: "dashboard-button", onClick: this.handleEditAccount },
-                        "Back to Dashboard"
+                        "table",
+                        null,
+                        React.createElement(
+                            "thead",
+                            null,
+                            React.createElement(
+                                "tr",
+                                null,
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Name"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Team"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Status"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Position"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Goals"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Assists"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Points"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "GWG"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "P/M"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Min Played"
+                                ),
+                                React.createElement(
+                                    "th",
+                                    null,
+                                    "Blocks"
+                                )
+                            )
+                        )
                     )
                 )
             );
