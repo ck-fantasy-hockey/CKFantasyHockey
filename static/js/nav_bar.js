@@ -27,6 +27,8 @@ var NavBar = function (_React$Component) {
         }, _this.handleLogout = function () {
             localStorage.setItem('usertoken', "");
             window.location.href = "/login";
+        }, _this.handlePlayer = function () {
+            window.location.href = "/playeradmin?token=" + localStorage.getItem('usertoken');
         }, _this.handlefaq = function () {
             window.location.href = "/faq?token=" + localStorage.getItem('usertoken');
         }, _this.handleUserManagement = function () {
@@ -83,14 +85,36 @@ var NavBar = function (_React$Component) {
                         { className: "nav-item right" },
                         React.createElement(
                             "div",
-                            { className: "mod-func" },
+                            { className: "mod-func-title" },
                             React.createElement(
                                 "li",
                                 null,
                                 React.createElement(
-                                    "button",
-                                    { type: "submit", onClick: this.handleUserManagement },
-                                    "User Management"
+                                    "p",
+                                    null,
+                                    "Admin Functions:"
+                                )
+                            ),
+                            React.createElement(
+                                "div",
+                                { className: "mod-func" },
+                                React.createElement(
+                                    "li",
+                                    null,
+                                    React.createElement(
+                                        "button",
+                                        { type: "submit", onClick: this.handleUserManagement },
+                                        "Users"
+                                    )
+                                ),
+                                React.createElement(
+                                    "li",
+                                    null,
+                                    React.createElement(
+                                        "button",
+                                        { type: "submit", onClick: this.handlePlayer },
+                                        "Players"
+                                    )
                                 )
                             )
                         ),

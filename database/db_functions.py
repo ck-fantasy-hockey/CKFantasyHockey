@@ -263,6 +263,48 @@ def select_available_players_in_league(leagueID: int) -> dict:
     cnx.close()
     return results
 
+# Pulls all players for admin page
+def get_all_players():
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor(dictionary=True)
+    query = "SELECT * FROM Players"
+    cursor.execute(query)
+    results = cursor.fetchall()
+    for player in results:
+        if player['savePercentage'] != None:
+            player['savePercentage'] = float(player['savePercentage'])
+        if player['goalsAllowedAverage'] != None:
+            player['goalsAllowedAverage'] = float(player['goalsAllowedAverage'])
+    cursor.close()
+    cnx.close()
+    return results
+
+# Add Player from admin page
+def add_player(player_data):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "INSERT INTO players (playerName, team, status, position, gamesPlayed, goals, assists, points, gameWinningGoals, penaltyMinutes, minutesPlayed, blocks)\
+    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    values = (player_data['name'],player_data['team'],player_data['status'],player_data['position'],player_data['gamesPlayed'],player_data['goals'],player_data['assists'],player_data['points'],player_data['gameWinningGoals'],player_data['penaltyMinutes'], player_data['minutesPlayed'],player_data['blocks'],)
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+    return True
+
+# Add Goalie from admin page
+def add_goalie(player_data):
+    cnx = mysql.connector.connect(**config)
+    cursor = cnx.cursor()
+    query = "INSERT INTO players (playerName, team, status, position, gamesPlayed, goals, assists, shutOuts, goalsAllowedAverage, savePercentage)\
+    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+    values = (player_data['name'],player_data['team'],player_data['status'],player_data['position'],player_data['gamesPlayed'],player_data['goals'],player_data['assists'],player_data['shutOuts'],player_data['goalsAllowedAverage'],player_data['savePercentage'],)
+    cursor.execute(query, values)
+    cnx.commit()
+    cursor.close()
+    cnx.close()
+    return True
+
 # Pull the specific roster for a players team
 def get_roster_for_player_team(teamID: int) -> dict:
 
@@ -283,6 +325,11 @@ def get_roster_for_player_team(teamID: int) -> dict:
     team_roster_values = (int(teamID),)
     cursor.execute(team_roster_query, team_roster_values)
     results = cursor.fetchall()
+    for player in results:
+        if player['savePercentage'] != None:
+            player['savePercentage'] = float(player['savePercentage'])
+        if player['goalsAllowedAverage'] != None:
+            player['goalsAllowedAverage'] = float(player['goalsAllowedAverage'])
     cursor.close()
     cnx.close()
 

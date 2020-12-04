@@ -4,6 +4,7 @@ import datetime
 import requests
 import json
 import os
+from decimal import Decimal
 import database.db_functions
 from functools import wraps
 from playerstats import pull_roster, pull_player_stats
@@ -160,6 +161,14 @@ def account_page():
 def login():
     return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
+@app.route('/playeradmin')
+@token_required
+def player_admin():
+    players = database.db_functions.get_all_players()
+    dataFromServer = {'players': players}
+    return render_template('index.j2', page="player_admin", css="style", css2="style", dataFromServer=dataFromServer)
+
+
 # Client APIs
 
 @app.route('/checklogin', methods=['POST'])
@@ -237,6 +246,22 @@ def drop_player():
     sent_info = request.get_json()
     
     return jsonify({'response': database.db_functions.drop_player_from_team(sent_info)})
+
+@app.route('/insertplayer', methods=['POST'])
+def insert_player():
+    """Adds new player from admin page"""
+    sent_info = request.get_json()
+    new_player = database.db_functions.add_player(sent_info)
+    if new_player == True:
+        return jsonify({'response': True})
+
+@app.route('/insertgoalie', methods=['POST'])
+def insert_goalie():
+    """Adds new goalie from admin page"""
+    sent_info = request.get_json()
+    new_player = database.db_functions.add_goalie(sent_info)
+    if new_player == True:
+        return jsonify({'response': True})
 
 if __name__ == '__main__':
     # Will set port to 5000 on local machine, but allow Heroku to bind on deployment.

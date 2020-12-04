@@ -13,6 +13,10 @@ export default class NavBar extends React.Component {
         window.location.href = "/login";
     }
 
+    handlePlayer = () => {
+        window.location.href = "/playeradmin?token="+localStorage.getItem('usertoken');
+    }
+
     handlefaq = () => {
         window.location.href = "/faq?token="+localStorage.getItem('usertoken');
     }
@@ -38,21 +42,27 @@ export default class NavBar extends React.Component {
             </li>
             </div>
             <div className="nav-item right">
+                <div className='mod-func-title'>
+                <li>
+                    <p>Admin Functions:</p>
+                </li>
                 <div className='mod-func'>
-                <li>
-                    <button type="submit" onClick={this.handleUserManagement}>User Management</button>
-                </li>
-                {/* Put player management here */}
+                    <li>
+                        <button type="submit" onClick={this.handleUserManagement}>Users</button>
+                    </li>
+                    <li>
+                        <button type="submit" onClick={this.handlePlayer}>Players</button>
+                    </li>
                 </div>
-                <li>
-                    <button type="submit" onClick={this.handlefaq}>FAQ</button>
-                </li>
-                <li>
-                    <button type="submit" onClick={this.handleLogout}>Logout</button>
-                </li>
             </div>
-        </ul>
-    </nav>
-}
-
+            <li>
+                <button type="submit" onClick={this.handlefaq}>FAQ</button>
+            </li>
+            <li>
+                <button type="submit" onClick={this.handleLogout}>Logout</button>
+            </li>
+                </div>
+            </ul>
+        </nav>
+    }
 }
