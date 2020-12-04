@@ -238,6 +238,14 @@ def insert_player():
     if new_player == True:
         return jsonify({'response': True})
 
+@app.route('/insertgoalie', methods=['POST'])
+def insert_player():
+    """Adds new player from admin page"""
+    sent_info = request.get_json()
+    new_player = database.db_functions.add_goalie(sent_info)
+    if new_player == True:
+        return jsonify({'response': True})
+
 if __name__ == '__main__':
     # Will set port to 5000 on local machine, but allow Heroku to bind on deployment.
     port = int(os.environ.get('PORT', 5000))
