@@ -23,8 +23,10 @@ export default class Signup extends React.Component {
     // handles submission of signup form
     handleSubmit = (event) => {
         event.preventDefault();
-        ReactDOM.render(<p></p>, document.getElementsByClassName('incorrect-creds')[0]);
-        ReactDOM.render(<p></p>, document.getElementsByClassName('incorrect-creds')[1]);
+        let email = this.emailValidate();
+        if (email == false) {
+            return;
+        }
         const userdata = this.state
         // check for blank fields
         let checkFields = this.checkBlank(userdata);
@@ -42,28 +44,24 @@ export default class Signup extends React.Component {
             return
         }
         const url = "/submitsignup"
-
-        // if password matches and email is valid, perform the signup
-        if (email && passMatch) {
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(userdata)
-             })
-             .then((response) => response.json())
-             .then(data => {
-                 // if username unique, redirects to login
-                 if (data['response'] === true) {
-                     window.location.href = "/login";
-                 // if username is taken displays error
-                 } else {
-                     const element = <p className="incorrect-text">Username taken</p>;
-                     ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
-                 }
-             })
-        }
+        fetch(url, {
+           method: 'POST',
+           headers: {
+               'Content-Type': 'application/json',
+           },
+           body: JSON.stringify(userdata)
+        })
+        .then((response) => response.json())
+        .then(data => {
+            // if username unique, redirects to login
+            if (data['response'] === true) {
+                window.location.href = "/login";
+            // if username is taken displays error
+            } else {
+                const element = <p className="incorrect-text">Username taken</p>;
+                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+            }
+        })
     }
 
     checkBlank = (userdata) => {
