@@ -632,3 +632,15 @@ body {
 .player_button {
     all: unset;
 }
+
+.player_input {
+    text-align: center;
+}
+
+.player_text {
+    width: 100px;;
+}
+
+.player_num {
+    width: 60px;
+}

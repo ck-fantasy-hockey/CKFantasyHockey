@@ -33,7 +33,7 @@ export default class PlayerInformation extends React.Component {
                     <th>Points</th>
                     <th>GWG</th>
                     <th>P/M</th>
-                    <th>Min Played</th>
+                    <th>Min P</th>
                     <th>Blocks</th>
                 </tr>
             </thead>

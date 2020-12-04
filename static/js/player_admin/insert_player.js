@@ -24,57 +24,57 @@ var InsertPlayer = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "name", name: "name" })
+                    React.createElement("input", { className: "player_input player_text", type: "text", id: "name", name: "name" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "team", name: "team" })
+                    React.createElement("input", { className: "player_input player_text", type: "text", id: "team", name: "team" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "status", name: "status" })
+                    React.createElement("input", { className: "player_input player_text", type: "text", id: "status", name: "status" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "position", name: "position" })
+                    React.createElement("input", { className: "player_input player_text", type: "text", id: "position", name: "position" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "goals", name: "goals" })
+                    React.createElement("input", { className: "player_input player_num", type: "text", id: "goals", name: "goals" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "assists", name: "assists" })
+                    React.createElement("input", { className: "player_input player_num", type: "text", id: "assists", name: "assists" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "points", name: "points" })
+                    React.createElement("input", { className: "player_input player_num", type: "text", id: "points", name: "points" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "gamewinninggoals", name: "gamewinninggoals" })
+                    React.createElement("input", { className: "player_input player_num", type: "text", id: "gamewinninggoals", name: "gamewinninggoals" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "penaltyminutes", name: "penaltyminutes" })
+                    React.createElement("input", { className: "player_input player_num", type: "text", id: "penaltyminutes", name: "penaltyminutes" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "minutesplayed", name: "minutesplayed" })
+                    React.createElement("input", { className: "player_input player_num", type: "text", id: "minutesplayed", name: "minutesplayed" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input", type: "text", id: "blocks", name: "blocks" })
+                    React.createElement("input", { className: "player_input player_num", type: "text", id: "blocks", name: "blocks" })
                 ),
                 React.createElement(
                     "td",

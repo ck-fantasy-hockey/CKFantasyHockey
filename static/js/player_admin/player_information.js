@@ -108,7 +108,7 @@ var PlayerInformation = function (_React$Component) {
                                 React.createElement(
                                     'th',
                                     null,
-                                    'Min Played'
+                                    'Min P'
                                 ),
                                 React.createElement(
                                     'th',
