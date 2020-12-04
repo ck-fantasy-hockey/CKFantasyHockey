@@ -92,7 +92,7 @@ var Players = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'Game Winning Goals'
+                                'GWG'
                             ),
                             React.createElement(
                                 'th',
@@ -102,7 +102,7 @@ var Players = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'Plus Minus'
+                                'P/M'
                             ),
                             React.createElement(
                                 'th',
@@ -117,7 +117,7 @@ var Players = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'Penalty Min'
+                                'Pen Min'
                             ),
                             React.createElement(
                                 'th',
@@ -137,7 +137,12 @@ var Players = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
-                                'Overtime Losses'
+                                'OT Loss'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
+                                'Update/Delete'
                             )
                         )
                     ),
@@ -145,7 +150,7 @@ var Players = function (_React$Component) {
                         'tbody',
                         null,
                         this.props.data.map(function (element) {
-                            return React.createElement(PlayerRow, Object.assign({ key: element[0] }, element));
+                            return React.createElement(PlayerRow, Object.assign({ key: element.playerID }, element));
                         })
                     )
                 )

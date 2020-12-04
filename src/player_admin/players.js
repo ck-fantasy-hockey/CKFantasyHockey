@@ -25,21 +25,22 @@ export default class Players extends React.Component {
                     <th>Goals</th>
                     <th>Assists</th>
                     <th>Points</th>
-                    <th>Game Winning Goals</th>
+                    <th>GWG</th>
                     <th>Hat Tricks</th>
-                    <th>Plus Minus</th>
+                    <th>P/M</th>
                     <th>PPG</th>
                     <th>SHG</th>
-                    <th>Penalty Min</th>
+                    <th>Pen Min</th>
                     <th>Blocks</th>
                     <th>Wins</th>
                     <th>Losses</th>
-                    <th>Overtime Losses</th>
+                    <th>OT Loss</th>
+                    <th>Update/Delete</th>
                 </tr>
             </thead>
             <tbody>
                 {this.props.data.map(element =>
-                    <PlayerRow key={element[0]} {...element}/>
+                    <PlayerRow key={element.playerID} {...element}/>
                     )}
             </tbody>
         </table>

@@ -24,20 +24,97 @@ var PlayerRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    "-"
-                ),
-                React.createElement("td", null),
-                React.createElement("td", null),
-                React.createElement("td", null),
-                React.createElement(
-                    "td",
-                    null,
-                    "-"
+                    this.props.playerID
                 ),
                 React.createElement(
                     "td",
                     null,
-                    "-"
+                    this.props.playerName
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.team
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.status
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.position
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.goals
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.assists
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.points
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.gameWinningGoals
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.hatTricks
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.penaltyMinutes
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.pointsPerGame
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.shootOutGoals
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.minutesPlayed
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.blocks
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.wins
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.losses
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.playerID
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    this.props.overtimeLosses
                 )
             );
         }
