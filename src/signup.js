@@ -23,10 +23,7 @@ export default class Signup extends React.Component {
     // handles submission of signup form
     handleSubmit = (event) => {
         event.preventDefault();
-        let email = this.emailValidate();
-        if (email == false) {
-            return;
-        }
+        
         const userdata = this.state
         // check for blank fields
         let checkFields = this.checkBlank(userdata);

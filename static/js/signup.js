@@ -32,15 +32,7 @@ var Signup = function (_React$Component) {
 
         _this.handleSubmit = function (event) {
             event.preventDefault();
-<<<<<<< HEAD
-            ReactDOM.render(React.createElement('p', null), document.getElementsByClassName('incorrect-creds')[0]);
-            ReactDOM.render(React.createElement('p', null), document.getElementsByClassName('incorrect-creds')[1]);
-=======
-            var email = _this.emailValidate();
-            if (email == false) {
-                return;
-            }
->>>>>>> parent of 1fadd7b... Merge branch 'main' into user-management
+
             var userdata = _this.state;
             // check for blank fields
             var checkFields = _this.checkBlank(userdata);
@@ -55,43 +47,6 @@ var Signup = function (_React$Component) {
             // if password do not match it displays error
             var passMatch = _this.checkPasswords(userdata['password'], userdata['passwordConfirm']);
             if (passMatch === false) {
-<<<<<<< HEAD
-                return;
-            }
-            var url = "/submitsignup";
-
-            // if password matches and email is valid, perform the signup
-            if (email && passMatch) {
-                fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(userdata)
-                }).then(function (response) {
-                    return response.json();
-                }).then(function (data) {
-                    // if username unique, redirects to login
-                    if (data['response'] === true) {
-                        window.location.href = "/login";
-                        // if username is taken displays error
-                    } else {
-                        var element = React.createElement(
-                            'p',
-                            { className: 'incorrect-text' },
-                            'Username taken'
-                        );
-                        ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
-                    }
-                });
-            }
-=======
-                var element = React.createElement(
-                    'p',
-                    { className: 'incorrect-text' },
-                    'Passwords do not match'
-                );
-                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
                 return;
             }
             var url = "/submitsignup";
@@ -109,15 +64,14 @@ var Signup = function (_React$Component) {
                     window.location.href = "/login";
                     // if username is taken displays error
                 } else {
-                    var _element = React.createElement(
+                    var element = React.createElement(
                         'p',
                         { className: 'incorrect-text' },
                         'Username taken'
                     );
-                    ReactDOM.render(_element, document.getElementsByClassName('incorrect-creds')[0]);
+                    ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
                 }
             });
->>>>>>> parent of 1fadd7b... Merge branch 'main' into user-management
         };
 
         _this.checkBlank = function (userdata) {
