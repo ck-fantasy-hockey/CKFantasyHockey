@@ -129,7 +129,7 @@ var Signup = function (_React$Component) {
     // handles submission of signup form
 
 
-    // Confirms password match
+    // Confirms password match or not
 
 
     _createClass(Signup, [{

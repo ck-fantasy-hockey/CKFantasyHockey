@@ -53,15 +53,10 @@ var UserRow = function (_React$Component) {
                     null,
                     React.createElement(
                         'button',
-                        { onClick: function onClick() {
+                        { className: 'btn', onClick: function onClick() {
                                 _this2.props.deleteUser(_this2.props.userID);
                             } },
                         'Delete'
-                    ),
-                    React.createElement(
-                        'button',
-                        null,
-                        'Reset Password'
                     )
                 )
             );

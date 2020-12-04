@@ -23,7 +23,7 @@ export default class Signup extends React.Component {
     // handles submission of signup form
     handleSubmit = (event) => {
         event.preventDefault();
-        
+
         const userdata = this.state
         // check for blank fields
         let checkFields = this.checkBlank(userdata);
@@ -84,7 +84,7 @@ export default class Signup extends React.Component {
           }
     }
 
-    // Confirms password match
+    // Confirms password match or not
     checkPasswords = (password1, password2) =>{
         if (password1 === password2) {
             return true
