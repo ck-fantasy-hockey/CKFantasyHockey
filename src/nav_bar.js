@@ -13,6 +13,10 @@ export default class NavBar extends React.Component {
         window.location.href = "/login";
     }
 
+    handlePlayer = () => {
+        window.location.href = "/playeradmin?token="+localStorage.getItem('usertoken');
+    }
+
     handlefaq = () => {
         window.location.href = "/faq?token="+localStorage.getItem('usertoken');
     }
@@ -34,6 +38,9 @@ export default class NavBar extends React.Component {
                 </li>
                 </div>
                 <div className="nav-item right">
+                    <li>
+                    <button type="submit" onClick={this.handlePlayer}>Player Admin</button>
+                    </li>
                     <li>
                         <button type="submit" onClick={this.handlefaq}>FAQ</button>
                     </li>

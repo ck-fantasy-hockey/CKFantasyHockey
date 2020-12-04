@@ -152,8 +152,8 @@ def login():
 @app.route('/playeradmin')
 @token_required
 def player_admin():
-    players = database.db_functions.get_all_players(teamID)
-
+    players = database.db_functions.get_all_players()
+    print(players)
     dataFromServer = {'players': players}
     return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
