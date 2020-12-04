@@ -9,10 +9,104 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var InsertPlayer = function (_React$Component) {
     _inherits(InsertPlayer, _React$Component);
 
-    function InsertPlayer() {
+    function InsertPlayer(props) {
         _classCallCheck(this, InsertPlayer);
 
-        return _possibleConstructorReturn(this, (InsertPlayer.__proto__ || Object.getPrototypeOf(InsertPlayer)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (InsertPlayer.__proto__ || Object.getPrototypeOf(InsertPlayer)).call(this, props));
+
+        _this.handleSubmitPlayer = function (event) {
+            event.preventDefault();
+            var playerdata = _this.state;
+            console.log(playerdata);
+            var url = "/insertplayer";
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(playerdata)
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if (data['response'] === true) {
+                    console.log("yay");
+                    // window.location.href = "/playeradmin?token="+localStorage.getItem('usertoken');
+                } else {
+                    // const element = <p className="incorrect-text">Username or password is incorrect</p>;
+                    // ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                    console.log("error");
+                }
+            });
+        };
+
+        _this.handleSignup = function (event) {
+            event.preventDefault();
+            window.location.href = "/";
+        };
+
+        _this.handleName = function (event) {
+            _this.setState({ name: event.target.value });
+        };
+
+        _this.handleTeam = function (event) {
+            _this.setState({ team: event.target.value });
+        };
+
+        _this.handlePosition = function (event) {
+            _this.setState({ position: event.target.value });
+        };
+
+        _this.handleStatus = function (event) {
+            _this.setState({ status: event.target.value });
+        };
+
+        _this.handleGP = function (event) {
+            _this.setState({ gamesPlayed: event.target.value });
+        };
+
+        _this.handleGoals = function (event) {
+            _this.setState({ goals: event.target.value });
+        };
+
+        _this.handleAssists = function (event) {
+            _this.setState({ assists: event.target.value });
+        };
+
+        _this.handlePoints = function (event) {
+            _this.setState({ points: event.target.value });
+        };
+
+        _this.handleGWG = function (event) {
+            _this.setState({ gameWinningGoals: event.target.value });
+        };
+
+        _this.handlePM = function (event) {
+            _this.setState({ penaltyMinutes: event.target.value });
+        };
+
+        _this.handleMP = function (event) {
+            _this.setState({ minutesPlayed: event.target.value });
+        };
+
+        _this.handleBlocks = function (event) {
+            _this.setState({ blocks: event.target.value });
+        };
+
+        _this.state = {
+            name: "",
+            team: "",
+            status: "",
+            position: "",
+            gamesPlayed: "",
+            goals: "",
+            assists: "",
+            points: "",
+            gameWinningGoals: "",
+            penaltyMinutes: "",
+            minutesPlayed: "",
+            blocks: ""
+        };
+        return _this;
     }
 
     _createClass(InsertPlayer, [{
@@ -24,69 +118,69 @@ var InsertPlayer = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_text", type: "text", id: "name", name: "name" })
+                    React.createElement("input", { className: "player_input player_text", onChange: this.handleName, type: "text", id: "name", name: "name" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_text", type: "text", id: "team", name: "team" })
+                    React.createElement("input", { className: "player_input player_text", onChange: this.handleTeam, type: "text", id: "team", name: "team" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_text", type: "text", id: "status", name: "status" })
+                    React.createElement("input", { className: "player_input player_text", onChange: this.handleStatus, type: "text", id: "status", name: "status" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_text", type: "text", id: "position", name: "position" })
+                    React.createElement("input", { className: "player_input player_text", onChange: this.handlePosition, type: "text", id: "position", name: "position" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", type: "text", id: "gamesplayed", name: "gamesplayed" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGP, type: "text", id: "gamesplayed", name: "gamesplayed" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", type: "text", id: "goals", name: "goals" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGoals, type: "text", id: "goals", name: "goals" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", type: "text", id: "assists", name: "assists" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleAssists, type: "text", id: "assists", name: "assists" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", type: "text", id: "points", name: "points" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handlePoints, type: "text", id: "points", name: "points" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", type: "text", id: "gamewinninggoals", name: "gamewinninggoals" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleGWG, type: "text", id: "gamewinninggoals", name: "gamewinninggoals" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", type: "text", id: "penaltyminutes", name: "penaltyminutes" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handlePM, type: "text", id: "penaltyminutes", name: "penaltyminutes" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", type: "text", id: "minutesplayed", name: "minutesplayed" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleMP, type: "text", id: "minutesplayed", name: "minutesplayed" })
                 ),
                 React.createElement(
                     "td",
                     null,
-                    React.createElement("input", { className: "player_input player_num", type: "text", id: "blocks", name: "blocks" })
+                    React.createElement("input", { className: "player_input player_num", onChange: this.handleBlocks, type: "text", id: "blocks", name: "blocks" })
                 ),
                 React.createElement(
                     "td",
                     null,
                     React.createElement(
                         "button",
-                        { className: "player_button" },
+                        { className: "player_button", onClick: this.handleSubmitPlayer },
                         "Save"
                     )
                 )
