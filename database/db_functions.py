@@ -302,6 +302,11 @@ def get_roster_for_player_team(teamID: int) -> dict:
     team_roster_values = (int(teamID),)
     cursor.execute(team_roster_query, team_roster_values)
     results = cursor.fetchall()
+    for player in results:
+        if player['savePercentage'] != None:
+            player['savePercentage'] = float(player['savePercentage'])
+        if player['goalsAllowedAverage'] != None:
+            player['goalsAllowedAverage'] = float(player['goalsAllowedAverage'])
     cursor.close()
     cnx.close()
 
