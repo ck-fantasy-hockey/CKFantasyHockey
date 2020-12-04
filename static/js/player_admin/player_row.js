@@ -80,20 +80,6 @@ var PlayerRow = function (_React$Component) {
                     "td",
                     null,
                     this.props.blocks
-                ),
-                React.createElement(
-                    "td",
-                    null,
-                    React.createElement(
-                        "button",
-                        { className: "player_button" },
-                        "Update"
-                    ),
-                    React.createElement(
-                        "button",
-                        { className: "player_button" },
-                        "Delete"
-                    )
                 )
             );
         }

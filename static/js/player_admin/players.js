@@ -108,11 +108,6 @@ var Players = function (_React$Component) {
                                 'th',
                                 null,
                                 'Blocks'
-                            ),
-                            React.createElement(
-                                'th',
-                                null,
-                                'Update/Delete'
                             )
                         )
                     ),

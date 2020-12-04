@@ -13,7 +13,7 @@ export default class PlayerRow extends React.Component {
             <td>{this.props.penaltyMinutes}</td>
             <td>{this.props.minutesPlayed}</td>
             <td>{this.props.blocks}</td>
-            <td><button className="player_button">Update</button><button className="player_button">Delete</button></td>
+            {/* <td><button className="player_button">Update</button><button className="player_button">Delete</button></td> */}
         </tr>
     }
 }

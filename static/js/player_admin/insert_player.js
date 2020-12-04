@@ -18,7 +18,74 @@ var InsertPlayer = function (_React$Component) {
     _createClass(InsertPlayer, [{
         key: "render",
         value: function render() {
-            return React.createElement("tr", null);
+            return React.createElement(
+                "tr",
+                null,
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "name", name: "name" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "team", name: "team" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "status", name: "status" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "position", name: "position" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "goals", name: "goals" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "assists", name: "assists" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "points", name: "points" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "gamewinninggoals", name: "gamewinninggoals" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "penaltyminutes", name: "penaltyminutes" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "minutesplayed", name: "minutesplayed" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement("input", { className: "player_input", type: "text", id: "blocks", name: "blocks" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
+                    React.createElement(
+                        "button",
+                        { className: "player_button" },
+                        "Save"
+                    )
+                )
+            );
         }
     }]);
 

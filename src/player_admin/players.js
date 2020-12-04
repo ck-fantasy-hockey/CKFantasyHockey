@@ -29,7 +29,7 @@ export default class Players extends React.Component {
                     <th>P/M</th>
                     <th>Min Played</th>
                     <th>Blocks</th>
-                    <th>Update/Delete</th>
+                    {/* <th>Update/Delete</th> */}
                 </tr>
             </thead>
             <tbody>
