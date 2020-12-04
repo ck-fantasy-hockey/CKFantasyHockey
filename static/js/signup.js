@@ -51,28 +51,32 @@ var Signup = function (_React$Component) {
                 return;
             }
             var url = "/submitsignup";
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userdata)
-            }).then(function (response) {
-                return response.json();
-            }).then(function (data) {
-                // if username unique, redirects to login
-                if (data['response'] === true) {
-                    window.location.href = "/login";
-                    // if username is taken displays error
-                } else {
-                    var element = React.createElement(
-                        'p',
-                        { className: 'incorrect-text' },
-                        'Username taken'
-                    );
-                    ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
-                }
-            });
+
+            // if password matches and email is valid, perform the signup
+            if (email && passMatch) {
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userdata)
+                }).then(function (response) {
+                    return response.json();
+                }).then(function (data) {
+                    // if username unique, redirects to login
+                    if (data['response'] === true) {
+                        window.location.href = "/login";
+                        // if username is taken displays error
+                    } else {
+                        var element = React.createElement(
+                            'p',
+                            { className: 'incorrect-text' },
+                            'Username taken'
+                        );
+                        ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                    }
+                });
+            }
         };
 
         _this.checkBlank = function (userdata) {

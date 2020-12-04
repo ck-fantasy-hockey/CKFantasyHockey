@@ -17,6 +17,10 @@ export default class NavBar extends React.Component {
         window.location.href = "/faq?token="+localStorage.getItem('usertoken');
     }
 
+    handleUserManagement = () => {
+        window.location.href = "/user-management?token="+localStorage.getItem('userToken');
+    }
+
     render() {
         return <nav className='nav-bar'>
             <ul>
@@ -34,6 +38,12 @@ export default class NavBar extends React.Component {
                 </li>
                 </div>
                 <div className="nav-item right">
+                    <div className='mod-func'>
+                    <li>
+                        <button type="submit" onClick={this.handleUserManagement}>User Management</button>
+                    </li>
+                    {/* Put player management here */}
+                    </div>
                     <li>
                         <button type="submit" onClick={this.handlefaq}>FAQ</button>
                     </li>

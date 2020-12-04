@@ -42,24 +42,28 @@ export default class Signup extends React.Component {
             return
         }
         const url = "/submitsignup"
-        fetch(url, {
-           method: 'POST',
-           headers: {
-               'Content-Type': 'application/json',
-           },
-           body: JSON.stringify(userdata)
-        })
-        .then((response) => response.json())
-        .then(data => {
-            // if username unique, redirects to login
-            if (data['response'] === true) {
-                window.location.href = "/login";
-            // if username is taken displays error
-            } else {
-                const element = <p className="incorrect-text">Username taken</p>;
-                ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
-            }
-        })
+
+        // if password matches and email is valid, perform the signup
+        if (email && passMatch) {
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userdata)
+             })
+             .then((response) => response.json())
+             .then(data => {
+                 // if username unique, redirects to login
+                 if (data['response'] === true) {
+                     window.location.href = "/login";
+                 // if username is taken displays error
+                 } else {
+                     const element = <p className="incorrect-text">Username taken</p>;
+                     ReactDOM.render(element, document.getElementsByClassName('incorrect-creds')[0]);
+                 }
+             })
+        }
     }
 
     checkBlank = (userdata) => {
