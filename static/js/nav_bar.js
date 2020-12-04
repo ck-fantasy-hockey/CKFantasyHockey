@@ -85,23 +85,36 @@ var NavBar = function (_React$Component) {
                         { className: "nav-item right" },
                         React.createElement(
                             "div",
-                            { className: "mod-func" },
+                            { className: "mod-func-title" },
                             React.createElement(
                                 "li",
                                 null,
                                 React.createElement(
-                                    "button",
-                                    { type: "submit", onClick: this.handleUserManagement },
-                                    "User Management"
+                                    "p",
+                                    null,
+                                    "Admin Functions:"
                                 )
                             ),
                             React.createElement(
-                                "li",
-                                null,
+                                "div",
+                                { className: "mod-func" },
                                 React.createElement(
-                                    "button",
-                                    { type: "submit", onClick: this.handlePlayer },
-                                    "Player Admin"
+                                    "li",
+                                    null,
+                                    React.createElement(
+                                        "button",
+                                        { type: "submit", onClick: this.handleUserManagement },
+                                        "Users"
+                                    )
+                                ),
+                                React.createElement(
+                                    "li",
+                                    null,
+                                    React.createElement(
+                                        "button",
+                                        { type: "submit", onClick: this.handlePlayer },
+                                        "Players"
+                                    )
                                 )
                             )
                         ),
