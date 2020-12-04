@@ -13,8 +13,8 @@ class PlayerView extends React.Component {
         return <div className='background-filter'>
             <NavBar />
             <div className='container'>
-                <PlayerInformation data={this.state.leaguedata} />
-                <Players data={this.state.teamdata} />
+                <PlayerInformation data={} />
+                <Players data={} />
             </div>
         </div>
     }

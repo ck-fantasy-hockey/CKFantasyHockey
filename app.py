@@ -153,9 +153,8 @@ def login():
 @token_required
 def player_admin():
     players = database.db_functions.get_all_players()
-    print(players)
     dataFromServer = {'players': players}
-    return render_template('index.j2', page="login", css="style", css2="signup_login", dataFromServer=dataFromServer)
+    return render_template('index.j2', page="player_admin", css="style", css2="signup_login", dataFromServer=dataFromServer)
 
 
 # Client APIs
