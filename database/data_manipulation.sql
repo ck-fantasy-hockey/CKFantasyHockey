@@ -10,6 +10,9 @@ SELECT userID FROM Users WHERE userName = :username LIMIT 0,1;
 -- insert to create new user [!]
 INSERT INTO Users SET userName = :username, password = :password, email = :email;
 
+-- Delete user [!]
+DELETE FROM Users WHERE UserID = :userid;
+
 -- verify username and password combination is correct [!]
 SELECT count(*) FROM Users WHERE userName = :userName AND password = :password;
 
