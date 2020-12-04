@@ -28,6 +28,7 @@ export default class PlayerInformation extends React.Component {
                     <th>Team</th>
                     <th>Status</th>
                     <th>Position</th>
+                    <th>GP</th>
                     <th>Goals</th>
                     <th>Assists</th>
                     <th>Points</th>

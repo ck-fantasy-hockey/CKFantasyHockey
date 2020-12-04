@@ -77,6 +77,11 @@ var Players = function (_React$Component) {
                             React.createElement(
                                 'th',
                                 null,
+                                'Games Played'
+                            ),
+                            React.createElement(
+                                'th',
+                                null,
                                 'Goals'
                             ),
                             React.createElement(

@@ -83,6 +83,11 @@ var PlayerInformation = function (_React$Component) {
                                 React.createElement(
                                     'th',
                                     null,
+                                    'GP'
+                                ),
+                                React.createElement(
+                                    'th',
+                                    null,
                                     'Goals'
                                 ),
                                 React.createElement(

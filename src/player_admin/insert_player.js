@@ -5,6 +5,7 @@ export default class InsertPlayer extends React.Component {
             <td><input className="player_input player_text" type="text" id="team" name="team" /></td>
             <td><input className="player_input player_text" type="text" id="status" name="status" /></td>
             <td><input className="player_input player_text" type="text" id="position" name="position" /></td>
+            <td><input className="player_input player_num" type="text" id="gamesplayed" name="gamesplayed" /></td>
             <td><input className="player_input player_num" type="text" id="goals" name="goals" /></td>
             <td><input className="player_input player_num" type="text" id="assists" name="assists" /></td>
             <td><input className="player_input player_num" type="text" id="points" name="points" /></td>

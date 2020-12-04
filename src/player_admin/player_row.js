@@ -6,6 +6,7 @@ export default class PlayerRow extends React.Component {
             <td>{this.props.team}</td>
             <td>{this.props.status}</td>
             <td>{this.props.position}</td>
+            <td>{this.props.gamesPlayed}</td>
             <td>{this.props.goals}</td>
             <td>{this.props.assists}</td>
             <td>{this.props.points}</td>

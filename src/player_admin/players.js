@@ -22,6 +22,7 @@ export default class Players extends React.Component {
                     <th>Team</th>
                     <th>Status</th>
                     <th>Position</th>
+                    <th>Games Played</th>
                     <th>Goals</th>
                     <th>Assists</th>
                     <th>Points</th>

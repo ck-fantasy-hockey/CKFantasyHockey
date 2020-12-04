@@ -49,6 +49,11 @@ var PlayerRow = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
+                    this.props.gamesPlayed
+                ),
+                React.createElement(
+                    "td",
+                    null,
                     this.props.goals
                 ),
                 React.createElement(

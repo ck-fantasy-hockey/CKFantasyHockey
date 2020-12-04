@@ -17,7 +17,7 @@ export default class GoalieInformation extends React.Component {
                 <img className='team-info-image' src='/static/img/hockey-team.jpg' />
             </div>
             <div className='team-info-text'>
-                <h1>Add Goalie</h1>
+                <h1>Add Goalies</h1>
             </div>
         </div>
         <div className="team-info-subheader">

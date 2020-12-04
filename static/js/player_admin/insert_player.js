@@ -44,6 +44,11 @@ var InsertPlayer = function (_React$Component) {
                 React.createElement(
                     "td",
                     null,
+                    React.createElement("input", { className: "player_input player_num", type: "text", id: "gamesplayed", name: "gamesplayed" })
+                ),
+                React.createElement(
+                    "td",
+                    null,
                     React.createElement("input", { className: "player_input player_num", type: "text", id: "goals", name: "goals" })
                 ),
                 React.createElement(

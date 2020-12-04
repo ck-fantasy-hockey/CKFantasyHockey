@@ -44,7 +44,7 @@ var GoalieInformation = function (_React$Component) {
                         React.createElement(
                             'h1',
                             null,
-                            'Add Player'
+                            'Add Goalies'
                         )
                     )
                 ),
