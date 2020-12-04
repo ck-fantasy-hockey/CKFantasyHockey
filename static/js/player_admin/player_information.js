@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+import InsertPlayer from './insert_player.js';
+
 var PlayerInformation = function (_React$Component) {
     _inherits(PlayerInformation, _React$Component);
 
@@ -23,97 +25,102 @@ var PlayerInformation = function (_React$Component) {
     }
 
     _createClass(PlayerInformation, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "div",
-                { className: "team-info" },
+                'div',
+                { className: 'team-info' },
                 React.createElement(
-                    "div",
-                    { className: "team-info-primary" },
+                    'div',
+                    { className: 'team-info-primary' },
                     React.createElement(
-                        "div",
-                        { className: "team-info-header" },
-                        React.createElement("img", { className: "team-info-image", src: "/static/img/hockey-team.jpg" })
+                        'div',
+                        { className: 'team-info-header' },
+                        React.createElement('img', { className: 'team-info-image', src: '/static/img/hockey-team.jpg' })
                     ),
                     React.createElement(
-                        "div",
-                        { className: "team-info-text" },
+                        'div',
+                        { className: 'team-info-text' },
                         React.createElement(
-                            "h1",
+                            'h1',
                             null,
-                            "Add Player"
+                            'Add Player'
                         )
                     )
                 ),
                 React.createElement(
-                    "div",
-                    { className: "team-info-subheader" },
+                    'div',
+                    { className: 'team-info-subheader' },
                     React.createElement(
-                        "table",
+                        'table',
                         null,
                         React.createElement(
-                            "thead",
+                            'thead',
                             null,
                             React.createElement(
-                                "tr",
+                                'tr',
                                 null,
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Name"
+                                    'Name'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Team"
+                                    'Team'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Status"
+                                    'Status'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Position"
+                                    'Position'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Goals"
+                                    'Goals'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Assists"
+                                    'Assists'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Points"
+                                    'Points'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "GWG"
+                                    'GWG'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "P/M"
+                                    'P/M'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Min Played"
+                                    'Min Played'
                                 ),
                                 React.createElement(
-                                    "th",
+                                    'th',
                                     null,
-                                    "Blocks"
+                                    'Blocks'
                                 )
                             )
+                        ),
+                        React.createElement(
+                            'tbody',
+                            null,
+                            React.createElement(InsertPlayer, null)
                         )
                     )
                 )

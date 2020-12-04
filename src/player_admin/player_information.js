@@ -1,3 +1,5 @@
+import InsertPlayer from './insert_player.js'
+
 export default class PlayerInformation extends React.Component {
     constructor(props) {
         super(props);
@@ -36,7 +38,7 @@ export default class PlayerInformation extends React.Component {
                 </tr>
             </thead>
             <tbody>
-                
+            <InsertPlayer />
             </tbody>
         </table>
         </div>

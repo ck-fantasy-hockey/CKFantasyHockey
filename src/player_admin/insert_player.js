@@ -1,4 +1,4 @@
-export default class insertPlayer extends React.Component {
+export default class InsertPlayer extends React.Component {
     render() {
         return <tr>
             {/* <td>{this.props.playerID}</td>
