@@ -4,6 +4,12 @@
 -- Gets the number of occurences of a specific username [!]
 SELECT count(*) FROM Users WHERE userName = :username;
 
+-- Deletes a specific user defined by UserID [!]
+DELETE FROM Users WHERE UserID = :userID;
+
+-- Selects all users [!]
+SELECT * From Users;
+
 -- Gets the userID for a specific username [!]
 SELECT userID FROM Users WHERE userName = :username LIMIT 0,1;
 
